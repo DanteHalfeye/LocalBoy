@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2c2a60bf-d080-434d-b8c3-54af064d9f50}">
+		<property name="assetPath">
+			<value>Among Us (Role Reveal) - Sound Effect (HD).mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.6236734693877555</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b598fa37-0593-4970-9f26-c57eeed8416c}</destination>
+		</relationship>
+	</object>
+</objects>
