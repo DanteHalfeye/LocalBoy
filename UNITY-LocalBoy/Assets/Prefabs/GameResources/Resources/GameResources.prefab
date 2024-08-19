@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2960340552144247830}
-  - component: {fileID: 6401965363643284583}
+  - component: {fileID: 7510305315082027974}
   m_Layer: 0
   m_Name: GameResources
   m_TagString: Untagged
@@ -269,7 +269,7 @@ Transform:
   - {fileID: 8898335596915373458}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6401965363643284583
+--- !u!114 &7510305315082027974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,7 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12341853baa38154491e982207df329f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNodeTypeList: {fileID: 11400000, guid: a0810f0819fa3874ba282bdd3385df9f, type: 2}
+  roomNodeTypeList: {fileID: 0}
+  dimmedMaterial: {fileID: 0}
+  enemyUnwalkableCollisionTilesArray: []
+  preferredEnemyPathTile: {fileID: 0}
 --- !u!1 &3460424841640784596
 GameObject:
   m_ObjectHideFlags: 0

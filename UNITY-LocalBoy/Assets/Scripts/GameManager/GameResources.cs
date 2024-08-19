@@ -37,28 +37,28 @@ public class GameResources : MonoBehaviour
     #endregion
     public Material dimmedMaterial;
 
-//    #region Header SPECIAL TILEMAP TILES
-//    [Space(10)]
-//    [Header("SPECIAL TILEMAP TILES")]
-//    #endregion Header SPECIAL TILEMAP TILES
-//    #region Tooltip
-//    [Tooltip("Collision tiles that enemies can navigate to")]
-//    #endregion Tooltip
-//    public TileBase[] enemyUnwalkableCollisionTilesArray;
-//    #region Tooltip
-//    [Tooltip("Preferred path tile for enemy navigation")]
-//    #endregion Tooltip
-//    public TileBase preferredEnemyPathArray;
+    #region Header SPECIAL TILEMAP TILES
+    [Space(10)]
+    [Header("SPECIAL TILEMAP TILES")]
+    #endregion Header SPECIAL TILEMAP TILES
+    #region Tooltip
+    [Tooltip("Collision tiles that the enemies can navigate to")]
+    #endregion Tooltip
+    public TileBase[] enemyUnwalkableCollisionTilesArray;
+    #region Tooltip
+    [Tooltip("Preferred path tile for enemy navigation")]
+    #endregion Tooltip
+    public TileBase preferredEnemyPathTile;
 
-//    #region Validation
-//#if UNITY_EDITOR
-//    //validando los detalles de scriptable objects detectados
-//    private void OnValidate()
-//    {
-        
-//        HelperUtilities.ValidateCheckEnumerableValues(this,nameof(enemyUnwalkableCollisionTilesArray), enemyUnwalkableCollisionTilesArray);
-//        HelperUtilities.ValidateCheckNullValue(this, nameof(preferredEnemyPathTile), preferredEnemyPathTile);
-//    }
-//#endif
-//    #endregion
+    #region Validation
+#if UNITY_EDITOR
+    //validando los detalles de scriptable objects detectados
+    private void OnValidate()
+    {
+
+        //HelperUtilities.ValidateCheckEnumerableValues(this, nameof(enemyUnwalkableCollisionTilesArray), enemyUnwalkableCollisionTilesArray);
+        //HelperUtilities.ValidateCheckNullValue(this, nameof(preferredEnemyPathTile), preferredEnemyPathTile);
+    }
+#endif
+    #endregion
 }
