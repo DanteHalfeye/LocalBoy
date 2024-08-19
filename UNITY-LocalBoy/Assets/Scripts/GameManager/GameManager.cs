@@ -24,6 +24,8 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     [HideInInspector] public GameState gameState;
 
+
+
     private void Start()
     {
         gameState = GameState.gameStarted;
@@ -72,4 +74,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     }
 #endif
     #endregion Validation
+
+
+
 }
