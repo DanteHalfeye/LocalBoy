@@ -46,6 +46,12 @@ public class InstantiatedRoom : MonoBehaviour
 
     }
 
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        StaticEventHandler.CallRoomChangedEvent(room);
+    }
 
     /// <summary>
     /// Initialise The Instantiated Room
@@ -258,5 +264,9 @@ public class InstantiatedRoom : MonoBehaviour
         if (environmentGameObject != null)
             environmentGameObject.SetActive(false);
     }
+
+
+
+    
 }
 

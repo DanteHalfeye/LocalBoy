@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -281,10 +281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12341853baa38154491e982207df329f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNodeTypeList: {fileID: 0}
-  dimmedMaterial: {fileID: 0}
-  enemyUnwalkableCollisionTilesArray: []
-  preferredEnemyPathTile: {fileID: 0}
+  roomNodeTypeList: {fileID: 11400000, guid: a0810f0819fa3874ba282bdd3385df9f, type: 2}
+  dimmedMaterial: {fileID: 2100000, guid: fd5ae752e16da36428c7ae98c49dc19e, type: 2}
+  litMaterial: {fileID: 2100000, guid: ad8cb007cdbc1594e816fad1bc59554e, type: 2}
+  enemyUnwalkableCollisionTilesArray:
+  - {fileID: 11400000, guid: 37e2c9e0227bfbc409cd632b9bd0c81f, type: 2}
+  - {fileID: 11400000, guid: 98f177f8276c38b429705e6720c48672, type: 2}
+  preferredEnemyPathTile: {fileID: 11400000, guid: 3ce5fb260af53d24887b55c3d50041e2, type: 2}
 --- !u!1 &3460424841640784596
 GameObject:
   m_ObjectHideFlags: 0

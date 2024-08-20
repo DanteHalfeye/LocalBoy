@@ -1,26 +1,23 @@
-using FMOD;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public static class AStar
 {
-    //basicamente acá vamos a hacer un camino para la habitacion, empezando por el nodo de inicio y finalizando pues en el nodo final
-    //devuelve null si no se encuentra ningun camino
-
+    /// <summary>
+    /// Builds a path for the room, from the startGridPosition to the endGridPosition, and adds
+    /// movement steps to the returned Stack. Returns null if no path is found.
+    /// </summary>
     public static Stack<Vector3> BuildPath(Room room, Vector3Int startGridPosition, Vector3Int endGridPosition)
     {
-        //ajustamos posiciones en lower bounds
-        startGridPosition -= (Vector3Int)room.templateLowerBounds;
+        // Adjust positions by lower bounds
+        startGridPosition -= (Vector3Int)room.templateLowerBounds; ;
         endGridPosition -= (Vector3Int)room.templateLowerBounds;
 
-        //crear la open list y closed hashset
-
+        // Create open list and closed hashset
         List<Node> openNodeList = new List<Node>();
         HashSet<Node> closedNodeHashSet = new HashSet<Node>();
 
-        //crea las gridnodes para el path finding
-
+        // Create gridnodes for path finding
         GridNodes gridNodes = new GridNodes(room.templateUpperBounds.x - room.templateLowerBounds.x + 1, room.templateUpperBounds.y - room.templateLowerBounds.y + 1);
 
         Node startNode = gridNodes.GetGridNode(startGridPosition.x, startGridPosition.y);
@@ -36,53 +33,61 @@ public static class AStar
         return null;
     }
 
-    //encontrar el camino mas corto - devuelve el nodo final si se encontró un camino, de resto, null.
-
-    private static Node FindShortestPath(Node startNode, Node targetNode, GridNodes gridNodes, List<Node> openNodeList, HashSet<Node> closedNodeHashset,
-        InstantiatedRoom instantiatedRoom)
+    /// <summary>
+    /// Find the shortest path - returns the end Node if a path has been found, else returns null.
+    /// </summary>
+    private static Node FindShortestPath(Node startNode, Node targetNode, GridNodes gridNodes, List<Node> openNodeList, HashSet<Node> closedNodeHashSet, InstantiatedRoom instantiatedRoom)
     {
-        //añadir nodo para abrir lista
+        // Add start node to open list
         openNodeList.Add(startNode);
 
-        //loop a traves de la open node list hasta que esté vacía
+        // Loop through open node list until empty
         while (openNodeList.Count > 0)
         {
-
-            //clasificando
+            // Sort List
             openNodeList.Sort();
 
-            //current node = el nodo en la open list que tenga en menor costo
+            // current node = the node in the open list with the lowest fCost
             Node currentNode = openNodeList[0];
             openNodeList.RemoveAt(0);
 
-            //añador current node a la lista cerrada
-            closedNodeHashset.Add(currentNode);
+            // if the current node = target node then finish
+            if (currentNode == targetNode)
+            {
+                return currentNode;
+            }
 
-            EvaluateCurrentNodeNeighbours(currentNode, targetNode, gridNodes, openNodeList, closedNodeHashset, instantiatedRoom);
+            // add current node to the closed list
+            closedNodeHashSet.Add(currentNode);
+
+            // evaluate fcost for each neighbour of the current node
+            EvaluateCurrentNodeNeighbours(currentNode, targetNode, gridNodes, openNodeList, closedNodeHashSet, instantiatedRoom);
         }
 
         return null;
+
     }
 
 
-    //creamos un Stack<Vector3> para conetener el camino de movimiento
-    private static Stack<Vector3> CreatePathStack(Node tagetNode, Room room)
+    /// <summary>
+    ///  Create a Stack<Vector3> containing the movement path 
+    /// </summary>
+    private static Stack<Vector3> CreatePathStack(Node targetNode, Room room)
     {
         Stack<Vector3> movementPathStack = new Stack<Vector3>();
 
-        Node nextNode = tagetNode;
+        Node nextNode = targetNode;
 
-        //agarrar punto medio de una celda
+        // Get mid point of cell
         Vector3 cellMidPoint = room.instantiatedRoom.grid.cellSize * 0.5f;
         cellMidPoint.z = 0f;
 
-        while(nextNode != null)
+        while (nextNode != null)
         {
-            //convertir la posicion del grid a posicion de mundo
-            Vector3 worldPosition = room.instantiatedRoom.grid.CellToWorld(new Vector3Int(nextNode.gridPosition.x + room.templateLowerBounds.x,
-                nextNode.gridPosition.y + room.templateLowerBounds.y, 0));
+            // Convert grid position to world position
+            Vector3 worldPosition = room.instantiatedRoom.grid.CellToWorld(new Vector3Int(nextNode.gridPosition.x + room.templateLowerBounds.x, nextNode.gridPosition.y + room.templateLowerBounds.y, 0));
 
-            //poner la posicion del mundoen lamitad de la celda
+            // Set the world position to the middle of the grid cell
             worldPosition += cellMidPoint;
 
             movementPathStack.Push(worldPosition);
@@ -91,20 +96,18 @@ public static class AStar
         }
 
         return movementPathStack;
-
     }
 
-    //evaluamos los nodos vecinos
-
-    private static void EvaluateCurrentNodeNeighbours(Node currentNode, Node targetNode, GridNodes gridNodes, List<Node> openNodeList, HashSet<Node>
-        closedNodeHashSet, InstantiatedRoom instantiatedRoom)
+    /// <summary>
+    /// Evaluate neighbour nodes
+    /// </summary>
+    private static void EvaluateCurrentNodeNeighbours(Node currentNode, Node targetNode, GridNodes gridNodes, List<Node> openNodeList, HashSet<Node> closedNodeHashSet, InstantiatedRoom instantiatedRoom)
     {
         Vector2Int currentNodeGridPosition = currentNode.gridPosition;
 
         Node validNeighbourNode;
 
-        //loop en todas las direcciones
-
+        // Loop through all directions
         for (int i = -1; i <= 1; i++)
         {
             for (int j = -1; j <= 1; j++)
@@ -112,14 +115,23 @@ public static class AStar
                 if (i == 0 && j == 0)
                     continue;
 
+
+                
+               
+
                 validNeighbourNode = GetValidNodeNeighbour(currentNodeGridPosition.x + i, currentNodeGridPosition.y + j, gridNodes, closedNodeHashSet, instantiatedRoom);
 
                 if (validNeighbourNode != null)
                 {
-                    //calcula  nuvo gCost para vecino
+                    // Calculate new gcost for neighbour
                     int newCostToNeighbour;
 
-                    newCostToNeighbour = currentNode.gCost + GetDistance(currentNode, validNeighbourNode);
+                    // Get the movement penalty
+                    // Unwalkable paths have a value of 0. Default movement penalty is set in
+                    // Settings and applies to other grid squares.
+                    int movementPenaltyForGridSpace = instantiatedRoom.aStarMovementPenalty[validNeighbourNode.gridPosition.x, validNeighbourNode.gridPosition.y];
+
+                    newCostToNeighbour = currentNode.gCost + GetDistance(currentNode, validNeighbourNode) + movementPenaltyForGridSpace;
 
                     bool isValidNeighbourNodeInOpenList = openNodeList.Contains(validNeighbourNode);
 
@@ -135,43 +147,48 @@ public static class AStar
                         }
                     }
                 }
-
             }
         }
     }
 
 
-    //  devuelve la distancia int entre nodeA y nodeB
-
+    /// <summary>
+    /// Returns the distance int between nodeA and nodeB
+    /// </summary>
     private static int GetDistance(Node nodeA, Node nodeB)
     {
         int dstX = Mathf.Abs(nodeA.gridPosition.x - nodeB.gridPosition.x);
         int dstY = Mathf.Abs(nodeA.gridPosition.y - nodeB.gridPosition.y);
 
         if (dstX > dstY)
-            return 14 * dstY + 10 * (dstX - dstY); //se usa 10 en vez de 1, el 14 es por un pitagorazo SQRT(10*10 + 10*10) pa no usar floats
+            return 14 * dstY + 10 * (dstX - dstY);  // 10 used instead of 1, and 14 is a pythagoras approximation SQRT(10*10 + 10*10) - to avoid using floats
         return 14 * dstX + 10 * (dstY - dstX);
     }
 
-    //evalua el nodo vecino en neighbourNodeXPosition, neighbourNodeYPosition, usando 
-    //los gridNodes especificos, closedNodeHashSet, y instantiated room. devuelvve null si el nodo no es valido
-
-    private static Node GetValidNodeNeighbour(int neighbourNodeXPosition, int neighbourNodeYPosition, GridNodes gridNodes, HashSet<Node> closedNodeHashSet,
-        InstantiatedRoom instantiatedRoom)
+    /// <summary>
+    /// Evaluate a neighbour node at neighboutNodeXPosition, neighbourNodeYPosition, using the
+    /// specified gridNodes, closedNodeHashSet, and instantiated room.  Returns null if the node isn't valid
+    /// </summary>
+    private static Node GetValidNodeNeighbour(int neighbourNodeXPosition, int neighbourNodeYPosition, GridNodes gridNodes, HashSet<Node> closedNodeHashSet, InstantiatedRoom instantiatedRoom)
     {
-        //si la posicion del nodo vecnino esta mas alla del grid, devuelve null
-
-        if( neighbourNodeXPosition >= instantiatedRoom.room.templateUpperBounds.x - instantiatedRoom.room.templateLowerBounds.x || neighbourNodeXPosition < 0
-            || neighbourNodeYPosition >= instantiatedRoom.room.templateUpperBounds.y - instantiatedRoom.room.templateLowerBounds.y || neighbourNodeYPosition <0)
+        // If neighbour node position is beyond grid then return null
+        if (neighbourNodeXPosition >= instantiatedRoom.room.templateUpperBounds.x - instantiatedRoom.room.templateLowerBounds.x || neighbourNodeXPosition < 0 || neighbourNodeYPosition >= instantiatedRoom.room.templateUpperBounds.y - instantiatedRoom.room.templateLowerBounds.y || neighbourNodeYPosition < 0)
         {
             return null;
         }
-        //obtener nodo vecino
 
+        // Get neighbour node
         Node neighbourNode = gridNodes.GetGridNode(neighbourNodeXPosition, neighbourNodeYPosition);
 
-        //si el nodo está en la closed list, lo salta
-        if (closedNodeHashSet.Contains(neighbourNode))
+        // check for obstacle at that position
+        int movementPenaltyForGridSpace = instantiatedRoom.aStarMovementPenalty[neighbourNodeXPosition, neighbourNodeYPosition];
+
+        // check for moveable obstacle at that position
+        int itemObstacleForGridSpace = instantiatedRoom.aStarItemObstacles[neighbourNodeXPosition, neighbourNodeYPosition];
+
+
+        // if neighbour is an obstacle or neighbour is in the closed list then skip
+        if (movementPenaltyForGridSpace == 0 || itemObstacleForGridSpace == 0 || closedNodeHashSet.Contains(neighbourNode))
         {
             return null;
         }
@@ -179,8 +196,6 @@ public static class AStar
         {
             return neighbourNode;
         }
+
     }
-
-
 }
-

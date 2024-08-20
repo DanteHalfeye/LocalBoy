@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
@@ -5,16 +6,17 @@ using UnityEngine;
 
 public class GameResources : MonoBehaviour
 {
-    private static GameResources instance;
+    static GameResources instance;
 
     public static GameResources Instance
     {
-        get 
-        { if (instance == null)
+        get
+        {
+            if (instance == null)
             {
                 instance = Resources.Load<GameResources>("GameResources");
-            } 
-        return instance;
+            }
+            return instance;
         }
     }
 
@@ -36,6 +38,13 @@ public class GameResources : MonoBehaviour
     [Tooltip("Dimmed Material")]
     #endregion
     public Material dimmedMaterial;
+
+
+
+    #region Tooltip
+    [Tooltip("Sprite-Lit-Default Material")]
+    #endregion
+    public Material litMaterial;
 
     #region Header SPECIAL TILEMAP TILES
     [Space(10)]
