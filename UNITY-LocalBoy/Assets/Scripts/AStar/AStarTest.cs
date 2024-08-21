@@ -90,7 +90,7 @@ public class AStarTest : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            //Debug.Log(pathStack);
+            
             DisplayPath();
         }
     }
@@ -195,7 +195,7 @@ public class AStarTest : MonoBehaviour
         
         
         pathStack = AStar.BuildPath(instantiatedRoom.room, startGridPosition, endGridPosition);
-        Debug.Log(pathStack);
+        
 
         if (pathStack == null) return;
 
