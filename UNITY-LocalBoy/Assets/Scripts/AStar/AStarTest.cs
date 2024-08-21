@@ -4,6 +4,7 @@ using UnityEngine.Tilemaps;
 
 public class AStarTest : MonoBehaviour
 {
+    [SerializeField]
     private InstantiatedRoom instantiatedRoom;
     private Grid grid;
     private Tilemap frontTilemap;
@@ -89,6 +90,7 @@ public class AStarTest : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
+            //Debug.Log(pathStack);
             DisplayPath();
         }
     }
@@ -187,9 +189,13 @@ public class AStarTest : MonoBehaviour
     /// </summary>
     private void DisplayPath()
     {
+
         if (startGridPosition == noValue || endGridPosition == noValue) return;
 
+        
+        
         pathStack = AStar.BuildPath(instantiatedRoom.room, startGridPosition, endGridPosition);
+        Debug.Log(pathStack);
 
         if (pathStack == null) return;
 

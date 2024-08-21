@@ -9,6 +9,8 @@ public static class AStar
     /// </summary>
     public static Stack<Vector3> BuildPath(Room room, Vector3Int startGridPosition, Vector3Int endGridPosition)
     {
+        
+        Debug.Log(room.id+ " "+ startGridPosition + " " + endGridPosition);
         // Adjust positions by lower bounds
         startGridPosition -= (Vector3Int)room.templateLowerBounds; ;
         endGridPosition -= (Vector3Int)room.templateLowerBounds;
@@ -167,6 +169,7 @@ public static class AStar
     /// </summary>
     private static Node GetValidNodeNeighbour(int neighbourNodeXPosition, int neighbourNodeYPosition, GridNodes gridNodes, HashSet<Node> closedNodeHashSet, InstantiatedRoom instantiatedRoom)
     {
+        Debug.Log(neighbourNodeXPosition + " " +  neighbourNodeYPosition + " " + gridNodes + " " + closedNodeHashSet + " " + instantiatedRoom   );
         // If neighbour node position is beyond grid then return null
         if (neighbourNodeXPosition >= instantiatedRoom.room.templateUpperBounds.x - instantiatedRoom.room.templateLowerBounds.x || neighbourNodeXPosition < 0 || neighbourNodeYPosition >= instantiatedRoom.room.templateUpperBounds.y - instantiatedRoom.room.templateLowerBounds.y || neighbourNodeYPosition < 0)
         {
