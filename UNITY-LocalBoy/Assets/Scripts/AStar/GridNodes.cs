@@ -1,7 +1,6 @@
-
 using UnityEngine;
 
-public class GridNodes 
+public class GridNodes
 {
     private int width;
     private int height;
@@ -17,13 +16,10 @@ public class GridNodes
 
         for (int x = 0; x < width; x++)
         {
-
             for (int y = 0; y < height; y++)
             {
-
                 gridNode[x, y] = new Node(new Vector2Int(x, y));
             }
-
         }
     }
 
@@ -35,8 +31,9 @@ public class GridNodes
         }
         else
         {
-            Debug.Log("El grid node solicitado está fuera de rango");
+            Debug.Log("Requested grid node is out of range");
             return null;
         }
     }
+
 }

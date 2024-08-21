@@ -79,21 +79,17 @@ public class AStarTest : MonoBehaviour
         {
             ClearPath();
             SetStartPosition();
-            Debug.Log("Se detecto i");
         }
 
         if (Input.GetKeyDown(KeyCode.O))
         {
             ClearPath();
             SetEndPosition();
-            Debug.Log("Se detecto o");
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
             DisplayPath();
-            Debug.Log("Se detecto p");
-
         }
     }
 
@@ -201,8 +197,6 @@ public class AStarTest : MonoBehaviour
         {
             pathTilemap.SetTile(grid.WorldToCell(worldPosition), startPathTile);
         }
-
-        Debug.Log("pintando celdas");
     }
 
 }

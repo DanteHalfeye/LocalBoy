@@ -115,10 +115,6 @@ public static class AStar
                 if (i == 0 && j == 0)
                     continue;
 
-
-                
-               
-
                 validNeighbourNode = GetValidNodeNeighbour(currentNodeGridPosition.x + i, currentNodeGridPosition.y + j, gridNodes, closedNodeHashSet, instantiatedRoom);
 
                 if (validNeighbourNode != null)
