@@ -24,5 +24,5 @@ public static class Settings
     public const float enemyPathRebuildCooldown = 2f;
 
     #endregion
-
+    
 }
