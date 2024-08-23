@@ -23,6 +23,9 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     [SerializeField] private int currentDungeonLevelListIndex = 0;
 
     [HideInInspector] public GameState gameState;
+    private Movement movement;
+    GameObject player;
+
 
     private void Start()
     {

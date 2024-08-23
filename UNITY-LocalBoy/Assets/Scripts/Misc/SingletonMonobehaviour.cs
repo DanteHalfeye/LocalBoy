@@ -4,6 +4,8 @@ public abstract class SingletonMonobehaviour<T> : MonoBehaviour where T : MonoBe
 {
     private static T instance;
 
+    private static Transform _instanceTransform;
+
     public static T Instance
     {
         get
@@ -20,6 +22,7 @@ public abstract class SingletonMonobehaviour<T> : MonoBehaviour where T : MonoBe
         }
         else
         {
+            _instanceTransform = instance.transform;
             Destroy(gameObject);
         }
     }
