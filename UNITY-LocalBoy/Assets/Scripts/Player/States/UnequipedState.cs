@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class UnequipedState : PlayerBaseState
 {
-    public UnequipedState(PlayerStateMachine currentContext, Movement movement) : base(currentContext, movement)
+    public UnequipedState(PlayerStateMachine currentContext, Movement movement, PlayerActor actor) : base(currentContext, movement, actor)
     {
        
     }
 
     public override void EnterState()
     {
-        movement.Speed = 3;
+        actor.SetMovingSpeed(3);
     }
 
     public override void ExitState()

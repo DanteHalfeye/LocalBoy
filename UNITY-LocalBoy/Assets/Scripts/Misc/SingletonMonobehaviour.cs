@@ -22,7 +22,7 @@ public abstract class SingletonMonobehaviour<T> : MonoBehaviour where T : MonoBe
         }
         else
         {
-            _instanceTransform = instance.transform;
+            instance.transform.position = gameObject.transform.position;
             Destroy(gameObject);
         }
     }

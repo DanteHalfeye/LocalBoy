@@ -12,6 +12,7 @@ public class PlayerStateMachine : MonoBehaviour
     //Remember that the base state is an abstract class and the states are inheriting from it
     PlayerBaseState currentState;
     PlayerInput input;
+    PlayerActor actor;
 
     [SerializeField] 
     string currentStateName = "";
@@ -64,6 +65,8 @@ public class PlayerStateMachine : MonoBehaviour
     private void Awake()
     {
         playerMovement = GetComponent<Movement>();
+        actor = PlayerActor.Instance;
+        input = GetComponent<PlayerInput>();
         // Set your components here
 
         /*
@@ -78,9 +81,11 @@ public class PlayerStateMachine : MonoBehaviour
             crouchState = new PlayerHidingState(this, _playerController, PlayerCamera);
 
          */
-        unequipedState = new UnequipedState(this, playerMovement);
 
-        input = GetComponent<PlayerInput>();
+
+
+
+        unequipedState = new UnequipedState(this, playerMovement, actor);
     }
 
     private void Start()
@@ -107,8 +112,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     public bool OnGrabInput(InputValue input)
     {
-        grabbing = !grabbing;
-        return grabbing;
+        return actor.OnHoldPress();
     }
 
 }

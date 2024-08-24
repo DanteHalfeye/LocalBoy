@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerActor : SingletonMonobehaviour<PlayerActor> 
 {
-    private float movingSpeed, holdingSpeed, shootCooldown, health, ammunition;
+    private float movingSpeed, holdingSpeed, shootCooldown, health, ammunition, baseMovementSpeed;
     bool isHolding, isShooting;
 
     [SerializeField] HealthSO Health;
@@ -23,7 +23,7 @@ public class PlayerActor : SingletonMonobehaviour<PlayerActor>
     /// </summary>
     public void AddMovingSpeed(float amount)
     {
-        movingSpeed = movement.Speed + amount;
+        movingSpeed = baseMovementSpeed + amount;
         movement.Speed = movingSpeed;
 
     }
@@ -33,6 +33,11 @@ public class PlayerActor : SingletonMonobehaviour<PlayerActor>
         movement.Speed = amount;
     }
 
+    public void SetBaseMovementSpeed(float amount)
+    {
+        baseMovementSpeed = amount;
+        AddMovingSpeed(0);
+    }
     public void AddAmmo()
     {
 

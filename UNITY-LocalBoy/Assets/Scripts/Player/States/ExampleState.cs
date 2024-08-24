@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExampleState : PlayerBaseState
 {
     // A constructor of this class that passes the context of the base state class
-    public ExampleState(PlayerStateMachine currentContext, Movement movement) : base(currentContext, movement)
+    public ExampleState(PlayerStateMachine currentContext, Movement movement, PlayerActor actor) : base(currentContext, movement, actor)
     {
         
     }

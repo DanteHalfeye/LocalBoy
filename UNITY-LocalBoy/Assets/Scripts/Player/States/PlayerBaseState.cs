@@ -7,15 +7,17 @@ public abstract class PlayerBaseState
     // We save the state machine in order to tell it to change states
     protected PlayerStateMachine stateMachine;
     protected Movement movement;
+    protected PlayerActor actor;
 
     /// <summary>
     /// This is the constructor class - if you need reference to something like the input system just add the argument to the method constuctor
     /// </summary>
 
-    public PlayerBaseState(PlayerStateMachine currentContext, Movement playerMovement)
+    public PlayerBaseState(PlayerStateMachine currentContext, Movement playerMovement, PlayerActor currentPlayer)
     {
         stateMachine = currentContext;
         movement = playerMovement;
+        actor = currentPlayer;
     }
 
 
