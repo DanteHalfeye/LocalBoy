@@ -67,6 +67,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         }
     }
 
+    
     #region Validation
 #if UNITY_EDITOR
     private void OnValidate()

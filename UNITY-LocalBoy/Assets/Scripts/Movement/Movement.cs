@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private InputManager inputs;
-    private float speed;
+    [SerializeField]private float speed;
     private Rigidbody2D rb;
     private Vector2 movDirection;
 
@@ -15,11 +15,6 @@ public class Movement : MonoBehaviour
 
      void Awake()
     {
-        PlayerActor player = PlayerActor.Instance;
-        transform.position = player.transform.position;
-
-        Destroy(gameObject);
-
         inputs = GetComponent<InputManager>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -30,11 +25,11 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        movDirection = inputs.MoveInput.normalized;
+        movDirection = inputs.MoveInput;
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movDirection * speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movDirection * (speed/32) );
     }
 }

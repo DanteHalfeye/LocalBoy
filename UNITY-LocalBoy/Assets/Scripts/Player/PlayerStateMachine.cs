@@ -4,17 +4,22 @@ using System.ComponentModel;
 using Unity.Collections;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerStateMachine : MonoBehaviour
 {
     // Only one state at a time
     //Remember that the base state is an abstract class and the states are inheriting from it
     PlayerBaseState currentState;
-
+    PlayerInput input;
 
     [SerializeField] 
     string currentStateName = "";
 
+    Movement playerMovement;
+
+
+    bool grabbing;
     /*
     
     Place here all your variables, these variables are the ones the states need to funtion correctly
@@ -23,6 +28,9 @@ public class PlayerStateMachine : MonoBehaviour
     */
     [HideInInspector]
     public ExampleState exampleState;
+    [HideInInspector]
+    public UnequipedState unequipedState;
+
     /* Declare the instance of the states - for example
 
     public PlayerMovingState movingState;
@@ -49,10 +57,13 @@ public class PlayerStateMachine : MonoBehaviour
     public PlayerBaseState CurrentState { get { return currentState; } set { currentState = value; } }
 
     */
+    public bool Grabbing { get { return grabbing; } }
+    public Movement PlayerMovement { get { return playerMovement; } }
     public PlayerBaseState CurrentState { get { return currentState; } set { currentState = value; } }
 
     private void Awake()
     {
+        playerMovement = GetComponent<Movement>();
         // Set your components here
 
         /*
@@ -67,12 +78,14 @@ public class PlayerStateMachine : MonoBehaviour
             crouchState = new PlayerHidingState(this, _playerController, PlayerCamera);
 
          */
-        exampleState = new ExampleState(this);
+        unequipedState = new UnequipedState(this, playerMovement);
+
+        input = GetComponent<PlayerInput>();
     }
 
     private void Start()
     {
-        currentState = exampleState;
+        currentState = unequipedState;
         CurrentState.EnterState();
     }
 
@@ -82,6 +95,7 @@ public class PlayerStateMachine : MonoBehaviour
         currentState.UpdateState();
 
     }
+
     /// <summary>
     /// This method is called by the states, not by the state machine
     /// </summary>
@@ -91,5 +105,10 @@ public class PlayerStateMachine : MonoBehaviour
         state.EnterState();
     }
 
+    public bool OnGrabInput(InputValue input)
+    {
+        grabbing = !grabbing;
+        return grabbing;
+    }
 
 }
