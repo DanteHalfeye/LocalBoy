@@ -24,12 +24,29 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     [HideInInspector] public GameState gameState;
     private Movement movement;
-    GameObject player;
 
+    private Room currentRoom;
+    private Room previousRoom;
+   // GameObject player;
+
+    private Player player;
 
     private void Start()
     {
         gameState = GameState.gameStarted;
+    }
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
+
+    /// <summary>
+    /// Get the current room the player is in
+    /// </summary>
+    public Room GetCurrentRoom()
+    {
+        return currentRoom;
     }
 
     private void Update()
@@ -43,6 +60,8 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     {
         HandleGameState();
     }
+
+
 
     /// <summary>
     /// Handle game state
@@ -60,6 +79,18 @@ public class GameManager : SingletonMonobehaviour<GameManager>
                 break;
 
         }
+    }
+
+    /// <summary>
+    /// Set the current room the player in in
+    /// </summary>
+    public void SetCurrentRoom(Room room)
+    {
+        previousRoom = currentRoom;
+        currentRoom = room;
+
+        //// Debug
+        //Debug.Log(room.prefab.name.ToString());
     }
 
     private void PlayDungeonLevel(int dungeonLevelListIndex)
