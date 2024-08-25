@@ -39,6 +39,11 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         HandleGameState();
     }
 
+    public void StartGame()
+    {
+        HandleGameState();
+    }
+
     /// <summary>
     /// Handle game state
     /// </summary>
