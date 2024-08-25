@@ -23,15 +23,9 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     [SerializeField] private int currentDungeonLevelListIndex = 0;
 
     [HideInInspector] public GameState gameState;
+    private Movement movement;
+    GameObject player;
 
-    
-    private Room currentRoom;
-    private Room previousRoom;
-
-    //private PlayerDetailsSO playerDetails;
-   // private Player player;
-
-   
 
     private void Start()
     {
@@ -42,6 +36,11 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     {
         // Testing
         if (Input.GetKeyDown(KeyCode.R))
+        HandleGameState();
+    }
+
+    public void StartGame()
+    {
         HandleGameState();
     }
 
@@ -71,37 +70,9 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         {
             Debug.LogError("Couldn't build dungeon from specified rooms and node graphs");
         }
-
-        // Call static event that room has changed.
-        StaticEventHandler.CallRoomChangedEvent(currentRoom);
     }
 
-    /// <summary>
-    /// Handle room changed event
-    /// </summary>
-    private void StaticEventHandler_OnRoomChanged(RoomChangedEventArgs roomChangedEventArgs)
-    {
-        SetCurrentRoom(roomChangedEventArgs.room);
-    }
-
-    public void SetCurrentRoom(Room room)
-    {
-        previousRoom = currentRoom;
-        currentRoom = room;
-
-        //// Debug
-        //Debug.Log(room.prefab.name.ToString());
-    }
-
-    /// <summary>
-    /// Get the player
-    /// </summary>
-    //public Player GetPlayer()
-    //{
-    //    return player;
-    //}
-
-
+    
     #region Validation
 #if UNITY_EDITOR
     private void OnValidate()
@@ -110,7 +81,4 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     }
 #endif
     #endregion Validation
-
-
-
 }
