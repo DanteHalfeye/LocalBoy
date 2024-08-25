@@ -24,8 +24,14 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     [HideInInspector] public GameState gameState;
 
+    
     private Room currentRoom;
     private Room previousRoom;
+
+    //private PlayerDetailsSO playerDetails;
+   // private Player player;
+
+   
 
     private void Start()
     {
@@ -86,6 +92,15 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         //// Debug
         //Debug.Log(room.prefab.name.ToString());
     }
+
+    /// <summary>
+    /// Get the player
+    /// </summary>
+    //public Player GetPlayer()
+    //{
+    //    return player;
+    //}
+
 
     #region Validation
 #if UNITY_EDITOR
