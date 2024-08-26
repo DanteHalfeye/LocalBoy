@@ -36,7 +36,7 @@ public class Aim : MonoBehaviour
             float angle = (Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg) + calibracion;
             shootPreview.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-        else
+        else if(shootPreview.activeSelf) 
         {
             shootPreview.SetActive(false);
         }
