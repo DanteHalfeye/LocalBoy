@@ -29,6 +29,9 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
+        Application.runInBackground = false;
+        QualitySettings.vSyncCount = 0;
         gameState = GameState.gameStarted;
     }
 
