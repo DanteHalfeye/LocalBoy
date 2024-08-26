@@ -16,7 +16,7 @@ public class UnequipedState : PlayerBaseState
 
     public override void ExitState()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public override void UpdateState()

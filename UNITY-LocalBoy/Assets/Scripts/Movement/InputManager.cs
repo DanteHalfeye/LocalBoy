@@ -22,9 +22,9 @@ public class InputManager : MonoBehaviour
 
     }
 
-    public void OnMove(InputValue input)
+    public void OnMove(InputAction.CallbackContext callback)
     {
-        MoveInput = input.Get<Vector2>();
+        MoveInput = callback.ReadValue<Vector2>();
     }
 
     public void OnFire(InputValue input)
