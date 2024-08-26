@@ -10,7 +10,8 @@ public class Agarre : MonoBehaviour
         //Pruebas, no funcionará así
         enemigo = GameObject.Find("Enemigo");
         enemigo.transform.position = gameObject.transform.position + new Vector3(0.5f ,0.5f,0f);
-        enemigo.transform.SetParent(gameObject.transform);
+        enemigo.transform.SetParent(gameObject.transform, false);
 
     }
+
 }

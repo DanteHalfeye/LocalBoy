@@ -27,9 +27,9 @@ public class InputManager : MonoBehaviour
         MoveInput = callback.ReadValue<Vector2>();
     }
 
-    public void OnFire(InputValue input)
+    public void OnFire(InputAction.CallbackContext callback)
     {
-        FireInput = input.Get<Vector2>();
+        FireInput = callback.ReadValue<Vector2>();
     }
 
     public InputAction joystickInput;
