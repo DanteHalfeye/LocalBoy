@@ -23,6 +23,9 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     [SerializeField] private int currentDungeonLevelListIndex = 0;
 
     [HideInInspector] public GameState gameState;
+    private Movement movement;
+    GameObject player;
+
 
     private void Start()
     {
@@ -33,6 +36,11 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     {
         // Testing
         if (Input.GetKeyDown(KeyCode.R))
+        HandleGameState();
+    }
+
+    public void StartGame()
+    {
         HandleGameState();
     }
 
@@ -64,6 +72,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         }
     }
 
+    
     #region Validation
 #if UNITY_EDITOR
     private void OnValidate()
