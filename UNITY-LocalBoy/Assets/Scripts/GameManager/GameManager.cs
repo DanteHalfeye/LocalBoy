@@ -40,6 +40,11 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         return player;
     }
 
+    public void SetPlayer(Player currentPlayer )
+    {
+        player = currentPlayer;
+    }
+    
 
     /// <summary>
     /// Get the current room the player is in
@@ -54,7 +59,11 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         // Testing
         if (Input.GetKeyDown(KeyCode.R))
         HandleGameState();
+
+        Debug.Log(Instance + " " + player);
+        Debug.Log(player);
     }
+
 
     public void StartGame()
     {

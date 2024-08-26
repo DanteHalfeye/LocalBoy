@@ -86,7 +86,7 @@ public class EnemyMovementAI : MonoBehaviour
                 if (moveEnemyRoutine != null)
                 {
                     // Trigger idle event
-                    //enemy.idleEvent.CallIdleEvent();
+                    enemy.idleEvent.CallIdleEvent();
                     StopCoroutine(moveEnemyRoutine);
                 }
 
@@ -118,10 +118,12 @@ public class EnemyMovementAI : MonoBehaviour
             }
 
             yield return waitForFixedUpdate;
+
+            //yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
         }
 
         // End of path steps - trigger the enemy idle event
-       // enemy.idleEvent.CallIdleEvent();
+        enemy.idleEvent.CallIdleEvent();
 
     }
 
@@ -152,7 +154,7 @@ public class EnemyMovementAI : MonoBehaviour
         else
         {
             // Trigger idle event - no path
-           // enemy.idleEvent.CallIdleEvent();
+            enemy.idleEvent.CallIdleEvent();
         }
     }
 
@@ -175,17 +177,13 @@ public class EnemyMovementAI : MonoBehaviour
 
         Vector2Int adjustedPlayerCellPositon = new Vector2Int(playerCellPosition.x - currentRoom.templateLowerBounds.x, playerCellPosition.y - currentRoom.templateLowerBounds.y);
 
-        int obstacle = Mathf.Min(currentRoom.instantiatedRoom.aStarMovementPenalty[adjustedPlayerCellPositon.x, adjustedPlayerCellPositon.y], currentRoom.instantiatedRoom.aStarItemObstacles[adjustedPlayerCellPositon.x, adjustedPlayerCellPositon.y]);
+       
 
-        // if the player isn't on a cell square marked as an obstacle then return that position
-        if (obstacle != 0)
-        {
-            return playerCellPosition;
-        }
+        
         // find a surounding cell that isn't an obstacle - required because with the 'half collision' tiles
         // and tables the player can be on a grid square that is marked as an obstacle
-        else
-        {
+        
+        
             // Empty surrounding position list
             surroundingPositionList.Clear();
 
@@ -201,47 +199,21 @@ public class EnemyMovementAI : MonoBehaviour
             }
 
 
-            // Loop through all positions
-            for (int l = 0; l < 8; l++)
-            {
-                // Generate a random index for the list
-                int index = Random.Range(0, surroundingPositionList.Count);
-
-                // See if there is an obstacle in the selected surrounding position
-                try
-                {
-                    obstacle = Mathf.Min(currentRoom.instantiatedRoom.aStarMovementPenalty[adjustedPlayerCellPositon.x + surroundingPositionList[index].x, adjustedPlayerCellPositon.y + surroundingPositionList[index].y], currentRoom.instantiatedRoom.aStarItemObstacles[adjustedPlayerCellPositon.x + surroundingPositionList[index].x, adjustedPlayerCellPositon.y + surroundingPositionList[index].y]);
-
-                    // If no obstacle return the cell position to navigate to
-                    if (obstacle != 0)
-                    {
-                        return new Vector3Int(playerCellPosition.x + surroundingPositionList[index].x, playerCellPosition.y + surroundingPositionList[index].y, 0);
-                    }
-
-                }
-                // Catch errors where the surrounding positon is outside the grid
-                catch
-                {
-
-                }
-
-                // Remove the surrounding position with the obstacle so we can try again
-                surroundingPositionList.RemoveAt(index);
-            }
 
 
             // If no non-obstacle cells found surrounding the player - send the enemy in the direction of an enemy spawn position
             return (Vector3Int)currentRoom.spawnPositionArray[Random.Range(0, currentRoom.spawnPositionArray.Length)];
 
-        }
+
+        
     }
 
 
-    #region Validation
+        #region Validation
 
 #if UNITY_EDITOR
 
-    private void OnValidate()
+        private void OnValidate()
     {
         HelperUtilities.ValidateCheckNullValue(this, nameof(movementDetails), movementDetails);
     }

@@ -5,7 +5,12 @@ using UnityEngine.Rendering;
 #region REQUIRE COMPONENTS
 
 [RequireComponent(typeof(EnemyMovementAI))]
+[RequireComponent(typeof(MovementToPositionEvent))]
+[RequireComponent(typeof(MovementToPosition))]
+[RequireComponent(typeof(IdleEvent))]
+[RequireComponent(typeof(Idle))]
 
+[RequireComponent(typeof(MaterializeEffect))]
 [RequireComponent(typeof(SortingGroup))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Animator))]
@@ -17,13 +22,13 @@ using UnityEngine.Rendering;
 [DisallowMultipleComponent]
 public class Enemy : MonoBehaviour
 {
-    [HideInInspector] public EnemyDetailsSO enemyDetails;
+    //[HideInInspector]
+    public EnemyDetailsSO enemyDetails;
 
-
-    private MaterializeEffect materializeEffect;
     private EnemyMovementAI enemyMovementAI;
     [HideInInspector] public MovementToPositionEvent movementToPositionEvent;
-    
+    [HideInInspector] public IdleEvent idleEvent;
+    private MaterializeEffect materializeEffect;
     private CircleCollider2D circleCollider2D;
     private PolygonCollider2D polygonCollider2D;
     [HideInInspector] public SpriteRenderer[] spriteRendererArray;
@@ -32,32 +37,20 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         // Load components
-        
-        
-       
-        
+
+
         enemyMovementAI = GetComponent<EnemyMovementAI>();
-        //movementToPositionEvent = GetComponent<MovementToPositionEvent>();
-        
-        
+        movementToPositionEvent = GetComponent<MovementToPositionEvent>();
+        idleEvent = GetComponent<IdleEvent>();
+        materializeEffect = GetComponent<MaterializeEffect>();
         circleCollider2D = GetComponent<CircleCollider2D>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         spriteRendererArray = GetComponentsInChildren<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
-    
-
    
 
-    /// <summary>
-    /// Handle health lost event
-    /// </summary>
-   
-
-    /// <summary>
-    /// Enemy destroyed
-    /// </summary>
     
 
 
@@ -70,7 +63,7 @@ public class Enemy : MonoBehaviour
 
         SetEnemyMovementUpdateFrame(enemySpawnNumber);
 
-        
+    
 
         // Materialise enemy
         StartCoroutine(MaterializeEnemy());
@@ -86,19 +79,10 @@ public class Enemy : MonoBehaviour
     }
 
 
-    
-    
-
-    /// <summary>
-    /// Set enemy starting weapon as per the weapon details SO
-    /// </summary>
-    
-
     /// <summary>
     /// Set enemy animator speed to match movement speed
     /// </summary>
     
-
     private IEnumerator MaterializeEnemy()
     {
         // Disable collider, Movement AI and Weapon AI
@@ -121,7 +105,7 @@ public class Enemy : MonoBehaviour
         enemyMovementAI.enabled = isEnabled;
 
         // Enable / Disable Fire Weapon
-        
+       
 
     }
 }

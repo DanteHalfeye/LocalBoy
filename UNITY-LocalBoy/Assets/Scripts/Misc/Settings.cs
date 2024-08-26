@@ -16,6 +16,11 @@ public static class Settings
     #endregion
 
 
+    #region GAMEOBJECT TAGS
+    public const string playerTag = "Player";
+    
+    #endregion
+
     #region ASTAR PATHFINDING PARAMETERS
     public const int defaultAStarMovementPenalty = 40;
     public const int preferredPathAStarMovementPenalty = 1;
@@ -24,5 +29,8 @@ public static class Settings
     public const float enemyPathRebuildCooldown = 2f;
 
     #endregion
+
+
+
     
 }

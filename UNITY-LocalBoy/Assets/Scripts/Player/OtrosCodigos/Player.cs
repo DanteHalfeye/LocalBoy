@@ -14,7 +14,12 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(PolygonCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(IdleEvent))]
+[RequireComponent(typeof(Idle))]
+
 [DisallowMultipleComponent]
+
+
 #endregion REQUIRE COMPONENTS
 
 
@@ -30,6 +35,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Animator animator;
 
+    [HideInInspector] public IdleEvent idleEvent;
 
     private void Awake()
     {
@@ -39,6 +45,10 @@ public class Player : MonoBehaviour
   
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        idleEvent = GetComponent<IdleEvent>();
+
+        GameManager.Instance.SetPlayer(this);
     }
 
 
@@ -54,26 +64,13 @@ public class Player : MonoBehaviour
 
    
 
-  
-
-    /// <summary>
-    /// Handle health changed event
-    /// </summary>
-    
-
- 
-
-    
     public Vector3 GetPlayerPosition()
     {
         return transform.position;
     }
 
 
-    /// <summary>
-    /// Add a weapon to the player weapon dictionary
-    /// </summary>
-    
+
 
     
 }
