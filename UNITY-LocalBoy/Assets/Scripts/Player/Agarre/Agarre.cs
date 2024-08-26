@@ -9,10 +9,16 @@ public class Agarre : MonoBehaviour
     CircleCollider2D enemiesInRange;
     [SerializeField] float grabRange;
     [SerializeField] LayerMask enemyLayer;
-    bool grabbing;
-    public void Agarrar()
+    bool grabbing; //Esto es temporal se debe usar el state machine :D
+    public void Agarrar() 
     {
-        //Pruebas, no funcionará así del todo
+
+        if (grabbing)
+        {
+            enemigo.transform.SetParent(null);
+            Destroy(enemigo,1f); //Esto se cambiará despues a la forma en la que matemos enemigos, puede ser directamente pasando la vida del enmigo a 0
+            grabbing = false;
+        }
 
         Collider2D enemyToGrab = Physics2D.OverlapCircle(transform.position, grabRange, enemyLayer);
 

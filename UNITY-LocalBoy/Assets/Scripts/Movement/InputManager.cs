@@ -9,6 +9,9 @@ public class InputManager : MonoBehaviour
     public BulletPool bp;
     public Agarre agarre;
 
+    float timer = 0;
+    float grabCD = 0.5f;
+
     private void Awake()
     {
         bp = GetComponent<BulletPool>();
@@ -17,8 +20,13 @@ public class InputManager : MonoBehaviour
 
     public void OnAgarre()
     {
-        Debug.Log("intentando agarrar");
-        agarre.Agarrar();
+        if(timer <= 0.1f)
+        {
+            agarre.Agarrar();
+            Debug.Log("Intentando agarrar");
+            timer = grabCD;
+        }
+        
 
     }
 
@@ -55,5 +63,14 @@ public class InputManager : MonoBehaviour
                 GetComponent<Shoot>().OnShoot(FireInput.normalized, bp.RequerirBala());
             }
         }
+    }
+
+
+    private void Update()
+    {
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+        } 
     }
 }
