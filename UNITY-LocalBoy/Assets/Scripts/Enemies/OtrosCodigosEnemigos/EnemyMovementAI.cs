@@ -10,7 +10,7 @@ public class EnemyMovementAI : MonoBehaviour
     #region Tooltip
     [Tooltip("MovementDetailsSO scriptable object containing movement details such as speed")]
     #endregion Tooltip
-    [SerializeField] private MovementDetailsSO movementDetails;
+    [SerializeField] MovementDetailsSO movementDetails;
     private Enemy enemy;
     private Stack<Vector3> movementSteps = new Stack<Vector3>();
     private Vector3 playerReferencePosition;
@@ -27,7 +27,7 @@ public class EnemyMovementAI : MonoBehaviour
         // Load components
         enemy = GetComponent<Enemy>();
 
-        moveSpeed = movementDetails.GetMoveSpeed();
+       moveSpeed = movementDetails.GetMoveSpeed();
     }
 
     private void Start()

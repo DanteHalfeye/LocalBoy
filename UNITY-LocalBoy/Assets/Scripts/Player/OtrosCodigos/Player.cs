@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
 
     [HideInInspector] public IdleEvent idleEvent;
 
+
     private void Awake()
     {
         // Load components
@@ -48,6 +49,10 @@ public class Player : MonoBehaviour
 
         idleEvent = GetComponent<IdleEvent>();
 
+        
+    }
+    private void OnEnable()
+    {
         GameManager.Instance.SetPlayer(this);
     }
 

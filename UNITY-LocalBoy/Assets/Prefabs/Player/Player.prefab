@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2370486192576905994}
   - component: {fileID: 3188472797212623802}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: ShootPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,9 +110,9 @@ GameObject:
   - component: {fileID: -6486280932840167958}
   - component: {fileID: -995197428525638563}
   - component: {fileID: -621347879412181111}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

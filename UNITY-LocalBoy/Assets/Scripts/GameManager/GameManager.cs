@@ -51,6 +51,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     /// </summary>
     public Room GetCurrentRoom()
     {
+        print(currentRoom.instantiatedRoom.gameObject.name);
         return currentRoom;
     }
 

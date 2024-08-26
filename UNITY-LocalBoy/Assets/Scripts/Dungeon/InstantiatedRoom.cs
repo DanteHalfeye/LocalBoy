@@ -50,7 +50,9 @@ public class InstantiatedRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player"))
         StaticEventHandler.CallRoomChangedEvent(room);
+        GameManager.Instance.SetCurrentRoom(room);
     }
 
     /// <summary>
