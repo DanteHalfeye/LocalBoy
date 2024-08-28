@@ -7,15 +7,24 @@ public class InputManager : MonoBehaviour
 {
     public Vector2 MoveInput, FireInput;
     public BulletPool bp;
+    public Agarre agarre;
 
     private void Awake()
     {
         bp = GetComponent<BulletPool>();
+        agarre = GetComponent<Agarre>();
     }
 
-    public void OnMove(InputValue input)
+    public void OnAgarre()
     {
-        MoveInput = input.Get<Vector2>();
+        Debug.Log("intentando agarrar");
+        agarre.Agarrar();
+
+    }
+
+    public void OnMove(InputAction.CallbackContext callback)
+    {
+        MoveInput = callback.ReadValue<Vector2>();
     }
 
     public void OnFire(InputValue input)

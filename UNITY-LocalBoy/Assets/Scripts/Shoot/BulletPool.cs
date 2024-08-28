@@ -14,7 +14,7 @@ public class BulletPool : MonoBehaviour
 
     private void RellenarPool(int amount)
     {
-        for (int i = 0; i < cantidadDeBalas; i++)
+        for (int i = 0; i < amount; i++)
         {
             GameObject bala = Instantiate(balaPrefab);
             bala.SetActive(false);
