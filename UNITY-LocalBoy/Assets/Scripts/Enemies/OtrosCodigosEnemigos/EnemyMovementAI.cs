@@ -22,6 +22,7 @@ public class EnemyMovementAI : MonoBehaviour
     [HideInInspector] public int updateFrameNumber = 1; // default value.  This is set by the enemy spawner.
     private List<Vector2Int> surroundingPositionList = new List<Vector2Int>();
 
+    private float additionalTime = 1.25f;
     private void Awake()
     {
         // Load components
@@ -72,7 +73,7 @@ public class EnemyMovementAI : MonoBehaviour
         if (currentEnemyPathRebuildCooldown <= 0f || (Vector3.Distance(playerReferencePosition, GameManager.Instance.GetPlayer().GetPlayerPosition()) > Settings.playerMoveDistanceToRebuildPath))
         {
             // Reset path rebuild cooldown timer
-            currentEnemyPathRebuildCooldown = Settings.enemyPathRebuildCooldown;
+            currentEnemyPathRebuildCooldown = Settings.enemyPathRebuildCooldown + additionalTime; //ACA AÑADO ALGO PARA QUE SE DEMORE MAS HACIENDO LA PAUSA
 
             // Reset player reference position
             playerReferencePosition = GameManager.Instance.GetPlayer().GetPlayerPosition();
@@ -119,7 +120,7 @@ public class EnemyMovementAI : MonoBehaviour
 
             yield return waitForFixedUpdate;
 
-            //yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
+           // yield return new WaitForSeconds(Random.Range(0.5f, 0.10f));
         }
 
         // End of path steps - trigger the enemy idle event
