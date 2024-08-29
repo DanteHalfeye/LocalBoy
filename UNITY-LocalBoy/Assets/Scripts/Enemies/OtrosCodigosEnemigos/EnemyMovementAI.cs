@@ -120,7 +120,7 @@ public class EnemyMovementAI : MonoBehaviour
 
             yield return waitForFixedUpdate;
 
-           // yield return new WaitForSeconds(Random.Range(0.5f, 0.10f));
+           // yield return new WaitForSeconds(Random.Range(0.2f, 0.5f)); //ESTO LO PODEMOS USAR PARA HACER DIFERENTES MOVIMIENTOS
         }
 
         // End of path steps - trigger the enemy idle event
