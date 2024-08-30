@@ -20,8 +20,12 @@ public class InputManager : MonoBehaviour
 
     public void OnAgarre()
     {
-        agarre.Agarrar();
-        Debug.Log("Intentando agarrar");
+        if (timer <= 0.1f)
+        {
+            agarre.Agarrar();
+            Debug.Log("Intentando agarrar");
+            timer = grabCD;
+        }
 
     }
 

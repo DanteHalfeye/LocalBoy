@@ -10,13 +10,20 @@ public class Agarre : MonoBehaviour
     [SerializeField] float grabRange;
     [SerializeField] LayerMask enemyLayer;
     bool grabbing; //Esto es temporal se debe usar el state machine :D
+    EnemyMovementAI enemyAI;
+    Enemy enemyScript;
+    MovementToPositionEvent mtpeScript;
+    MovementToPosition movementScript;
+    IdleEvent idleEventScript;
+    Idle idleScript;
+    MaterializeEffect materializeEffectScript;
     public void Agarrar() 
     {
 
         if (grabbing)
         {
             enemigo.transform.SetParent(null);
-            Destroy(enemigo,1f); //Esto se cambiará despues a la forma en la que matemos enemigos, puede ser directamente pasando la vida del enmigo a 0
+            //Destroy(enemigo,1f); //Esto se cambiará despues a la forma en la que matemos enemigos, puede ser directamente pasando la vida del enmigo a 0
             grabbing = false;
         }
 
@@ -26,8 +33,14 @@ public class Agarre : MonoBehaviour
         {
             enemigo = enemyToGrab.gameObject;
 
-            enemyRB = enemigo.GetComponent<Rigidbody2D>();
-            enemyRB.simulated = false;
+            Destroy(enemigo.GetComponent<EnemyMovementAI>());
+            Destroy(enemigo.GetComponent<Enemy>());
+            Destroy(enemigo.GetComponent<MovementToPositionEvent>());
+            Destroy(enemigo.GetComponent<MovementToPosition>());
+            Destroy(enemigo.GetComponent<IdleEvent>());
+            Destroy(enemigo.GetComponent<Idle>());
+            Destroy(enemigo.GetComponent<MaterializeEffect>());
+            Destroy(enemigo.GetComponent<Rigidbody2D>());
 
             
 
