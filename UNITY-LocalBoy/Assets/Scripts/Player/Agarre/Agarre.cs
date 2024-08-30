@@ -23,7 +23,7 @@ public class Agarre : MonoBehaviour
         if (grabbing)
         {
             enemigo.transform.SetParent(null);
-            //Destroy(enemigo,1f); //Esto se cambiará despues a la forma en la que matemos enemigos, puede ser directamente pasando la vida del enmigo a 0
+            Destroy(enemigo,1f); //Esto se cambiará despues a la forma en la que matemos enemigos, puede ser directamente pasando la vida del enmigo a 0
             grabbing = false;
         }
 
@@ -33,19 +33,12 @@ public class Agarre : MonoBehaviour
         {
             enemigo = enemyToGrab.gameObject;
 
-            Destroy(enemigo.GetComponent<EnemyMovementAI>());
-            Destroy(enemigo.GetComponent<Enemy>());
-            Destroy(enemigo.GetComponent<MovementToPositionEvent>());
-            Destroy(enemigo.GetComponent<MovementToPosition>());
-            Destroy(enemigo.GetComponent<IdleEvent>());
-            Destroy(enemigo.GetComponent<Idle>());
-            Destroy(enemigo.GetComponent<MaterializeEffect>());
-            Destroy(enemigo.GetComponent<Rigidbody2D>());
-
+            enemyRB = enemigo.GetComponent<Rigidbody2D>();
+            enemyRB.simulated = false;
             
 
             enemigo.transform.SetParent(gameObject.transform, false);
-            enemigo.transform.position =  new Vector3(0.5f, 0.5f, 0f) + gameObject.transform.localPosition;
+            enemigo.transform.position = transform.position + Vector3.one * 0.5f;
 
             grabbing = true; //Esto se cambiaría en la maquina de estados
         }

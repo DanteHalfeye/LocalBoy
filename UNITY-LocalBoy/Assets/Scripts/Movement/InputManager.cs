@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public Vector2 MoveInput, FireInput;
-    public BulletPool bp;
-    public Agarre agarre;
+     BulletPool bp;
+     Agarre agarre;
 
     float timer = 0;
     float grabCD = 0.5f;
