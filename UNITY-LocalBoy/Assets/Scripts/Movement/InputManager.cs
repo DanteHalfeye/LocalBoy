@@ -18,13 +18,10 @@ public class InputManager : MonoBehaviour
         agarre = GetComponent<Agarre>();
     }
 
-    public void OnAgarre(InputAction.CallbackContext callback)
+    public void OnAgarre()
     {
-        if (callback.performed)
-        {
-            agarre.Agarrar();
-            Debug.Log("Intentando agarrar");
-        }
+        agarre.Agarrar();
+        Debug.Log("Intentando agarrar");
 
     }
 
