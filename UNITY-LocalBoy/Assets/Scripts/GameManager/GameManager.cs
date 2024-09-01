@@ -24,8 +24,12 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     [HideInInspector] public GameState gameState;
     private Movement movement;
-    GameObject player;
 
+    private Room currentRoom;
+    private Room previousRoom;
+   // GameObject player;
+
+    private Player player;
 
     private void Start()
     {
@@ -34,18 +38,43 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         QualitySettings.vSyncCount = 0;
         gameState = GameState.gameStarted;
     }
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
+    public void SetPlayer(Player currentPlayer )
+    {
+        player = currentPlayer;
+    }
+    
+
+    /// <summary>
+    /// Get the current room the player is in
+    /// </summary>
+    public Room GetCurrentRoom()
+    {
+        print(currentRoom.instantiatedRoom.gameObject.name);
+        return currentRoom;
+    }
 
     private void Update()
     {
         // Testing
         if (Input.GetKeyDown(KeyCode.R))
         HandleGameState();
+
+        Debug.Log(Instance + " " + player);
+        Debug.Log(player);
     }
+
 
     public void StartGame()
     {
         HandleGameState();
     }
+
+
 
     /// <summary>
     /// Handle game state
@@ -63,6 +92,18 @@ public class GameManager : SingletonMonobehaviour<GameManager>
                 break;
 
         }
+    }
+
+    /// <summary>
+    /// Set the current room the player in in
+    /// </summary>
+    public void SetCurrentRoom(Room room)
+    {
+        previousRoom = currentRoom;
+        currentRoom = room;
+
+        //// Debug
+        //Debug.Log(room.prefab.name.ToString());
     }
 
     private void PlayDungeonLevel(int dungeonLevelListIndex)

@@ -6,8 +6,11 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public Vector2 MoveInput, FireInput;
-    public BulletPool bp;
-    public Agarre agarre;
+     BulletPool bp;
+     Agarre agarre;
+
+    float timer = 0;
+    float grabCD = 0.5f;
 
     private void Awake()
     {
@@ -17,8 +20,12 @@ public class InputManager : MonoBehaviour
 
     public void OnAgarre()
     {
-        Debug.Log("intentando agarrar");
-        agarre.Agarrar();
+        if (timer <= 0.1f)
+        {
+            agarre.Agarrar();
+            Debug.Log("Intentando agarrar");
+            timer = grabCD;
+        }
 
     }
 
@@ -27,9 +34,9 @@ public class InputManager : MonoBehaviour
         MoveInput = callback.ReadValue<Vector2>();
     }
 
-    public void OnFire(InputValue input)
+    public void OnFire(InputAction.CallbackContext callback)
     {
-        FireInput = input.Get<Vector2>();
+        FireInput = callback.ReadValue<Vector2>();
     }
 
     public InputAction joystickInput;
@@ -55,5 +62,14 @@ public class InputManager : MonoBehaviour
                 GetComponent<Shoot>().OnShoot(FireInput.normalized, bp.RequerirBala());
             }
         }
+    }
+
+
+    private void Update()
+    {
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+        } 
     }
 }

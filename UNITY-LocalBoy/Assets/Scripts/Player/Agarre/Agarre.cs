@@ -5,12 +5,46 @@ using UnityEngine;
 public class Agarre : MonoBehaviour
 {
     GameObject enemigo;
-    public void Agarrar()
+    Rigidbody2D enemyRB;
+    CircleCollider2D enemiesInRange;
+    [SerializeField] float grabRange;
+    [SerializeField] LayerMask enemyLayer;
+    bool grabbing; //Esto es temporal se debe usar el state machine :D
+    EnemyMovementAI enemyAI;
+    Enemy enemyScript;
+    MovementToPositionEvent mtpeScript;
+    MovementToPosition movementScript;
+    IdleEvent idleEventScript;
+    Idle idleScript;
+    MaterializeEffect materializeEffectScript;
+    public void Agarrar() 
     {
-        //Pruebas, no funcionará así
-        enemigo = GameObject.Find("Enemigo");
-        enemigo.transform.position = gameObject.transform.position + new Vector3(0.5f ,0.5f,0f);
-        enemigo.transform.SetParent(gameObject.transform);
+
+        if (grabbing)
+        {
+            enemigo.transform.SetParent(null);
+            Destroy(enemigo,1f); //Esto se cambiará despues a la forma en la que matemos enemigos, puede ser directamente pasando la vida del enmigo a 0
+            grabbing = false;
+        }
+
+        Collider2D enemyToGrab = Physics2D.OverlapCircle(transform.position, grabRange, enemyLayer);
+
+        if (enemyToGrab != null && !grabbing)
+        {
+            enemigo = enemyToGrab.gameObject;
+
+            enemyRB = enemigo.GetComponent<Rigidbody2D>();
+            enemyRB.simulated = false;
+            
+
+            enemigo.transform.SetParent(gameObject.transform, false);
+            enemigo.transform.position = transform.position + Vector3.one * 0.5f;
+
+            grabbing = true; //Esto se cambiaría en la maquina de estados
+        }
+        
+        
 
     }
+
 }
