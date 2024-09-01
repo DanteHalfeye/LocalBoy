@@ -6,20 +6,15 @@ using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] RectTransform mainMenu, gamePanel, optionsMenu, addsMenu, itemsMenu, pauseMenu, creditsPanel, gameOverPanel;
+    [SerializeField] RectTransform mainMenu, gamePanel, optionsMenu, addsMenu, itemsMenu, pauseMenu, creditsPanel, gameOverPanel, rectTransform;
     [SerializeField] Image darkOverlay;
-    [SerializeField] CanvasGroup gamePanelCanvasGroup;
-    public RectTransform rectTransform;
-    public CanvasGroup canvaGroup;
-    public List<GameObject> items = new List<GameObject>();
-
-    [SerializeField] List<RectTransform> creditItems; 
-    public float fadeTime = 1f;
-    public float explosionDuration = 0.5f; 
-    public Vector2 explosionRange = new Vector2(100f, 100f); 
-    public Ease explosionEase = Ease.OutBack; 
-    public Ease fadeInEase = Ease.InQuad; 
-    public Ease myEase;
+    [SerializeField] CanvasGroup canvaGroup, gamePanelCanvasGroup;
+    [SerializeField] List<GameObject> items = new List<GameObject>();
+ 
+    [SerializeField] List<RectTransform> creditItems;
+    [SerializeField] float fadeTime, explosionDuration;
+    [SerializeField] Ease explosionEase, fadeInEase, myEase;
+    [SerializeField] Vector2 explosionRange; 
 
     private enum MenuState { MainMenu, PauseMenu, None }
     private MenuState previousState = MenuState.None;
