@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class UIManager : MonoBehaviour
@@ -38,8 +39,7 @@ public class UIManager : MonoBehaviour
 
     public void gamePanelButton()
     {
-        mainMenu.DOAnchorPos(new Vector2(0, -1000), 0.25f);
-        gamePanel.DOAnchorPos(new Vector2(0f, 0f), fadeTime, false).SetEase(myEase);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void closeGamePanel()

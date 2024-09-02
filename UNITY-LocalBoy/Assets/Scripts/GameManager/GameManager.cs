@@ -21,6 +21,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     [Tooltip("Populate with the starting dungeon level for testing, first level = 0")]
     #endregion Tooltip
     [SerializeField] private int currentDungeonLevelListIndex = 0;
+    [SerializeField] private Camera testCamera;
 
     [HideInInspector] public GameState gameState;
     private Movement movement;
@@ -37,6 +38,8 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         Application.runInBackground = false;
         QualitySettings.vSyncCount = 0;
         gameState = GameState.gameStarted;
+        testCamera.gameObject.SetActive(false);
+        HandleGameState();
     }
     public Player GetPlayer()
     {
@@ -58,15 +61,6 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         return currentRoom;
     }
 
-    private void Update()
-    {
-        // Testing
-        if (Input.GetKeyDown(KeyCode.R))
-        HandleGameState();
-
-        Debug.Log(Instance + " " + player);
-        Debug.Log(player);
-    }
 
 
     public void StartGame()

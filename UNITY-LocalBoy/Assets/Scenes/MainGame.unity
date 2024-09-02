@@ -156,6 +156,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 65d1820d42a7f5a43b09139e6c7b712c, type: 2}
   - {fileID: 11400000, guid: faa942ca159345f4197a9560be540990, type: 2}
   currentDungeonLevelListIndex: 0
+  testCamera: {fileID: 2072093780}
   gameState: 0
 --- !u!4 &391840257
 Transform:
@@ -282,7 +283,7 @@ RectTransform:
   m_GameObject: {fileID: 1021260383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.6688, y: 2.6688, z: 2.6688}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1250604148}
