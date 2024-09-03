@@ -22,7 +22,7 @@ public class EnemyMovementAI : MonoBehaviour
     [HideInInspector] public int updateFrameNumber = 1; // default value.  This is set by the enemy spawner.
     private List<Vector2Int> surroundingPositionList = new List<Vector2Int>();
 
-    private float additionalTime = 1.25f;
+    private float additionalTime = 0.5f;
     private void Awake()
     {
         // Load components
@@ -184,6 +184,7 @@ public class EnemyMovementAI : MonoBehaviour
         // find a surounding cell that isn't an obstacle - required because with the 'half collision' tiles
         // and tables the player can be on a grid square that is marked as an obstacle
         
+        //VOY A INTENATR PONER ESTO A VER SI NO DAÑA NADA
         
             // Empty surrounding position list
             surroundingPositionList.Clear();
