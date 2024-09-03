@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyDetails_Wizard
   m_EditorClassIdentifier: 
   enemyName: Coronel
-  enemyPrefab: {fileID: 5179376199188719783, guid: 9fe3734a5573fb0428483394f6cf9125, type: 3}
+  enemyPrefab: {fileID: 5179376199188719783, guid: 025f6a780821cf84b93c8b5528d44c92, type: 3}
   chaseDistance: 50
   enemyStandardMaterial: {fileID: 2100000, guid: ad8cb007cdbc1594e816fad1bc59554e, type: 2}
   enemyMaterializeTime: 0
