@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class SpawnTest : MonoBehaviour
@@ -28,10 +29,12 @@ public class SpawnTest : MonoBehaviour
             }
 
             EnemyDetailsSO enemyDetails = randomEnemyHelperClass.GetItem();
+            
 
             if(enemyDetails != null)
             {
                 instantiatedEnemy = Instantiate(enemyDetails.enemyPrefab, HelperUtilities.GetSpawnPositionNearestToPlayer(HelperUtilities.GetMouseWorldPosition()), Quaternion.identity);
+                Debug.Log("está spawneando");
             }
         }
     }
