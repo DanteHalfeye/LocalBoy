@@ -121,6 +121,10 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         {
             Debug.LogError("Couldn't build dungeon from specified rooms and node graphs");
         }
+
+        // Get nearest spawn point in room nearest to player
+        player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
+
     }
 
     
