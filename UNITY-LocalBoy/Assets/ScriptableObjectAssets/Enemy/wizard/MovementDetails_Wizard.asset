@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa95bcb073419544aafd5804cc1a121d, type: 3}
-  m_Name: MovementDetails_ 1
+  m_Name: MovementDetails_Wizard
   m_EditorClassIdentifier: 
   minMoveSpeed: 2
   maxMoveSpeed: 3

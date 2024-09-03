@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 3646869875213336654}
   - component: {fileID: 3593369325077770634}
   m_Layer: 15
-  m_Name: Enemy 1
+  m_Name: Skull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: -653709415
   m_SortingLayer: 4
   m_SortingOrder: 9
-  m_Sprite: {fileID: 5259133912500787586, guid: f74a93b1d87f36749ba078e20f7fa96c, type: 3}
+  m_Sprite: {fileID: 4434631920700272137, guid: 7bdbf47b0efa80f4b8f0b72e6571c9da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1993acd445c52f54eb74607aace4d89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDetails: {fileID: 11400000, guid: 45fbbc22740952143b3789d0c0f8e0d8, type: 2}
+  enemyDetails: {fileID: 11400000, guid: c5afba07e15f8784093dab3165acc2ce, type: 2}
   movementToPositionEvent: {fileID: 0}
   idleEvent: {fileID: 0}
   spriteRendererArray: []
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd674f03e180b5429a18626770e01d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDetails: {fileID: 11400000, guid: 01f8f55683623334b91cd80bcadd7a70, type: 2}
+  movementDetails: {fileID: 11400000, guid: 2dd29950d6ec52546bd4feeb94907fd1, type: 2}
   moveSpeed: 0
   updateFrameNumber: 1
 --- !u!114 &6779972174401953882
@@ -283,7 +283,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.5, y: 1.75}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
