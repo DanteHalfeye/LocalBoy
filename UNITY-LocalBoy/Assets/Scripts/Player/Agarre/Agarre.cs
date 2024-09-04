@@ -6,17 +6,10 @@ public class Agarre : MonoBehaviour
 {
     GameObject enemigo;
     Rigidbody2D enemyRB;
-    CircleCollider2D enemiesInRange;
     [SerializeField] float grabRange;
     [SerializeField] LayerMask enemyLayer;
     bool grabbing; //Esto es temporal se debe usar el state machine :D
-    EnemyMovementAI enemyAI;
-    Enemy enemyScript;
-    MovementToPositionEvent mtpeScript;
-    MovementToPosition movementScript;
-    IdleEvent idleEventScript;
-    Idle idleScript;
-    MaterializeEffect materializeEffectScript;
+
     public void Agarrar() 
     {
 

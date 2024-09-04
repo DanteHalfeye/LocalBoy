@@ -327,6 +327,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a362d064-d51d-430a-a894-8661b06138bf
     m_ActionName: Player/Agarre
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48597b51-3f6b-439d-b251-3399b53c9a06
+    m_ActionName: Player/AutoShoot
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -346,8 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveInput: {x: 0, y: 0}
   FireInput: {x: 0, y: 0}
-  bp: {fileID: 0}
-  agarre: {fileID: 0}
+  grabCD: 0.5
   joystickInput:
     m_Name: Joystick Input
     m_Type: 0
@@ -405,6 +408,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerza: 10
+  autoShootRange: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!114 &2000654607995948131
 MonoBehaviour:
   m_ObjectHideFlags: 0

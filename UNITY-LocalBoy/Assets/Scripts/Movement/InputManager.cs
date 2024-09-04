@@ -9,8 +9,12 @@ public class InputManager : MonoBehaviour
      BulletPool bp;
      Agarre agarre;
 
-    float timer = 0;
+    float grabTimer = 0;
     float grabCD = 0.5f;
+
+    float shootTimer = 0;
+    float autoShootCD = 0.5f;
+
 
     private void Awake()
     {
@@ -18,13 +22,31 @@ public class InputManager : MonoBehaviour
         agarre = GetComponent<Agarre>();
     }
 
+    public void AutoShoot()
+    {
+        if (shootTimer <= 0.1f)
+        {
+            Debug.Log("AutoDisparo");
+            Shoot playerShoot = GetComponent<Shoot>();
+            if (playerShoot != null)
+            {
+                if (FireInput.magnitude < 0.75f)
+                {
+                    playerShoot.OnShoot(playerShoot.AutoShootDirection(), bp.RequerirBala());
+                }
+            }
+            shootTimer = autoShootCD;
+        }
+
+    }
+
     public void OnAgarre()
     {
-        if (timer <= 0.1f)
+        if (grabTimer <= 0.1f)
         {
             agarre.Agarrar();
             Debug.Log("Intentando agarrar");
-            timer = grabCD;
+            grabTimer = grabCD;
         }
 
     }
@@ -45,6 +67,7 @@ public class InputManager : MonoBehaviour
     {
         joystickInput.Enable();
         joystickInput.canceled += OnJoystickReleased;
+        
     }
 
     private void OnDisable()
@@ -67,9 +90,14 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if(timer > 0)
+        if(grabTimer > 0)
         {
-            timer -= Time.deltaTime;
+            grabTimer -= Time.deltaTime;
         } 
+
+        if(shootTimer > 0)
+        {
+            shootTimer -= Time.deltaTime;
+        }
     }
 }
