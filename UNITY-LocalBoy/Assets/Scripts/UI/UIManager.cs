@@ -22,9 +22,22 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
-        optionsMenu.DOAnchorPos(new Vector2(0, 850), 0.25f);
-        darkOverlay.color = new Color(0, 0, 0, 0); 
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "UI Expermient") // Cambia "MainMenuSceneName" por el nombre real de tu escena del menú principal
+        {
+            // Comportamiento en la escena del menú principal
+            mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
+            optionsMenu.DOAnchorPos(new Vector2(0, 850), 0.25f);
+            darkOverlay.color = new Color(0, 0, 0, 0);
+        }
+        else if (currentScene == "MainGame") // Cambia "GameSceneName" por el nombre real de tu escena del juego
+        {
+            // Comportamiento en la escena del juego
+            mainMenu.gameObject.SetActive(false); // Desactiva el menú principal
+            gamePanel.DOAnchorPos(new Vector2(0, 0), 0.25f);
+            darkOverlay.color = new Color(0, 0, 0, 0);
+        }
     }
 
     public void optionsMenuButton()
@@ -34,21 +47,31 @@ public class UIManager : MonoBehaviour
 
     public void closeOptionsMenu()
     {
-        optionsMenu.DOAnchorPos(new Vector2(0, 850), 0.25f);
+        optionsMenu.DOAnchorPos(new Vector2(0, 1000), 0.25f);
     }
 
     public void gamePanelButton()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "UI Experiment")
+        {
+            mainMenu.DOAnchorPos(new Vector2(0, -1000), 0.25f);
+            gamePanel.DOAnchorPos(new Vector2(0f, 0f), fadeTime, false).SetEase(myEase);
+        }
+        else if (currentScene == "MainGame")
+        {
+            SceneManager.LoadSceneAsync("MainGame");
+        }
     }
 
     public void closeGamePanel()
     {
-        pauseMenu.DOAnchorPos(new Vector2(0, -850), 0f);
-        darkOverlay.DOFade(0f, 0.5f);
-        gamePanelCanvasGroup.interactable = true;
-        gamePanel.DOAnchorPos(new Vector2(0, -1000), 0.25f);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
+        //pauseMenu.DOAnchorPos(new Vector2(0, -850), 0f);
+        //darkOverlay.DOFade(0f, 0.5f);
+        //gamePanelCanvasGroup.interactable = true;
+        //gamePanel.DOAnchorPos(new Vector2(0, -1000), 0.25f);
+        SceneManager.LoadSceneAsync("UI Experiment");
     }
 
     public void creditsPanelButton()
