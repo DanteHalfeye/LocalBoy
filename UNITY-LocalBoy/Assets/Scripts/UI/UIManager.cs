@@ -56,12 +56,11 @@ public class UIManager : MonoBehaviour
 
         if (currentScene == "UI Experiment")
         {
-            mainMenu.DOAnchorPos(new Vector2(0, -1000), 0.25f);
-            gamePanel.DOAnchorPos(new Vector2(0f, 0f), fadeTime, false).SetEase(myEase);
+            SceneManager.LoadSceneAsync("MainGame");
         }
         else if (currentScene == "MainGame")
         {
-            SceneManager.LoadSceneAsync("MainGame");
+            SceneManager.LoadSceneAsync("UI Experiment");
         }
     }
 
@@ -110,7 +109,7 @@ public class UIManager : MonoBehaviour
 
     public void closeAddsMenu()
     {
-        addsMenu.DOAnchorPos(new Vector2(0, -850), 0.25f);
+        addsMenu.DOAnchorPos(new Vector2(0, -1200), 0.25f);
     }
 
     public void pauseMenuButton()
@@ -122,7 +121,7 @@ public class UIManager : MonoBehaviour
 
     public void closePauseMenu()
     {
-        pauseMenu.DOAnchorPos(new Vector2(0, -850), 0f);
+        pauseMenu.DOAnchorPos(new Vector2(0, -1200), 0f);
         darkOverlay.DOFade(0f, 0.5f);
         gamePanelCanvasGroup.interactable = true; 
     }
@@ -130,7 +129,7 @@ public class UIManager : MonoBehaviour
     public void itemsMenuButton()
     {
         previousState = MenuState.MainMenu; 
-        mainMenu.DOAnchorPos(new Vector2(850, 0), 0.25f);
+        mainMenu.DOAnchorPos(new Vector2(1200, 0), 0.25f);
         itemsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
         panelFadeIn();
     }
@@ -138,7 +137,7 @@ public class UIManager : MonoBehaviour
     public void itemsMenuButtonInGame()
     {
         previousState = MenuState.PauseMenu; // Guardar estado anterior
-        pauseMenu.DOAnchorPos(new Vector2(850, 0), 0.25f);
+        pauseMenu.DOAnchorPos(new Vector2(5000, 0), 0.25f);
         itemsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
         panelFadeIn();
     }
