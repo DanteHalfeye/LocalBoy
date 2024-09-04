@@ -242,6 +242,8 @@ public class InstantiatedRoom : MonoBehaviour
 
     }
 
+   
+
     /// <summary>
     /// Disable the room trigger collider that is used to trigger when the player enters a room
     /// </summary>
@@ -257,6 +259,20 @@ public class InstantiatedRoom : MonoBehaviour
     {
         boxCollider2D.enabled = true;
     }
+    //lock the room dors
+    //public void LockDors()
+    //{
+    //    Door[] doorArray = GetComponentInChildren<Doorway>();
+
+    //    //trigger lock doors
+    //    foreach (Door door in doorArray)
+    //    {
+    //        door.LockDors();
+    //    }
+
+    //    DisableRoomCollider();
+    //}
+
 
     public void ActivateEnvironmentGameObjects()
     {
