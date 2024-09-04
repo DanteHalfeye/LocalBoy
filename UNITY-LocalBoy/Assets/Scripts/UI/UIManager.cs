@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
         darkOverlay.DOFade(0f, 0.5f);
         gamePanelCanvasGroup.interactable = true;
         gamePanel.DOAnchorPos(new Vector2(0, -1000), 0.25f);
-        mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void creditsPanelButton()
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
             item.localScale = Vector3.zero;
         }
 
-        mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 
@@ -128,11 +128,11 @@ public class UIManager : MonoBehaviour
         switch (previousState)
         {
             case MenuState.MainMenu:
-                itemsMenu.DOAnchorPos(new Vector2(850, 0), 0.25f);
+                itemsMenu.DOAnchorPos(new Vector2(2000, 0), 0.25f);
                 mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
                 break;
             case MenuState.PauseMenu:
-                itemsMenu.DOAnchorPos(new Vector2(850, 0), 0.25f);
+                itemsMenu.DOAnchorPos(new Vector2(2000, 0), 0.25f);
                 pauseMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
                 break;
         }
@@ -149,7 +149,7 @@ public class UIManager : MonoBehaviour
     public void closeGameOverPanel()
     {
         gameOverPanel.DOAnchorPos(new Vector2(0, 1000), 0f);
-        mainMenu.DOAnchorPos(new Vector2(0, 0), 0f);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void panelFadeIn()
