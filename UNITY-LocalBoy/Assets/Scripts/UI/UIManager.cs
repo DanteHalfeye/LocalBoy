@@ -42,12 +42,12 @@ public class UIManager : MonoBehaviour
 
     public void optionsMenuButton()
     {
-        optionsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        optionsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
     }
 
     public void closeOptionsMenu()
     {
-        optionsMenu.DOAnchorPos(new Vector2(0, 1000), 0.25f);
+        optionsMenu.DOAnchorPos(new Vector2(0, 1300), 0.25f).SetUpdate(true);
     }
 
     public void gamePanelButton()
@@ -66,10 +66,7 @@ public class UIManager : MonoBehaviour
 
     public void closeGamePanel()
     {
-        //pauseMenu.DOAnchorPos(new Vector2(0, -850), 0f);
-        //darkOverlay.DOFade(0f, 0.5f);
-        //gamePanelCanvasGroup.interactable = true;
-        //gamePanel.DOAnchorPos(new Vector2(0, -1000), 0.25f);
+        Time.timeScale = 1;
         SceneManager.LoadSceneAsync("UI Experiment");
     }
 
@@ -104,26 +101,28 @@ public class UIManager : MonoBehaviour
 
     public void addsMenuButton()
     {
-        addsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        addsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
     }
 
     public void closeAddsMenu()
     {
-        addsMenu.DOAnchorPos(new Vector2(0, -1200), 0.25f);
+        addsMenu.DOAnchorPos(new Vector2(0, -1200), 0.25f).SetUpdate(true);
     }
 
     public void pauseMenuButton()
     {
-        pauseMenu.DOAnchorPos(new Vector2(0, 0), 0f);
-        darkOverlay.DOFade(0.5f, 0.5f);
-        gamePanelCanvasGroup.interactable = false; 
+        pauseMenu.DOAnchorPos(new Vector2(0, 0), 0f).SetUpdate(true);
+        darkOverlay.DOFade(0.5f, 0.5f).SetUpdate(true);
+        gamePanelCanvasGroup.interactable = false;
+        Time.timeScale = 0f;
     }
 
     public void closePauseMenu()
     {
-        pauseMenu.DOAnchorPos(new Vector2(0, -1200), 0f);
-        darkOverlay.DOFade(0f, 0.5f);
-        gamePanelCanvasGroup.interactable = true; 
+        pauseMenu.DOAnchorPos(new Vector2(0, -1200), 0f).SetUpdate(true);
+        darkOverlay.DOFade(0f, 0.5f).SetUpdate(true);
+        gamePanelCanvasGroup.interactable = true;
+        Time.timeScale = 1f;
     }
 
     public void itemsMenuButton()
@@ -136,9 +135,9 @@ public class UIManager : MonoBehaviour
 
     public void itemsMenuButtonInGame()
     {
-        previousState = MenuState.PauseMenu; // Guardar estado anterior
-        pauseMenu.DOAnchorPos(new Vector2(5000, 0), 0.25f);
-        itemsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        previousState = MenuState.PauseMenu;
+        pauseMenu.DOAnchorPos(new Vector2(5000, 0), 0.25f).SetUpdate(true);
+        itemsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
         panelFadeIn();
     }
 
@@ -146,20 +145,19 @@ public class UIManager : MonoBehaviour
     {
         panelFadeOut();
 
-        // Regresar al estado anterior
         switch (previousState)
         {
             case MenuState.MainMenu:
-                itemsMenu.DOAnchorPos(new Vector2(2000, 0), 0.25f);
-                mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
+                itemsMenu.DOAnchorPos(new Vector2(2000, 0), 0.25f).SetUpdate(true);
+                mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
                 break;
             case MenuState.PauseMenu:
-                itemsMenu.DOAnchorPos(new Vector2(2000, 0), 0.25f);
-                pauseMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
+                itemsMenu.DOAnchorPos(new Vector2(2000, 0), 0.25f).SetUpdate(true);
+                pauseMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
                 break;
         }
 
-        previousState = MenuState.None; // Resetea el estado anterior
+        previousState = MenuState.None;
     }
 
     public void gameOverButton()
@@ -178,8 +176,8 @@ public class UIManager : MonoBehaviour
     {
         canvaGroup.alpha = 0f;
         rectTransform.transform.localPosition = new Vector3(0f, -1000f, 0f);
-        rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime, false).SetEase(Ease.OutElastic);
-        canvaGroup.DOFade(1, fadeTime);
+        rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime, false).SetEase(Ease.OutElastic).SetUpdate(true);
+        canvaGroup.DOFade(1, fadeTime).SetUpdate(true);
         StartCoroutine("itemsAnimation");
     }
 
@@ -187,8 +185,8 @@ public class UIManager : MonoBehaviour
     {
         canvaGroup.alpha = 1f;
         rectTransform.transform.localPosition = new Vector3(0f, 0f, 0f);
-        rectTransform.DOAnchorPos(new Vector2(0f, -1000f), fadeTime, false).SetEase(Ease.InOutQuint);
-        canvaGroup.DOFade(0, fadeTime);
+        rectTransform.DOAnchorPos(new Vector2(0f, -1000f), fadeTime, false).SetEase(Ease.InOutQuint).SetUpdate(true);
+        canvaGroup.DOFade(0, fadeTime).SetUpdate(true);
     }
 
     IEnumerator itemsAnimation()
@@ -200,8 +198,8 @@ public class UIManager : MonoBehaviour
 
         foreach (var item in items)
         {
-            item.transform.DOScale(1f, fadeTime).SetEase(Ease.OutBounce);
-            yield return new WaitForSeconds(0.10f);
+            item.transform.DOScale(1f, fadeTime).SetEase(Ease.OutBounce).SetUpdate(true);
+            yield return new WaitForSecondsRealtime(0.10f);
         }
     }
 
@@ -229,7 +227,7 @@ public class UIManager : MonoBehaviour
             itemCanvasGroup.DOFade(1f, explosionDuration).SetEase(Ease.Linear);
 
             // Esperar antes de "explotar" el siguiente elemento
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSecondsRealtime(0.10f);
         }
     }
 
