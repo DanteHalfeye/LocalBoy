@@ -31,7 +31,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     private Player player;
 
-    //[HideInInspector] public GameState gameState;
+    
     [HideInInspector] public GameState previousGameState;
 
     private void Start()
@@ -39,7 +39,10 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         Application.targetFrameRate = 60;
         Application.runInBackground = false;
         QualitySettings.vSyncCount = 0;
+        previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
+        //
+        
     }
     public Player GetPlayer()
     {

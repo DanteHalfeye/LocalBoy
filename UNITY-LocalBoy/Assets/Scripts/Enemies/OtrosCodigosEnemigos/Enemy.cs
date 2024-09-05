@@ -9,6 +9,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(MovementToPosition))]
 [RequireComponent(typeof(IdleEvent))]
 [RequireComponent(typeof(Idle))]
+//[RequireComponent(typeof(AnimateEnemy))]
 
 [RequireComponent(typeof(MaterializeEffect))]
 [RequireComponent(typeof(SortingGroup))]
@@ -22,8 +23,7 @@ using UnityEngine.Rendering;
 [DisallowMultipleComponent]
 public class Enemy : MonoBehaviour
 {
-    //[HideInInspector]
-    public EnemyDetailsSO enemyDetails;
+    [HideInInspector] public EnemyDetailsSO enemyDetails; //funciona sin el HideInInspector
 
     private EnemyMovementAI enemyMovementAI;
     [HideInInspector] public MovementToPositionEvent movementToPositionEvent;
@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour
 
         SetEnemyMovementUpdateFrame(enemySpawnNumber);
 
+        //SetEnemyAnimationSpeed();
     
 
         // Materialise enemy
@@ -108,4 +109,11 @@ public class Enemy : MonoBehaviour
        
 
     }
+
+    ////Set enemy animator speed to match movement speed
+    //private void SetEnemyAnimationSpeed()
+    //{
+    //    //set animator speed to match movement speed
+    //    animator.speed = enemyMovementAI.moveSpeed / Settings.baseSpeedForEnemyAnimation;
+    //}
 }
