@@ -111,4 +111,27 @@ public class PlayerActor : SingletonMonobehaviour<PlayerActor>
     {
         attackSpeed += value;
     }
+
+    public void PickUpItem(ItemSO item)
+    {
+        ItemManager.RegisterItem(item, this);
+
+        Debug.Log("item " + item.name);
+
+    }
+
+    private void OnKill()
+    {
+        ItemEvents.TriggerEnemyKilled();
+    }
+
+    private void OnRoomEntered()
+    {
+        ItemEvents.TriggerOnRoomEntered();
+    }
+
+    private void OnStatChange()
+    {
+        ItemEvents.TriggerOnStatChange();
+    }
 }

@@ -22,9 +22,9 @@ public class ApplyItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.GetComponent<PLAYERPRUEBA>() != null)
+        if(other.GetComponent<PlayerActor>() != null)
         {
-            PLAYERPRUEBA actor = other.GetComponent<PLAYERPRUEBA>();
+            PlayerActor actor = other.GetComponent<PlayerActor>();
 
             actor.PickUpItem(item);
 
