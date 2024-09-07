@@ -11,7 +11,7 @@ public class UnequipedState : PlayerBaseState
 
     public override void EnterState()
     {
-        actor.SetMovingSpeed(3);
+        actor.SetMovementSpeed(3);
     }
 
     public override void ExitState()

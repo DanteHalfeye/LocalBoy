@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e728844ef2650b46b4afbdf19627d5f, type: 3}
+  m_Name: Periodico
+  m_EditorClassIdentifier: 
+  name: Periodico
+  description: Hay descuentos en ironia
+  icon: {fileID: 21300000, guid: a9d38f6109e864641a4f8cae9bd0a77b, type: 3}
+  conditional: 0
+  conditionValue: 0
+  conditionNumber: 0
+  triggerType: 1
+  duration: 1
+  durationAmount: 2
+  prefab: {fileID: 2025641042522881552, guid: c5e5f2a6294ddc04cba94483829ca587, type: 3}
