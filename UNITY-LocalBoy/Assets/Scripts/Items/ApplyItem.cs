@@ -22,7 +22,7 @@ public class ApplyItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.GetComponent<PlayerActor>() != null)
+        if(other.CompareTag("Player"))
         {
             PlayerActor actor = other.GetComponent<PlayerActor>();
 
