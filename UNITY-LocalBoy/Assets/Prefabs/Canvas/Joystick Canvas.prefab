@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 8622608900516761477}
   - component: {fileID: 4369264008128838544}
   - component: {fileID: 8372361070157427564}
+  - component: {fileID: 292520799913005156}
   m_Layer: 5
   m_Name: ShootHanle
   m_TagString: Untagged
@@ -311,6 +312,19 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &292520799913005156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780995286303372014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/dpad/right
 --- !u!1 &8729327241588522347
 GameObject:
   m_ObjectHideFlags: 0
