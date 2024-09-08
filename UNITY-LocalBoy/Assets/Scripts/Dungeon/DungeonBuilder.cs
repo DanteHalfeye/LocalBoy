@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
     private RoomNodeTypeListSO roomNodeTypeList;
     private bool dungeonBuildSuccessful;
 
-   
+
 
     protected override void Awake()
     {
@@ -65,17 +66,30 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
                 // Attempt To Build A Random Dungeon For The Selected room node graph
                 dungeonBuildSuccessful = AttemptToBuildRandomDungeon(roomNodeGraph);
+
+                int i = 0;
+                while (i >= 1000)
+                {
+                    i++;
+                }
             }
 
 
             if (dungeonBuildSuccessful)
             {
+                // Instatiate Room Enemy Spawners
+                InstatiateRoomEnemySpawner();
                 // Instantiate Room Gameobjects
                 InstantiateRoomGameobjects();
             }
         }
 
         return dungeonBuildSuccessful;
+    }
+
+    private void InstatiateRoomEnemySpawner()
+    {
+
     }
 
     /// <summary>
@@ -520,6 +534,8 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         room.lowerBounds = roomTemplate.lowerBounds;
         room.upperBounds = roomTemplate.upperBounds;
         room.spawnPositionArray = roomTemplate.spawnPositionArray;
+        room.enemiesByLevelList = roomTemplate.enemiesByLevelList;
+        room.roomLevelEnemySpawnParametersList = roomTemplate.roomEnemySpawnParametersList;
         room.templateLowerBounds = roomTemplate.lowerBounds;
         room.templateUpperBounds = roomTemplate.upperBounds;
         room.childRoomIDList = CopyStringList(roomNode.childRoomNodeIDList);
@@ -532,6 +548,7 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
             room.isPreviouslyVisited = true;
 
             // Set entrance in game manager
+            GameManager.Instance.SetCurrentRoom(room);
 
         }
         else
@@ -539,7 +556,10 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
             room.parentRoomID = roomNode.parentRoomNodeIDList[0];
         }
 
-
+        if(room.GetNumberOffEnemiesToSpawn(GameManager.Instance.GetCurrentDungeonLevel()) ==0)
+        {
+            room.isClearedOfEnemies = true;
+        }
 
 
         return room;

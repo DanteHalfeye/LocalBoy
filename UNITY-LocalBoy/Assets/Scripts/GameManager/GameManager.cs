@@ -24,15 +24,51 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     [HideInInspector] public GameState gameState;
     private Movement movement;
-    GameObject player;
 
+    private Room currentRoom;
+    private Room previousRoom;
+   // GameObject player;
+
+    private Player player;
+
+    
+    [HideInInspector] public GameState previousGameState;
 
     private void Start()
     {
         Application.targetFrameRate = 60;
         Application.runInBackground = false;
         QualitySettings.vSyncCount = 0;
+        previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
+        //
+        
+    }
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
+    public void SetPlayer(Player currentPlayer )
+    {
+        player = currentPlayer;
+    }
+    
+
+    /// <summary>
+    /// Get the current room the player is in
+    /// </summary>
+    public Room GetCurrentRoom()
+    {
+        print(currentRoom.instantiatedRoom.gameObject.name);
+        return currentRoom;
+    }
+
+    //get current dungeon level
+
+    public DungeonLevelSO GetCurrentDungeonLevel()
+    {
+        return dungeonLevelList[currentDungeonLevelListIndex];
     }
 
     private void Update()
@@ -40,12 +76,18 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         // Testing
         if (Input.GetKeyDown(KeyCode.R))
         HandleGameState();
+
+        Debug.Log(Instance + " " + player);
+        Debug.Log(player);
     }
+
 
     public void StartGame()
     {
         HandleGameState();
     }
+
+
 
     /// <summary>
     /// Handle game state
@@ -65,6 +107,18 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         }
     }
 
+    /// <summary>
+    /// Set the current room the player in in
+    /// </summary>
+    public void SetCurrentRoom(Room room)
+    {
+        previousRoom = currentRoom;
+        currentRoom = room;
+
+        //// Debug
+        //Debug.Log(room.prefab.name.ToString());
+    }
+
     private void PlayDungeonLevel(int dungeonLevelListIndex)
     {
         // Build dungeon for level
@@ -73,6 +127,10 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         {
             Debug.LogError("Couldn't build dungeon from specified rooms and node graphs");
         }
+
+        // Get nearest spawn point in room nearest to player
+        player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
+
     }
 
     

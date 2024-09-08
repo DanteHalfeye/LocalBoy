@@ -46,16 +46,27 @@ public class InstantiatedRoom : MonoBehaviour
 
     }
 
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        StaticEventHandler.CallRoomChangedEvent(room);
+        GameManager.Instance.SetCurrentRoom(room);
+    }
 
     /// <summary>
     /// Initialise The Instantiated Room
     /// </summary>
     public void Initialise(GameObject roomGameobject)
     {
+
         PopulateTilemapMemberVariables(roomGameobject);
         BlockOffUnusedDoorWays();
-
+        AddObstaclesAndPreferredPaths();
         DisableCollisionTilemapRenderer();
+
+
 
     }
 
@@ -231,6 +242,8 @@ public class InstantiatedRoom : MonoBehaviour
 
     }
 
+   
+
     /// <summary>
     /// Disable the room trigger collider that is used to trigger when the player enters a room
     /// </summary>
@@ -246,6 +259,20 @@ public class InstantiatedRoom : MonoBehaviour
     {
         boxCollider2D.enabled = true;
     }
+    //lock the room dors
+    //public void LockDors()
+    //{
+    //    Door[] doorArray = GetComponentInChildren<Doorway>();
+
+    //    //trigger lock doors
+    //    foreach (Door door in doorArray)
+    //    {
+    //        door.LockDors();
+    //    }
+
+    //    DisableRoomCollider();
+    //}
+
 
     public void ActivateEnvironmentGameObjects()
     {
@@ -258,5 +285,47 @@ public class InstantiatedRoom : MonoBehaviour
         if (environmentGameObject != null)
             environmentGameObject.SetActive(false);
     }
+
+    private void AddObstaclesAndPreferredPaths()
+    {
+        // this array will be populated with wall obstacles 
+        aStarMovementPenalty = new int[room.templateUpperBounds.x - room.templateLowerBounds.x + 1, room.templateUpperBounds.y - room.templateLowerBounds.y + 1];
+
+
+        // Loop thorugh all grid squares
+        for (int x = 0; x < (room.templateUpperBounds.x - room.templateLowerBounds.x + 1); x++)
+        {
+            for (int y = 0; y < (room.templateUpperBounds.y - room.templateLowerBounds.y + 1); y++)
+            {
+                // Set default movement penalty for grid sqaures
+                aStarMovementPenalty[x, y] = Settings.defaultAStarMovementPenalty;
+
+                // Add obstacles for collision tiles the enemy can't walk on
+                TileBase tile = collisionTilemap.GetTile(new Vector3Int(x + room.templateLowerBounds.x, y + room.templateLowerBounds.y, 0));
+
+                foreach (TileBase collisionTile in GameResources.Instance.enemyUnwalkableCollisionTilesArray)
+                {
+                    if (tile == collisionTile)
+                    {
+                        aStarMovementPenalty[x, y] = 0;
+                        break;
+                    }
+                }
+
+                // Add preferred path for enemies (1 is the preferred path value, default value for
+                // a grid location is specified in the Settings).
+                if (tile == GameResources.Instance.preferredEnemyPathTile)
+                {
+                    aStarMovementPenalty[x, y] = Settings.preferredPathAStarMovementPenalty;
+                }
+
+            }
+        }
+
+    }
+
+
+
+
 }
 
