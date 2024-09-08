@@ -50,14 +50,19 @@ public class EnemyDetailsSO : ScriptableObject
     #endregion
     public Color enemyMaterializeColor;
 
+  
+    
+
     #region Header ENEMY WEAPON SETTINGS
     [Space(10)]
     [Header("ENEMY WEAPON SETTINGS")]
     #endregion
-    
     #region Tooltip
-    [Tooltip("The minimum time delay interval in seconds between bursts of enemy shooting.  This value should be greater than 0. A random value will be selected between the minimum value and the maximum value")]
+    [Tooltip("the weapon for the enemy - none if the enemy doesnt have a weapon")]
     #endregion
+    //public WeaponDetailsSO enemyWeapon;
+
+ 
     public float firingIntervalMin = 0.1f;
     #region Tooltip
     [Tooltip("The maximum time delay interval in seconds between bursts of enemy shooting.  A random value will be selected between the minimum value and the maximum value")]
