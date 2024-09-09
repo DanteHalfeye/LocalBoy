@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a2cb549b4e7c342ba92893efc31be1, type: 3}
-  m_Name: WeaponShootEffect_MP7_Boss
+  m_Script: {fileID: 11500000, guid: 6ce725bfd316d2648819d168394c2609, type: 3}
+  m_Name: AmmoHitEffect_Shotgun_Boss
   m_EditorClassIdentifier: 
   colorGradient:
     serializedVersion: 2
@@ -43,14 +43,14 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   duration: 0.5
-  startParticleSize: 0.25
+  startParticleSize: 0.46
   startParticleSpeed: 3
   startLifetime: 0.5
-  maxParticleNumber: 100
-  emissionRate: 100
+  maxParticleNumber: 20
+  emissionRate: 0
   burstParticleNumber: 20
   effectGravity: -0.01
   sprite: {fileID: 0}
   velocityOverLifetimeMin: {x: 0, y: 0, z: 0}
   velocityOverLifetimeMax: {x: 0, y: 0, z: 0}
-  weaponShootEffectPrefab: {fileID: 7853615770937549561, guid: cd4f59c0fb4f6284f871e480fd5ef773, type: 3}
+  ammoHitEffectPrefab: {fileID: 0}

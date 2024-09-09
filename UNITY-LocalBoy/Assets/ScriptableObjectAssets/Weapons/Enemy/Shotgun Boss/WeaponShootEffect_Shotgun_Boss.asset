@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2a2cb549b4e7c342ba92893efc31be1, type: 3}
-  m_Name: WeaponShootEffect_MP7_Boss
+  m_Name: WeaponShootEffect_Shotgun_Boss
   m_EditorClassIdentifier: 
   colorGradient:
     serializedVersion: 2
@@ -50,7 +50,7 @@ MonoBehaviour:
   emissionRate: 100
   burstParticleNumber: 20
   effectGravity: -0.01
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ecf6e010769abce4cb1e7c60e0f3b3d8, type: 3}
   velocityOverLifetimeMin: {x: 0, y: 0, z: 0}
   velocityOverLifetimeMax: {x: 0, y: 0, z: 0}
-  weaponShootEffectPrefab: {fileID: 7853615770937549561, guid: cd4f59c0fb4f6284f871e480fd5ef773, type: 3}
+  weaponShootEffectPrefab: {fileID: 7255582679228879866, guid: e71aa3c0f59fb9145bf77f280745da44, type: 3}
