@@ -43,7 +43,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   duration: 0.5
-  startParticleSize: 0.46
+  startParticleSize: 0.25
   startParticleSpeed: 3
   startLifetime: 0.5
   maxParticleNumber: 20
