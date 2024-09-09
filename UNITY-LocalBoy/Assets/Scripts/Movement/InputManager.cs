@@ -17,7 +17,6 @@ public class InputManager : MonoBehaviour
     float autoShootCD = 0.5f;
 
     private float pressTime = 0f;
-    private bool isPressed = false;
     bool autoShootAllowed = true;
 
     bool shootAllowed;
@@ -33,41 +32,36 @@ public class InputManager : MonoBehaviour
 
     public void AutoShoot(InputAction.CallbackContext context)
     {
-        Debug.Log("Hola;");
-        if (!isPressed)
+        Debug.Log("AUTOSHOOT");
+        if (context.started)
         {
-            isPressed = true;
             pressTime = Time.time;
         }
-        else
+        
+        if(context.canceled)
         {
-            isPressed = false;
-            if (Time.time - pressTime < 0.075f)
+            if (Time.time - pressTime < 0.1f)
             {
                 autoShootAllowed = true;
+                Debug.Log("AutoDisparo");
+                Shoot playerShoot = GetComponent<Shoot>();
+                if (playerShoot != null)
+                {
+                    if (shootAllowed)
+                    {
+                        playerShoot.OnShoot(playerShoot.AutoShootDirection(), bp.RequerirBala());
+                        shootAllowed = false;
+                        shootTimer = autoShootCD;
+                    }
+
+                }
+
+                autoShootAllowed = false;
             }
             else
             {
                 autoShootAllowed = false;
             }
-        }
-
-        if(autoShootAllowed)
-        {
-            Debug.Log("AutoDisparo");
-            Shoot playerShoot = GetComponent<Shoot>();
-            if (playerShoot != null)
-            {
-                if (shootAllowed)
-                {
-                    playerShoot.OnShoot(playerShoot.AutoShootDirection(), bp.RequerirBala());
-                    shootAllowed = false;
-                    shootTimer = autoShootCD;
-                }
-
-            }
-
-            autoShootAllowed = false;
         }
 
     }
