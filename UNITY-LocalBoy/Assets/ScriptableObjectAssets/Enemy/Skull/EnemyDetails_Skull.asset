@@ -24,7 +24,7 @@ MonoBehaviour:
   firingIntervalMax: 3
   firingDurationMin: 8
   firingDurationMax: 10
-  firingLineOfSightRequired: 0
+  firingLineOfSightRequired: 1
   isImmuneAfterHit: 0
   hitImmunityTime: 0
   isHealthBarDisplayed: 0
