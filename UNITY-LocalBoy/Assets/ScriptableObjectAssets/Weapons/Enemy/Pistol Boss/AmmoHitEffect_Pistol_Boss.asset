@@ -53,4 +53,4 @@ MonoBehaviour:
   sprite: {fileID: 0}
   velocityOverLifetimeMin: {x: 0, y: 0, z: 0}
   velocityOverLifetimeMax: {x: 0, y: 0, z: 0}
-  ammoHitEffectPrefab: {fileID: 0}
+  ammoHitEffectPrefab: {fileID: 7853615770937549561, guid: dd7d74469c8132a4b89a7a450b61dcea, type: 3}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce725bfd316d2648819d168394c2609, type: 3}
-  m_Name: AmmoHitEffect_Pistol_Enemy
+  m_Name: AmmoHitEffect_Shotgun_Enemy
   m_EditorClassIdentifier: 
   colorGradient:
     serializedVersion: 2
@@ -43,11 +43,11 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   duration: 0.5
-  startParticleSize: 0.35
+  startParticleSize: 0.46
   startParticleSpeed: 3
   startLifetime: 0.5
-  maxParticleNumber: 100
-  emissionRate: 100
+  maxParticleNumber: 20
+  emissionRate: 0
   burstParticleNumber: 20
   effectGravity: -0.01
   sprite: {fileID: 0}

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9155d6bf35f4e6145936948922e912eb, type: 3}
-  m_Name: WeaponDetails_Pistol_Enemy
+  m_Name: WeaponDetails_Shotgun_Enemy
   m_EditorClassIdentifier: 
-  weaponName: Pistol Enemy
-  weaponSprite: {fileID: 21300000, guid: abbe40c4d6a803f42a7c4f53404a484d, type: 3}
-  weaponShootPosition: {x: 1.115, y: 0.227, z: 0}
-  weaponCurrentAmmo: {fileID: 11400000, guid: 2d0f0ddbcf39bbd459293db9b31d7873, type: 2}
-  weaponShootEffect: {fileID: 11400000, guid: 5bcce2b038b38c94abddb72a9b5f3776, type: 2}
+  weaponName: Shot gun Boss
+  weaponSprite: {fileID: 21300000, guid: c2517a309699a414dacb0773703ce135, type: 3}
+  weaponShootPosition: {x: 1.87, y: 0.31, z: 0}
+  weaponCurrentAmmo: {fileID: 11400000, guid: 15fa443b6a7b79d4d9bb684f96ab2bf1, type: 2}
+  weaponShootEffect: {fileID: 11400000, guid: 2e3117a01e884424193050952828584e, type: 2}
   hasInfiniteAmmo: 1
   hasInfiniteClipCapacity: 0
-  weaponClipAmmoCapacity: 10
+  weaponClipAmmoCapacity: 6
   weaponAmmoCapacity: 0
-  weaponFireRate: 0.25
+  weaponFireRate: 0.4
   weaponPrechargeTime: 0
-  weaponReloadTime: 1.2
+  weaponReloadTime: 1

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce725bfd316d2648819d168394c2609, type: 3}
-  m_Name: AmmoHitEffect_Pistol_Enemy
+  m_Script: {fileID: 11500000, guid: 3d2afe5cecbcd5a468df445fde31d8be, type: 3}
+  m_Name: AmmoHitEffect_QBZ95SMG_Enemy
   m_EditorClassIdentifier: 
   colorGradient:
     serializedVersion: 2
@@ -39,18 +39,17 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   duration: 0.5
-  startParticleSize: 0.35
+  startParticleSize: 0.25
   startParticleSpeed: 3
   startLifetime: 0.5
-  maxParticleNumber: 100
-  emissionRate: 100
+  maxParticleNumber: 20
+  emissionRate: 0
   burstParticleNumber: 20
   effectGravity: -0.01
   sprite: {fileID: 0}
   velocityOverLifetimeMin: {x: 0, y: 0, z: 0}
   velocityOverLifetimeMax: {x: 0, y: 0, z: 0}
-  ammoHitEffectPrefab: {fileID: 7853615770937549561, guid: dd7d74469c8132a4b89a7a450b61dcea, type: 3}
+  ammoHitEffectPrefab: {fileID: 7853615770937549561, guid: a67a9f991dc97ed46b3202ca3f58f2df, type: 3}
