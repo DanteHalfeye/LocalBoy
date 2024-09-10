@@ -57,47 +57,58 @@ public class EnemyDetailsSO : ScriptableObject
     [Space(10)]
     [Header("ENEMY WEAPON SETTINGS")]
     #endregion
+
     #region Tooltip
     [Tooltip("the weapon for the enemy - none if the enemy doesnt have a weapon")]
     #endregion
-    //public WeaponDetailsSO enemyWeapon;
+    public WeaponDetailsSO enemyWeapon;
 
- 
+    #region Tooltip
+    [Tooltip("The minimum time delay interval in seconds between bursts of enemy shooting.  A random value will be selected between the minimum value and the maximum value")]
+    #endregion 
     public float firingIntervalMin = 0.1f;
+
     #region Tooltip
     [Tooltip("The maximum time delay interval in seconds between bursts of enemy shooting.  A random value will be selected between the minimum value and the maximum value")]
     #endregion
     public float firingIntervalMax = 1f;
+
     #region Tooltip
-    [Tooltip("The minimum firing duration that the enemy shoots for during a firing burst.  This value should be greater than zero.  A random value will be selected between the minimum value and the maximum value.")]
+    [Tooltip("the mimnimum firing duration that the enemy shoots for during a firing burst. This value should be greater than zero. a random value will be selected btw the min and max value")]
     #endregion
     public float firingDurationMin = 1f;
+
     #region Tooltip
-    [Tooltip("The maximum firing duration that the enemy shoots for during a firing burst.  A random value will be selected between the minimum value and the maximum value.")]
+    [Tooltip("the maximum firing duration that the enemy shoots for during a firing burst. This value should be greater than zero. a random value will be selected btw the min and max value")]
     #endregion
     public float firingDurationMax = 2f;
+
     #region Tooltip
-    [Tooltip("Select this if line of sight is required of the player before the enemy fires.  If line of sight isn't selected the enemy will fire regardless of obstacles whenever the player is 'in range'")]
+    [Tooltip("Select this if line of sight is required of the player before the enemy fires. If line of sight isnt sleected the enemy will fire regardless of obstacles whenever the player is in range")]
     #endregion
     public bool firingLineOfSightRequired;
 
-    #region Header ENEMY HEALTH
-    [Space(10)]
-    [Header("ENEMY HEALTH")]
-    #endregion
+
+
+
+
+    //#region Header ENEMY HEALTH
+    //[Space(10)]
+    //[Header("ENEMY HEALTH")]
+    //#endregion
   
-    #region Tooltip
-    [Tooltip("Select if has immunity period immediately after being hit.  If so specify the immunity time in seconds in the other field")]
-    #endregion
-    public bool isImmuneAfterHit = false;
-    #region Tooltip
-    [Tooltip("Immunity time in seconds after being hit")]
-    #endregion
-    public float hitImmunityTime;
-    #region Tooltip
-    [Tooltip("Select to display a health bar for the enemy")]
-    #endregion
-    public bool isHealthBarDisplayed = false;
+    //#region Tooltip
+    //[Tooltip("Select if has immunity period immediately after being hit.  If so specify the immunity time in seconds in the other field")]
+    //#endregion
+    //public bool isImmuneAfterHit = false;
+    //#region Tooltip
+    //[Tooltip("Immunity time in seconds after being hit")]
+    //#endregion
+    //public float hitImmunityTime;
+    //#region Tooltip
+    //[Tooltip("Select to display a health bar for the enemy")]
+    //#endregion
+    //public bool isHealthBarDisplayed = false;
 
 
 
@@ -108,17 +119,17 @@ public class EnemyDetailsSO : ScriptableObject
     {
         HelperUtilities.ValidateCheckEmptyString(this, nameof(enemyName), enemyName);
         HelperUtilities.ValidateCheckNullValue(this, nameof(enemyPrefab), enemyPrefab);
-        HelperUtilities.ValidateCheckPositiveValue(this, nameof(chaseDistance), chaseDistance, false);
+        HelperUtilities.ValidateCheckPositiveValue(this, nameof(chaseDistance), chaseDistance, false);      
         HelperUtilities.ValidateCheckNullValue(this, nameof(enemyStandardMaterial), enemyStandardMaterial);
         HelperUtilities.ValidateCheckPositiveValue(this, nameof(enemyMaterializeTime), enemyMaterializeTime, true);
         HelperUtilities.ValidateCheckNullValue(this, nameof(enemyMaterializeShader), enemyMaterializeShader);
         HelperUtilities.ValidateCheckPositiveRange(this, nameof(firingIntervalMin), firingIntervalMin, nameof(firingIntervalMax), firingIntervalMax, false);
         HelperUtilities.ValidateCheckPositiveRange(this, nameof(firingDurationMin), firingDurationMin, nameof(firingDurationMax), firingDurationMax, false);
        
-        if (isImmuneAfterHit)
-        {
-            HelperUtilities.ValidateCheckPositiveValue(this, nameof(hitImmunityTime), hitImmunityTime, false);
-        }
+        //if (isImmuneAfterHit)
+        //{
+        //    HelperUtilities.ValidateCheckPositiveValue(this, nameof(hitImmunityTime), hitImmunityTime, false);
+        //}
     }
 
 #endif

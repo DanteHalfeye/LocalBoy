@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 570476586025300719}
   - component: {fileID: 4741451071720767939}
   - component: {fileID: 3718866469416824207}
+  - component: {fileID: -7515859776863911142}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -327,22 +328,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a362d064-d51d-430a-a894-8661b06138bf
     m_ActionName: Player/Agarre
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8523589061365655325}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: AutoShoot
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 48597b51-3f6b-439d-b251-3399b53c9a06
-    m_ActionName: Player/AutoShoot
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -362,7 +347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveInput: {x: 0, y: 0}
   FireInput: {x: 0, y: 0}
-  maxPressDuration: 0.2
   joystickInput:
     m_Name: Joystick Input
     m_Type: 0
@@ -378,23 +362,6 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Joystick Input
-      m_Flags: 0
-    m_Flags: 0
-  autoShootInput:
-    m_Name: Auto Shoot Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5a274a26-f11c-4023-bd41-c3f6ccf370d1
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 02b57d19-98c0-4019-8e26-3b4da62ee872
-      m_Path: <Gamepad>/dpad/right
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Auto Shoot Input
       m_Flags: 0
     m_Flags: 0
 --- !u!114 &5642231802692350008
@@ -437,10 +404,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerza: 10
-  autoShootRange: 10
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 32768
 --- !u!114 &2000654607995948131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,3 +640,16 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
   idleEvent: {fileID: 0}
+--- !u!114 &-7515859776863911142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8641597408487544074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b69678c7c1cf6344b97f684f1386d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 11400000, guid: 1e7647e468d8c514a81526afa8aba8f6, type: 2}
