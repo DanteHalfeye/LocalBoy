@@ -69,8 +69,8 @@ public class Ammo : MonoBehaviour, IFireable
         // If already colliding with something return
         if (isColliding) return;
 
-        // Deal Damage To Collision Object
-        DealDamage(collision);
+        //// Deal Damage To Collision Object
+        //DealDamage(collision);
 
         // Show ammo hit effect
         AmmoHitEffect();
@@ -80,23 +80,23 @@ public class Ammo : MonoBehaviour, IFireable
 
     private void DealDamage(Collider2D collision)
     {
-        Health health = collision.GetComponent<Health>();
+        //Health health = collision.GetComponent<Health>();
 
         bool enemyHit = false;
 
-        if (health != null)
-        {
-            // Set isColliding to prevent ammo dealing damage multiple times
-            isColliding = true;
+        //if (health != null)
+        //{
+        //    // Set isColliding to prevent ammo dealing damage multiple times
+        //    isColliding = true;
 
-            health.TakeDamage(ammoDetails.ammoDamage);
+        //    health.TakeDamage(ammoDetails.ammoDamage);
 
-            // Enemy hit
-            if (health.enemy != null)
-            {
-                enemyHit = true;
-            }
-        }
+        //    // Enemy hit
+        //    if (health.enemy != null)
+        //    {
+        //        enemyHit = true;
+        //    }
+        //}
 
         // If player ammo then update multiplier
         if (ammoDetails.isPlayerAmmo)

@@ -6,6 +6,12 @@ public class Bullet : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //gameObject.SetActive(false);
+        if (collision.gameObject.GetComponent<Health>())
+        {
+            collision.gameObject.GetComponent<Health>().TakeDamage(1);
+            Debug.Log(collision.gameObject.GetComponent<Health>().health.currentHealth);
+        }
+
+        gameObject.SetActive(false);
     }
 }

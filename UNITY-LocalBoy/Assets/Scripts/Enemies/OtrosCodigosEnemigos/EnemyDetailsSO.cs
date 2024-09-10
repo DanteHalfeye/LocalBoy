@@ -92,23 +92,23 @@ public class EnemyDetailsSO : ScriptableObject
 
 
 
-    #region Header ENEMY HEALTH
-    [Space(10)]
-    [Header("ENEMY HEALTH")]
-    #endregion
+    //#region Header ENEMY HEALTH
+    //[Space(10)]
+    //[Header("ENEMY HEALTH")]
+    //#endregion
   
-    #region Tooltip
-    [Tooltip("Select if has immunity period immediately after being hit.  If so specify the immunity time in seconds in the other field")]
-    #endregion
-    public bool isImmuneAfterHit = false;
-    #region Tooltip
-    [Tooltip("Immunity time in seconds after being hit")]
-    #endregion
-    public float hitImmunityTime;
-    #region Tooltip
-    [Tooltip("Select to display a health bar for the enemy")]
-    #endregion
-    public bool isHealthBarDisplayed = false;
+    //#region Tooltip
+    //[Tooltip("Select if has immunity period immediately after being hit.  If so specify the immunity time in seconds in the other field")]
+    //#endregion
+    //public bool isImmuneAfterHit = false;
+    //#region Tooltip
+    //[Tooltip("Immunity time in seconds after being hit")]
+    //#endregion
+    //public float hitImmunityTime;
+    //#region Tooltip
+    //[Tooltip("Select to display a health bar for the enemy")]
+    //#endregion
+    //public bool isHealthBarDisplayed = false;
 
 
 
@@ -126,10 +126,10 @@ public class EnemyDetailsSO : ScriptableObject
         HelperUtilities.ValidateCheckPositiveRange(this, nameof(firingIntervalMin), firingIntervalMin, nameof(firingIntervalMax), firingIntervalMax, false);
         HelperUtilities.ValidateCheckPositiveRange(this, nameof(firingDurationMin), firingDurationMin, nameof(firingDurationMax), firingDurationMax, false);
        
-        if (isImmuneAfterHit)
-        {
-            HelperUtilities.ValidateCheckPositiveValue(this, nameof(hitImmunityTime), hitImmunityTime, false);
-        }
+        //if (isImmuneAfterHit)
+        //{
+        //    HelperUtilities.ValidateCheckPositiveValue(this, nameof(hitImmunityTime), hitImmunityTime, false);
+        //}
     }
 
 #endif
