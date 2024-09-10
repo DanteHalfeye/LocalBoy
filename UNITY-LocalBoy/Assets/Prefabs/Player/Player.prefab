@@ -328,6 +328,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a362d064-d51d-430a-a894-8661b06138bf
     m_ActionName: Player/Agarre
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8523589061365655325}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: AutoShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 48597b51-3f6b-439d-b251-3399b53c9a06
+    m_ActionName: Player/AutoShoot
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -347,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveInput: {x: 0, y: 0}
   FireInput: {x: 0, y: 0}
+  maxPressDuration: 0.2
   joystickInput:
     m_Name: Joystick Input
     m_Type: 0
@@ -362,6 +379,23 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Joystick Input
+      m_Flags: 0
+    m_Flags: 0
+  autoShootInput:
+    m_Name: Auto Shoot Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0f8d26e6-385a-47d7-8410-88092d9e17b7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ab28727d-cb3e-41df-af7c-6008bc2b42ad
+      m_Path: <Gamepad>/dpad/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Auto Shoot Input
       m_Flags: 0
     m_Flags: 0
 --- !u!114 &5642231802692350008
@@ -404,6 +438,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerza: 10
+  autoShootRange: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &2000654607995948131
 MonoBehaviour:
   m_ObjectHideFlags: 0

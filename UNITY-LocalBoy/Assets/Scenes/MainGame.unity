@@ -157,7 +157,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 65d1820d42a7f5a43b09139e6c7b712c, type: 2}
   - {fileID: 11400000, guid: faa942ca159345f4197a9560be540990, type: 2}
   currentDungeonLevelListIndex: 1
-  testCamera: {fileID: 2072093780}
   gameState: 0
   previousGameState: 0
 --- !u!4 &391840257
