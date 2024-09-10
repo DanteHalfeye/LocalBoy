@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 570476586025300719}
   - component: {fileID: 4741451071720767939}
   - component: {fileID: 3718866469416824207}
-  - component: {fileID: -7515859776863911142}
+  - component: {fileID: 6030853927047946046}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -678,7 +678,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
   idleEvent: {fileID: 0}
---- !u!114 &-7515859776863911142
+--- !u!114 &6030853927047946046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

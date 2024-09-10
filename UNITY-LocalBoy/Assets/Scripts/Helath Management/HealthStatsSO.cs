@@ -9,7 +9,12 @@ public class HealthStatsSO : ScriptableObject
     public int maxHealth, currentHealth;
 
 
-    public void Awake()
+    public void OnEnable()
+    {
+        ResetHealth();
+    }
+
+    public void ResetHealth()
     {
         currentHealth = maxHealth;
     }
