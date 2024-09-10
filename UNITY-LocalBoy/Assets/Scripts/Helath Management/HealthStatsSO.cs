@@ -13,6 +13,7 @@ public class HealthStatsSO : ScriptableObject
     {
         currentHealth = maxHealth;
     }
+
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
