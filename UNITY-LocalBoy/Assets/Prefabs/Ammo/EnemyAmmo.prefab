@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 338823425537541427}
   - component: {fileID: 8667464555903078330}
   - component: {fileID: -2441160751027018482}
+  - component: {fileID: 7327449159968498539}
   m_Layer: 16
   m_Name: EnemyAmmo
   m_TagString: Untagged
@@ -296,10 +297,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 9216
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4185015
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -317,3 +318,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailRenderer: {fileID: 1143193874319752257}
+--- !u!114 &7327449159968498539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300469830871815366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f5c23a91ee4fd41b8fd86620bc9d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
