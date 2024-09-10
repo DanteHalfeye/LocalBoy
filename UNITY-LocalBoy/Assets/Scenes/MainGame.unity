@@ -547,6 +547,18 @@ MonoBehaviour:
   - poolSize: 200
     prefab: {fileID: 5300469830871815366, guid: 457c822307c0e334fa29939333f9f92c, type: 3}
     componentType: IFireable
+  - poolSize: 20
+    prefab: {fileID: 7853615770937549561, guid: cd4f59c0fb4f6284f871e480fd5ef773, type: 3}
+    componentType: WeaponShootEffect
+  - poolSize: 20
+    prefab: {fileID: 7255582679228879866, guid: e71aa3c0f59fb9145bf77f280745da44, type: 3}
+    componentType: WeaponShootEffect
+  - poolSize: 20
+    prefab: {fileID: 4845784685338801524, guid: 7dafb68840461b543b2a9c0da1db45bd, type: 3}
+    componentType: WeaponShootEffect
+  - poolSize: 20
+    prefab: {fileID: 7853615770937549561, guid: dd7d74469c8132a4b89a7a450b61dcea, type: 3}
+    componentType: AmmoHitEffect
 --- !u!4 &1191802453
 Transform:
   m_ObjectHideFlags: 0

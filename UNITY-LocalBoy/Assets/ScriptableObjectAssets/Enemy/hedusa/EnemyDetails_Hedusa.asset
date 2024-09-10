@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09998bdb027ab5b4cb3edb286d8ace6b, type: 3}
   m_Name: EnemyDetails_Hedusa
   m_EditorClassIdentifier: 
-  enemyName: Coronel
+  enemyName: Hedusa
   enemyPrefab: {fileID: 5179376199188719783, guid: 9fe3734a5573fb0428483394f6cf9125, type: 3}
   chaseDistance: 50
   enemyStandardMaterial: {fileID: 2100000, guid: ad8cb007cdbc1594e816fad1bc59554e, type: 2}
   enemyMaterializeTime: 0
-  enemyMaterializeShader: {fileID: 0}
-  enemyMaterializeColor: {r: 0, g: 0, b: 0, a: 0}
+  enemyMaterializeShader: {fileID: -6465566751694194690, guid: 5fec8f8e6ea244648a3c6ede24a56288, type: 3}
+  enemyMaterializeColor: {r: 0.28840548, g: 0.94716984, b: 0.16977562, a: 0}
   enemyWeapon: {fileID: 11400000, guid: cb8d9b5b157e5864199df33df956c200, type: 2}
   firingIntervalMin: 1
   firingIntervalMax: 1.5
