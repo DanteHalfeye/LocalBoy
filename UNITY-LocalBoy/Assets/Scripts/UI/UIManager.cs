@@ -11,11 +11,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] Image darkOverlay;
     [SerializeField] CanvasGroup canvaGroup, gamePanelCanvasGroup;
     [SerializeField] List<GameObject> items = new List<GameObject>();
- 
+
     [SerializeField] List<RectTransform> creditItems;
     [SerializeField] float fadeTime, explosionDuration;
     [SerializeField] Ease explosionEase, fadeInEase, myEase;
-    [SerializeField] Vector2 explosionRange; 
+    [SerializeField] Vector2 explosionRange;
+
 
     private enum MenuState { MainMenu, PauseMenu, None }
     private MenuState previousState = MenuState.None;
@@ -230,8 +231,6 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.10f);
         }
     }
-
-
 
     public void OnApplicationQuit()
     {
