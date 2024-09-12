@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 570476586025300719}
   - component: {fileID: 4741451071720767939}
   - component: {fileID: 3718866469416824207}
+  - component: {fileID: 6030853927047946046}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -384,12 +385,12 @@ MonoBehaviour:
     m_Name: Auto Shoot Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 5a274a26-f11c-4023-bd41-c3f6ccf370d1
+    m_Id: 0f8d26e6-385a-47d7-8410-88092d9e17b7
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 02b57d19-98c0-4019-8e26-3b4da62ee872
+      m_Id: ab28727d-cb3e-41df-af7c-6008bc2b42ad
       m_Path: <Gamepad>/dpad/right
       m_Interactions: 
       m_Processors: 
@@ -677,3 +678,16 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
   idleEvent: {fileID: 0}
+--- !u!114 &6030853927047946046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8641597408487544074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b69678c7c1cf6344b97f684f1386d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 11400000, guid: 1e7647e468d8c514a81526afa8aba8f6, type: 2}
