@@ -60,6 +60,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     /// </summary>
     public Room GetCurrentRoom()
     {
+        PlayerActor.instance.OnRoomEntered();
         print(currentRoom.instantiatedRoom.gameObject.name);
         return currentRoom;
     }

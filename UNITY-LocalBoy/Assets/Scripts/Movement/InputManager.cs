@@ -143,4 +143,8 @@ public class InputManager : MonoBehaviour
 
         
     }
+
+
+    public float AutoShootCD { get { return autoShootCD; } set { autoShootCD = value; } }   
+
 }

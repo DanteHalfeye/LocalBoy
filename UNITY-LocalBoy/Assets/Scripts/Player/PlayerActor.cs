@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class PlayerActor : SingletonMonobehaviour<PlayerActor>
 {
-    private float maxHp, currentHp,
-        movementSpeed, attackSpeed;
+    public static PlayerActor instance;
+    [SerializeField] HealthStatsSO health;
+
+
+    //ARREGLAR BALAS
     private int currentAmmo;
 
 
-
-
+    private InputManager inputManager;
+    private Movement movement;
 
     bool isHolding, isShooting;
-
-    [SerializeField] HealthSO Health;
-
-    Movement movement;
-
-    Shoot shoot;
 
 
     private void Start()
     {
-        movement = GetComponent<Movement>();
-        shoot = GetComponent<Shoot>();
-
+        inputManager = GetComponent<InputManager>();
+        movement = GetComponent <Movement>();
     }
 
     public bool OnHoldPress()
@@ -37,32 +33,32 @@ public class PlayerActor : SingletonMonobehaviour<PlayerActor>
 
     public float HpPercent
     {
-        get { return maxHp / currentHp; }
+        get { return health.MaxHealth / health.CurrentHealth; }
     }
 
     public float GetHp
     {
-        get { return currentHp; }
+        get { return health.CurrentHealth; }
     }
 
-    public void SetHp(float value)
+    public void SetHp(int value)
     {
-        currentHp = value;
+        health.CurrentHealth = value;
     }
 
-    public void ModifyCurrentHp(float value)
+    public void ModifyCurrentHp(int value)
     {
-        currentHp += value;
+        health.CurrentHealth += value;
     }
 
-    public void SetMaxHp(float value)
+    public void SetMaxHp(int value)
     {
-        maxHp = value;
+        health.MaxHealth = value;
     }
 
-    public void ModifyMaxHp(float value)
+    public void ModifyMaxHp(int value)
     {
-        maxHp += value;
+        health.MaxHealth += value;
     }
 
     public int GetAmmo
@@ -82,34 +78,32 @@ public class PlayerActor : SingletonMonobehaviour<PlayerActor>
 
     public float GetMovementSpeed
     {
-        get { return movementSpeed; }
+        get { return movement.Speed; }
     }
 
     public void SetMovementSpeed(float value)
     {
-        movementSpeed = value;
         movement.Speed = value;
     }
 
     public void ModifyMovementSpeed(float value)
     {
-        movementSpeed += value;
         movement.Speed += value;
     }
 
     public float GetAttackSpeed
     {
-        get { return attackSpeed; }
+        get { return inputManager.AutoShootCD; }
     }
 
     public void SetAttackSPeed(float value)
     {
-        attackSpeed = value;
+        inputManager.AutoShootCD = value;
     }
 
     public void ModifyAttackSpeed(float value)
     {
-        attackSpeed += value;
+        inputManager.AutoShootCD += value;
     }
 
     public void PickUpItem(ItemSO item)
@@ -120,12 +114,12 @@ public class PlayerActor : SingletonMonobehaviour<PlayerActor>
 
     }
 
-    private void OnKill()
+    public void OnKill()
     {
         ItemEvents.TriggerEnemyKilled();
     }
 
-    private void OnRoomEntered()
+    public void OnRoomEntered()
     {
         ItemEvents.TriggerOnRoomEntered();
     }

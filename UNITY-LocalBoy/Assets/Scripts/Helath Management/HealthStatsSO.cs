@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newHealthStats", menuName = "Scriptable Objects/Health/HealthStats")]
 public class HealthStatsSO : ScriptableObject
 {
-    public int maxHealth, currentHealth;
+    private int maxHealth, currentHealth;
 
 
     public void OnEnable()
@@ -30,5 +30,7 @@ public class HealthStatsSO : ScriptableObject
         currentHealth = math.clamp(currentHealth, 0, maxHealth);
     }
 
+    public int MaxHealth { get { return maxHealth; }  set { maxHealth = value; } }
+    public int CurrentHealth { get { return currentHealth; } set { currentHealth = value; } }
     
 }
