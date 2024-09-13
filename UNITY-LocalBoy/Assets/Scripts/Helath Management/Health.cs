@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health.TakeDamage(amount);
-        if(health.CurrentHealth <= 0)
+        if(health.currentHealth <= 0)
         {
             Die();
         }
@@ -22,9 +22,13 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Murió");
-        gameObject.SetActive(false);
-        PlayerActor.instance.OnKill();
+        if (GetComponent<DestroyedEvent>() == null)
+        {
+            this.gameObject.SetActive(false);
+        }
+        DestroyedEvent destroyed = GetComponent<DestroyedEvent>();
+        destroyed.CallDestroyedEvent();
+        
     }
     
 }
