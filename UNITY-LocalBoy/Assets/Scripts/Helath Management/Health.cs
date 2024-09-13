@@ -22,8 +22,12 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Murió");
-        gameObject.SetActive(false);
+        if (GetComponent<DestroyedEvent>() == null)
+        {
+            this.gameObject.SetActive(false);
+        }
+        DestroyedEvent destroyed = GetComponent<DestroyedEvent>();
+        destroyed.CallDestroyedEvent();
         
     }
     

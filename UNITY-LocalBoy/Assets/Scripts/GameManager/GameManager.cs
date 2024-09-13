@@ -22,7 +22,6 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     #endregion Tooltip
     [SerializeField] private int currentDungeonLevelListIndex = 0;
 
-    [HideInInspector] public GameState gameState;
     private Movement movement;
 
     private Room currentRoom;
@@ -32,7 +31,10 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     private Player player;
 
     
+    [HideInInspector] public GameState gameState;
     [HideInInspector] public GameState previousGameState;
+
+    private InstantiatedRoom bossRoom;
 
     private void Start()
     {
@@ -44,6 +46,16 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         //
         
     }
+
+    private void OnEnable()
+    {
+        StaticEventHandler.OnRoomEnemiesDefeated += StaticEventHandler_OnRoomEnemiesDefeated; 
+        
+    }
+    private void OnDisable()
+    {
+        StaticEventHandler.OnRoomEnemiesDefeated -= StaticEventHandler_OnRoomEnemiesDefeated;
+    }
     public Player GetPlayer()
     {
         return player;
@@ -53,8 +65,31 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     {
         player = currentPlayer;
     }
-    
 
+    private void StaticEventHandler_OnRoomEnemiesDefeated(RoomEnemiesDefeatedArgs roomEnemiesDefeatedArgs)
+    {
+        // Initialise dungeon as being cleared - but then test each room
+        bool isDungeonClearOfRegularEnemies = true;
+        bossRoom = null;
+
+        // Loop through all dungeon rooms to see if cleared of enemies
+        foreach (KeyValuePair<string, Room> keyValuePair in DungeonBuilder.Instance.dungeonBuilderRoomDictionary)
+        {
+            // skip boss room for time being
+            if (keyValuePair.Value.roomNodeType.isBossRoom)
+            {
+                bossRoom = keyValuePair.Value.instantiatedRoom;
+                continue;
+            }
+
+            // check if other rooms have been cleared of enemies
+            if (!keyValuePair.Value.isClearedOfEnemies)
+            {
+                isDungeonClearOfRegularEnemies = false;
+                break;
+            }
+        }
+    }
     /// <summary>
     /// Get the current room the player is in
     /// </summary>
@@ -77,8 +112,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         if (Input.GetKeyDown(KeyCode.R))
         HandleGameState();
 
-        Debug.Log(Instance + " " + player);
-        Debug.Log(player);
+
     }
 
 

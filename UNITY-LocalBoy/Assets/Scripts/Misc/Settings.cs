@@ -4,6 +4,10 @@ using UnityEngine;
 
 public static class Settings 
 {
+    #region UNITS
+    public const float pixelsPerUnit = 32f;
+    public const float tileSizePixels = 16f;
+    #endregion
     #region DUNGEON BUILD SETTINGS
     public const int maxDungeonRebuildAttemptsForRoomGraph = 100;
     public const int maxDungeonBuildAttempts = 10;
@@ -16,7 +20,7 @@ public static class Settings
     #endregion
 
     ////ESTO LO PONGO POR SI ALGO, ANIMACION 
-    //#region ANIMATOR PARAMETERS
+    #region ANIMATOR PARAMETERS
     //// Animator parameters - Player
     //public static int aimUp = Animator.StringToHash("aimUp");
     //public static int aimDown = Animator.StringToHash("aimDown");
@@ -32,11 +36,13 @@ public static class Settings
     //public static int rollDown = Animator.StringToHash("rollDown");
     //public static float baseSpeedForPlayerAnimations = 8f;
 
+    public static int open = Animator.StringToHash("open");
     //// Animator parameters - Enemy
     //public static float baseSpeedForEnemyAnimations = 3f;
 
     ////Animator parameters - Enemy
     //public static int open = Animator.StringToHash("open");
+    #endregion
 
     #region GAMEOBJECT TAGS
     public const string playerTag = "Player";
@@ -56,7 +62,6 @@ public static class Settings
     #region FIRING CONTROL
     public const float useAimAngleDistance = 3.5f; // if the target distance is less than this then the aim angle will be used (calculated from player), else the weapon aim angle will be used (calculated from the weapon). 
     #endregion
-
-
+    public const float doorUnlockDelay = 1f;
 
 }

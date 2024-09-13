@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class StaticEventHandler 
 {
+    public static event Action<RoomEnemiesDefeatedArgs> OnRoomEnemiesDefeated;
+
+    public static void CallRoomEnemiesDefeatedEvent(Room room)
+    {
+        OnRoomEnemiesDefeated?.Invoke(new RoomEnemiesDefeatedArgs() { room = room });
+    }
     // Room changed event
     public static event Action<RoomChangedEventArgs> OnRoomChanged;
 
@@ -24,7 +30,10 @@ public class RoomChangedEventArgs : EventArgs
 {
     public Room room;
 }
-
+public class RoomEnemiesDefeatedArgs : EventArgs
+{
+    public Room room;
+}
 public class MultiplierArgs : EventArgs
 {
     public bool multiplier;

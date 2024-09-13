@@ -22,7 +22,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(Idle))]
 //[RequireComponent(typeof(AnimateEnemy))]
 
-[RequireComponent(typeof(MaterializeEffect))]
+//[RequireComponent(typeof(MaterializeEffect))]
 [RequireComponent(typeof(SortingGroup))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Animator))]
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     private EnemyMovementAI enemyMovementAI;
     [HideInInspector] public MovementToPositionEvent movementToPositionEvent;
     [HideInInspector] public IdleEvent idleEvent;
-    private MaterializeEffect materializeEffect;
+    //private MaterializeEffect materializeEffect;
     private CircleCollider2D circleCollider2D;
     private PolygonCollider2D polygonCollider2D;
     [HideInInspector] public SpriteRenderer[] spriteRendererArray;
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         enemyMovementAI = GetComponent<EnemyMovementAI>();
         movementToPositionEvent = GetComponent<MovementToPositionEvent>();
         idleEvent = GetComponent<IdleEvent>();
-        materializeEffect = GetComponent<MaterializeEffect>();
+        //materializeEffect = GetComponent<MaterializeEffect>();
         circleCollider2D = GetComponent<CircleCollider2D>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         spriteRendererArray = GetComponentsInChildren<SpriteRenderer>();
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
     
 
         // Materialise enemy
-        StartCoroutine(MaterializeEnemy());
+        //StartCoroutine(MaterializeEnemy());
     }
 
     /// <summary>
@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour
     /// <summary>
     /// Set enemy animator speed to match movement speed
     /// </summary>
-    
+    /*
     private IEnumerator MaterializeEnemy()
     {
         // Disable collider, Movement AI and Weapon AI
@@ -132,7 +132,7 @@ public class Enemy : MonoBehaviour
         EnemyEnable(true);
 
     }
-
+    */
     private void EnemyEnable(bool isEnabled)
     {
         // Enable/Disable colliders

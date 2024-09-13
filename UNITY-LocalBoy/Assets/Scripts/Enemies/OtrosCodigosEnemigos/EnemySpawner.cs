@@ -30,7 +30,7 @@ public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
     {
         enemiesSpawnedSoFar = 0;
         currentEnemyCount = 0;
-
+        print("this");
         currentRoom = roomChangedEventArgs.room;
 
         //if the room is a corridor or the entrance then return
@@ -61,12 +61,12 @@ public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
         ////Lock doors
         //currentRoom.instantiatedRoom.LockDoors;
 
+        currentRoom.instantiatedRoom.LockDoors();
         //spawn enemies
         SpawnEnemies();
 
 
-      
-        
+
 
 
     }
@@ -144,6 +144,45 @@ public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
 
         //initialize enemy
         enemy.GetComponent<Enemy>().EnemyInitialization(enemyDetails, enemiesSpawnedSoFar, dungeonLevel);
+
+        enemy.GetComponent<DestroyedEvent>().OnDestroyed += Enemy_OnDestroyed;
+    }
+    /// <summary>
+    /// Process enemy destroyed
+    /// </summary>
+    private void Enemy_OnDestroyed(DestroyedEvent destroyedEvent)
+    {
+        // Unsubscribe from event
+        destroyedEvent.OnDestroyed -= Enemy_OnDestroyed;
+
+        // reduce current enemy count
+        currentEnemyCount--;
+
+
+        if (currentEnemyCount <= 0 && enemiesSpawnedSoFar == enemiesToSpawn)
+        {
+            currentRoom.isClearedOfEnemies = true;
+
+            // Set game state
+            if (GameManager.Instance.gameState == GameState.engagingEnemies)
+            {
+                GameManager.Instance.gameState = GameState.playingLevel;
+                GameManager.Instance.previousGameState = GameState.engagingEnemies;
+            }
+
+            else if (GameManager.Instance.gameState == GameState.engagingBoss)
+            {
+                GameManager.Instance.gameState = GameState.bossStage;
+                GameManager.Instance.previousGameState = GameState.engagingBoss;
+            }
+
+            // unlock doors
+            currentRoom.instantiatedRoom.UnlockDoors(Settings.doorUnlockDelay);
+
+
+            // Trigger room enemies defeated event
+            StaticEventHandler.CallRoomEnemiesDefeatedEvent(currentRoom);
+        }
     }
 
 }
