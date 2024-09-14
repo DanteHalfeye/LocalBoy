@@ -21,7 +21,7 @@ public class HealthStatsSO : ScriptableObject
 
     public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
+        CurrentHealth -= damageAmount;
     }
 
     public void Heal(int healAmount)

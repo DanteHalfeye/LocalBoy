@@ -25,17 +25,15 @@ public class UIManager : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
-        if (currentScene == "UI Expermient") // Cambia "MainMenuSceneName" por el nombre real de tu escena del menú principal
+        if (currentScene == "UI Expermient")
         {
-            // Comportamiento en la escena del menú principal
             mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
             optionsMenu.DOAnchorPos(new Vector2(0, 850), 0.25f);
             darkOverlay.color = new Color(0, 0, 0, 0);
         }
-        else if (currentScene == "MainGame") // Cambia "GameSceneName" por el nombre real de tu escena del juego
+        else if (currentScene == "MainGame")
         {
-            // Comportamiento en la escena del juego
-            mainMenu.gameObject.SetActive(false); // Desactiva el menú principal
+            mainMenu.gameObject.SetActive(false);
             gamePanel.DOAnchorPos(new Vector2(0, 0), 0.25f);
             darkOverlay.color = new Color(0, 0, 0, 0);
         }
@@ -84,7 +82,6 @@ public class UIManager : MonoBehaviour
 
         foreach (var item in creditItems)
         {
-            // Establece la opacidad a 0
             CanvasGroup itemCanvasGroup = item.GetComponent<CanvasGroup>();
 
             if (itemCanvasGroup != null)
@@ -92,7 +89,6 @@ public class UIManager : MonoBehaviour
                 itemCanvasGroup.alpha = 0f;
             }
 
-            // También puedes restablecer la escala si lo necesitas
             item.localScale = Vector3.zero;
         }
 
@@ -208,11 +204,8 @@ public class UIManager : MonoBehaviour
     {
         foreach (var item in creditItems)
         {
-
-            // Mantener la posición original del elemento
             Vector2 originalPos = item.anchoredPosition;
 
-            // Establecer la escala a cero y la opacidad a cero antes de la animación
             item.localScale = Vector3.zero;
             CanvasGroup itemCanvasGroup = item.GetComponent<CanvasGroup>();
 
@@ -221,13 +214,10 @@ public class UIManager : MonoBehaviour
                 itemCanvasGroup = item.gameObject.AddComponent<CanvasGroup>();
             }
 
-            // Animar la escala desde cero a uno para simular la explosión, sin mover la posición
             item.DOScale(1f, explosionDuration).SetEase(explosionEase);
 
-            // Aplicar el efecto de fade in simultáneamente
             itemCanvasGroup.DOFade(1f, explosionDuration).SetEase(Ease.Linear);
 
-            // Esperar antes de "explotar" el siguiente elemento
             yield return new WaitForSecondsRealtime(0.10f);
         }
     }

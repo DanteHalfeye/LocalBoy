@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
                 Debug.Log("daño al player");
             }
             collision.gameObject.GetComponent<Health>().TakeDamage(1);
-            Debug.Log(collision.gameObject.GetComponent<Health>().health.currentHealth);
+            Debug.Log(collision.gameObject.GetComponent<Health>().health.CurrentHealth);
         }
 
         gameObject.SetActive(false);
