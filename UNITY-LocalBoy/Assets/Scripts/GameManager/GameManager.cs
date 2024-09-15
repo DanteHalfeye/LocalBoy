@@ -112,8 +112,6 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         // Testing
         if (Input.GetKeyDown(KeyCode.R))
         HandleGameState();
-
-
     }
 
 

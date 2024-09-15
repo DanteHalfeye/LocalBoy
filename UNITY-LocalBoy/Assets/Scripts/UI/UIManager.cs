@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
         if (currentScene == "UI Expermient")
         {
             mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
-            optionsMenu.DOAnchorPos(new Vector2(0, 850), 0.25f);
+            optionsMenu.DOAnchorPos(new Vector2(0, 10000), 0.25f);
             darkOverlay.color = new Color(0, 0, 0, 0);
         }
         else if (currentScene == "MainGame")
@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
 
     public void closeOptionsMenu()
     {
-        optionsMenu.DOAnchorPos(new Vector2(0, 1300), 0.25f).SetUpdate(true);
+        optionsMenu.DOAnchorPos(new Vector2(0, 10000), 0.25f).SetUpdate(true);
     }
 
     public void gamePanelButton()
@@ -71,14 +71,14 @@ public class UIManager : MonoBehaviour
 
     public void creditsPanelButton()
     {
-        gamePanel.DOAnchorPos(new Vector2(0, -1000), 0f);
+        gamePanel.DOAnchorPos(new Vector2(0, -10000), 0f);
         creditsPanel.DOAnchorPos(new Vector2(0, 0), 0.25f);
         StartCoroutine("CreditItemsExplosionEffect");
     }
 
     public void closeCreditsPanel()
     {
-        creditsPanel.DOAnchorPos(new Vector2(-1800, 0), 0.25f);
+        creditsPanel.DOAnchorPos(new Vector2(-10000, 0), 0.25f);
 
         foreach (var item in creditItems)
         {
@@ -103,7 +103,7 @@ public class UIManager : MonoBehaviour
 
     public void closeAddsMenu()
     {
-        addsMenu.DOAnchorPos(new Vector2(0, -1200), 0.25f).SetUpdate(true);
+        addsMenu.DOAnchorPos(new Vector2(0, -10000), 0.25f).SetUpdate(true);
     }
 
     public void pauseMenuButton()
@@ -116,7 +116,7 @@ public class UIManager : MonoBehaviour
 
     public void closePauseMenu()
     {
-        pauseMenu.DOAnchorPos(new Vector2(0, -1200), 0f).SetUpdate(true);
+        pauseMenu.DOAnchorPos(new Vector2(0, -10000), 0f).SetUpdate(true);
         darkOverlay.DOFade(0f, 0.5f).SetUpdate(true);
         gamePanelCanvasGroup.interactable = true;
         Time.timeScale = 1f;
@@ -125,7 +125,7 @@ public class UIManager : MonoBehaviour
     public void itemsMenuButton()
     {
         previousState = MenuState.MainMenu; 
-        mainMenu.DOAnchorPos(new Vector2(1200, 0), 0.25f);
+        mainMenu.DOAnchorPos(new Vector2(10000, 0), 0.25f);
         itemsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f);
         panelFadeIn();
     }
@@ -133,7 +133,7 @@ public class UIManager : MonoBehaviour
     public void itemsMenuButtonInGame()
     {
         previousState = MenuState.PauseMenu;
-        pauseMenu.DOAnchorPos(new Vector2(5000, 0), 0.25f).SetUpdate(true);
+        pauseMenu.DOAnchorPos(new Vector2(10000, 0), 0.25f).SetUpdate(true);
         itemsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
         panelFadeIn();
     }
@@ -145,11 +145,11 @@ public class UIManager : MonoBehaviour
         switch (previousState)
         {
             case MenuState.MainMenu:
-                itemsMenu.DOAnchorPos(new Vector2(2000, 0), 0.25f).SetUpdate(true);
+                itemsMenu.DOAnchorPos(new Vector2(10000, 0), 0.25f).SetUpdate(true);
                 mainMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
                 break;
             case MenuState.PauseMenu:
-                itemsMenu.DOAnchorPos(new Vector2(2000, 0), 0.25f).SetUpdate(true);
+                itemsMenu.DOAnchorPos(new Vector2(10000, 0), 0.25f).SetUpdate(true);
                 pauseMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
                 break;
         }
@@ -160,19 +160,19 @@ public class UIManager : MonoBehaviour
     public void gameOverButton()
     {
         gameOverPanel.DOAnchorPos(new Vector2(0, 0), 0.25f).SetEase(myEase);
-        gamePanel.DOAnchorPos(new Vector2(0, -1000), 0f);
+        gamePanel.DOAnchorPos(new Vector2(0, -10000), 0f);
     }
 
     public void closeGameOverPanel()
     {
-        gameOverPanel.DOAnchorPos(new Vector2(0, 1000), 0f);
+        gameOverPanel.DOAnchorPos(new Vector2(0, 10000), 0f);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void panelFadeIn()
     {
         canvaGroup.alpha = 0f;
-        rectTransform.transform.localPosition = new Vector3(0f, -1000f, 0f);
+        rectTransform.transform.localPosition = new Vector3(0f, -10000f, 0f);
         rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime, false).SetEase(Ease.OutElastic).SetUpdate(true);
         canvaGroup.DOFade(1, fadeTime).SetUpdate(true);
         StartCoroutine("itemsAnimation");
@@ -182,7 +182,7 @@ public class UIManager : MonoBehaviour
     {
         canvaGroup.alpha = 1f;
         rectTransform.transform.localPosition = new Vector3(0f, 0f, 0f);
-        rectTransform.DOAnchorPos(new Vector2(0f, -1000f), fadeTime, false).SetEase(Ease.InOutQuint).SetUpdate(true);
+        rectTransform.DOAnchorPos(new Vector2(0f, -10000f), fadeTime, false).SetEase(Ease.InOutQuint).SetUpdate(true);
         canvaGroup.DOFade(0, fadeTime).SetUpdate(true);
     }
 
