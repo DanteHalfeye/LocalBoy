@@ -240,19 +240,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 668669036126339548, guid: ec1b5e8a752af554a95947151b78ba2a, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.04322917
-      objectReference: {fileID: 0}
-    - target: {fileID: 668669036126339548, guid: ec1b5e8a752af554a95947151b78ba2a, type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 668669036126339548, guid: ec1b5e8a752af554a95947151b78ba2a, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.04074074
+      objectReference: {fileID: 0}
+    - target: {fileID: 668669036126339548, guid: ec1b5e8a752af554a95947151b78ba2a, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.37314817
+      value: 0.6885965
       objectReference: {fileID: 0}
     - target: {fileID: 668669036126339548, guid: ec1b5e8a752af554a95947151b78ba2a, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.37314814
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3265565534582344198, guid: ec1b5e8a752af554a95947151b78ba2a, type: 3}
       propertyPath: m_Name
@@ -297,6 +297,10 @@ PrefabInstance:
     - target: {fileID: 6571356329566387503, guid: ec1b5e8a752af554a95947151b78ba2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053084782602203782, guid: ec1b5e8a752af554a95947151b78ba2a, type: 3}
+      propertyPath: m_CropFrame
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1243,6 +1247,10 @@ PrefabInstance:
     - target: {fileID: 2787761158959318505, guid: 8a5b34d808405934bbde757212eba638, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787761158959318505, guid: 8a5b34d808405934bbde757212eba638, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3220361441001965494, guid: 8a5b34d808405934bbde757212eba638, type: 3}
       propertyPath: m_Alpha
@@ -2496,7 +2504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7860743173744655884, guid: 5947917272ab19143bfa4b85423ae805, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.762878
+      value: 9.762939
       objectReference: {fileID: 0}
     - target: {fileID: 7860743173744655884, guid: 5947917272ab19143bfa4b85423ae805, type: 3}
       propertyPath: m_AnchoredPosition.y
