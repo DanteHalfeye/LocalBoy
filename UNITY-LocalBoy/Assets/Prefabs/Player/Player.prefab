@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cc905bc9fb406439024c3991e523d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerza: 10
+  fuerza: 15
   autoShootRange: 10
   enemyLayer:
     serializedVersion: 2
