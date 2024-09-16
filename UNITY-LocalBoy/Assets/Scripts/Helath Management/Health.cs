@@ -6,6 +6,15 @@ public class Health : MonoBehaviour
 {
     public HealthStatsSO health;
 
+    public void SetHealth(int amount)
+    {
+        health.currentHealth = amount;
+
+        if (health.currentHealth <= 0)
+        {
+            Die();
+        }
+    }
 
     public void Heal(int amount)
     {

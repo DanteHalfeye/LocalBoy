@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Agarre : MonoBehaviour
 {
@@ -39,30 +40,33 @@ public class Agarre : MonoBehaviour
         if (grabbing)
         {
             enemigo.transform.SetParent(null);
-            enemigo.GetComponent<Health>().TakeDamage(5);
+            enemigo.GetComponent<Health>().SetHealth(0);
             grabbing = false;
         }
-
-        Collider2D enemyToGrab = Physics2D.OverlapCircle(transform.position, grabRange, enemyLayer);
-
-        if (enemyToGrab != null && !grabbing && canGrab)
+        else
         {
-            enemigo = enemyToGrab.gameObject;
+            Collider2D enemyToGrab = Physics2D.OverlapCircle(transform.position, grabRange, enemyLayer);
 
-            enemigo.GetComponent<FireWeapon>().enabled = false;
-            enemigo.layer = 21;
+            if (enemyToGrab != null && !grabbing && canGrab)
+            {
+                enemigo = enemyToGrab.gameObject;
 
-            enemyRB = enemigo.GetComponent<Rigidbody2D>();
-            enemyRB.simulated = false;
+                enemigo.GetComponent<FireWeapon>().enabled = false;
 
-            GetComponent<Shoot>().Ammo += 5;
-            
+                enemyRB = enemigo.GetComponent<Rigidbody2D>();
+                enemyRB.simulated = false;
 
-            enemigo.transform.SetParent(gameObject.transform, false);
-            enemigo.transform.position = transform.position + Vector3.one * 0.5f;
+                GetComponent<Shoot>().Ammo += 5;
 
-            grabbing = true; //Esto se cambiaría en la maquina de estados
+
+                enemigo.transform.SetParent(gameObject.transform, false);
+                enemigo.transform.position = transform.position + Vector3.one * 0.5f;
+
+                grabbing = true; //Esto se cambiaría en la maquina de estados
+            }
         }
+
+        
 
 
         if (!grabbing && lastGrabbingState) //Si dejo de agarrar
