@@ -471,6 +471,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 32768
+  grabCD: 3
 --- !u!114 &8316697847568645027
 MonoBehaviour:
   m_ObjectHideFlags: 0
