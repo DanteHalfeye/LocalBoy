@@ -243,10 +243,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8081336751789251548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6e0993e8622e242ad5efd58592b352, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b69678c7c1cf6344b97f684f1386d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  myEase: 0
+  gameOverPanel: {fileID: 0}
+  gamePanel: {fileID: 0}
+  health: {fileID: 11400000, guid: 1e7647e468d8c514a81526afa8aba8f6, type: 2}
 --- !u!1 &8458151746216600757
 GameObject:
   m_ObjectHideFlags: 0

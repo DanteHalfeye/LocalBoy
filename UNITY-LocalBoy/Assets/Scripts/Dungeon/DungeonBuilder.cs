@@ -12,6 +12,7 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
     private List<RoomTemplateSO> roomTemplateList = null;
     private RoomNodeTypeListSO roomNodeTypeList;
     private bool dungeonBuildSuccessful;
+    EnemySpawner spawner;
 
 
 
@@ -89,7 +90,7 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
     private void InstatiateRoomEnemySpawner()
     {
-
+        
     }
 
     /// <summary>
