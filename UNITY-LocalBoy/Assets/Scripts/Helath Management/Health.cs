@@ -8,9 +8,9 @@ public class Health : MonoBehaviour
 
     public void SetHealth(int amount)
     {
-        health.currentHealth = amount;
+        health.CurrentHealth = amount;
 
-        if (health.currentHealth <= 0)
+        if (health.CurrentHealth <= 0)
         {
             Die();
         }
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health.TakeDamage(amount);
-        if(health.currentHealth <= 0)
+        if(health.CurrentHealth <= 0)
         {
             Die();
         }
