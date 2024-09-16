@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PRUEBA : PlayerActor
+public class PRUEBA : MonoBehaviour
 {
     public float moveSpeed = 5f; // Velocidad de movimiento del objeto
 

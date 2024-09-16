@@ -14,6 +14,7 @@ public enum Stat
 
 public enum EffectTrigger
 {
+    Once,
     Always,
     OnEnemyKill,
     OnRoomEnter,
@@ -52,4 +53,11 @@ public enum ItemTypeClass
 {
     Stats,
     Orbital
+}
+
+public enum ItemRarity
+{
+    Normal,
+    Epic,
+    Legendary
 }

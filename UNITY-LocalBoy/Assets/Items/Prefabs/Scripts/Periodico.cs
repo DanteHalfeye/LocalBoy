@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Periodico : BaseOrbital
 {
-
+    protected override void Awake()
+    {
+        base.Awake();
+    }
     private void Update()
     {
         transform.RotateAround(padre.position, rotationVector, speed*Time.deltaTime);

@@ -12,6 +12,10 @@ public static class TriggerEffect
     {
         switch (item.TriggerType)
         {
+            case EffectTrigger.Once:
+                EvaluateTrigger(item, actor); 
+                break;
+
             case EffectTrigger.Always:
                 EvaluateTrigger(item, actor);
                 ItemEvents.OnStatChanged += () => EvaluateTrigger(item, actor);
@@ -79,7 +83,6 @@ public static class TriggerEffect
         {
             GameObject instance = UnityEngine.Object.Instantiate(item.Prefab, actor.transform.position, Quaternion.identity);
             instance.transform.SetParent(actor.transform);
-            instance.transform.localPosition = Vector3.zero;
 
             ItemManager.RegisterInstance(actor, item, instance);
             ManageEffects.MarkEffectAsApplied(actor, item);
