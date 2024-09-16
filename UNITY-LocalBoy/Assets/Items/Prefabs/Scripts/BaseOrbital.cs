@@ -16,7 +16,7 @@ public class BaseOrbital : MonoBehaviour
     [SerializeField]
     protected bool rotateAroundItself;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         switch(axis)
         {
@@ -29,6 +29,7 @@ public class BaseOrbital : MonoBehaviour
         }
 
         padre = transform.parent;
+        Debug.Log(padre.name);
     }
 }
 

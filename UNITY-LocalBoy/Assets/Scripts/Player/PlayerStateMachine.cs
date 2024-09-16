@@ -65,7 +65,7 @@ public class PlayerStateMachine : MonoBehaviour
     private void Awake()
     {
         playerMovement = GetComponent<Movement>();
-        actor = PlayerActor.Instance;
+        actor = PlayerActor.instance;
         input = GetComponent<PlayerInput>();
         // Set your components here
 

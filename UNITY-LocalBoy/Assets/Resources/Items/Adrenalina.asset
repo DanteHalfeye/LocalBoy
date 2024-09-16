@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41fab4f4177c55f408f83eb98e77576e, type: 3}
-  m_Name: Panic
+  m_Name: Adrenalina
   m_EditorClassIdentifier: 
-  name: Panico
-  description: El dolar volvio a subir...
-  icon: {fileID: 21300000, guid: bc51481e7e9fba04fa64efc565c73c34, type: 3}
-  conditional: 2
-  conditionValue: 25
-  conditionNumber: 4
-  triggerType: 0
-  duration: 0
-  durationAmount: 0
-  itemStatType: 4
-  modifier: 10
+  name: Adrenaline
+  description: + Attack Speed
+  icon: {fileID: 21300000, guid: 4c1046a8180e3f44b86d49ab80c0f48e, type: 3}
+  rarity: 0
+  conditional: 0
+  conditionValue: 0
+  conditionNumber: 0
+  triggerType: 2
+  duration: 1
+  durationAmount: 3
+  itemStatType: 8
+  modifier: 30

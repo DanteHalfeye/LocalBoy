@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class Calaca : BaseOrbital
 {
-    void Update()
+    [SerializeField]
+    private float attackSpeed;
+
+    private float attackTime;
+
+
+    private Shoot shoot;
+    private BulletPool bp;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        shoot = GetComponent<Shoot>();
+        bp = GetComponent<BulletPool>();
+    }
+
+    private void Update()
     {
         transform.RotateAround(padre.position, rotationVector, speed * Time.deltaTime);
+
         if (!rotateAroundItself)
         {
-            transform.rotation = Quaternion.identity;
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         }
-        Vector3 position = transform.position;
-        position.z = 0f; // Forzamos el eje Z a 0
-        transform.position = position;
+
+        if (attackTime <= 0)
+        {
+            Shoot();
+            attackTime = attackSpeed;
+        }
+        else
+        {
+            attackTime -= Time.deltaTime;
+        }
+    }
+
+    private void Shoot()
+    {
+        shoot.OnShoot(shoot.AutoShootDirection(), bp.RequerirBala());
     }
 }

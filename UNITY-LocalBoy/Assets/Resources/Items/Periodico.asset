@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Periodico
   m_EditorClassIdentifier: 
   name: Periodico
-  description: Hay descuentos en ironia
+  description: Oribtal al Matar
   icon: {fileID: 21300000, guid: a9d38f6109e864641a4f8cae9bd0a77b, type: 3}
+  rarity: 2
   conditional: 0
   conditionValue: 0
   conditionNumber: 0
-  triggerType: 1
+  triggerType: 2
   duration: 1
-  durationAmount: 2
-  prefab: {fileID: 2025641042522881552, guid: c5e5f2a6294ddc04cba94483829ca587, type: 3}
+  durationAmount: 3
+  prefab: {fileID: 6149631687321502167, guid: 21347c7de2d77be4ea611f524f394638, type: 3}

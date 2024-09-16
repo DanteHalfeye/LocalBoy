@@ -10,6 +10,9 @@ public class ItemSO : ScriptableObject
     private string description;
     [SerializeField]
     private Sprite icon;
+    [SerializeField]
+    private ItemRarity rarity;
+
 
     [SerializeField]
     private Condition conditional;
@@ -41,5 +44,7 @@ public class ItemSO : ScriptableObject
         get { return itemType; }
         set { itemType = value; }
     }
+
+    public ItemRarity Rarity { get { return rarity; } }
 
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerActor : SingletonMonobehaviour<PlayerActor>
+public class PlayerActor : MonoBehaviour
 {
     public static PlayerActor instance;
     [SerializeField] HealthStatsSO health;
@@ -17,6 +17,17 @@ public class PlayerActor : SingletonMonobehaviour<PlayerActor>
 
     bool isHolding, isShooting;
 
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(instance);
+        }
+    }
 
     private void Start()
     {
