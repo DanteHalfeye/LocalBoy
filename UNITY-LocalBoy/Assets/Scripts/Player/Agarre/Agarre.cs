@@ -8,26 +8,54 @@ public class Agarre : MonoBehaviour
     Rigidbody2D enemyRB;
     [SerializeField] float grabRange;
     [SerializeField] LayerMask enemyLayer;
-    bool grabbing; //Esto es temporal se debe usar el state machine :D
+    bool grabbing;
+    public bool Grabbing { get { return grabbing; } }
+    bool lastGrabbingState;
+    [SerializeField] float grabCD;
+    float grabCDTimer;
+
+    bool canGrab = true;
+
+    private void Update()
+    {
+        if (grabCDTimer > 0)
+        { 
+            grabCDTimer -= Time.deltaTime; 
+            canGrab = false;
+        }
+        else { canGrab = true; }
+
+    }
+
 
     public void Agarrar() 
     {
 
+        if(!canGrab)
+        {
+            Debug.Log("Grab en CD");
+        }
+
         if (grabbing)
         {
             enemigo.transform.SetParent(null);
-            Destroy(enemigo,1f); //Esto se cambiará despues a la forma en la que matemos enemigos, puede ser directamente pasando la vida del enmigo a 0
+            enemigo.GetComponent<Health>().TakeDamage(5);
             grabbing = false;
         }
 
         Collider2D enemyToGrab = Physics2D.OverlapCircle(transform.position, grabRange, enemyLayer);
 
-        if (enemyToGrab != null && !grabbing)
+        if (enemyToGrab != null && !grabbing && canGrab)
         {
             enemigo = enemyToGrab.gameObject;
 
+            enemigo.GetComponent<FireWeapon>().enabled = false;
+            enemigo.layer = 21;
+
             enemyRB = enemigo.GetComponent<Rigidbody2D>();
             enemyRB.simulated = false;
+
+            GetComponent<Shoot>().Ammo += 5;
             
 
             enemigo.transform.SetParent(gameObject.transform, false);
@@ -35,8 +63,16 @@ public class Agarre : MonoBehaviour
 
             grabbing = true; //Esto se cambiaría en la maquina de estados
         }
-        
-        
+
+
+        if (!grabbing && lastGrabbingState) //Si dejo de agarrar
+        {
+            grabCDTimer = grabCD;
+        }
+
+        lastGrabbingState = grabbing;
+
+
 
     }
 

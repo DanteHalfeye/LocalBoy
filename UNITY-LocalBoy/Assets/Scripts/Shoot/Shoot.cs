@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    //Lo voy a hacer medio a las patadas pero se va mejorando de a poquitos
-    
 
     public float fuerza;
     [SerializeField] float autoShootRange;
     [SerializeField] LayerMask enemyLayer;
+
+    int ammo;
+    public int Ammo
+    {
+        get { return ammo; } set { ammo = value; }
+    }
+
+
     public void OnShoot(Vector2 direccion, GameObject bala)
     {
         if (bala != null)
         {
-            bala.transform.position = gameObject.transform.position;
-            bala.GetComponent<Rigidbody2D>().velocity = direccion * fuerza;
+            if(ammo > 0)
+            {
+                bala.transform.position = gameObject.transform.position;
+                bala.GetComponent<Rigidbody2D>().velocity = direccion * fuerza;
+                ammo--;
+            }
+            
         }
     }
 
