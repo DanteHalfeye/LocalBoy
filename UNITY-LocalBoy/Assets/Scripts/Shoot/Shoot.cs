@@ -4,30 +4,38 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-
     public float fuerza;
     [SerializeField] float autoShootRange;
     [SerializeField] LayerMask enemyLayer;
 
-    [SerializeField]
-    int ammo;
+    [SerializeField] UIManager uiManager;
+    [SerializeField] int ammo;
+
     public int Ammo
     {
-        get { return ammo; } set { ammo = value; }
+        get { return ammo; }
+        set
+        {
+            ammo = value;
+            uiManager.UpdateAmmo(ammo);
+        }
     }
 
+    private void Awake()
+    {
+        uiManager = FindObjectOfType<UIManager>();
+    }
 
     public void OnShoot(Vector2 direccion, GameObject bala)
     {
         if (bala != null)
         {
-            if(ammo > 0)
+            if (ammo > 0) 
             {
                 bala.transform.position = gameObject.transform.position;
                 bala.GetComponent<Rigidbody2D>().velocity = direccion * fuerza;
-                ammo--;
+                ammo--; 
             }
-            
         }
     }
 
@@ -38,14 +46,12 @@ public class Shoot : MonoBehaviour
         if (enemyToShoot != null)
         {
             GameObject enemigo = enemyToShoot.gameObject;
-            
             Vector2 shootDirection = (enemigo.transform.position - gameObject.transform.position).normalized;
-
             return shootDirection;
         }
         else
         {
-            return new Vector2(1,1);
+            return new Vector2(1, 1); 
         }
     }
 }

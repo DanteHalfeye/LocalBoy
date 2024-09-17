@@ -187,7 +187,7 @@ public class UIManager : MonoBehaviour
         canvaGroup.DOFade(0, fadeTime).SetUpdate(true);
     }
 
-    public void updateAmmo(int count)
+    public void UpdateAmmo(int count)
     {
         ammoText.text = "Ammo: " + count;
     }

@@ -32,7 +32,7 @@ public class InputManager : MonoBehaviour
 
         if (uiManager == null)
         {
-            uiManager = FindObjectOfType<UIManager>();
+            uiManager = FindObjectOfType<UIManager>(); 
         }
     }
 
@@ -73,10 +73,10 @@ public class InputManager : MonoBehaviour
     {
         if (grabTimer <= 0.1f)
         {
-            int ammoGained = agarre.Agarrar(); // Obtener las balas del enemigo
+            int ammoGained = agarre.Agarrar();
             Debug.Log("Intentando agarrar");
-            bulletCount += ammoGained; // Actualizamos la cantidad de balas
-            uiManager.updateAmmo(bulletCount); // Actualizamos la UI
+            bulletCount += ammoGained; 
+            uiManager.UpdateAmmo(bulletCount); 
             grabTimer = grabCD;
         }
     }

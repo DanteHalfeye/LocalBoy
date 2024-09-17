@@ -5,14 +5,15 @@ using UnityEngine.Rendering;
 
 public class Agarre : MonoBehaviour
 {
+    [SerializeField] float grabRange, grabCD;
+    [SerializeField] LayerMask enemyLayer;
+
     GameObject enemigo;
     Rigidbody2D enemyRB;
-    [SerializeField] float grabRange;
-    [SerializeField] LayerMask enemyLayer;
-    bool grabbing;
+
     public bool Grabbing { get { return grabbing; } }
-    bool lastGrabbingState;
-    [SerializeField] float grabCD;
+    bool grabbing, lastGrabbingState;
+
     float grabCDTimer;
 
     bool canGrab = true;
@@ -20,30 +21,31 @@ public class Agarre : MonoBehaviour
     private void Update()
     {
         if (grabCDTimer > 0)
-        { 
-            grabCDTimer -= Time.deltaTime; 
+        {
+            grabCDTimer -= Time.deltaTime;
             canGrab = false;
         }
-        else { canGrab = true; }
-
+        else
+        {
+            canGrab = true;
+        }
     }
 
-
-    public void Agarrar() 
+    public int Agarrar()
     {
-
-        if(!canGrab)
+        if (!canGrab)
         {
             Debug.Log("Grab en CD");
+            return 0;
         }
 
         if (grabbing)
         {
-            
             enemigo.GetComponent<Health>().SetHealth(0);
             grabbing = false;
             enemigo.transform.SetParent(null);
             Destroy(enemigo);
+            return 0;
         }
         else
         {
@@ -60,26 +62,13 @@ public class Agarre : MonoBehaviour
 
                 GetComponent<Shoot>().Ammo += 5;
 
-
                 enemigo.transform.SetParent(gameObject.transform, false);
                 enemigo.transform.position = transform.position + Vector3.one * 0.5f;
 
-                grabbing = true; //Esto se cambiaría en la maquina de estados
+                grabbing = true;
+                return 5;
             }
         }
-
-        
-
-
-        if (!grabbing && lastGrabbingState) //Si dejo de agarrar
-        {
-            grabCDTimer = grabCD;
-        }
-
-        lastGrabbingState = grabbing;
-
-
-
+        return 0;
     }
-
 }
