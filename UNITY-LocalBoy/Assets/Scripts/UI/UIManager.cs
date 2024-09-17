@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Image darkOverlay;
     [SerializeField] CanvasGroup canvaGroup, gamePanelCanvasGroup;
     [SerializeField] List<GameObject> items = new List<GameObject>();
+    [SerializeField] Text ammoText;
 
     [SerializeField] List<RectTransform> creditItems;
     [SerializeField] float fadeTime, explosionDuration;
@@ -184,6 +185,11 @@ public class UIManager : MonoBehaviour
         rectTransform.transform.localPosition = new Vector3(0f, 0f, 0f);
         rectTransform.DOAnchorPos(new Vector2(0f, -10000f), fadeTime, false).SetEase(Ease.InOutQuint).SetUpdate(true);
         canvaGroup.DOFade(0, fadeTime).SetUpdate(true);
+    }
+
+    public void updateAmmo(int count)
+    {
+        ammoText.text = "Ammo: " + count;
     }
 
     IEnumerator itemsAnimation()
