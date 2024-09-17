@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class Health : MonoBehaviour
         }
         DestroyedEvent destroyed = GetComponent<DestroyedEvent>();
         destroyed.CallDestroyedEvent();
-
+        SceneManager.LoadSceneAsync("UI Experiment");
     }
     
 }

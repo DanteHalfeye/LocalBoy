@@ -108,15 +108,15 @@ RectTransform:
   m_GameObject: {fileID: 901900502257159823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9700695, y: 0.64060277, z: 0.91516}
+  m_LocalScale: {x: 0.97006947, y: 0.64060277, z: 0.91516}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7495237020532797651}
   m_Father: {fileID: 8865573104493203164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -338.40375, y: 186.3}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 126.80759, y: -34.50067}
   m_SizeDelta: {x: 260.7144, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2709158024321286740
@@ -235,14 +235,14 @@ RectTransform:
   m_GameObject: {fileID: 2469706259305867195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.6999899, z: 1}
+  m_LocalScale: {x: 1, y: 0.69998986, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8865573104493203164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -338.40375, y: 186.3}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 126.80759, y: -34.50067}
   m_SizeDelta: {x: 260.7144, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2811697302632697192
@@ -450,10 +450,10 @@ RectTransform:
   - {fileID: 30973300683056530}
   m_Father: {fileID: 8798560923195859633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 262, y: -142.94}
+  m_SizeDelta: {x: 256.1229, y: 65.034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7204572743517170187
 MonoBehaviour:
@@ -504,7 +504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0.00000049193, y: 0}
   m_SizeDelta: {x: 260.7144, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6993538163956088033
@@ -536,11 +536,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 61e5bef5971dc8f4e95c301ae12db17c, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: NaN
+  m_FillMethod: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickerItemPrefab: {fileID: 1972254715943210289, guid: d3845753a41399a49aeec4bb13909529, type: 3}
-  itemDuration: 5
+  itemDuration: 8
   fillerItems:
   - I Sea horses have invaded the coasts. To all persons present, beware of flying
     sharks I
@@ -897,6 +897,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -90.7728
       objectReference: {fileID: 0}
+    - target: {fileID: 1549299831086955674, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1759688752977685155}
+    - target: {fileID: 1549299831086955674, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: optionsMenuButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2353438469181357824, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
       propertyPath: m_Name
       value: MainPanel
@@ -981,6 +989,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3368723164545379002, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1759688752977685155}
+    - target: {fileID: 3368723164545379002, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: gamePanelButton
+      objectReference: {fileID: 0}
     - target: {fileID: 4508465395890013693, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1004,6 +1020,22 @@ PrefabInstance:
     - target: {fileID: 4508465395890013693, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 26.789194
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759476368378155, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1759688752977685155}
+    - target: {fileID: 6032759476368378155, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: addsMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507403294887354631, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1759688752977685155}
+    - target: {fileID: 7507403294887354631, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: itemsMenuButton
       objectReference: {fileID: 0}
     - target: {fileID: 7607985075541958450, guid: c7b26a4c95f2f9b42aba9ba11f157ba4, type: 3}
       propertyPath: m_AnchorMax.x
