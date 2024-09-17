@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newHealthStats", menuName = "Scriptable Objects/Health/HealthStats")]
 public class HealthStatsSO : ScriptableObject
 {
+    [SerializeField]
     private int maxHealth, currentHealth;
 
 

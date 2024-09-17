@@ -39,9 +39,11 @@ public class Agarre : MonoBehaviour
 
         if (grabbing)
         {
-            enemigo.transform.SetParent(null);
+            
             enemigo.GetComponent<Health>().SetHealth(0);
             grabbing = false;
+            enemigo.transform.SetParent(null);
+            Destroy(enemigo);
         }
         else
         {

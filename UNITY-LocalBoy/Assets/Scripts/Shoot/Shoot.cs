@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] float autoShootRange;
     [SerializeField] LayerMask enemyLayer;
 
+    [SerializeField]
     int ammo;
     public int Ammo
     {
