@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
         }
         DestroyedEvent destroyed = GetComponent<DestroyedEvent>();
         destroyed.CallDestroyedEvent();
-        SceneManager.LoadSceneAsync("UI Experiment");
+        //SceneManager.LoadSceneAsync("UI Experiment");
     }
     
 }
