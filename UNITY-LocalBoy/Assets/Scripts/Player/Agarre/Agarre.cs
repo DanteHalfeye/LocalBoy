@@ -31,12 +31,12 @@ public class Agarre : MonoBehaviour
         }
     }
 
-    public int Agarrar()
+    public void Agarrar()
     {
         if (!canGrab)
         {
             Debug.Log("Grab en CD");
-            return 0;
+            return;
         }
 
         if (grabbing)
@@ -45,7 +45,7 @@ public class Agarre : MonoBehaviour
             grabbing = false;
             enemigo.transform.SetParent(null);
             Destroy(enemigo);
-            return 0;
+            return;
         }
         else
         {
@@ -66,9 +66,9 @@ public class Agarre : MonoBehaviour
                 enemigo.transform.position = transform.position + Vector3.one * 0.5f;
 
                 grabbing = true;
-                return 5;
+                return;
             }
         }
-        return 0;
+        return;
     }
 }

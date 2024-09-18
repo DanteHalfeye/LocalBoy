@@ -11,20 +11,15 @@ public class Shoot : MonoBehaviour
     [SerializeField] UIManager uiManager;
     [SerializeField] int ammo;
 
-    public int Ammo
-    {
-        get { return ammo; }
-        set
-        {
-            ammo = value;
-            uiManager.UpdateAmmo(ammo);
-        }
-    }
-
     private void Awake()
     {
-        uiManager = FindObjectOfType<UIManager>();
+        if (this.gameObject.tag == "Player")
+        {
+            uiManager = FindAnyObjectByType<UIManager>();
+            uiManager.SetShoot(this);
+        }
     }
+    public int Ammo { get { return ammo; } set { ammo = value; } }
 
     public void OnShoot(Vector2 direccion, GameObject bala)
     {

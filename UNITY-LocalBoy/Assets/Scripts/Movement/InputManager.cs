@@ -73,10 +73,7 @@ public class InputManager : MonoBehaviour
     {
         if (grabTimer <= 0.1f)
         {
-            int ammoGained = agarre.Agarrar();
             Debug.Log("Intentando agarrar");
-            bulletCount += ammoGained; 
-            uiManager.UpdateAmmo(bulletCount); 
             grabTimer = grabCD;
         }
     }

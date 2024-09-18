@@ -2831,11 +2831,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3341541241866978777, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -25
+      value: -73
       objectReference: {fileID: 0}
     - target: {fileID: 3341541241866978777, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 376
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 3395660774281519825, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_IsActive
@@ -2847,11 +2847,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3995396349524000934, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -25
+      value: -73
       objectReference: {fileID: 0}
     - target: {fileID: 3995396349524000934, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 376
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 4780995286303372014, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_IsActive
@@ -2878,7 +2878,8 @@ PrefabInstance:
       value: Joystick Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3395660774281519825, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3054910937682803457, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       insertIndex: 0

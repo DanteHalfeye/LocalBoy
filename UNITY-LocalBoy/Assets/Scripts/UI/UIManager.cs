@@ -18,10 +18,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] Ease explosionEase, fadeInEase, myEase;
     [SerializeField] Vector2 explosionRange;
 
+    bool isShootSet;
+    Shoot _shoot;
+
 
     private enum MenuState { MainMenu, PauseMenu, None }
     private MenuState previousState = MenuState.None;
 
+    public void SetShoot(Shoot shootPlayerInstance)
+    {
+        _shoot = shootPlayerInstance;
+        isShootSet = true;
+    }
     void Start()
     {
         string currentScene = SceneManager.GetActiveScene().name;
@@ -40,6 +48,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        StartCoroutine(UpdateAmmo());
+    }
     public void optionsMenuButton()
     {
         optionsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
@@ -74,7 +86,7 @@ public class UIManager : MonoBehaviour
     {
         gamePanel.DOAnchorPos(new Vector2(0, -10000), 0f);
         creditsPanel.DOAnchorPos(new Vector2(0, 0), 0.25f);
-        StartCoroutine("CreditItemsExplosionEffect");
+        StartCoroutine(CreditItemsExplosionEffect());
     }
 
     public void closeCreditsPanel()
@@ -187,12 +199,21 @@ public class UIManager : MonoBehaviour
         canvaGroup.DOFade(0, fadeTime).SetUpdate(true);
     }
 
-    public void UpdateAmmo(int count)
+    IEnumerator UpdateAmmo()
     {
-        ammoText.text = "Ammo: " + count;
+        if (!isShootSet)
+        {
+            yield return (null);
+        }
+        if (Time.deltaTime % 20 == 0)
+        {
+
+            ammoText.text = _shoot.Ammo.ToString();
+        }
+        yield return (null);
     }
 
-    IEnumerator itemsAnimation()
+    IEnumerator ItemsAnimation()
     {
         foreach (var item in items)
         {
