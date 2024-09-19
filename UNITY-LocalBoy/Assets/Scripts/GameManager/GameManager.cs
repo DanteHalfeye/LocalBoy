@@ -95,7 +95,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     /// </summary>
     public Room GetCurrentRoom()
     {
-        PlayerActor.instance.OnRoomEntered();
+        ItemEvents.TriggerOnRoomEntered();
         print(currentRoom.instantiatedRoom.gameObject.name);
         return currentRoom;
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerActor : MonoBehaviour
 {
-    public static PlayerActor instance;
+
     [SerializeField] HealthStatsSO health;
 
 
@@ -16,18 +16,6 @@ public class PlayerActor : MonoBehaviour
     private Movement movement;
 
     bool isHolding, isShooting;
-
-    public void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(instance);
-        }
-    }
 
     private void Start()
     {
