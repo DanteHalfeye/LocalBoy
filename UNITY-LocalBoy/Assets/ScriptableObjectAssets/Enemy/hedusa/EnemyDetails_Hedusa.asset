@@ -22,9 +22,6 @@ MonoBehaviour:
   enemyWeapon: {fileID: 11400000, guid: cb8d9b5b157e5864199df33df956c200, type: 2}
   firingIntervalMin: 1
   firingIntervalMax: 1.5
-  firingDurationMin: 4
-  firingDurationMax: 6
+  firingDurationMin: 2
+  firingDurationMax: 4
   firingLineOfSightRequired: 1
-  isImmuneAfterHit: 0
-  hitImmunityTime: 0
-  isHealthBarDisplayed: 0

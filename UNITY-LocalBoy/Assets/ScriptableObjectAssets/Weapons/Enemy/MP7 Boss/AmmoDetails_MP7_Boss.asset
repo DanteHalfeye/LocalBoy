@@ -21,17 +21,17 @@ MonoBehaviour:
   ammoChargeTime: 0
   ammoChargeMaterial: {fileID: 0}
   ammoHitEffect: {fileID: 0}
-  ammoDamage: 11
-  ammoSpeedMin: 18
-  ammoSpeedMax: 18
+  ammoDamage: 1
+  ammoSpeedMin: 4
+  ammoSpeedMax: 6
   ammoRange: 25
   ammoRotationSpeed: 1
   ammoSpreadMin: 2
   ammoSpreadMax: 4
   ammoSpawnAmountMin: 1
   ammoSpawnAmountMax: 1
-  ammoSpawnIntervalMin: 0
-  ammoSpawnIntervalMax: 0
+  ammoSpawnIntervalMin: 1
+  ammoSpawnIntervalMax: 5
   isAmmoTrail: 0
   ammoTrailTime: 0
   ammoTrailMaterial: {fileID: 0}
