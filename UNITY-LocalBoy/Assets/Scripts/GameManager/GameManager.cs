@@ -43,8 +43,9 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         QualitySettings.vSyncCount = 0;
         previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
-        //
+
         
+        HandleGameState();
     }
 
     private void OnEnable()
