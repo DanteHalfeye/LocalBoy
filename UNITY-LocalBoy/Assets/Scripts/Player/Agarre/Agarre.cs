@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class Agarre : MonoBehaviour
 {
-    [SerializeField] float grabRange, grabCD;
-    [SerializeField] LayerMask enemyLayer;
-
     GameObject enemigo;
     Rigidbody2D enemyRB;
+    [SerializeField] float grabRange;
+    [SerializeField] LayerMask enemyLayer;
+    bool grabbing;
 
+    float timer;
+    float cd = 0.5f;
+    bool acaboDeEntrar;
     public bool Grabbing { get { return grabbing; } }
-    bool grabbing, lastGrabbingState;
-
+    bool lastGrabbingState;
+    [SerializeField] float grabCD;
     float grabCDTimer;
 
     bool canGrab = true;
@@ -25,27 +29,42 @@ public class Agarre : MonoBehaviour
             grabCDTimer -= Time.deltaTime;
             canGrab = false;
         }
+        else { canGrab = true; }
+
+
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;    
+           
+        }
         else
         {
-            canGrab = true;
+            acaboDeEntrar = false;
         }
+
     }
+
 
     public void Agarrar()
     {
+        if(acaboDeEntrar)
+        {
+            return;
+        }
+
+        acaboDeEntrar = true;
+        timer = cd;
+
         if (!canGrab)
         {
             Debug.Log("Grab en CD");
-            return;
         }
 
         if (grabbing)
         {
+            enemigo.transform.SetParent(null);
             enemigo.GetComponent<Health>().SetHealth(0);
             grabbing = false;
-            enemigo.transform.SetParent(null);
-            Destroy(enemigo);
-            return;
         }
         else
         {
@@ -62,13 +81,28 @@ public class Agarre : MonoBehaviour
 
                 GetComponent<Shoot>().Ammo += 5;
 
+
                 enemigo.transform.SetParent(gameObject.transform, false);
                 enemigo.transform.position = transform.position + Vector3.one * 0.5f;
 
-                grabbing = true;
-                return;
+                grabbing = true; //Esto se cambiaría en la maquina de estados
             }
         }
-        return;
+
+
+
+
+        if (!grabbing && lastGrabbingState) //Si dejo de agarrar
+        {
+            grabCDTimer = grabCD;
+        }
+
+        lastGrabbingState = grabbing;
+
+
+
     }
+
+   
+
 }
