@@ -41,6 +41,10 @@ public class Ticker : MonoBehaviour
     {
         currentItem = Instantiate(tickerItemPrefab, transform);
         currentItem.Initialized(width, pixelsPerSeconds, message);
+
+        // Start the ticker item off-screen to the right
+        RectTransform rt = currentItem.GetComponent<RectTransform>();
+        rt.anchoredPosition = new Vector2(width, rt.anchoredPosition.y);
     }
 
     // Método para obtener el siguiente mensaje a mostrar
