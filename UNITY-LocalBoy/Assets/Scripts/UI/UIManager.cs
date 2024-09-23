@@ -208,7 +208,7 @@ public class UIManager : MonoBehaviour
         if (Time.deltaTime % 20 == 0)
         {
 
-            ammoText.text = "Ammo: " + _shoot.Ammo.ToString();
+            //ammoText.text = "Ammo: " + _shoot.Ammo.ToString();
         }
         yield return (null);
     }

@@ -5,11 +5,9 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public float fuerza;
-    [SerializeField] float autoShootRange;
-    [SerializeField] LayerMask enemyLayer;
+    [SerializeField] LayerMask targetLayer;
 
     [SerializeField] UIManager uiManager;
-    [SerializeField] int ammo;
 
     private void Awake()
     {
@@ -19,29 +17,33 @@ public class Shoot : MonoBehaviour
             uiManager.SetShoot(this);
         }
     }
-    public int Ammo { get { return ammo; } set { ammo = value; } }
 
     public void OnShoot(Vector2 direccion, GameObject bala)
     {
         if (bala != null)
         {
-            if (ammo > 0) 
-            {
-                bala.transform.position = gameObject.transform.position;
-                bala.GetComponent<Rigidbody2D>().velocity = direccion * fuerza;
-                ammo--; 
-            }
+            bala.transform.position = gameObject.transform.position;
+            bala.GetComponent<Rigidbody2D>().velocity = direccion * fuerza;
         }
     }
 
     public Vector2 AutoShootDirection()
     {
-        Collider2D enemyToShoot = Physics2D.OverlapCircle(transform.position, autoShootRange, enemyLayer);
+        GameObject jugador;
 
-        if (enemyToShoot != null)
+        if (GameObject.Find("Player"))
         {
-            GameObject enemigo = enemyToShoot.gameObject;
-            Vector2 shootDirection = (enemigo.transform.position - gameObject.transform.position).normalized;
+             jugador = GameObject.Find("Player");
+        }
+        else
+        {
+            jugador = null;
+        }
+
+        if (jugador != null)
+        {
+            
+            Vector2 shootDirection = (jugador.transform.position - gameObject.transform.position).normalized;
             return shootDirection;
         }
         else
