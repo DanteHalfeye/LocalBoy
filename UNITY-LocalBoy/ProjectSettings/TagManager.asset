@@ -18,26 +18,26 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - UISuperior
-  - IgnoreAmmo
-  - Camera 1
-  - Camera 2
-  - Player
-  - MiniMap
   - Room
   - Wall
-  - PlayerAmmo
   - Enemy
   - EnemyAmmo
   - Environment
-  - PlayerWeapon
-  - EnemyWeapon
-  - Camera 3
-  - Player
-  - enemyBeingHold
+  - PlayerAttack
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
