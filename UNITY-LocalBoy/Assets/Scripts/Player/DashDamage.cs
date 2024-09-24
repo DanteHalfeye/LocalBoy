@@ -16,7 +16,7 @@ public class DashDamage : MonoBehaviour
         {
             if (collision.gameObject.layer == layer)
             {
-                print(collision.gameObject + " Was Hit");
+                collision.gameObject.SetActive(false);
             }
         }
     }

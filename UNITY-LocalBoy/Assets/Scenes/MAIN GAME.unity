@@ -134,6 +134,10 @@ GameObject:
   - component: {fileID: 141551197}
   - component: {fileID: 141551196}
   - component: {fileID: 141551198}
+  - component: {fileID: 141551201}
+  - component: {fileID: 141551200}
+  - component: {fileID: 141551199}
+  - component: {fileID: 141551202}
   m_Layer: 8
   m_Name: Hexagon Flat-Top (3)
   m_TagString: Untagged
@@ -253,6 +257,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 1.11}
   m_EdgeRadius: 0
+--- !u!114 &141551199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141551195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314b393ec686d7e41ac2560294001841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 2
+--- !u!114 &141551200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141551195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537eab8a99e1b4742bdcf7b5a874b119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 1889673154734698582, guid: 666145e7af3bac141b679502f363a856, type: 3}
+  cantidadDeBalas: 3
+--- !u!114 &141551201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141551195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cc905bc9fb406439024c3991e523d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerza: 15
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  uiManager: {fileID: 0}
+--- !u!114 &141551202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141551195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db89820899dfb0240ba9955764654dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.2
 --- !u!1 &208009977
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +377,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.25
+  orthographic size: 30
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -404,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 8
+  m_AssetsPPU: 3
   m_RefResolutionX: 222
   m_RefResolutionY: 180
   m_CropFrame: 1
@@ -426,6 +487,10 @@ GameObject:
   - component: {fileID: 265330071}
   - component: {fileID: 265330070}
   - component: {fileID: 265330072}
+  - component: {fileID: 265330075}
+  - component: {fileID: 265330074}
+  - component: {fileID: 265330073}
+  - component: {fileID: 265330076}
   m_Layer: 8
   m_Name: Hexagon Flat-Top
   m_TagString: Untagged
@@ -545,6 +610,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 1.11}
   m_EdgeRadius: 0
+--- !u!114 &265330073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265330069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314b393ec686d7e41ac2560294001841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 2
+--- !u!114 &265330074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265330069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537eab8a99e1b4742bdcf7b5a874b119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 1889673154734698582, guid: 666145e7af3bac141b679502f363a856, type: 3}
+  cantidadDeBalas: 3
+--- !u!114 &265330075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265330069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cc905bc9fb406439024c3991e523d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerza: 15
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  uiManager: {fileID: 0}
+--- !u!114 &265330076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265330069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db89820899dfb0240ba9955764654dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.2
 --- !u!1 &553667514
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +678,10 @@ GameObject:
   - component: {fileID: 553667516}
   - component: {fileID: 553667515}
   - component: {fileID: 553667517}
+  - component: {fileID: 553667520}
+  - component: {fileID: 553667519}
+  - component: {fileID: 553667518}
+  - component: {fileID: 553667521}
   m_Layer: 8
   m_Name: Hexagon Flat-Top (1)
   m_TagString: Untagged
@@ -675,6 +801,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 1.11}
   m_EdgeRadius: 0
+--- !u!114 &553667518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553667514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314b393ec686d7e41ac2560294001841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 2
+--- !u!114 &553667519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553667514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537eab8a99e1b4742bdcf7b5a874b119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 1889673154734698582, guid: 666145e7af3bac141b679502f363a856, type: 3}
+  cantidadDeBalas: 3
+--- !u!114 &553667520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553667514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cc905bc9fb406439024c3991e523d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerza: 15
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  uiManager: {fileID: 0}
+--- !u!114 &553667521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553667514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db89820899dfb0240ba9955764654dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.2
 --- !u!1 &719485155
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +869,10 @@ GameObject:
   - component: {fileID: 719485157}
   - component: {fileID: 719485156}
   - component: {fileID: 719485158}
+  - component: {fileID: 719485161}
+  - component: {fileID: 719485160}
+  - component: {fileID: 719485159}
+  - component: {fileID: 719485162}
   m_Layer: 8
   m_Name: Hexagon Flat-Top (2)
   m_TagString: Untagged
@@ -805,6 +992,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 1.11}
   m_EdgeRadius: 0
+--- !u!114 &719485159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719485155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314b393ec686d7e41ac2560294001841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 2
+--- !u!114 &719485160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719485155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537eab8a99e1b4742bdcf7b5a874b119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 1889673154734698582, guid: 666145e7af3bac141b679502f363a856, type: 3}
+  cantidadDeBalas: 3
+--- !u!114 &719485161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719485155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cc905bc9fb406439024c3991e523d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerza: 15
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  uiManager: {fileID: 0}
+--- !u!114 &719485162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719485155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db89820899dfb0240ba9955764654dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.2
 --- !u!1001 &874842736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1135,9 +1379,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6941401219798349554, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: m_Radius
+      value: 1.5255532
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941401219798349554, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8360505760994624112, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499963114932448287, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8745391438867128570, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_LocalPosition.x
