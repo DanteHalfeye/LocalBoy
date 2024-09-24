@@ -2592,12 +2592,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f45a4a0d67d8844b7a5a9fb7db1848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: 0.53
+  velocidadMovimiento: 2.07
   puntosMovimiento:
   - {fileID: 311532842}
   - {fileID: 314621278}
   - {fileID: 1574969746}
   - {fileID: 174537056}
+  - {fileID: 1684376355}
   distanciaMinima: 0.2
 --- !u!212 &1544260449
 SpriteRenderer:
@@ -2692,6 +2693,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.2, y: -0.96, z: -9.938614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1684376354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1684376355}
+  m_Layer: 0
+  m_Name: "MovAra\xF1a5"
+  m_TagString: Untagged
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1684376355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684376354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.77, y: 2.58, z: -9.938614}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3014,4 +3046,5 @@ SceneRoots:
   - {fileID: 314621278}
   - {fileID: 1574969746}
   - {fileID: 174537056}
+  - {fileID: 1684376355}
   - {fileID: 1544260450}
