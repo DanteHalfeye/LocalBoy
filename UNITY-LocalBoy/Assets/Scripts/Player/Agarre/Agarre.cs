@@ -79,7 +79,7 @@ public class Agarre : MonoBehaviour
                 enemyRB = enemigo.GetComponent<Rigidbody2D>();
                 enemyRB.simulated = false;
 
-                GetComponent<Shoot>().Ammo += 5;
+                //GetComponent<Shoot>().Ammo += 5;
 
 
                 enemigo.transform.SetParent(gameObject.transform, false);
