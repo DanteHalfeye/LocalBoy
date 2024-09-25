@@ -407,15 +407,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.14017992
     y: 0
-    width: 1
+    width: 0.7196402
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 31.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1244,27 +1244,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1425385993348915338, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.22
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 1425385993348915338, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.22
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 1425385993348915338, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.22
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 1425385993348915338, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 53.640015
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1425385993348915338, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 33.79
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1425385993348915338, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938321366299741688, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_ControlPath
+      value: <Keyboard>/space
       objectReference: {fileID: 0}
     - target: {fileID: 3054910937682803457, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_Pivot.x
@@ -1371,12 +1375,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3341541241866978777, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341541241866978777, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341541241866978777, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341541241866978777, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -220.5
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 3341541241866978777, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 42.73
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341541241866978777, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395660774281519825, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3995396349524000934, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_Pivot.x
@@ -1410,6 +1434,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 42.73
       objectReference: {fileID: 0}
+    - target: {fileID: 4780995286303372014, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032013002688244569, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032013002688244569, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032013002688244569, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032013002688244569, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8130441912676588774, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
+      propertyPath: m_MovementRange
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 8729327241588522347, guid: 47aaec671eb79644ebb266b546ea2532, type: 3}
       propertyPath: m_Name
       value: Joystick Canvas
@@ -1437,7 +1485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1177241923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,10 +1746,18 @@ PrefabInstance:
       propertyPath: _attackCollider
       value: 
       objectReference: {fileID: 5405745941245620646}
+    - target: {fileID: 714762725402581796, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: dashActionReference
+      value: 
+      objectReference: {fileID: -6578172533981278334, guid: dc6c1dbc32c7d024f9bd750d589b6d34, type: 3}
     - target: {fileID: 3805159666482997198, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6663238840484938664, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: moveActionToUse
+      value: 
+      objectReference: {fileID: -2381067643824337270, guid: dc6c1dbc32c7d024f9bd750d589b6d34, type: 3}
     - target: {fileID: 6941401219798349554, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_Radius
       value: 1.5255532
