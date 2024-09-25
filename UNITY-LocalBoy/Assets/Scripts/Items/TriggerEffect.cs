@@ -130,10 +130,10 @@ public static class TriggerEffect
                     actor.ModifyCurrentHp(item.Modifier);
                     break;
                 case Stat.ModifyAttackSpeed:
-                    actor.ModifyAttackSpeed(item.Modifier);
+                    //actor.ModifyAttackSpeed(item.Modifier);
                     break;
                 case Stat.SetAttackSpeed:
-                    actor.SetAttackSPeed(item.Modifier);
+                    //actor.SetAttackSPeed(item.Modifier);
                     break;
                 case Stat.AddAmmo:
                     actor.AddAmmo(item.Modifier);
@@ -142,10 +142,10 @@ public static class TriggerEffect
                     actor.SetAmmo(item.Modifier);
                     break;
                 case Stat.ModifySpeed:
-                    actor.ModifyMovementSpeed(item.Modifier);
+                    //actor.ModifyMovementSpeed(item.Modifier);
                     break;
                 case Stat.SetSpeed:
-                    actor.SetMovementSpeed(item.Modifier);
+                    //actor.SetMovementSpeed(item.Modifier);
                     break;
             }
 
@@ -182,10 +182,10 @@ public static class TriggerEffect
                     actor.ModifyCurrentHp(-item.Modifier);
                     break;
                 case Stat.ModifyAttackSpeed:
-                    actor.ModifyAttackSpeed(-item.Modifier);
+                    //actor.ModifyAttackSpeed(-item.Modifier);
                     break;
                 case Stat.SetAttackSpeed:
-                    actor.SetAttackSPeed(-item.Modifier);
+                    //actor.SetAttackSPeed(-item.Modifier);
                     break;
                 case Stat.AddAmmo:
                     actor.AddAmmo(-item.Modifier);
@@ -194,10 +194,10 @@ public static class TriggerEffect
                     actor.SetAmmo(-item.Modifier);
                     break;
                 case Stat.ModifySpeed:
-                    actor.ModifyMovementSpeed(-item.Modifier);
+                    //actor.ModifyMovementSpeed(-item.Modifier);
                     break;
                 case Stat.SetSpeed:
-                    actor.SetMovementSpeed(-item.Modifier);
+                    //actor.SetMovementSpeed(-item.Modifier);
                     break;
             }
             ManageEffects.MarkEffectAsNotApplied(actor, item);

@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private InputActionReference moveActionToUse, buttonPress;
+
     private Rigidbody2D _rb;
     [SerializeField] private float _acceleration = 0.5f;
     [SerializeField] private float _deceleration = 0.5f;
@@ -19,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         ProcessInput();
+        if (buttonPress.action.WasPressedThisFrame())
+        {
+            Button();
+            
+        }
     }
 
     private void FixedUpdate()
@@ -28,7 +36,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void ProcessInput()
     {
+        Vector2 moveDirection = moveActionToUse.action.ReadValue<Vector2>().normalized;
+        print(moveActionToUse.action.ReadValue<Vector2>().normalized);
+        if (moveDirection.magnitude == 0)
+        {
         _input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        }
+        else
+        {
+            _input = moveDirection;
+        }
         if (_input.magnitude > 1)
             _input.Normalize();
     }
@@ -47,4 +64,10 @@ public class PlayerMovement : MonoBehaviour
         _currentSpeed = Mathf.Clamp(_currentSpeed, 0, _maxSpeed);
         _rb.velocity = _input * _currentSpeed;
     }
+    public void Button()
+    {
+        Debug.Log("Presionando botón");
+    }
+
+    
 }
