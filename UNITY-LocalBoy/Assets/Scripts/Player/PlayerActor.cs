@@ -11,10 +11,16 @@ public class PlayerActor : MonoBehaviour
     //ARREGLAR BALAS
     private int currentAmmo;
 
+
+    private InputManager inputManager;
+    private Movement movement;
+
     bool isHolding, isShooting;
 
     private void Start()
     {
+        inputManager = GetComponent<InputManager>();
+        movement = GetComponent <Movement>();
     }
 
     public bool OnHoldPress()
@@ -68,12 +74,12 @@ public class PlayerActor : MonoBehaviour
     {
         currentAmmo = value;
     }
-    /*
-    public float GetMovementSpeed()
+
+    public float GetMovementSpeed
     {
-        retu
+        get { return movement.Speed; }
     }
-    
+
     public void SetMovementSpeed(float value)
     {
         movement.Speed = value;
@@ -98,7 +104,7 @@ public class PlayerActor : MonoBehaviour
     {
         inputManager.AutoShootCD += value;
     }
-    */
+
     public void PickUpItem(ItemSO item)
     {
         ItemManager.RegisterItem(item, this);
@@ -121,5 +127,4 @@ public class PlayerActor : MonoBehaviour
     {
         ItemEvents.TriggerOnStatChange();
     }
-
 }

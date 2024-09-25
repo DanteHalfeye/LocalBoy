@@ -27,11 +27,11 @@ public static class ConditionCalculation
         }
         else if (condition == Condition.Speed)
         {
-           // conditionMet = EvaluateConditionNumber(conditionNumber, actor.GetMovementSpeed, conditionValue);
+            conditionMet = EvaluateConditionNumber(conditionNumber, actor.GetMovementSpeed, conditionValue);
         }
         else if (condition == Condition.AttackSpeed)
         {
-           // conditionMet = EvaluateConditionNumber(conditionNumber, actor.GetAttackSpeed, conditionValue);
+            conditionMet = EvaluateConditionNumber(conditionNumber, actor.GetAttackSpeed, conditionValue);
         }
 
         return conditionMet;
