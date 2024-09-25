@@ -14,7 +14,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void Awake()
     {
-        bp = GetComponent<BulletPool>();
+        bp = GameObject.FindGameObjectWithTag("BulletPool").GetComponent<BulletPool>();
         shoot = GetComponent<Shoot>();
     }
 
