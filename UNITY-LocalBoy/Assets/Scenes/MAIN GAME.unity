@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 111118167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37, y: -0.59, z: 0}
+  m_LocalPosition: {x: -13.613375, y: 6.5991797, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -407,9 +407,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.125
+    x: 0
     y: 0
-    width: 0.75
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -737,7 +737,7 @@ Transform:
   m_GameObject: {fileID: 292928967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.06, y: -0.07, z: 0}
+  m_LocalPosition: {x: 13.160297, y: -11.376339, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -768,7 +768,7 @@ Transform:
   m_GameObject: {fileID: 450236702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 8.1, z: 0}
+  m_LocalPosition: {x: 8.452558, y: -12.69375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1545,7 +1545,7 @@ Transform:
   m_GameObject: {fileID: 1611237420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.1, y: 0.59, z: 0}
+  m_LocalPosition: {x: 2.1183498, y: 11.935896, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1576,7 +1576,7 @@ Transform:
   m_GameObject: {fileID: 1632590197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: -9.28, z: 0}
+  m_LocalPosition: {x: 14.660642, y: -4.8234963, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1712,6 +1712,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8360505760994624112, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360505760994624112, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8499963114932448287, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
