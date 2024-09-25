@@ -17,8 +17,8 @@ public class Shoot : MonoBehaviour
             uiManager.SetShoot(this);
         }
     }
-
-    public void OnShoot(Vector2 direccion, GameObject bala)
+    // Te recomiendo que le pases el componente del rigidbody al metodo para que no lo llame cada disparo
+    public void OnShoot(Vector2 direccion, GameObject bala) 
     {
         if (bala != null)
         {
@@ -31,7 +31,7 @@ public class Shoot : MonoBehaviour
     {
         GameObject jugador;
 
-        if (GameObject.Find("Player"))
+        if (GameObject.Find("Player")) //usa un find with tag, gasta menos recursos (Ya le puse el tag)
         {
              jugador = GameObject.Find("Player");
         }
@@ -48,7 +48,7 @@ public class Shoot : MonoBehaviour
         }
         else
         {
-            return new Vector2(1, 1); 
+            return new Vector2(1, 1); // No necesitas un else, ya que si no hay jugador no deberian spawnear enemigos
         }
     }
 }
