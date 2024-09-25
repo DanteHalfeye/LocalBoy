@@ -14,14 +14,12 @@ public class AutoAim : MonoBehaviour
         
         if (enemyToShoot != null)
         {
-            print(enemyToShoot);
             GameObject enemigo = enemyToShoot.gameObject;
             Vector2 shootDirection = (enemigo.transform.position - gameObject.transform.position).normalized;
             return shootDirection;
         }
         else
         {
-            print(enemyToShoot);
             return Vector2.zero;
         }
     }
