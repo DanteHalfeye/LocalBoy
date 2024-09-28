@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _deceleration = 0.5f;
     [SerializeField] private float _maxSpeed = 5f;
     [SerializeField] private InputActionReference moveActionToUse;
+    [SerializeField] private bool keyboard;
 
     private Vector2 _input;
     private float _currentSpeed;
@@ -21,7 +22,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (keyboard)
+        {
+            ProcessInput(keyboard);
+        }
+        else
+        {
         ProcessInput();
+        }
     }
 
     private void OnEnable()
@@ -43,6 +51,12 @@ public class PlayerMovement : MonoBehaviour
     private void ProcessInput()
     {
         _input = moveActionToUse.action.ReadValue<Vector2>();
+        if (_input.magnitude > 1)
+            _input.Normalize();
+    }
+    private void ProcessInput(bool teclado)
+    {
+        _input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (_input.magnitude > 1)
             _input.Normalize();
     }
