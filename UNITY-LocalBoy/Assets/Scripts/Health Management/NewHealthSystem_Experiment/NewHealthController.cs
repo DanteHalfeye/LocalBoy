@@ -37,9 +37,7 @@ public class NewHealthController : MonoBehaviour
     {
         if (collision.CompareTag("EnemyBullet"))
         {
-            Debug.Log("Siendo disparado");
             TakeDamage(_damageAmount);
-            Debug.Log(_currentHealth);
         }
         else if (collision.CompareTag("Heal"))
         {
