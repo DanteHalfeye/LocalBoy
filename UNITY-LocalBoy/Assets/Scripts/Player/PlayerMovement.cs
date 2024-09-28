@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _acceleration = 0.5f;
     [SerializeField] private float _deceleration = 0.5f;
     [SerializeField] private float _maxSpeed = 5f;
+    [SerializeField] private InputActionReference moveActionToUse;
+
     private Vector2 _input;
     private float _currentSpeed;
 
@@ -21,6 +24,17 @@ public class PlayerMovement : MonoBehaviour
         ProcessInput();
     }
 
+    private void OnEnable()
+    {
+        moveActionToUse.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveActionToUse.action.Disable();
+    }
+
+
     private void FixedUpdate()
     {
         MoveCharacter();
@@ -28,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ProcessInput()
     {
-        _input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _input = moveActionToUse.action.ReadValue<Vector2>();
         if (_input.magnitude > 1)
             _input.Normalize();
     }

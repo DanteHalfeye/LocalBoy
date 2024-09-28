@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(AutoAim))]
@@ -10,6 +11,7 @@ public class DashAttack : MonoBehaviour
     [SerializeField] private float _dashSpeed = 20f;  // Speed during dash
     [SerializeField] private float _dashDuration = 0.2f;  // How long the dash lasts
     [SerializeField] private float _dashCooldown = 1f;  // Cooldown between dashes
+    [SerializeField] private InputActionReference dashActionReference;
 
     private bool _isDashing = false;
     private bool _canDash = true;
@@ -30,9 +32,19 @@ public class DashAttack : MonoBehaviour
         DeactivateAttackHitbox();
     }
 
+    private void OnEnable()
+    {
+        dashActionReference.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        dashActionReference.action.Disable();
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _canDash)  // Press space to dash
+        if (dashActionReference.action.WasPressedThisFrame() && _canDash)  // Press space to dash
         {
             StartCoroutine(Dash());
         }

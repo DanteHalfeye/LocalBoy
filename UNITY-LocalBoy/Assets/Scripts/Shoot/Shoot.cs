@@ -31,7 +31,7 @@ public class Shoot : MonoBehaviour
     {
         GameObject jugador;
 
-        if (GameObject.Find("Player")) //usa un find with tag, gasta menos recursos (Ya le puse el tag)
+        if (GameObject.FindGameObjectWithTag("Player")) //usa un find with tag, gasta menos recursos (Ya le puse el tag)
         {
              jugador = GameObject.Find("Player");
         }
