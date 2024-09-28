@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ApplyItem : MonoBehaviour
 {
+    /*
     [SerializeField]
     private ItemRarity rarityPool;
 
@@ -70,4 +71,5 @@ public class ApplyItem : MonoBehaviour
 
         }
     }
+    */
 }

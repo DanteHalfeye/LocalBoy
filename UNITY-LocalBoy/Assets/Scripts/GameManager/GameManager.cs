@@ -6,113 +6,62 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class GameManager : SingletonMonobehaviour<GameManager>
 {
-    #region header DUNGEON LEVELS
-    [Space(10)]
-    [Header("DUNGEON LEVELS")]
-    #endregion DUNGEON LEVELS
-
-    #region Tooltip
-    [Tooltip("Populate with dungeon level scriptable objects")]
-    #endregion Tooltip
-
-    [SerializeField] private List<DungeonLevelSO> dungeonLevelList;
 
     #region Tooltip
     [Tooltip("Populate with the starting dungeon level for testing, first level = 0")]
     #endregion Tooltip
-    [SerializeField] private int currentDungeonLevelListIndex = 0;
+    [SerializeField] private int currentEncounterListIndex = 0;
+    [SerializeField] private int[] amountOfPatternsInRoom;
+    [SerializeField] private int delayBetweenSpawns;
+    [SerializeField] private bool multiplePatterns;
 
-    private Movement movement;
+    private PlayerMovement player;
 
-    private Room currentRoom;
-    private Room previousRoom;
-   // GameObject player;
+    [SerializeField]private EnemeySpawner spawner;
 
-    private Player player;
 
-    
     [HideInInspector] public GameState gameState;
     [HideInInspector] public GameState previousGameState;
 
-    private InstantiatedRoom bossRoom;
+
 
     private void Start()
     {
         Application.targetFrameRate = 60;
         Application.runInBackground = false;
         QualitySettings.vSyncCount = 0;
+
         previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
 
-        
+
         HandleGameState();
     }
 
-    private void OnEnable()
-    {
-        StaticEventHandler.OnRoomEnemiesDefeated += StaticEventHandler_OnRoomEnemiesDefeated; 
-        
-    }
-    private void OnDisable()
-    {
-        StaticEventHandler.OnRoomEnemiesDefeated -= StaticEventHandler_OnRoomEnemiesDefeated;
-    }
-    public Player GetPlayer()
+    public PlayerMovement GetPlayer()
     {
         return player;
     }
 
-    public void SetPlayer(Player currentPlayer )
+    public void SetPlayer(PlayerMovement currentPlayer)
     {
         player = currentPlayer;
     }
-
-    private void StaticEventHandler_OnRoomEnemiesDefeated(RoomEnemiesDefeatedArgs roomEnemiesDefeatedArgs)
-    {
-        // Initialise dungeon as being cleared - but then test each room
-        bool isDungeonClearOfRegularEnemies = true;
-        bossRoom = null;
-
-        // Loop through all dungeon rooms to see if cleared of enemies
-        foreach (KeyValuePair<string, Room> keyValuePair in DungeonBuilder.Instance.dungeonBuilderRoomDictionary)
-        {
-            // skip boss room for time being
-            if (keyValuePair.Value.roomNodeType.isBossRoom)
-            {
-                bossRoom = keyValuePair.Value.instantiatedRoom;
-                continue;
-            }
-
-            // check if other rooms have been cleared of enemies
-            if (!keyValuePair.Value.isClearedOfEnemies)
-            {
-                isDungeonClearOfRegularEnemies = false;
-                break;
-            }
-        }
-    }
+    /*
     /// <summary>
     /// Get the current room the player is in
     /// </summary>
     public Room GetCurrentRoom()
     {
         ItemEvents.TriggerOnRoomEntered();
-        print(currentRoom.instantiatedRoom.gameObject.name);
         return currentRoom;
     }
-
-    //get current dungeon level
-
-    public DungeonLevelSO GetCurrentDungeonLevel()
-    {
-        return dungeonLevelList[currentDungeonLevelListIndex];
-    }
-
+    */
     private void Update()
     {
         // Testing
         if (Input.GetKeyDown(KeyCode.R))
-        HandleGameState();
+            HandleGameState();
     }
 
 
@@ -133,14 +82,22 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         {
             case GameState.gameStarted:
                 // Play first level
-                PlayDungeonLevel(currentDungeonLevelListIndex);
+                if (!multiplePatterns)
+                {
+                    PlayLevelEncounter(currentEncounterListIndex);
+
+                }
+                else
+                {
+                    PlayLevelEncounter(amountOfPatternsInRoom.Length, amountOfPatternsInRoom, delayBetweenSpawns);
+                }
 
                 //gameState = GameState.playingLevel; 
                 break;
 
         }
     }
-
+    /*
     /// <summary>
     /// Set the current room the player in in
     /// </summary>
@@ -152,28 +109,18 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         //// Debug
         //Debug.Log(room.prefab.name.ToString());
     }
-
-    private void PlayDungeonLevel(int dungeonLevelListIndex)
-    {
-        // Build dungeon for level
-       bool dungeonBuiltSuccessfully = DungeonBuilder.Instance.GenerateDungeon(dungeonLevelList[dungeonLevelListIndex]);
-        if (!dungeonBuiltSuccessfully)
-        {
-            Debug.LogError("Couldn't build dungeon from specified rooms and node graphs");
-        }
-
-        // Get nearest spawn point in room nearest to player
-        player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
-
-    }
-
+    */
     
-    #region Validation
-#if UNITY_EDITOR
-    private void OnValidate()
+    private void PlayLevelEncounter(int encounterLevelListIndex)
     {
-        HelperUtilities.ValidateCheckEnumerableValues(this, nameof(dungeonLevelList), dungeonLevelList);
+        spawner.InstantiateEnemies(encounterLevelListIndex);
+
     }
-#endif
-    #endregion Validation
+
+    private void PlayLevelEncounter(int amountOfPatterns, int[] patternsIDs, float delayBetweenSpawns)
+    {
+        spawner.InstantiateEnemies(amountOfPatterns, patternsIDs, delayBetweenSpawns);
+
+    }
+
 }

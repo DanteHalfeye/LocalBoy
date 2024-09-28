@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerActor : MonoBehaviour
 {
-
+    /*
     [SerializeField] HealthStatsSO health;
 
 
@@ -12,15 +12,14 @@ public class PlayerActor : MonoBehaviour
     private int currentAmmo;
 
 
-    private InputManager inputManager;
-    private Movement movement;
+    private PlayerMovement movement;
 
     bool isHolding, isShooting;
 
     private void Start()
     {
-        inputManager = GetComponent<InputManager>();
-        movement = GetComponent <Movement>();
+       
+        movement = GetComponent <PlayerMovement>();
     }
 
     public bool OnHoldPress()
@@ -126,5 +125,5 @@ public class PlayerActor : MonoBehaviour
     private void OnStatChange()
     {
         ItemEvents.TriggerOnStatChange();
-    }
+    }*/
 }

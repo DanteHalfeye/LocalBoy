@@ -5,6 +5,7 @@ using UnityEngine;
 
 public static class ConditionCalculation
 {
+    /*
     public static bool EvaluateConditionType(Condition condition, ConditionNumberType conditionNumber, int conditionValue, PlayerActor actor)
     {
         bool conditionMet = false;
@@ -62,5 +63,5 @@ public static class ConditionCalculation
             default:
                 return false;
         }
-    }
+    }*/
 }

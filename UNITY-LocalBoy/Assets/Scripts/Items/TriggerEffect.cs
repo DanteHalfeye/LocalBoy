@@ -7,7 +7,7 @@ using UnityEngine;
 
 public static class TriggerEffect
 {
-
+    /*
     public static void Initialize(ItemSO item, PlayerActor actor)
     {
         switch (item.TriggerType)
@@ -203,4 +203,5 @@ public static class TriggerEffect
             ManageEffects.MarkEffectAsNotApplied(actor, item);
         }
     }
+    */
 }

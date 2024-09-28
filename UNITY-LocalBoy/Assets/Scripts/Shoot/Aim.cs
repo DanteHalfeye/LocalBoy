@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Aim : MonoBehaviour
 {
-    private InputManager inputs;
+    //private InputManager inputs;
 
     private Vector2 aimDirection;
     public GameObject shootPreview;
@@ -15,18 +15,18 @@ public class Aim : MonoBehaviour
 
     private void Awake()
     {
-        inputs = GetComponent<InputManager>();
+        //inputs = GetComponent<InputManager>();
     }
 
     private void Update()
     {
-        aimDirection = inputs.FireInput.normalized;
+        //aimDirection = inputs.FireInput.normalized;
 
-        Aiming();
+        //Aiming();
 
         
     }
-
+    /*
     public void Aiming()
     {
         if (aimDirection != Vector2.zero && inputs.FireInput.magnitude > 0.75f)
@@ -40,5 +40,5 @@ public class Aim : MonoBehaviour
         {
             shootPreview.SetActive(false);
         }
-    }
+    }*/
 }

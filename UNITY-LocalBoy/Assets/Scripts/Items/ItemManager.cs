@@ -5,6 +5,7 @@ using UnityEngine;
 
 public static class ItemManager
 {
+    /*
     private static readonly Dictionary<PlayerActor, List<ItemSO>> _itemsByActor = new Dictionary<PlayerActor, List<ItemSO>>();
     private static Dictionary<(PlayerActor, ItemOrbitalSO), GameObject> instances = new Dictionary<(PlayerActor, ItemOrbitalSO), GameObject>();
 
@@ -73,5 +74,5 @@ public static class ItemManager
             instances.Remove(key);
         }
     }
-
+    */
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ManageItemTimers : MonoBehaviour
 {
+    /*
     public static ManageItemTimers instance {  get; private set; }
     private Dictionary<ItemSO, float> activeTimers = new Dictionary<ItemSO, float>();
 
@@ -101,5 +102,6 @@ public class ManageItemTimers : MonoBehaviour
             activeTimers[item] += item.DurationAmount;
         }
     }
+    */
 }
 
