@@ -17,7 +17,7 @@ public class GameOverUI : MonoBehaviour
     public void closeGameOverPanel()
     {
         gameOverPanel.DOAnchorPos(new Vector2(0, 10000), 0f);
-        SceneManager.LoadSceneAsync("UI Experiment");
+        SceneManager.LoadSceneAsync("MAIN GAME");
     }
 
 
