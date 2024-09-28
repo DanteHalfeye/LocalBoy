@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 208009978}
   - component: {fileID: 208009981}
   - component: {fileID: 208009982}
+  - component: {fileID: 208009983}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -285,6 +286,18 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &208009983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208009977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfc4fa74d930184cba6c9db167e6a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &801029145
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentEncounterListIndex: 1
   amountOfPatternsInRoom: 00000000010000000000000001000000
-  delayBetweenSpawns: 2
+  delayBetweenSpawns: 10
   multiplePatterns: 1
   spawner: {fileID: 2121546927}
   gameState: 0
@@ -963,7 +976,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694649402}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -4076,6 +4089,14 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8743542694388174394, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: duration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743542694388174394, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: magnitude
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8745391438867128570, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4132,8 +4153,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1545793526}
   - {fileID: 2121546928}
-  - {fileID: 1194274389}
   - {fileID: 208009980}
+  - {fileID: 1194274389}
   - {fileID: 5405745941245620645}
   - {fileID: 1177241926}
   - {fileID: 1871753148}

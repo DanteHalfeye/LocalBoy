@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class DashDamage : MonoBehaviour
 {
+    CameraShake cameraShake;
     [SerializeField] LayerMask enemyLayer;
+    [SerializeField] float duration;
+    [SerializeField]float magnitude;
+
         int layer;
     private void Awake()
     {
+        cameraShake = Camera.main.GetComponent<CameraShake>();
         layer = (int)Mathf.Log(enemyLayer.value, 2);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,7 +21,8 @@ public class DashDamage : MonoBehaviour
         {
             if (collision.gameObject.layer == layer)
             {
-                collision.gameObject.SetActive(false);
+                collision.gameObject.GetComponent<EnemyDeath>().Death();
+                cameraShake.StartShake(duration, magnitude);
             }
         }
     }

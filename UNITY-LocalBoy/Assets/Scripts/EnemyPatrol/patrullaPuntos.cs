@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class patrullaPuntos : MonoBehaviour
+public class PatrullaPuntos : MonoBehaviour
 {
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private Transform[] puntosMovimiento;
