@@ -14,6 +14,13 @@ public class EnemyShoot : MonoBehaviour
 
     GameObject[] balas = new GameObject[3];
 
+
+    [SerializeField] bool showAim;
+    [SerializeField] float startShowing, stopShowing;
+    [SerializeField] float fuerzaSniper = 30;
+    [SerializeField] int cantidadBalasEscopeta = 30;
+    GameObject[] balasEscopeta;
+
     string type;
 
     // Define las opciones como un enum
@@ -21,6 +28,7 @@ public class EnemyShoot : MonoBehaviour
     {
         disparoNormal,
         disparoTriple,
+        sniper,
         escopeta
     }
 
@@ -38,6 +46,9 @@ public class EnemyShoot : MonoBehaviour
             case FeatureOption.disparoTriple:
                 type = "disparoTriple";
                 break;
+            case FeatureOption.sniper:
+                type = "sniper";
+                break;
             case FeatureOption.escopeta:
                 type = "escopeta";
                 break;
@@ -49,6 +60,7 @@ public class EnemyShoot : MonoBehaviour
     {
         bp = GameObject.FindGameObjectWithTag("BulletPool").GetComponent<BulletPool>();
         shoot = GetComponent<Shoot>();
+        balasEscopeta = new GameObject[cantidadBalasEscopeta];
     }
 
 
@@ -59,13 +71,16 @@ public class EnemyShoot : MonoBehaviour
             if(timer > 0)
             {
                 timer -= Time.deltaTime;
-                if(timer * 100 /shootCooldown > 15 && timer * 100 / shootCooldown < 50) // entre el 50% y el 15% del tiempo de cooldown se muestra
+                if(showAim)
                 {
-                    shoot.mostrandoRayo = true;
-                }
-                else
-                {
-                    shoot.mostrandoRayo = false;
+                    if (timer * 100 / shootCooldown > stopShowing && timer * 100 / shootCooldown < startShowing) // intervalo para mostrar el aim
+                    {
+                        shoot.mostrandoRayo = true;
+                    }
+                    else
+                    {
+                        shoot.mostrandoRayo = false;
+                    }
                 }
             }
             else
@@ -89,6 +104,18 @@ public class EnemyShoot : MonoBehaviour
                 balas[i] = bp.RequerirBala();
             }
             shoot.OnTripleShoot(shoot.AutoShootDirection(), balas);
+        }
+        else if(type == "sniper")
+        {
+            shoot.OnShoot(shoot.AutoShootDirection(), bp.RequerirBala(),fuerzaSniper);
+        }
+        else if(type == "escopeta")
+        {
+            for (int i = 0; i < balasEscopeta.Length; i++)
+            {
+                balasEscopeta[i] = bp.RequerirBala();
+            }
+            shoot.OnShotGunShot(shoot.AutoShootDirection(), balasEscopeta);
         }
         
     }

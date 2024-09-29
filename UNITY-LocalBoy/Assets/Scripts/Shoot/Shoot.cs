@@ -6,13 +6,16 @@ public class Shoot : MonoBehaviour
 {
     public float fuerza;
     public string tagObjetivo;
+    GameObject jugador;
     [SerializeField] float desviacion;
 
     [SerializeField] UIManager uiManager;
 
     public LineRenderer rayo; // El LineRenderer para el rayo
-    public float duracionRayo = 0.1f; // Duración del rayo antes de desaparecer
-    public float longitudRayo = 5f; // Longitud máxima del rayo
+    [SerializeField] float duracionRayo = 0.1f; // Duración del rayo antes de desaparecer
+    [SerializeField] float longitudRayo = 5f; // Longitud máxima del rayo
+
+    public GameObject customShootPreview;
 
     public bool mostrandoRayo;
 
@@ -22,6 +25,15 @@ public class Shoot : MonoBehaviour
         {
             uiManager = FindAnyObjectByType<UIManager>();
             uiManager.SetShoot(this);
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            jugador = GameObject.Find("Player");
+        }
+        else
+        {
+            jugador = null;
         }
     }
 
@@ -33,7 +45,11 @@ public class Shoot : MonoBehaviour
         }
         else
         {
-            rayo.enabled = false;
+            if (rayo != null) { rayo.enabled = false; }
+
+            else if (customShootPreview != null) { customShootPreview.SetActive(false); }
+
+
         }
     }
 
@@ -44,6 +60,14 @@ public class Shoot : MonoBehaviour
         { 
             bala.transform.position = gameObject.transform.position;
             bala.GetComponent<Rigidbody2D>().velocity = direccion * fuerza;
+        }
+    }
+    public  void OnShoot(Vector2 direccion, GameObject bala, float force)
+    {
+        if (bala != null)
+        {
+            bala.transform.position = gameObject.transform.position;
+            bala.GetComponent<Rigidbody2D>().velocity = direccion * force;
         }
     }
 
@@ -61,19 +85,22 @@ public class Shoot : MonoBehaviour
         // Disparo con desviación hacia el otro lado
         OnShoot(direccion - (perpendicular * desviacion), bala[2]);
     }
+    public void OnShotGunShot(Vector2 direccion, GameObject[] balasEscopeta)
+    {
+        direccion.Normalize();
+
+        foreach (GameObject obj in balasEscopeta)
+        {
+            OnShoot(AutoShootDirection() + new Vector2(Random.Range(-0.2f,0.2f), Random.Range(-0.2f, 0.2f)), obj);
+        }
+    }
+
 
     public Vector2 AutoShootDirection()
     {
-        GameObject jugador;
+        
 
-        if (GameObject.FindGameObjectWithTag("Player")) 
-        {
-             jugador = GameObject.Find("Player");
-        }
-        else
-        {
-            jugador = null;
-        }
+        
 
         if (jugador != null)
         {
@@ -91,30 +118,37 @@ public class Shoot : MonoBehaviour
 
     private void MostrarRayo(Vector2 direccion)
     {
-        // Raycast para detectar colisiones
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direccion, longitudRayo);
-
-        // Activar el LineRenderer
-        rayo.enabled = true;
-
-        // Establecer la posición de inicio del rayo
-        rayo.SetPosition(0, transform.position); // Punto inicial en la posición del objeto que dispara
-
-        // Si el Raycast detecta una colisión
-        if (hit.collider != null)
+        if (rayo != null)
         {
-            // Verifica si el objeto tiene el tag deseado
-            if (hit.collider.CompareTag(tagObjetivo))
+            // Raycast para detectar colisiones
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direccion, longitudRayo);
+
+            // Activar el LineRenderer
+            rayo.enabled = true;
+
+            // Establecer la posición de inicio del rayo
+            rayo.SetPosition(0, transform.position); // Punto inicial en la posición del objeto que dispara
+
+            // Si el Raycast detecta una colisión
+            if (hit.collider != null)
             {
-                Debug.Log("Colisión con el objeto: " + hit.collider.gameObject.name);
+                // Establecer el punto final del rayo en el punto de colisión
+                rayo.SetPosition(1, hit.point);
             }
-
-            // Establecer el punto final del rayo en el punto de colisión
-            rayo.SetPosition(1, hit.point);
+            else
+            {
+                rayo.SetPosition(1, (Vector2)transform.position + (direccion * longitudRayo));
+            }
         }
-        else
+        else if(customShootPreview != null)
         {
-            rayo.SetPosition(1, (Vector2)transform.position + (direccion * longitudRayo));
+            customShootPreview.SetActive(true);
+            Vector2 direccionDelJugador = AutoShootDirection();// tu vector que apunta hacia el objetivo, normalizado
+            float anguloEnGrados = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+            customShootPreview.transform.rotation = Quaternion.Euler(0, 0, anguloEnGrados+90);
+
+
+
         }
     }
 
