@@ -5,30 +5,30 @@ using UnityEngine;
 public class PatrullaPuntos : MonoBehaviour
 {
     [SerializeField] private float velocidadMovimiento;
-    [SerializeField] private Transform[] puntosMovimiento;
+    [SerializeField] private Vector2[] puntosMovimiento; // Cambiado a Vector2 para usar coordenadas
     [SerializeField] private float distanciaMinima;
     private int siguientePaso = 0;
 
     private SpriteRenderer spriteRenderer;
 
-
     private void Start()
     {
-        
         spriteRenderer = GetComponent<SpriteRenderer>();
         Girar();
     }
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, puntosMovimiento[siguientePaso].position, velocidadMovimiento * Time.deltaTime);
+        // Movemos al enemigo hacia la siguiente coordenada en puntosMovimiento
+        transform.position = Vector2.MoveTowards(transform.position, puntosMovimiento[siguientePaso], velocidadMovimiento * Time.deltaTime);
 
-        if(Vector2.Distance(transform.position, puntosMovimiento[siguientePaso].position) < distanciaMinima)
+        // Si la distancia es menor a la distancia mínima, cambiamos al siguiente punto
+        if (Vector2.Distance(transform.position, puntosMovimiento[siguientePaso]) < distanciaMinima)
         {
             siguientePaso += 1;
-            if(siguientePaso >= puntosMovimiento.Length)
+            if (siguientePaso >= puntosMovimiento.Length)
             {
-                siguientePaso = 0;
+                siguientePaso = 0; // Reiniciamos para que patrulle cíclicamente
             }
             Girar();
         }
@@ -36,7 +36,8 @@ public class PatrullaPuntos : MonoBehaviour
 
     private void Girar()
     {
-        if(transform.position.x < puntosMovimiento[siguientePaso].position.x)
+        // Giramos al enemigo en función de la dirección en que se mueve
+        if (transform.position.x < puntosMovimiento[siguientePaso].x)
         {
             spriteRenderer.flipX = true;
         }
@@ -44,6 +45,5 @@ public class PatrullaPuntos : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
-        
     }
 }
