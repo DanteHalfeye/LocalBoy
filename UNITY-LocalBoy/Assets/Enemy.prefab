@@ -106,6 +106,7 @@ MonoBehaviour:
   rayo: {fileID: 4668559177456784336}
   duracionRayo: 0.1
   longitudRayo: 20
+  customShootPreview: {fileID: 0}
   mostrandoRayo: 0
 --- !u!114 &226550790734687526
 MonoBehaviour:
@@ -120,6 +121,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootCooldown: 5
+  showAim: 0
+  startShowing: 0
+  stopShowing: 0
+  fuerzaSniper: 30
+  cantidadBalasEscopeta: 30
+  colorInicial: {r: 0, g: 0.22402222, b: 0.5566038, a: 0}
+  colorFinal: {r: 1, g: 0, b: 0, a: 0}
   selectedOption: 0
 --- !u!120 &4668559177456784336
 LineRenderer:

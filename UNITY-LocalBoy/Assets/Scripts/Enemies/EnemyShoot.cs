@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,13 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] int cantidadBalasEscopeta = 30;
     GameObject[] balasEscopeta;
 
+    public Color colorInicial, colorFinal;
+    float colorTimer;
+
     string type;
+
+    float elapsedTime;
+
 
     // Define las opciones como un enum
     public enum FeatureOption
@@ -76,10 +83,37 @@ public class EnemyShoot : MonoBehaviour
                     if (timer * 100 / shootCooldown > stopShowing && timer * 100 / shootCooldown < startShowing) // intervalo para mostrar el aim
                     {
                         shoot.mostrandoRayo = true;
+
+                        if (shoot.rayo != null) //Cambio de color
+                        {
+
+                            elapsedTime += Time.deltaTime;
+                            
+                            float t = Mathf.PingPong(elapsedTime / shootCooldown, 1f); // Oscila entre 0 y 1
+
+                            Color currentColor = Color.Lerp(colorInicial, colorFinal, t);
+
+                            Gradient gradient = new Gradient();
+                            gradient.SetKeys(
+                                new GradientColorKey[] { new GradientColorKey(currentColor, 0.0f), new GradientColorKey(currentColor, 1.0f) },
+                                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(1.0f, 1.0f) }
+                            );
+                            shoot.rayo.colorGradient = gradient;
+                            colorTimer -= Time.deltaTime;
+                        }
+
+
+
+
                     }
                     else
                     {
                         shoot.mostrandoRayo = false;
+                        elapsedTime = 0;
+                        float aimTime = (shootCooldown - (shootCooldown * (startShowing / 100) - (shootCooldown * (stopShowing / 100))));
+                        aimTime -= aimTime * 0.2f;
+
+
                     }
                 }
             }
