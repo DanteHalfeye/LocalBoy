@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.Mathematics;
+
 public class NewHealthController : MonoBehaviour
 {
     [SerializeField] private int _maxHealth, _currentHealth;
@@ -11,6 +12,17 @@ public class NewHealthController : MonoBehaviour
     [SerializeField] private Transform _healthBarTransform;
     [SerializeField] private int _damageAmount, _healAmount;
     private Camera _camera;
+    bool isPlayerDead = false;
+
+    public int CurrentHealth
+    {
+        get { return _currentHealth; }
+    }
+
+    public bool IsPlayerDead
+    {
+        get { return isPlayerDead; }
+    }
 
     private void Awake()
     {
@@ -21,6 +33,7 @@ public class NewHealthController : MonoBehaviour
     private void OnEnable()
     {
         ResetHealth();
+        isPlayerDead = false; 
     }
 
     private void Update()
@@ -30,7 +43,8 @@ public class NewHealthController : MonoBehaviour
 
     private void ResetHealth()
     {
-        _maxHealth = _currentHealth;
+        _currentHealth = _maxHealth;
+        UpdateHealth();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,15 +59,17 @@ public class NewHealthController : MonoBehaviour
             collision.gameObject.SetActive(false);
         }
     }
+
     private void TakeDamage(int damageAmount)
     {
         _currentHealth -= damageAmount;
         _currentHealth = math.clamp(_currentHealth, 0, _maxHealth);
-        if (_currentHealth <= 0)
+
+        if (_currentHealth <= 0 && !isPlayerDead) 
         {
             Die();
-            _maxHealth = _currentHealth;
         }
+
         UpdateHealth();
     }
 
@@ -71,6 +87,8 @@ public class NewHealthController : MonoBehaviour
 
     private void Die()
     {
-        SceneManager.LoadSceneAsync("GameOver");
+        isPlayerDead = true;
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+        gameObject.SetActive(false);
     }
 }
