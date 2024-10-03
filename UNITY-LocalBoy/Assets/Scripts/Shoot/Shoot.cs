@@ -11,6 +11,8 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] UIManager uiManager;
 
+    LayerMask selfLayer;
+
     public LineRenderer rayo; // El LineRenderer para el rayo
     [SerializeField] float duracionRayo = 0.1f; // Duración del rayo antes de desaparecer
     [SerializeField] float longitudRayo = 5f; // Longitud máxima del rayo
@@ -35,6 +37,9 @@ public class Shoot : MonoBehaviour
         {
             jugador = null;
         }
+
+        selfLayer = this.gameObject.layer;
+        
     }
 
     private void FixedUpdate()
@@ -121,7 +126,7 @@ public class Shoot : MonoBehaviour
         if (rayo != null)
         {
             // Raycast para detectar colisiones
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direccion, longitudRayo);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direccion, longitudRayo, selfLayer);
 
             // Activar el LineRenderer
             rayo.enabled = true;
