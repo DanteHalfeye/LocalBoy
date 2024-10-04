@@ -78,7 +78,7 @@ public class MainMenuUIManager : MonoBehaviour
 
             itemCanvasGroup.DOFade(1f, explosionDuration).SetEase(Ease.Linear);
 
-            yield return new WaitForSecondsRealtime(0.10f);
+            yield return new WaitForSecondsRealtime(0.25f);
         }
     }
 }
