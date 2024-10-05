@@ -510,9 +510,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.18911916
+    x: 0.125
     y: 0
-    width: 0.6217616
+    width: 0.75
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1754,6 +1754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07388891c5da20149913eb5fe4a3eb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLevelNumber: 24
   gameState: 0
   previousGameState: 0
 --- !u!4 &1545793526
@@ -6044,6 +6045,10 @@ PrefabInstance:
     - target: {fileID: 3805159666482997198, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805159666482997198, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6663238840484938664, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: keyboard

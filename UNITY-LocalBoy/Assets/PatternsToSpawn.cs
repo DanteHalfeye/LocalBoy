@@ -11,7 +11,7 @@ public class PatternsToSpawn : MonoBehaviour
 
     [SerializeField] private int delayBetweenSpawns;
 
-    private float x = 2;
+    private int x = 2;
     private float y;
 
     private void Start()
@@ -19,9 +19,6 @@ public class PatternsToSpawn : MonoBehaviour
         SelectAmountOfPatterns();
         delayBetweenSpawns = (int)DelayBetweenSpawns();
         patternIDs = GetPatterns();
-
-        // Call method to spawn patterns with the selected amount and delay
-        StartCoroutine(SpawnPatterns());
     }
 
     public int[] GetPatterns()
@@ -38,9 +35,9 @@ public class PatternsToSpawn : MonoBehaviour
         return selectedPatternIDs;
     }
 
-    public float SelectAmountOfPatterns()
+    public int SelectAmountOfPatterns()
     {
-        x = Mathf.Pow(2, GameManager.Instance.CurrentLevelNumber - 1);
+        x = Mathf.RoundToInt( GameManager.Instance.CurrentLevelNumber /2) ;
         return x;
     }
 
@@ -54,22 +51,5 @@ public class PatternsToSpawn : MonoBehaviour
         return y;
     }
 
-    private IEnumerator SpawnPatterns()
-    {
-        // Loop through the selected pattern IDs to spawn them
-        foreach (int patternID in patternIDs)
-        {
-            // Spawn the enemy pattern (assuming you have a method to handle this)
-            SpawnEnemyPattern(enemyPatterns[patternID]);
 
-            // Wait for the delay before spawning the next pattern
-            yield return new WaitForSeconds(delayBetweenSpawns);
-        }
-    }
-
-    private void SpawnEnemyPattern(GameObject pattern)
-    {
-        // Implement the logic to spawn the enemy pattern in your scene
-        Instantiate(pattern, transform.position, Quaternion.identity);
-    }
 }
