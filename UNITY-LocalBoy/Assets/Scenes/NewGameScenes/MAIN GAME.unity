@@ -509,10 +509,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.23504274
+    x: 0.21929824
     y: 0
-    width: 0.13675214
-    height: 0.2287037
+    width: 0.5614035
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1461,7 +1461,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1869100850}
   - {fileID: 1444832725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1633,6 +1632,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 122054766}
+  - {fileID: 1869100850}
   - {fileID: 1065928481}
   - {fileID: 2041622596165852958}
   - {fileID: 1476432531}
@@ -4986,7 +4986,7 @@ GameObject:
   - component: {fileID: 1869100849}
   - component: {fileID: 1869100848}
   m_Layer: 5
-  m_Name: Image
+  m_Name: DarkOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5006,9 +5006,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5042,7 +5042,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 7.4489007}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1177241926}
+  m_Father: {fileID: 1444832725}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5627,7 +5627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6663238840484938664, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: keyboard
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6663238840484938664, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: moveActionToUse
