@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class MainMenuUIManager : MonoBehaviour
 {
-    [SerializeField] RectTransform mainMenu, optionsMenu, addsMenu, creditsPanel;
+    [SerializeField] RectTransform mainMenu, optionsMenu, addsMenu, creditsPanel, creditsBackground;
     [SerializeField] List<RectTransform> creditItems;
     [SerializeField] float explosionDuration;
     [SerializeField] Ease explosionEase;
@@ -29,12 +29,14 @@ public class MainMenuUIManager : MonoBehaviour
     public void CreditsPanelButton()
     {
         mainMenu.DOAnchorPos(new Vector2(0, -10000), 0f);
+        creditsBackground.DOAnchorPos(new Vector2(0, 0), 0.25f);
         creditsPanel.DOAnchorPos(new Vector2(0, 0), 0.25f);
         StartCoroutine(CreditItemsExplosionEffect());
     }
 
     public void CloseCreditsPanel()
     {
+        creditsBackground.DOAnchorPos(new Vector2(-5000, 0), 0.25f);
         creditsPanel.DOAnchorPos(new Vector2(-5000, 0), 0.25f);
 
         foreach (var item in creditItems)
