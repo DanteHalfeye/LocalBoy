@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ApplyItem : MonoBehaviour
 {
-    [SerializeField]
     private ItemRarity rarityPool;
 
     private UIText text;
@@ -17,6 +17,8 @@ public class ApplyItem : MonoBehaviour
 
     private void Awake()
     {
+        rarityPool = GetRandomRarity();
+
         spriteRender = GetComponent<SpriteRenderer>();
 
         allItems = new List<ItemSO>(Resources.LoadAll<ItemSO>("Items"));
@@ -31,10 +33,9 @@ public class ApplyItem : MonoBehaviour
             }
         }
 
-        // Escoger uno aleatoriamente
         if (itemsOfSelectedRarity.Count > 0)
         {
-            item = itemsOfSelectedRarity[Random.Range(0, itemsOfSelectedRarity.Count)];
+            item = itemsOfSelectedRarity[UnityEngine.Random.Range(0, itemsOfSelectedRarity.Count)];
 
         }
         else
@@ -42,13 +43,39 @@ public class ApplyItem : MonoBehaviour
             Debug.Log("No hay objetos con la rareza seleccionada.");
         }
 
-
-        text = DetatchFromParent.Instance.transform.Find("Joystick Canvas").Find("ItemPop").GetComponent<UIText>();
+        //RECORDAR HACER LA UI
+        //text = DetatchFromParent.Instance.transform.Find("Joystick Canvas").Find("ItemPop").GetComponent<UIText>();
     }
 
     private void Start()
     {
         spriteRender.sprite = item.Icon;
+    }
+
+
+    private ItemRarity GetRandomRarity()
+    {
+        int totalWeight = 0;
+        int[] weights = new int[] { 70, 25, 5 };
+
+        for (int i = 0; i < weights.Length; i++)
+        {
+            totalWeight += weights[i];
+        }
+
+        int randomValue = UnityEngine.Random.Range(0, totalWeight);
+
+        int cumulativeWeight = 0;
+        for (int i = 0; i < weights.Length; i++)
+        {
+            cumulativeWeight += weights[i];
+            if (randomValue < cumulativeWeight)
+            {
+                return (ItemRarity)i;
+            }
+        }
+
+        return ItemRarity.Normal;
     }
 
 
@@ -65,9 +92,6 @@ public class ApplyItem : MonoBehaviour
             actor.PickUpItem(item);
 
             Destroy(gameObject);
-
-
-
         }
     }
 }
