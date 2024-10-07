@@ -37,7 +37,8 @@ public class PatternsToSpawn : MonoBehaviour
 
     public int SelectAmountOfPatterns()
     {
-        x = Mathf.RoundToInt( GameManager.Instance.CurrentLevelNumber /2) ;
+        int a = GameManager.Instance.CurrentLevelNumber;
+        x = Mathf.RoundToInt(1 + (a / 2) + (Mathf.Pow(a, 3) / 2 * 0.2f));
         return x;
     }
 
