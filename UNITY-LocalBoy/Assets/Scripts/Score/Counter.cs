@@ -15,7 +15,7 @@ public class Counter : MonoBehaviour
     private int decreaseIndex;
 
     [SerializeField]
-    private float currentScore;
+    public float currentScore; //lo cambio a public por ahora, para poder referenciarlo desde el DetectEventos
 
     [SerializeField]
     private float maxTimer;
