@@ -34,6 +34,10 @@ public class Counter : MonoBehaviour
     [SerializeField]
     private UnityEngine.UI.Slider slider;
 
+    public static Counter instance;
+
+
+
     private void Awake()
     {
         slider.value = 0;
@@ -41,6 +45,15 @@ public class Counter : MonoBehaviour
         uiScore = GetComponent<TextMeshProUGUI>();
         currentMultiplier = CurrentMultiplier.soyJak;
         isTiming = false;
+
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+
     }
 
     private void Update()
