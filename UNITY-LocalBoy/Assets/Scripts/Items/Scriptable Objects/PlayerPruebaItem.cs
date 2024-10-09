@@ -29,18 +29,4 @@ public class PlayerPruebaItem : MonoBehaviour
         // Mover el personaje usando la física
         rb.MovePosition(rb.position + movimiento * velocidadMovimiento * Time.fixedDeltaTime);
     }
-
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        DoorReward door = collision.gameObject.GetComponent<DoorReward>();
-
-        if( door != null)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                door.Enter();
-            }
-        }
-    }
 }

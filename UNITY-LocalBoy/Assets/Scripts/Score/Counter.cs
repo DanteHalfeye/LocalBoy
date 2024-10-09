@@ -8,38 +8,37 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class Counter : MonoBehaviour
 {
-    [SerializeField]
-    private bool debug;
-
+    [Tooltip("Que tanto decrecera el multiplier del score cuando el timer se acaba")]
     [SerializeField]
     private int decreaseIndex;
+    private float currentScore;
 
-    [SerializeField]
-    public float currentScore; //lo cambio a public por ahora, para poder referenciarlo desde el DetectEventos
-
+    [Tooltip("Timer maximo del multiplier")]
     [SerializeField]
     private float maxTimer;
-
-    [SerializeField]
     private float multiplierTimer;
+    [Tooltip("Que tan rapido decrece el timer")]
     [SerializeField]
     private float decreaseMultiplierTimer;
 
-
     private bool isTiming;
 
-    [SerializeField]
     private CurrentMultiplier currentMultiplier;
     private CurrentMultiplier[] enumIndex;
 
-    public TextMeshProUGUI uiScore;
-    private TextMeshProUGUI uiMultiplier; 
+    private TextMeshProUGUI uiScore;
+    [Tooltip("Texto del multiplicador")]
+    [SerializeField]
+    private TextMeshProUGUI uiMultiplier;
+
+    [SerializeField]
+    private UnityEngine.UI.Slider slider;
 
     private void Awake()
     {
+        slider.value = 0;
         enumIndex = (CurrentMultiplier[])System.Enum.GetValues(typeof(CurrentMultiplier));
         uiScore = GetComponent<TextMeshProUGUI>();
-        uiMultiplier = transform.GetComponentInChildren<TextMeshProUGUI>();
         currentMultiplier = CurrentMultiplier.soyJak;
         isTiming = false;
     }
@@ -47,11 +46,13 @@ public class Counter : MonoBehaviour
     private void Update()
     {
         uiScore.text = "Score: " + currentScore.ToString();
-        uiMultiplier.text = currentMultiplier.ToString();
+        uiMultiplier.text = "G Force : " + ((int)currentMultiplier).ToString();
+        slider.value = Mathf.Clamp(multiplierTimer / maxTimer, 0f, 1f);
 
-        if (Input.GetKeyDown(KeyCode.E)) 
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            AddScore(20, debug);
+            AddScore(20, true);
         }
     }
 
@@ -59,7 +60,7 @@ public class Counter : MonoBehaviour
     {
         currentScore += (score * (int)currentMultiplier);
 
-        if (epico)
+        if (epico && currentMultiplier != CurrentMultiplier.basado)
         {
             ChangeMultiplier(CambiarIndex(1));
         }
