@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class DetectEventos : MonoBehaviour
 {
-    [SerializeField] Counter counter;
+   public Counter counter;
 
     private void Awake()
     {
@@ -14,7 +14,7 @@ public class DetectEventos : MonoBehaviour
     public void MuerteEnem()
     {
         counter.AddScore(20, false); //sumamos 20 puntos por enemigo muerto
-
+        
         //debg temporal
         Debug.Log("puntuacion actual" + counter.currentScore);
         //Debug.Log("muerte enem" + );

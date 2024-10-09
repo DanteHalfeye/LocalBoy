@@ -32,7 +32,7 @@ public class Counter : MonoBehaviour
     private CurrentMultiplier currentMultiplier;
     private CurrentMultiplier[] enumIndex;
 
-    private TextMeshProUGUI uiScore;
+    public TextMeshProUGUI uiScore;
     private TextMeshProUGUI uiMultiplier; 
 
     private void Awake()
