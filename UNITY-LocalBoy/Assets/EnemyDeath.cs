@@ -13,6 +13,10 @@ public class EnemyDeath : MonoBehaviour
     PatrullaPuntos patrullaPuntos;
     SpriteRenderer spriteRenderer;
 
+    //DetectEventos detectEventos;
+
+    Counter counter;
+
     private void Awake()
     {
         _particles = GetComponent<ParticleSystem>();
@@ -39,6 +43,8 @@ public class EnemyDeath : MonoBehaviour
 
         // Start the coroutine to deactivate the enemy after the delay
         StartCoroutine(DeactivateAfterDelay());
+
+       
     }
 
     private IEnumerator DeactivateAfterDelay()

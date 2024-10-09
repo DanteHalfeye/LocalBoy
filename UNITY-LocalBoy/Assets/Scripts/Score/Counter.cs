@@ -53,11 +53,14 @@ public class Counter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             AddScore(20, true);
+            
         }
     }
 
     public void AddScore(float score, bool epico)
     {
+        Debug.Log("score:" + currentScore);
+
         currentScore += (score * (int)currentMultiplier);
 
         if (epico && currentMultiplier != CurrentMultiplier.basado)

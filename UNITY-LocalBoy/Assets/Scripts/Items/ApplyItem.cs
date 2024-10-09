@@ -89,7 +89,7 @@ public class ApplyItem : MonoBehaviour
 
             PlayerActor actor = other.GetComponent<PlayerActor>();
 
-            actor.PickUpItem(item);
+            //actor.PickUpItem(item);
 
             Destroy(gameObject);
         }
