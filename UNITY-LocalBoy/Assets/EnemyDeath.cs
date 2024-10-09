@@ -1,4 +1,3 @@
-using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,15 +18,6 @@ public class EnemyDeath : MonoBehaviour
         enemyShoot = GetComponent<EnemyShoot>();
         patrullaPuntos = GetComponent<PatrullaPuntos>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    private void OnEnable()
-    {
-        StaticEventHandler.NotifyEntityExists();
-    }
-    private void OnDisable()
-    {
-        StaticEventHandler.NotifyEntityDied();
     }
     public void Death()
     {
