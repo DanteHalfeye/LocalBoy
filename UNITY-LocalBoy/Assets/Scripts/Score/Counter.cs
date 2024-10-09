@@ -63,11 +63,7 @@ public class Counter : MonoBehaviour
         slider.value = Mathf.Clamp(multiplierTimer / maxTimer, 0f, 1f);
 
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            AddScore(20, true);
-            
-        }
+        
     }
 
     public void AddScore(float score, bool epico)
