@@ -21,12 +21,14 @@ public class DashAttack : MonoBehaviour
     private AutoAim autoAimDirection;
 
     [SerializeField]private CircleCollider2D _attackCollider;
+    private BoxCollider2D _playerCollider;
     public bool IsDashing { get { return _isDashing; } }
     private void Awake()
     {
         _playerMovement = GetComponent<PlayerMovement>();
         _rb = GetComponent<Rigidbody2D>();
         _attackCollider = GetComponentInChildren<CircleCollider2D>();
+        _playerCollider = GetComponent<BoxCollider2D>();
         autoAimDirection = GetComponent<AutoAim>();
 
         DeactivateAttackHitbox();
@@ -82,12 +84,16 @@ public class DashAttack : MonoBehaviour
     private void ActivateAttackHitbox()
     {
         _attackCollider .enabled = true;
+        Debug.DrawLine(transform.position - Vector3.one * 1.5f, transform.position + Vector3.one * 1.5f, Color.red, 0.1f); // Runtime debug line for hitbox visibility
+        
     }
 
     private void DeactivateAttackHitbox()
     {
         _attackCollider.enabled = false;
     }
+
+
     // Reactivate player movement
     private void ReactivatePlayerMovement()
     {
@@ -95,5 +101,12 @@ public class DashAttack : MonoBehaviour
         _playerMovement.enabled = true;  // Re-enable player movement
         _isDashing = false;
     }
-
+    private void OnDrawGizmos()
+    {
+        if (IsDashing)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(transform.position, Vector3.one * 3); // Visualization in editor
+        }
+    }
 }

@@ -7,7 +7,7 @@ public class EnemySpawnEffect : MonoBehaviour
     private float growDuration = 1f; // How long the grow effect lasts
     private bool isGrowingComplete = false;
     EnemyShoot enemyShoot;
-    private void Start()
+    private void Awake()
     {
         targetScale = transform.localScale;
         transform.localScale = Vector3.zero; // Start at 0 scale

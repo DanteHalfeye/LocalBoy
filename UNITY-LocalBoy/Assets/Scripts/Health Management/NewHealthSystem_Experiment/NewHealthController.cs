@@ -11,6 +11,7 @@ public class NewHealthController : MonoBehaviour
     [SerializeField] private Image _healthBarFiller;
     [SerializeField] private Transform _healthBarTransform;
     [SerializeField] private int _damageAmount, _healAmount;
+    [SerializeField] private DashAttack _attack;
     private Camera _camera;
     bool isPlayerDead = false;
 
@@ -49,14 +50,17 @@ public class NewHealthController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("EnemyBullet"))
+        if (collision.CompareTag("EnemyBullet") && !_attack.IsDashing)
         {
             TakeDamage(_damageAmount);
+            collision.gameObject.SetActive(false);
+            return;
         }
-        else if (collision.CompareTag("Heal"))
+        if (collision.CompareTag("Heal"))
         {
             Heal(_healAmount);
             collision.gameObject.SetActive(false);
+            return;
         }
     }
 
