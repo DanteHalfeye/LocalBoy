@@ -1,3 +1,4 @@
+using FMODUnity;
 using JetBrains.Annotations;
 using System;
 using System.Collections;
@@ -9,21 +10,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : SingletonMonobehaviour<GameManager>
 {
 
-    [SerializeField] private int currentLevelNumber;
+    [SerializeField] private int _currentLevelNumber;
 
-    private PlayerMovement player;
+    private PlayerMovement _player;
 
-    
+    float _amountOfEnemies, _amountOfDeadEnemies;
 
 
     [HideInInspector] public GameState gameState;
     [HideInInspector] public GameState previousGameState;
 
 
-    public int CurrentLevelNumber { get { return currentLevelNumber; } }
+    public int CurrentLevelNumber { get { return _currentLevelNumber; } }
 
     private void Start()
     {
+        _amountOfEnemies = 0;
         Application.targetFrameRate = 60;
         Application.runInBackground = false;
         QualitySettings.vSyncCount = 0;
@@ -36,25 +38,29 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     }
     private void OnEnable()
     {
+        StaticEventHandler.OnEntitySpawned += HandleEntitySpawned;
+        StaticEventHandler.OnEntityDied += HandleEntityDied;
         SceneManager.sceneLoaded += IncrementLevelNumber;
     }
     private void OnDisable()
     {
+        StaticEventHandler.OnEntitySpawned -= HandleEntitySpawned;
+        StaticEventHandler.OnEntityDied -= HandleEntityDied;
         SceneManager.sceneLoaded -= IncrementLevelNumber;
     }
     public void IncrementLevelNumber(Scene scene, LoadSceneMode modo)
     {
-        currentLevelNumber++;
+        _currentLevelNumber++;
     }
 
     public PlayerMovement GetPlayer()
     {
-        return player;
+        return _player;
     }
 
     public void SetPlayer(PlayerMovement currentPlayer)
     {
-        player = currentPlayer;
+        _player = currentPlayer;
     }
     
     private void Update()
@@ -62,8 +68,27 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         // Testing
         if (Input.GetKeyDown(KeyCode.R))
             HandleGameState();
+
+    }
+    private void HandleEntitySpawned()
+    {
+        _amountOfEnemies++;
     }
 
+    private void HandleEntityDied()
+    {
+        _amountOfDeadEnemies++;
+        if (_amountOfDeadEnemies >= _amountOfEnemies)
+        {
+            RoomCleared();
+        }
+    }
+
+    private void RoomCleared()
+    {
+        StaticEventHandler.NotifyRoomCleared();
+        print("Room Cleared Good Job you are great and all that stuff");
+    }
 
     public void StartGame()
     {
@@ -89,19 +114,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
         }
     }
-    /*
-    /// <summary>
-    /// Set the current room the player in in
-    /// </summary>
-    public void SetCurrentRoom(Room room)
-    {
-        previousRoom = currentRoom;
-        currentRoom = room;
-
-        //// Debug
-        //Debug.Log(room.prefab.name.ToString());
-    }
-    */
+    
     
     
 
