@@ -8,6 +8,7 @@ using DG.Tweening;
 public class MainMenuUIManager : MonoBehaviour
 {
     [SerializeField] RectTransform mainMenu, optionsMenu, addsMenu, creditsPanel, creditsBackground;
+    [SerializeField] Image darkOverlay;
     [SerializeField] List<RectTransform> creditItems;
     [SerializeField] float explosionDuration;
     [SerializeField] Ease explosionEase;
@@ -19,11 +20,13 @@ public class MainMenuUIManager : MonoBehaviour
     }
     public void OptionsMenuButton()
     {
+        darkOverlay.DOFade(0.9f, 0.5f).SetUpdate(true);
         optionsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
     }
 
     public void CloseOptionsMenu()
     {
+        darkOverlay.DOFade(0f, 0.5f).SetUpdate(true);
         optionsMenu.DOAnchorPos(new Vector2(0, 5000), 0.5f).SetUpdate(true);
     }
     public void CreditsPanelButton()
@@ -54,11 +57,13 @@ public class MainMenuUIManager : MonoBehaviour
     }
     public void AddsMenuButton()
     {
+        darkOverlay.DOFade(0.9f, 0.5f).SetUpdate(true);
         addsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
     }
 
     public void CloseAddsMenu()
     {
+        darkOverlay.DOFade(0f, 0.5f).SetUpdate(true);
         addsMenu.DOAnchorPos(new Vector2(0, -5000), 0.5f).SetUpdate(true);
     }
 
