@@ -1,26 +1,29 @@
-using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
 public class GameManager : SingletonMonobehaviour<GameManager>
 {
 
-    [SerializeField] private int currentLevelNumber;
+    #region Tooltip
+    [Tooltip("Populate with the starting dungeon level for testing, first level = 0")]
+    #endregion Tooltip
+    [SerializeField] private int currentEncounterListIndex = 0;
+    [SerializeField] private int[] amountOfPatternsInRoom;
+    [SerializeField] private int delayBetweenSpawns;
+    [SerializeField] private bool multiplePatterns;
 
     private PlayerMovement player;
 
-    
+    [SerializeField]private EnemeySpawner spawner;
 
 
     [HideInInspector] public GameState gameState;
     [HideInInspector] public GameState previousGameState;
 
 
-    public int CurrentLevelNumber { get { return currentLevelNumber; } }
 
     private void Start()
     {
@@ -31,20 +34,8 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
 
-        //currentLevelNumber = 1;
+
         HandleGameState();
-    }
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += IncrementLevelNumber;
-    }
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= IncrementLevelNumber;
-    }
-    public void IncrementLevelNumber(Scene scene, LoadSceneMode modo)
-    {
-        currentLevelNumber++;
     }
 
     public PlayerMovement GetPlayer()
@@ -56,7 +47,16 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     {
         player = currentPlayer;
     }
-    
+    /*
+    /// <summary>
+    /// Get the current room the player is in
+    /// </summary>
+    public Room GetCurrentRoom()
+    {
+        ItemEvents.TriggerOnRoomEntered();
+        return currentRoom;
+    }
+    */
     private void Update()
     {
         // Testing
@@ -71,6 +71,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     }
 
 
+
     /// <summary>
     /// Handle game state
     /// </summary>
@@ -80,10 +81,17 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         switch (gameState)
         {
             case GameState.gameStarted:
-                //game has started
-                break;
-            case GameState.playingLevel:
                 // Play first level
+                if (!multiplePatterns)
+                {
+                    PlayLevelEncounter(currentEncounterListIndex);
+
+                }
+                else
+                {
+                    PlayLevelEncounter(amountOfPatternsInRoom.Length, amountOfPatternsInRoom, delayBetweenSpawns);
+                }
+
                 //gameState = GameState.playingLevel; 
                 break;
 
@@ -103,6 +111,16 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     }
     */
     
-    
+    private void PlayLevelEncounter(int encounterLevelListIndex)
+    {
+        spawner.InstantiateEnemies(encounterLevelListIndex);
+
+    }
+
+    private void PlayLevelEncounter(int amountOfPatterns, int[] patternsIDs, float delayBetweenSpawns)
+    {
+        spawner.InstantiateEnemies(amountOfPatterns, patternsIDs, delayBetweenSpawns);
+
+    }
 
 }

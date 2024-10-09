@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class EnemeySpawner : MonoBehaviour
 {
-    List<GameObject> enemyPatterns;
+    [SerializeField]List<GameObject> enemyPatterns = new List<GameObject>();
+
+    [SerializeField] int amountOfPatterns;
+    [SerializeField] int[] patternId;
 
     int enemiesInPattern;
     int enemiesDefeatedInPattern;
-
-    private void Start()
-    {
-        enemyPatterns = GetComponent<PatternsToSpawn>().enemyPatterns;
-    }
     public void InstantiateEnemies(int id)
     {
         GameObject currentPatterns = Instantiate(enemyPatterns[id]);
