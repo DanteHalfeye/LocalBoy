@@ -1668,7 +1668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07388891c5da20149913eb5fe4a3eb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevelNumber: 0
+  _currentLevelNumber: 0
   gameState: 0
   previousGameState: 0
 --- !u!4 &1545793526
@@ -5530,9 +5530,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPatterns:
-  - {fileID: 1615298198243823835, guid: c9907699b7b344644aad65266eab1309, type: 3}
-  - {fileID: 1615298198243823835, guid: 2615dd2b222dd254f9e9c4889b21eb4e, type: 3}
-  - {fileID: 1615298198243823835, guid: 96b4bb926eb5bc2498e8dbb26663e864, type: 3}
+  - {fileID: 1640111640890452227, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+  - {fileID: 43859094853049790, guid: c9c8c881ae38fc8469389642622f9980, type: 3}
+  - {fileID: 6164730874942273466, guid: 554a7f8912ca4bc468b55ab74570aaa6, type: 3}
+  - {fileID: 5660459899649313098, guid: f7d8958366f0a444a9efb923637f814c, type: 3}
+  - {fileID: 6851901060513355491, guid: 6bcece3f3c8c5964bad5ecc95b52657c, type: 3}
+  - {fileID: 4868057021196127610, guid: 691bed50b4214b346bf07cb30a014c99, type: 3}
+  - {fileID: 3037901177479180717, guid: 1a8a56e8d8f39cd45b9bff943736a760, type: 3}
+  - {fileID: 4288673991347193995, guid: 3ce29b1ef3806ef4ebbd28d05b760a2f, type: 3}
+  - {fileID: 7468776364787368201, guid: cfddba0b7b50c294c8f25a6662887323, type: 3}
+  - {fileID: 9177628442475665495, guid: 96ef239a06de57848b47d36a2be75870, type: 3}
+  - {fileID: 4547671108010709012, guid: 00eeb8f2b4f1f244abfbc2f8a2d3cb63, type: 3}
+  - {fileID: 731917357990522790, guid: db6f8624ab62a5b4795000c9440c7776, type: 3}
+  - {fileID: 728583705471851433, guid: 98a1cfaeb50168a47a4fecd1f3c20283, type: 3}
+  - {fileID: 9117892186051878023, guid: 8fd21fb6646db824b87d1533b55cad77, type: 3}
+  - {fileID: 683991035053192997, guid: 33274cf11b2d78247b13e550cce8b12c, type: 3}
   currentEncounterListIndex: 0
   patternIDs: 
   delayBetweenSpawns: 0
