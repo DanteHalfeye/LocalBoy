@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/PRUEBAS.bank
   Name: PRUEBAS
   StudioPath: bank:/PRUEBAS
-  lastModified: 638593532454391395
+  lastModified: 638593532460000000
   FileSizes:
   - Name: Desktop
     Value: 55872
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638593532452117863
+  lastModified: 638593532460000000
   FileSizes:
   - Name: Desktop
     Value: 812
@@ -90,7 +90,7 @@ MonoBehaviour:
   - {fileID: 614239836045416818}
   StringsBanks:
   - {fileID: -4221699823372732368}
-  cacheTime: 638593532454391395
+  cacheTime: 638593532460000000
   cacheVersion: 131619
 --- !u!114 &614239836045416818
 MonoBehaviour:
@@ -107,7 +107,7 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638593532452077788
+  lastModified: 638593532460000000
   FileSizes:
   - Name: Desktop
     Value: 1036

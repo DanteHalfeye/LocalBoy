@@ -8,58 +8,71 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class Counter : MonoBehaviour
 {
-    [SerializeField]
-    private bool debug;
-
+    [Tooltip("Que tanto decrecera el multiplier del score cuando el timer se acaba")]
     [SerializeField]
     private int decreaseIndex;
-
-    [SerializeField]
     private float currentScore;
 
+    [Tooltip("Timer maximo del multiplier")]
     [SerializeField]
     private float maxTimer;
-
-    [SerializeField]
     private float multiplierTimer;
+    [Tooltip("Que tan rapido decrece el timer")]
     [SerializeField]
     private float decreaseMultiplierTimer;
 
-
     private bool isTiming;
 
-    [SerializeField]
     private CurrentMultiplier currentMultiplier;
     private CurrentMultiplier[] enumIndex;
 
     private TextMeshProUGUI uiScore;
-    private TextMeshProUGUI uiMultiplier; 
+    [Tooltip("Texto del multiplicador")]
+    [SerializeField]
+    private TextMeshProUGUI uiMultiplier;
+
+    [SerializeField]
+    private UnityEngine.UI.Slider slider;
+
+    public static Counter instance;
+
+
 
     private void Awake()
     {
+        slider.value = 0;
         enumIndex = (CurrentMultiplier[])System.Enum.GetValues(typeof(CurrentMultiplier));
         uiScore = GetComponent<TextMeshProUGUI>();
-        uiMultiplier = transform.GetComponentInChildren<TextMeshProUGUI>();
         currentMultiplier = CurrentMultiplier.soyJak;
         isTiming = false;
+
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+
     }
 
     private void Update()
     {
         uiScore.text = "Score: " + currentScore.ToString();
-        uiMultiplier.text = currentMultiplier.ToString();
+        uiMultiplier.text = "G Force : " + ((int)currentMultiplier).ToString();
+        slider.value = Mathf.Clamp(multiplierTimer / maxTimer, 0f, 1f);
 
-        if (Input.GetKeyDown(KeyCode.E)) 
-        {
-            AddScore(20, debug);
-        }
+
+        
     }
 
     public void AddScore(float score, bool epico)
     {
+        Debug.Log("score:" + currentScore);
+
         currentScore += (score * (int)currentMultiplier);
 
-        if (epico)
+        if (epico && currentMultiplier != CurrentMultiplier.basado)
         {
             ChangeMultiplier(CambiarIndex(1));
         }
