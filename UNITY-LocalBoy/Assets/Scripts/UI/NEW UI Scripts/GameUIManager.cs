@@ -15,7 +15,7 @@ public class GameUIManager : MonoBehaviour
     public void pauseMenuButton()
     {
         pauseMenu.DOAnchorPos(new Vector2(0, 0), 0f).SetUpdate(true);
-        darkOverlay.DOFade(0.5f, 0.5f).SetUpdate(true);
+        darkOverlay.DOFade(0.9f, 0.5f).SetUpdate(true);
         gamePanelCanvasGroup.interactable = false;
         Time.timeScale = 0f;
     }

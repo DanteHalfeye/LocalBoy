@@ -12,18 +12,7 @@ public class EnemyDeath : MonoBehaviour
     EnemyShoot enemyShoot;
     PatrullaPuntos patrullaPuntos;
     SpriteRenderer spriteRenderer;
-
-    private bool isTiming;
-   
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Death();
-
-        }
-    }
+    DetectEventos detectEventos;
 
     private void Awake()
     {
@@ -31,10 +20,7 @@ public class EnemyDeath : MonoBehaviour
         enemyShoot = GetComponent<EnemyShoot>();
         patrullaPuntos = GetComponent<PatrullaPuntos>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        isTiming = false;
     }
-
-    
 
     private void OnEnable()
     {
@@ -47,15 +33,15 @@ public class EnemyDeath : MonoBehaviour
     public void Death()
     {
         // Play the particle effect
-        //_particles.Play();
-        //enemyShoot.enabled = false;
-        //patrullaPuntos.enabled = false;
-        //spriteRenderer.enabled = false;
+        _particles.Play();
+        enemyShoot.enabled = false;
+        patrullaPuntos.enabled = false;
+        spriteRenderer.enabled = false;
+
+        detectEventos.MuerteEnem();
 
         // Start the coroutine to deactivate the enemy after the delay
-        //StartCoroutine(DeactivateAfterDelay());
-
-        DeathTimer.instance.MuerteEnem();
+        StartCoroutine(DeactivateAfterDelay());
 
         
     }
@@ -68,6 +54,4 @@ public class EnemyDeath : MonoBehaviour
         // Deactivate the enemy object
         gameObject.SetActive(false);
     }
-
-    
 }

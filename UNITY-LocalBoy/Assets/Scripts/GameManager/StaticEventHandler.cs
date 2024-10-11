@@ -21,5 +21,6 @@ public class StaticEventHandler : MonoBehaviour
 
     public static void NotifyRoomCleared()
     {
+        OnRoomCleared?.Invoke();
     }
 }

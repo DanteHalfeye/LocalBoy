@@ -27,7 +27,7 @@ public class PlayableTimer : MonoBehaviour
             int minutes = Mathf.FloorToInt(_elapsedTime / 60);
             int seconds = Mathf.FloorToInt(_elapsedTime % 60);
             int milliseconds = Mathf.FloorToInt((_elapsedTime * 100) % 100);
-            timerText.text = string.Format("{0:00}:{1:00}'{2:00}''", minutes, seconds, milliseconds);
+            timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
         }
     }
 }
