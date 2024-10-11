@@ -47,13 +47,13 @@ public class EnemyDeath : MonoBehaviour
     public void Death()
     {
         // Play the particle effect
-        _particles.Play();
-        enemyShoot.enabled = false;
-        patrullaPuntos.enabled = false;
-        spriteRenderer.enabled = false;
+        //_particles.Play();
+        //enemyShoot.enabled = false;
+        //patrullaPuntos.enabled = false;
+        //spriteRenderer.enabled = false;
 
         // Start the coroutine to deactivate the enemy after the delay
-        StartCoroutine(DeactivateAfterDelay());
+        //StartCoroutine(DeactivateAfterDelay());
 
         DeathTimer.instance.MuerteEnem();
 
