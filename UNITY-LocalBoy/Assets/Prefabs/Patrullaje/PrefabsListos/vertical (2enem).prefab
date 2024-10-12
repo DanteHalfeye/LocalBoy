@@ -85,6 +85,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4389248699367234786, guid: 0e6106682c30fe54f896084e42e3e78e, type: 3}
+      propertyPath: longitudRayo
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8479798832783324572, guid: 0e6106682c30fe54f896084e42e3e78e, type: 3}
       propertyPath: distanciaMinima
       value: 0.1
@@ -139,6 +143,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8271797187567727696}
     m_Modifications:
+    - target: {fileID: 292498381982148282, guid: 194ea2645c0f7684296d217505dc1b2f, type: 3}
+      propertyPath: longitudRayo
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 786115653711451996, guid: 194ea2645c0f7684296d217505dc1b2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.0888834

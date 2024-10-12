@@ -41,6 +41,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4439023521256783110}
     m_Modifications:
+    - target: {fileID: 292498381982148282, guid: 194ea2645c0f7684296d217505dc1b2f, type: 3}
+      propertyPath: longitudRayo
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 786115653711451996, guid: 194ea2645c0f7684296d217505dc1b2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.579545
@@ -234,6 +238,10 @@ PrefabInstance:
     - target: {fileID: 1758959581306974887, guid: 50fdeb0ce6c0d7a4f8a8b9504f488814, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389248699367234786, guid: 50fdeb0ce6c0d7a4f8a8b9504f488814, type: 3}
+      propertyPath: longitudRayo
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6720458011152408510, guid: 50fdeb0ce6c0d7a4f8a8b9504f488814, type: 3}
       propertyPath: cantidadDeBalas

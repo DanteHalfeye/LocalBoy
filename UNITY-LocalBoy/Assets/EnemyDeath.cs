@@ -1,4 +1,5 @@
 using FMODUnity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class EnemyDeath : MonoBehaviour
     EnemyShoot enemyShoot;
     PatrullaPuntos patrullaPuntos;
     SpriteRenderer spriteRenderer;
+    LineRenderer lineRenderer;
+    Shoot shoot;
+
 
     private bool isTiming;
    
@@ -31,6 +35,8 @@ public class EnemyDeath : MonoBehaviour
         enemyShoot = GetComponent<EnemyShoot>();
         patrullaPuntos = GetComponent<PatrullaPuntos>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        shoot = GetComponent <Shoot>();
+        lineRenderer = GetComponent <LineRenderer>();
         isTiming = false;
     }
 
@@ -48,16 +54,22 @@ public class EnemyDeath : MonoBehaviour
     {
         // Play the particle effect
         _particles.Play();
-        enemyShoot.enabled = false;
-        patrullaPuntos.enabled = false;
-        spriteRenderer.enabled = false;
-
+        DeactivateAI();
         // Start the coroutine to deactivate the enemy after the delay
         StartCoroutine(DeactivateAfterDelay());
 
         DeathTimer.instance.MuerteEnem();
 
         
+    }
+
+    private void DeactivateAI()
+    {
+        shoot.enabled = false;
+        enemyShoot.enabled = false;
+        patrullaPuntos.enabled = false;
+        spriteRenderer.enabled = false;
+        lineRenderer.enabled = false;
     }
 
     private IEnumerator DeactivateAfterDelay()

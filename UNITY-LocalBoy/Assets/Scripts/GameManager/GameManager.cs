@@ -14,7 +14,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     private PlayerMovement _player;
 
-    float _amountOfEnemies, _amountOfDeadEnemies;
+    float _amountOfEnemies, _amountOfDeadEnemies, _ammountOfPatterns, _currentAmountOfPatterns;
 
 
     [HideInInspector] public GameState gameState;
@@ -22,7 +22,8 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
 
     public int CurrentLevelNumber { get { return _currentLevelNumber; } }
-
+    public int AmmountOfPatterns { set { _ammountOfPatterns = value; } }
+    public int CurrentAmmountOfPatterns { set { _currentAmountOfPatterns = value; } }
     private void Start()
     {
         _amountOfEnemies = 0;
@@ -78,6 +79,10 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     private void HandleEntityDied()
     {
         _amountOfDeadEnemies++;
+        if (_currentAmountOfPatterns <_ammountOfPatterns)
+        {
+            return;
+        }
         if (_amountOfDeadEnemies >= _amountOfEnemies)
         {
             RoomCleared();
