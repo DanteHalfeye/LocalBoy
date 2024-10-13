@@ -47,12 +47,18 @@ public class EnemeySpawner : MonoBehaviour
             // Instantiate the current pattern
             GameObject currentPatterns = Instantiate(enemyPatterns[patternId]);
             currentPatterns.transform.position = Vector3.zero;
-
+            SendPatternsRemaining(amountOfPatterns, i+1);
             // Optionally count enemies in the pattern
             AmountOfEnemiesInCurrentPatern(patternId);
 
             // Wait for the specified delay before spawning the next pattern
             yield return new WaitForSeconds(delayBetweenSpawns);
         }
+    }
+
+    private void SendPatternsRemaining(int amountOfPatterns, int currentAmount)
+    {
+        GameManager.Instance.AmmountOfPatterns = amountOfPatterns;
+        GameManager.Instance.CurrentAmmountOfPatterns = currentAmount;
     }
 }
