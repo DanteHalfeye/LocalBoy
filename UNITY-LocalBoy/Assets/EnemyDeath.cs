@@ -36,6 +36,7 @@ public class EnemyDeath : MonoBehaviour
         enemyShoot.enabled = false;
         patrullaPuntos.enabled = false;
         spriteRenderer.enabled = false;
+        ItemEvents.TriggerEnemyKilled();
 
         // Start the coroutine to deactivate the enemy after the delay
         StartCoroutine(DeactivateAfterDelay());

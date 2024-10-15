@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ManageItemTimers : MonoBehaviour
 {
-    /*
     public static ManageItemTimers instance {  get; private set; }
     private Dictionary<ItemSO, float> activeTimers = new Dictionary<ItemSO, float>();
 
@@ -31,11 +30,6 @@ public class ManageItemTimers : MonoBehaviour
         {
             StartCoroutine(HandleRooms(item, actor));
         }
-        else if (item.Duration == DurationType.Floor)
-        {
-            StartCoroutine(HandleFloors(item, actor));
-        }
-
     }
 
     private IEnumerator HandleTimer(ItemSO item, PlayerActor actor) 
@@ -102,6 +96,5 @@ public class ManageItemTimers : MonoBehaviour
             activeTimers[item] += item.DurationAmount;
         }
     }
-    */
 }
 

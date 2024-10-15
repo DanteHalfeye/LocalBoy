@@ -8,9 +8,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(AutoAim))]
 public class DashAttack : MonoBehaviour
 {
-    [SerializeField] private float _dashSpeed = 20f;  // Speed during dash
-    [SerializeField] private float _dashDuration = 0.2f;  // How long the dash lasts
-    [SerializeField] private float _dashCooldown = 1f;  // Cooldown between dashes
+    private PlayerActor actor;
     [SerializeField] private InputActionReference dashActionReference;
 
     private bool _isDashing = false;
@@ -25,6 +23,7 @@ public class DashAttack : MonoBehaviour
     public bool IsDashing { get { return _isDashing; } }
     private void Awake()
     {
+        actor = GetComponent<PlayerActor>();
         _playerMovement = GetComponent<PlayerMovement>();
         _rb = GetComponent<Rigidbody2D>();
         _attackCollider = GetComponentInChildren<CircleCollider2D>();
@@ -69,15 +68,15 @@ public class DashAttack : MonoBehaviour
             direction = _playerMovement.CurrentInput;
         }
 
-        _rb.velocity = direction * _dashSpeed;
+        _rb.velocity = direction * actor.DashSpeed;
         // Wait for dash duration
-        yield return new WaitForSeconds(_dashDuration);
+        yield return new WaitForSeconds(actor.DashDuration);
 
         DeactivateAttackHitbox();
         ReactivatePlayerMovement();
 
         // Cooldown before next dash
-        yield return new WaitForSeconds(_dashCooldown);
+        yield return new WaitForSeconds(actor.DashCooldown);
         _canDash = true;
     }
 

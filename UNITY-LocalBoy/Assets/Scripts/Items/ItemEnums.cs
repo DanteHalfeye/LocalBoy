@@ -6,8 +6,6 @@ public enum Stat
     ModifyCurrentHealth,
     ModifyAttackSpeed,
     SetAttackSpeed,
-    AddAmmo,
-    SetAmmo,
     ModifySpeed,
     SetSpeed
 }
@@ -18,7 +16,6 @@ public enum EffectTrigger
     Always,
     OnEnemyKill,
     OnRoomEnter,
-    OnFloorEnter
 }
 
 public enum Condition
@@ -26,7 +23,6 @@ public enum Condition
     None,
     Health,
     Halth_percent,
-    Ammo,
     Speed,
     AttackSpeed
 }
@@ -46,7 +42,6 @@ public enum DurationType
     Infinite,
     Time,
     Rooms,
-    Floor
 }
 
 public enum ItemTypeClass
@@ -57,7 +52,7 @@ public enum ItemTypeClass
 
 public enum ItemRarity
 {
-    Normal,
-    Epic,
-    Legendary
+    Normal = 10,
+    Epic = 15,
+    Legendary = 20
 }

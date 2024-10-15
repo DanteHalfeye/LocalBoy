@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
 {
+    /*
     public Health healthComponent;   
     public Image healthBarGreen;      
     public Image healthBarRed;        
@@ -26,4 +27,6 @@ public class HealthUI : MonoBehaviour
     {
         healthComponent.health.OnHealthChanged -= UpdateHealthBar;
     }
+
+    */
 }

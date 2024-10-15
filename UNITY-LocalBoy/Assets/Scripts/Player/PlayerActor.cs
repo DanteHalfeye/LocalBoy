@@ -1,107 +1,116 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Mathematics;
 
 public class PlayerActor : MonoBehaviour
 {
-    /*
-    [SerializeField] HealthStatsSO health;
+    [SerializeField]
+    private int maxHealth;
+    [SerializeField] private float _acceleration = 0.5f;
+    [SerializeField] private float _deceleration = 0.5f;
+    [SerializeField] private float _maxSpeed = 5f;
+    [SerializeField] private float _dashSpeed = 20f;
+    [SerializeField] private float _dashDuration = 0.2f;  
+    [SerializeField] private float _dashCooldown = 1f; 
 
+    private int currentHealth;
+    private int currency;
 
-    //ARREGLAR BALAS
-    private int currentAmmo;
-
-
-    private PlayerMovement movement;
-
-    bool isHolding, isShooting;
-
-    private void Start()
+    public int Currency
     {
-       
-        movement = GetComponent <PlayerMovement>();
+        get { return currency; }
+        set { currency = value; }
     }
 
-    public bool OnHoldPress()
+    public int MaxHp
     {
-        isHolding = !isHolding;
-        return isHolding;
+        get { return maxHealth; }
     }
 
+    public int CurrentHealth
+    {
+        get { return currentHealth;  }
+        set { currentHealth = value; }
+    }
 
     public float HpPercent
     {
-        get { return health.MaxHealth / health.CurrentHealth; }
+        get { return maxHealth / currentHealth; }
     }
 
-    public float GetHp
+    public float Acceleration
     {
-        get { return health.CurrentHealth; }
+        get { return _acceleration; }
+    }
+
+    public float Deceleration
+    {
+        get { return _deceleration; }
+    }
+
+    public float MaxSpeed
+    {
+        get { return _maxSpeed; }
+    }
+
+    public float DashSpeed
+    {
+        get { return _dashSpeed; }
+    }
+
+    public float DashDuration
+    {
+        get { return _dashDuration; }
+    }
+
+    public float DashCooldown
+    {
+        get { return _dashCooldown; }
     }
 
     public void SetHp(int value)
     {
-        health.CurrentHealth = value;
+        currentHealth = value;
+
+        currentHealth = math.clamp(currentHealth, 0, maxHealth);
     }
 
     public void ModifyCurrentHp(int value)
     {
-        health.CurrentHealth += value;
+        currentHealth += value;
+
+        currentHealth = math.clamp(currentHealth, 0, maxHealth);
     }
 
     public void SetMaxHp(int value)
     {
-        health.MaxHealth = value;
+        maxHealth = value;
     }
 
     public void ModifyMaxHp(int value)
     {
-        health.MaxHealth += value;
-    }
-
-    public int GetAmmo
-    {
-        get { return currentAmmo; }
-    }
-
-    public void AddAmmo(int value)
-    {
-        currentAmmo += value;
-    }
-
-    public void SetAmmo(int value)
-    {
-        currentAmmo = value;
+        maxHealth += value;
     }
 
     public float GetMovementSpeed
     {
-        get { return movement.Speed; }
+        get { return _maxSpeed; }
     }
 
     public void SetMovementSpeed(float value)
     {
-        movement.Speed = value;
+        _maxSpeed = value;
     }
 
     public void ModifyMovementSpeed(float value)
     {
-        movement.Speed += value;
+        _maxSpeed += value;
     }
 
     public float GetAttackSpeed
     {
-        get { return inputManager.AutoShootCD; }
-    }
-
-    public void SetAttackSPeed(float value)
-    {
-        inputManager.AutoShootCD = value;
-    }
-
-    public void ModifyAttackSpeed(float value)
-    {
-        inputManager.AutoShootCD += value;
+        get { return _dashCooldown; }
     }
 
     public void PickUpItem(ItemSO item)
@@ -111,19 +120,4 @@ public class PlayerActor : MonoBehaviour
         Debug.Log("item " + item.name);
 
     }
-
-    public void OnKill()
-    {
-        ItemEvents.TriggerEnemyKilled();
-    }
-
-    public void OnRoomEntered()
-    {
-        ItemEvents.TriggerOnRoomEntered();
-    }
-
-    private void OnStatChange()
-    {
-        ItemEvents.TriggerOnStatChange();
-    }*/
 }

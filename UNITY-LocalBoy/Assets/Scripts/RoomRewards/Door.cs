@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class DoorReward : MonoBehaviour
 {
-    private bool isOpen;
+    [SerializeField]
+    private string sceneToLoad;
     [SerializeField]
     private Rewards rewardType;
+    private GameObject hint;
 
-    private void Start()
+    private void Awake()
     {
-        isOpen = false;
+        hint = transform.GetChild(0).gameObject;
+        hint.SetActive(true);
     }
 
     public void AsignReward(Rewards reward)
@@ -19,31 +22,26 @@ public class DoorReward : MonoBehaviour
         rewardType = reward;
     }
 
-    private void Open()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        isOpen = true;
-
-        SpawnReward.GetReward();
+        if (collision.CompareTag("Player"))
+        {
+            Enter();
+        }
     }
 
     public void Enter()
     {
         RoomManager.instance.CurrentReward = rewardType;
-        //RECORDAR HACER EL SCENE MANAGER
-        SceneManager.LoadScene("Item");
-        Debug.Log("enter");
-
+        SceneManager.LoadScene(sceneToLoad);
+        ItemEvents.TriggerOnRoomEntered();
     }
 
 
-    private void Update()
+    public Rewards RewardType
     {
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            Open();
-        }
+        get { return rewardType; }
     }
-
 }
 
 public enum Rewards

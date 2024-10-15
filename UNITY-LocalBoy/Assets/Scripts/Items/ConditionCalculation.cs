@@ -5,8 +5,7 @@ using UnityEngine;
 
 public static class ConditionCalculation
 {
-    /*
-    public static bool EvaluateConditionType(Condition condition, ConditionNumberType conditionNumber, int conditionValue, PlayerActor actor)
+    public static bool EvaluateConditionType(Condition condition, ConditionNumberType conditionNumber, float conditionValue, PlayerActor actor)
     {
         bool conditionMet = false;
 
@@ -16,11 +15,7 @@ public static class ConditionCalculation
         }
         else if (condition == Condition.Health)
         {
-            conditionMet = EvaluateConditionNumber(conditionNumber, actor.GetHp, conditionValue);
-        }
-        else if (condition == Condition.Ammo)
-        {
-            conditionMet = EvaluateConditionNumber(conditionNumber, actor.GetAmmo, conditionValue);
+            conditionMet = EvaluateConditionNumber(conditionNumber, actor.CurrentHealth, conditionValue);
         }
         else if (condition == Condition.Halth_percent)
         {
@@ -38,7 +33,7 @@ public static class ConditionCalculation
         return conditionMet;
     }
 
-    private static bool EvaluateConditionNumber(ConditionNumberType conditionNumberType, float statValue, int conditionValue)
+    private static bool EvaluateConditionNumber(ConditionNumberType conditionNumberType, float statValue, float conditionValue)
     {
         switch (conditionNumberType)
         {
@@ -63,5 +58,5 @@ public static class ConditionCalculation
             default:
                 return false;
         }
-    }*/
+    }
 }

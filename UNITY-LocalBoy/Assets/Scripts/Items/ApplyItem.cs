@@ -1,11 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ApplyItem : MonoBehaviour
 {
-    /*
-    [SerializeField]
     private ItemRarity rarityPool;
 
     private UIText text;
@@ -18,6 +17,7 @@ public class ApplyItem : MonoBehaviour
 
     private void Awake()
     {
+        rarityPool = GetRandomRarity<ItemRarity>();
         spriteRender = GetComponent<SpriteRenderer>();
 
         allItems = new List<ItemSO>(Resources.LoadAll<ItemSO>("Items"));
@@ -35,7 +35,8 @@ public class ApplyItem : MonoBehaviour
         // Escoger uno aleatoriamente
         if (itemsOfSelectedRarity.Count > 0)
         {
-            item = itemsOfSelectedRarity[Random.Range(0, itemsOfSelectedRarity.Count)];
+            item = itemsOfSelectedRarity[UnityEngine.Random.Range(0, itemsOfSelectedRarity.Count)];
+            Debug.Log(item.Name);
 
         }
         else
@@ -44,7 +45,7 @@ public class ApplyItem : MonoBehaviour
         }
 
 
-        text = DetatchFromParent.Instance.transform.Find("Joystick Canvas").Find("ItemPop").GetComponent<UIText>();
+        //text = DetatchFromParent.Instance.transform.Find("Joystick Canvas").Find("ItemPop").GetComponent<UIText>();
     }
 
     private void Start()
@@ -52,6 +53,43 @@ public class ApplyItem : MonoBehaviour
         spriteRender.sprite = item.Icon;
     }
 
+    private static T GetRandomRarity<T>() where T : Enum
+    {
+        // Definir los pesos en el mismo orden que los valores del enum.
+        int[] weights = new int[] { 70, 25, 5 };
+
+        // Obtener los valores del enum.
+        T[] valores = (T[])Enum.GetValues(typeof(T));
+
+        // Verificar que los pesos coincidan con el número de valores.
+        if (weights.Length != valores.Length)
+        {
+            throw new ArgumentException("El número de pesos no coincide con el número de valores en el enum.");
+        }
+
+        // Calcular la suma total de los pesos.
+        int totalWeight = 0;
+        foreach (int weight in weights)
+        {
+            totalWeight += weight;
+        }
+
+        // Generar un número aleatorio entre 0 y el total de los pesos.
+        int randomValue = UnityEngine.Random.Range(0, totalWeight);
+
+        // Determinar qué valor corresponde al número aleatorio basado en los pesos.
+        int cumulativeWeight = 0;
+        for (int i = 0; i < valores.Length; i++)
+        {
+            cumulativeWeight += weights[i];
+            if (randomValue < cumulativeWeight)
+            {
+                return valores[i];
+            }
+        }
+
+        throw new InvalidOperationException("No se pudo seleccionar un valor aleatorio del enum.");
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -71,5 +109,4 @@ public class ApplyItem : MonoBehaviour
 
         }
     }
-    */
 }
