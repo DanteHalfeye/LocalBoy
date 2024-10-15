@@ -62,7 +62,8 @@ public class Shoot : MonoBehaviour
     public void OnShoot(Vector2 direccion, GameObject bala) 
     {
         if (bala != null)
-        { 
+        {
+            //AUDIO: Aquí se llamaría el audio del disparo de enemigo 
             bala.transform.position = gameObject.transform.position;
             bala.GetComponent<Rigidbody2D>().velocity = direccion * fuerza;
         }
@@ -71,6 +72,7 @@ public class Shoot : MonoBehaviour
     {
         if (bala != null)
         {
+            //AUDIO: Aquí se llamaría el audio del disparo de enemigo 
             bala.transform.position = gameObject.transform.position;
             bala.GetComponent<Rigidbody2D>().velocity = direccion * force;
         }
