@@ -28,6 +28,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2190183105480379067, guid: 1a8a56e8d8f39cd45b9bff943736a760, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382564750856126257, guid: 1a8a56e8d8f39cd45b9bff943736a760, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3037901177479180717, guid: 1a8a56e8d8f39cd45b9bff943736a760, type: 3}
       propertyPath: m_Name
       value: HorizMid (3enem) Variant
@@ -91,6 +99,10 @@ PrefabInstance:
     - target: {fileID: 6278833296022119365, guid: 1a8a56e8d8f39cd45b9bff943736a760, type: 3}
       propertyPath: puntosMovimiento.Array.data[1].y
       value: -3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402305486903003436, guid: 1a8a56e8d8f39cd45b9bff943736a760, type: 3}
+      propertyPath: longitudRayo
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6523156139690447085, guid: 1a8a56e8d8f39cd45b9bff943736a760, type: 3}
       propertyPath: m_LocalPosition.x

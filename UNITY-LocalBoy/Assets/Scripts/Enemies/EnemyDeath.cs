@@ -55,7 +55,7 @@ public class EnemyDeath : MonoBehaviour
         // Play the particle effect
         _particles.Play();
         DeactivateAI();
-
+        gameObject.layer = 0;
         // Play Death Audio Play Once 
 
         // Start the coroutine to deactivate the enemy after the delay

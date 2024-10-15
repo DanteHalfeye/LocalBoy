@@ -52,9 +52,17 @@ PrefabInstance:
       propertyPath: puntosMovimiento.Array.data[1].y
       value: 13.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3411632915663811917, guid: 3ce29b1ef3806ef4ebbd28d05b760a2f, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4288673991347193995, guid: 3ce29b1ef3806ef4ebbd28d05b760a2f, type: 3}
       propertyPath: m_Name
       value: horizTop (2enem) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120084658233157978, guid: 3ce29b1ef3806ef4ebbd28d05b760a2f, type: 3}
+      propertyPath: longitudRayo
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7544169946084403145, guid: 3ce29b1ef3806ef4ebbd28d05b760a2f, type: 3}
       propertyPath: distanciaMinima

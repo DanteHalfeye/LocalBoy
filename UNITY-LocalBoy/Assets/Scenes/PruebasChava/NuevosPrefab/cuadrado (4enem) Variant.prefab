@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: puntosMovimiento.Array.data[3].y
       value: -21.3
       objectReference: {fileID: 0}
+    - target: {fileID: 786830377165495860, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382838990848858971, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1640111640890452227, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: m_Name
       value: cuadrado (4enem) Variant
@@ -163,6 +171,10 @@ PrefabInstance:
     - target: {fileID: 4876431361857877834, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: puntosMovimiento.Array.data[3].y
       value: -21.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669466419899638574, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: longitudRayo
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5931877047041222646, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: m_LocalPosition.x
@@ -291,6 +303,10 @@ PrefabInstance:
     - target: {fileID: 7650867751483657579, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: m_LocalPosition.y
       value: -10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636095414544148478, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: longitudRayo
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

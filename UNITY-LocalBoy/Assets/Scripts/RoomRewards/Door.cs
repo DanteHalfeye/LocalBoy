@@ -29,7 +29,7 @@ public class DoorReward : MonoBehaviour
     public void Enter()
     {
         RoomManager.instance.CurrentReward = rewardType;
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 

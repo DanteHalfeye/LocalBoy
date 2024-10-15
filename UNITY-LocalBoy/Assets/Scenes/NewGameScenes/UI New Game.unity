@@ -147,9 +147,65 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 601847955157040523, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 433357307}
+    - target: {fileID: 601847955157040523, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseCreditsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448956083348545081, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 433357307}
+    - target: {fileID: 1448956083348545081, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseOptionsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920605065538225558, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 433357307}
+    - target: {fileID: 1920605065538225558, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CreditsPanelButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2373828590866952496, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282966746775024557, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 433357307}
+    - target: {fileID: 3282966746775024557, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddsMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555456608770060519, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 433357307}
+    - target: {fileID: 3555456608770060519, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GamePanelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773732561662037712, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 433357307}
+    - target: {fileID: 3773732561662037712, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OptionsMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008797876772029046, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 433357307}
+    - target: {fileID: 4008797876772029046, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseAddsMenu
       objectReference: {fileID: 0}
     - target: {fileID: 4058280007953212569, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_AnchorMax.y

@@ -104,6 +104,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -20.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3748521751131835071, guid: 6bcece3f3c8c5964bad5ecc95b52657c, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711974471123729045, guid: 6bcece3f3c8c5964bad5ecc95b52657c, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6851901060513355491, guid: 6bcece3f3c8c5964bad5ecc95b52657c, type: 3}
       propertyPath: m_Name
       value: figurara2 ( 2enem) Variant

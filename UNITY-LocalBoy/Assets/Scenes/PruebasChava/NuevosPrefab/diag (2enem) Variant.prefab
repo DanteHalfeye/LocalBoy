@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: diag (2enem) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 843893919641031469, guid: c9c8c881ae38fc8469389642622f9980, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1214268785875451448, guid: c9c8c881ae38fc8469389642622f9980, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -91,6 +95,10 @@ PrefabInstance:
     - target: {fileID: 3402107817050750312, guid: c9c8c881ae38fc8469389642622f9980, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772144029454569597, guid: c9c8c881ae38fc8469389642622f9980, type: 3}
+      propertyPath: longitudRayo
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4823900008424389203, guid: c9c8c881ae38fc8469389642622f9980, type: 3}
       propertyPath: velocidadMovimiento

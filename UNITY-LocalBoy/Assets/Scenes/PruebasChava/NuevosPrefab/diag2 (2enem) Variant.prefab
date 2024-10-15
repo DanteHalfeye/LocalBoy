@@ -56,6 +56,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: diag2 (2enem) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6705666035690679969, guid: 554a7f8912ca4bc468b55ab74570aaa6, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803828399354620000, guid: 554a7f8912ca4bc468b55ab74570aaa6, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7509831442386781358, guid: 554a7f8912ca4bc468b55ab74570aaa6, type: 3}
       propertyPath: distanciaMinima
       value: 0.14

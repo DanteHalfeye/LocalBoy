@@ -11,6 +11,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 {
 
     [SerializeField] private int _currentLevelNumber;
+    private int lastLevelNumber = 0;
 
     private PlayerMovement _player;
 
@@ -26,6 +27,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     public int CurrentAmmountOfPatterns { set { _currentAmountOfPatterns = value; } }
     private void Start()
     {
+        DontDestroyOnLoad(this);
         _amountOfEnemies = 0;
         Application.targetFrameRate = 60;
         Application.runInBackground = false;

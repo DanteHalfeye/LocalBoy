@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 13.4
       objectReference: {fileID: 0}
+    - target: {fileID: 4431190524906399375, guid: cfddba0b7b50c294c8f25a6662887323, type: 3}
+      propertyPath: longitudRayo
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4439023521256783110, guid: cfddba0b7b50c294c8f25a6662887323, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -163,6 +167,10 @@ PrefabInstance:
     - target: {fileID: 7468776364787368201, guid: cfddba0b7b50c294c8f25a6662887323, type: 3}
       propertyPath: m_Name
       value: M (2enem) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740323930826655723, guid: cfddba0b7b50c294c8f25a6662887323, type: 3}
+      propertyPath: longitudRayo
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8832694500951159819, guid: cfddba0b7b50c294c8f25a6662887323, type: 3}
       propertyPath: distanciaMinima
