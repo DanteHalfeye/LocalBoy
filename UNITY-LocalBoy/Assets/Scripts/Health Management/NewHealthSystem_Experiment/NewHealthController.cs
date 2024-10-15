@@ -69,6 +69,8 @@ public class NewHealthController : MonoBehaviour
         _currentHealth -= damageAmount;
         _currentHealth = math.clamp(_currentHealth, 0, _maxHealth);
 
+        // Play Damaged Audio
+
         if (_currentHealth <= 0 && !isPlayerDead) 
         {
             Die();
@@ -91,6 +93,7 @@ public class NewHealthController : MonoBehaviour
 
     private void Die()
     {
+        //Play Death Audio
         isPlayerDead = true;
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
         gameObject.SetActive(false);

@@ -59,6 +59,7 @@ public class DashAttack : MonoBehaviour
         _isDashing = true;
         _playerMovement.enabled = false;  // Disable player movement
 
+        //Play Audio Once Change Pitch
 
         ActivateAttackHitbox();
         Vector2 direction = autoAimDirection.AutoShootDirection().normalized;

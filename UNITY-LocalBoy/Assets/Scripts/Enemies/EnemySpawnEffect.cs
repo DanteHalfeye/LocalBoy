@@ -12,6 +12,7 @@ public class EnemySpawnEffect : MonoBehaviour
         targetScale = transform.localScale;
         transform.localScale = Vector3.zero; // Start at 0 scale
         StartCoroutine(ScaleUp());
+        // Play Audio enemy Spawn Play Once Change Pitch for each time its called
         enemyShoot = GetComponent<EnemyShoot>();
     }
 
