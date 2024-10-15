@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
-    public static event Action OnRoomClear;
+   
 
     [SerializeField] 
     private GameObject doorPrefab;
@@ -48,20 +48,16 @@ public class RoomManager : MonoBehaviour
 
     private void OnEnable()
     {
-        OnRoomClear += SpawnDoors;
-        OnRoomClear += SpawnRewards;
+        StaticEventHandler.OnRoomCleared += SpawnDoors;
+        StaticEventHandler.OnRoomCleared += SpawnRewards;
     }
 
     private void OnDisable()
     {
-        OnRoomClear -= SpawnDoors;
-        OnRoomClear -= SpawnRewards;
+        StaticEventHandler.OnRoomCleared -= SpawnDoors;
+        StaticEventHandler.OnRoomCleared -= SpawnRewards;
     }
 
-    public void Clear()
-    {
-        OnRoomClear?.Invoke();
-    }
 
     private void SpawnDoors()    
     {
@@ -87,15 +83,6 @@ public class RoomManager : MonoBehaviour
         }
 
         AsignDoors();
-    }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("ola");
-            Clear();
-        }
     }
 
     private void AsignDoors()
