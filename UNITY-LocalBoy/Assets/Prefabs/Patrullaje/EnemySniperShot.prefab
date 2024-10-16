@@ -224,7 +224,7 @@ MonoBehaviour:
   showAim: 1
   startShowing: 50
   stopShowing: 0
-  fuerzaSniper: 20
+  fuerzaSniper: 55
   cantidadBalasEscopeta: 30
   colorInicial: {r: 0.3881693, g: 0, b: 1, a: 0}
   colorFinal: {r: 1, g: 0, b: 0, a: 0}

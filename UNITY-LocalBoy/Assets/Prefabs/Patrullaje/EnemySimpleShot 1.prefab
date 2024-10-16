@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cc905bc9fb406439024c3991e523d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerza: 10
+  fuerza: 30
   tagObjetivo: Player
   desviacion: 0
   uiManager: {fileID: 0}
