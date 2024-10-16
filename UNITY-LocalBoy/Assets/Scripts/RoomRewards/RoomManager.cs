@@ -38,6 +38,14 @@ public class RoomManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            Clear();
+        }
+    }
+
     private void OnDestroy()
     {
         if (instance == this)

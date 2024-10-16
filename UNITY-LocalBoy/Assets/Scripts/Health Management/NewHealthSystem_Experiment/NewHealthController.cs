@@ -17,10 +17,6 @@ public class NewHealthController : MonoBehaviour
     bool isPlayerDead = false;
 
     private PlayerActor actor;
-    private void Start()
-    {
-        actor = GetComponent<PlayerActor>();
-    }
 
     public bool IsPlayerDead
     {
@@ -29,6 +25,7 @@ public class NewHealthController : MonoBehaviour
 
     private void Awake()
     {
+        actor = GetComponent<PlayerActor>();
         actor.CurrentHealth = actor.MaxHp;
         _camera = Camera.main;
     }
