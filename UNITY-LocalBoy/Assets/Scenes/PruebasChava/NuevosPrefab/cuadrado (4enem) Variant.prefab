@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: longitudRayo
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1368783596275131684, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 7.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368783596275131684, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 5.59
+      objectReference: {fileID: 0}
     - target: {fileID: 1382838990848858971, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: longitudRayo
       value: 100
@@ -59,6 +67,14 @@ PrefabInstance:
     - target: {fileID: 1640111640890452227, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: m_Name
       value: cuadrado (4enem) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137473747167699444, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 7.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137473747167699444, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 5.59
       objectReference: {fileID: 0}
     - target: {fileID: 3344987100102324337, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: m_LocalScale.x
@@ -303,6 +319,22 @@ PrefabInstance:
     - target: {fileID: 7650867751483657579, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: m_LocalPosition.y
       value: -10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055836255629040878, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 7.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055836255629040878, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 5.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509449069386520961, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 7.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509449069386520961, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 5.59
       objectReference: {fileID: 0}
     - target: {fileID: 8636095414544148478, guid: 397111c7dd606b14ebf733bab0947015, type: 3}
       propertyPath: longitudRayo
