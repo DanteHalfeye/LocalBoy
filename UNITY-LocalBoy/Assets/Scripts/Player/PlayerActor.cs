@@ -17,6 +17,7 @@ public class PlayerActor : MonoBehaviour
     private int currentHealth;
     private int currency;
 
+   
     public int Currency
     {
         get { return currency; }

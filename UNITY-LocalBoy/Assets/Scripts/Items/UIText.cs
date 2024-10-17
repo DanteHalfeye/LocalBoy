@@ -23,14 +23,14 @@ public class UIText : MonoBehaviour
 
     private void Awake()
     {
-        /*if (instance == null)
+        if (instance == null)
         {
             instance = this;
         }
         else if (instance != this)
         {
             Destroy(instance);
-        }*/
+        }
 
         title = gameObject.transform.Find("Title").GetComponent<TextMeshProUGUI>();
         description = gameObject.transform.Find("Description").GetComponent<TextMeshProUGUI>();

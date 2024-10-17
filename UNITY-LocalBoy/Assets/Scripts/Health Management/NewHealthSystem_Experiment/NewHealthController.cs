@@ -13,7 +13,7 @@ public class NewHealthController : MonoBehaviour
     [SerializeField] private Transform _healthBarTransform;
     [SerializeField] private int _damageAmount, _healAmount;
     [SerializeField] private DashAttack _attack;
-    private Camera _camera;
+   
     bool isPlayerDead = false;
 
     private PlayerActor actor;
@@ -27,7 +27,7 @@ public class NewHealthController : MonoBehaviour
     {
         actor = GetComponent<PlayerActor>();
         actor.CurrentHealth = actor.MaxHealth;
-        _camera = Camera.main;
+  
     }
 
     private void OnEnable()
@@ -38,7 +38,7 @@ public class NewHealthController : MonoBehaviour
 
     private void Update()
     {
-        _healthBarTransform.rotation = _camera.transform.rotation;
+        _healthBarTransform.rotation = quaternion.identity;
     }
 
     private void ResetHealth()

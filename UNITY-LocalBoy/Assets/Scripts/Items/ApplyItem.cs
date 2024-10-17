@@ -45,7 +45,7 @@ public class ApplyItem : MonoBehaviour
         }
 
 
-        //text = DetatchFromParent.Instance.transform.Find("Joystick Canvas").Find("ItemPop").GetComponent<UIText>();
+        text = UIText.instance;
     }
 
     private void Start()
@@ -103,7 +103,7 @@ public class ApplyItem : MonoBehaviour
 
             actor.PickUpItem(item);
 
-            Destroy(gameObject);
+            Destroy(this.gameObject);
 
 
 

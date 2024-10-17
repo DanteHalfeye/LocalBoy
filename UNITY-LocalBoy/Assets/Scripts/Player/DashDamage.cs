@@ -12,7 +12,6 @@ public class DashDamage : MonoBehaviour
         int layer;
     private void Awake()
     {
-        cameraShake = Camera.main.GetComponent<CameraShake>();
         layer = (int)Mathf.Log(enemyLayer.value, 2);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +20,7 @@ public class DashDamage : MonoBehaviour
         {
             if (collision.gameObject.layer == layer)
             {
+                cameraShake = Camera.main.GetComponent<CameraShake>();
                 collision.gameObject.GetComponent<EnemyDeath>().Death();
                 cameraShake.StartShake(duration, magnitude);
             }

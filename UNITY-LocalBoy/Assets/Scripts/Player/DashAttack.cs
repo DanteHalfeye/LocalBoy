@@ -8,28 +8,20 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(AutoAim))]
 public class DashAttack : MonoBehaviour
 {
-    private PlayerActor actor;
+    [SerializeField] private PlayerActor actor;
     [SerializeField] private InputActionReference dashActionReference;
 
     private bool _isDashing = false;
     private bool _canDash = true;
 
-    private PlayerMovement _playerMovement;
-    private Rigidbody2D _rb;
-    private AutoAim autoAimDirection;
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private AutoAim autoAimDirection;
 
     [SerializeField]private CircleCollider2D _attackCollider;
-    private BoxCollider2D _playerCollider;
     public bool IsDashing { get { return _isDashing; } }
     private void Awake()
     {
-        actor = GetComponent<PlayerActor>();
-        _playerMovement = GetComponent<PlayerMovement>();
-        _rb = GetComponent<Rigidbody2D>();
-        _attackCollider = GetComponentInChildren<CircleCollider2D>();
-        _playerCollider = GetComponent<BoxCollider2D>();
-        autoAimDirection = GetComponent<AutoAim>();
-
         DeactivateAttackHitbox();
     }
 
