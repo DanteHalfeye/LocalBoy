@@ -151,6 +151,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3555456608770060519, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 433357307}
+    - target: {fileID: 3555456608770060519, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GamePanelButton
+      objectReference: {fileID: 0}
     - target: {fileID: 4058280007953212569, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

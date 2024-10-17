@@ -34,6 +34,10 @@ public class Counter : MonoBehaviour
     [SerializeField]
     private UnityEngine.UI.Slider slider;
 
+    [Tooltip("Texto del High Score")]
+    [SerializeField]
+    private TextMeshProUGUI uiHighScore;
+
     public static Counter instance;
 
 
@@ -52,25 +56,32 @@ public class Counter : MonoBehaviour
             return;
         }
 
+        if (HighScore.instance != null)
+        {
+            uiHighScore.text = "High Score: " + HighScore.instance.GetHighScore().ToString();
+        }
+
         instance = this;
 
     }
 
     private void Update()
     {
-        uiScore.text = "Score: " + currentScore.ToString();
+        uiScore.text = "Score: " + currentScore.ToString() + " Points";
         uiMultiplier.text = "G Force : " + ((int)currentMultiplier).ToString();
         slider.value = Mathf.Clamp(multiplierTimer / maxTimer, 0f, 1f);
 
-
-        
+        uiHighScore.text = "High Score: " + HighScore.instance.GetHighScore().ToString() + " Points";
     }
 
     public void AddScore(float score, bool epico)
     {
         Debug.Log("score:" + currentScore);
 
+
         currentScore += (score * (int)currentMultiplier);
+
+        HighScore.instance.SaveHighScore(currentScore);
 
         if (epico && currentMultiplier != CurrentMultiplier.basado)
         {
@@ -120,6 +131,28 @@ public class Counter : MonoBehaviour
 
         // Retornamos el valor correspondiente al nuevo índice
         return enumIndex[newIndex];
+    }
+
+    public float GetFinalScore()
+    {
+        return currentScore;
+    }
+
+    public void ResetCurrentScore()
+    {
+        currentScore = 0;
+    }
+
+    private void OnDisable()
+    {
+        ResetCurrentScore();
+    }
+
+    [ContextMenu("Reset High Score")]
+    private void ResetHighScoreFromInspector()
+    {
+        HighScore.instance.ResetHighScore();
+        Debug.Log("High Score reiniciado desde el Inspector");
     }
 }
 
