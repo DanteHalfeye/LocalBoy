@@ -23,7 +23,7 @@ public class PlayerActor : MonoBehaviour
         set { currency = value; }
     }
 
-    public int MaxHp
+    public int MaxHealth
     {
         get { return maxHealth; }
     }
@@ -36,7 +36,7 @@ public class PlayerActor : MonoBehaviour
 
     public float HpPercent
     {
-        get { return maxHealth / currentHealth; }
+        get { return currentHealth / maxHealth; }
     }
 
     public float Acceleration

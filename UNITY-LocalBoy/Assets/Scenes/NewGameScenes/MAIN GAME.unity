@@ -600,9 +600,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.19194312
+    x: 0.125
     y: 0
-    width: 0.6161137
+    width: 0.75
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51611cf96d5c95b47b552fcfcf9a9d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorPrefab: {fileID: 2042914295974283405, guid: 6ae064859d991dd40991adc62a92aaac, type: 3}
+  doorPrefab: {fileID: 2042914295974283405, guid: 2bb2cf54318418246949bc2148dc598a, type: 3}
   minDoors: 3
   maxDoors: 5
   currentReward: 0
@@ -804,15 +804,15 @@ BoxCollider2D:
   m_Offset: {x: 0.0000019073486, y: 0.3355205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.710255, y: 1.671041}
+  m_Size: {x: 50.112015, y: 5.011248}
   m_EdgeRadius: 0
 --- !u!114 &442975892
 MonoBehaviour:
@@ -6678,6 +6678,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8102665496856643070, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: _maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8102665496856643070, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -8102665496856643070, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: _dashSpeed
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: -8102665496856643070, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: _acceleration
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8102665496856643070, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: _dashCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 431767270818713733, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 3.82

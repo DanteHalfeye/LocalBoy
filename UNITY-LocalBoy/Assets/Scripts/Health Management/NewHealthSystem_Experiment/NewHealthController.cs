@@ -26,7 +26,7 @@ public class NewHealthController : MonoBehaviour
     private void Awake()
     {
         actor = GetComponent<PlayerActor>();
-        actor.CurrentHealth = actor.MaxHp;
+        actor.CurrentHealth = actor.MaxHealth;
         _camera = Camera.main;
     }
 
@@ -43,7 +43,7 @@ public class NewHealthController : MonoBehaviour
 
     private void ResetHealth()
     {
-        actor.CurrentHealth = actor.MaxHp;
+        actor.CurrentHealth = actor.MaxHealth;
         UpdateHealth();
     }
 
@@ -66,7 +66,7 @@ public class NewHealthController : MonoBehaviour
     private void TakeDamage(int damageAmount)
     {
         actor.CurrentHealth -= damageAmount;
-        actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHp);
+        actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHealth);
 
         if (actor.CurrentHealth <= 0 && !isPlayerDead) 
         {
@@ -80,14 +80,14 @@ public class NewHealthController : MonoBehaviour
     private void Heal(int healAmount)
     {
         actor.CurrentHealth += healAmount;
-        actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHp);
+        actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHealth);
         UpdateHealth();
         OnHealthChanged?.Invoke();
     }
 
     private void UpdateHealth()
     {
-        _healthBarFiller.fillAmount = (float)actor.HpPercent;
+        _healthBarFiller.fillAmount = (float)actor.CurrentHealth / actor.MaxHealth;
     }
 
     private void Die()
