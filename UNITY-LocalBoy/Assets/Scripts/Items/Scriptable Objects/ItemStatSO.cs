@@ -4,20 +4,21 @@ using UnityEngine;
 
 [CreateAssetMenu (fileName = "NewItem", menuName = "Item/Stat")]
 public class ItemStatSO : ItemSO
-{ 
-
+{
     [SerializeField]
-    private Stat itemStatType;
-    [SerializeField]
-    private int modifier;
+    private List<StatEffect> effects = new List<StatEffect>();
 
     private void OnEnable()
     {
         ItemType = ItemTypeClass.Stats;
     }
 
+    public IReadOnlyList<StatEffect> Effects => effects.AsReadOnly();
 
-    public Stat ItemStatType => itemStatType;
-    public int Modifier => modifier;
-
+    [System.Serializable]
+    public struct StatEffect
+    {
+        public Stat stat;
+        public int modifier;
+    }
 }

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class DoorReward : MonoBehaviour
 {
+    [SerializeField]
+    private string sceneToLoad;
+    [SerializeField]
     private Rewards rewardType;
     private GameObject hint;
 
@@ -26,10 +29,12 @@ public class DoorReward : MonoBehaviour
             Enter();
         }
     }
+
     public void Enter()
     {
         RoomManager.instance.CurrentReward = rewardType;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(sceneToLoad);
+        ItemEvents.TriggerOnRoomEntered();
     }
 
 

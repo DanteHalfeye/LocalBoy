@@ -7,7 +7,6 @@ using UnityEngine;
 
 public static class TriggerEffect
 {
-    /*
     public static void Initialize(ItemSO item, PlayerActor actor)
     {
         switch (item.TriggerType)
@@ -27,10 +26,6 @@ public static class TriggerEffect
 
             case EffectTrigger.OnRoomEnter:
                 ItemEvents.OnRoomEntered += () => EvaluateTrigger(item, actor);
-                break;
-
-            case EffectTrigger.OnFloorEnter:
-                ItemEvents.OnFloorEntered += () => EvaluateTrigger(item, actor);
                 break;
         }
     }
@@ -112,41 +107,31 @@ public static class TriggerEffect
 
     private static void ApplyEffectStats(ItemStatSO item, PlayerActor actor)
     {
-
         if (!ManageEffects.HasEffectBeenApplied(actor,item))
         {
-            switch (item.ItemStatType)
+            foreach (var effect in item.Effects)
             {
-                case Stat.SetMaxHealth:
-                    actor.SetMaxHp(item.Modifier);
-                    break;
-                case Stat.SetCurrentHealth:
-                    actor.SetHp(item.Modifier);
-                    break;
-                case Stat.ModifyMaxHealth:
-                    actor.ModifyMaxHp(item.Modifier); 
-                    break;
-                case Stat.ModifyCurrentHealth:
-                    actor.ModifyCurrentHp(item.Modifier);
-                    break;
-                case Stat.ModifyAttackSpeed:
-                    actor.ModifyAttackSpeed(item.Modifier);
-                    break;
-                case Stat.SetAttackSpeed:
-                    actor.SetAttackSPeed(item.Modifier);
-                    break;
-                case Stat.AddAmmo:
-                    actor.AddAmmo(item.Modifier);
-                    break;
-                case Stat.SetAmmo:
-                    actor.SetAmmo(item.Modifier);
-                    break;
-                case Stat.ModifySpeed:
-                    actor.ModifyMovementSpeed(item.Modifier);
-                    break;
-                case Stat.SetSpeed:
-                    actor.SetMovementSpeed(item.Modifier);
-                    break;
+                switch (effect.stat)
+                {
+                    case Stat.SetMaxHealth:
+                        actor.SetMaxHp(effect.modifier);
+                        break;
+                    case Stat.SetCurrentHealth:
+                        actor.SetHp(effect.modifier);
+                        break;
+                    case Stat.ModifyMaxHealth:
+                        actor.ModifyMaxHp(effect.modifier);
+                        break;
+                    case Stat.ModifyCurrentHealth:
+                        actor.ModifyCurrentHp(effect.modifier);
+                        break;
+                    case Stat.ModifySpeed:
+                        actor.ModifyMovementSpeed(effect.modifier);
+                        break;
+                    case Stat.SetSpeed:
+                        actor.SetMovementSpeed(effect.modifier);
+                        break;
+                }
             }
 
             ManageEffects.MarkEffectAsApplied(actor, item);
@@ -167,41 +152,31 @@ public static class TriggerEffect
     {
         if (ManageEffects.HasEffectBeenApplied(actor, item))
         {
-            switch (item.ItemStatType)
+            foreach (var effect in item.Effects)
             {
-                case Stat.SetMaxHealth:
-                    actor.SetMaxHp(-item.Modifier);
-                    break;
-                case Stat.SetCurrentHealth:
-                    actor.SetHp(-item.Modifier);
-                    break;
-                case Stat.ModifyMaxHealth:
-                    actor.ModifyMaxHp(-item.Modifier);
-                    break;
-                case Stat.ModifyCurrentHealth:
-                    actor.ModifyCurrentHp(-item.Modifier);
-                    break;
-                case Stat.ModifyAttackSpeed:
-                    actor.ModifyAttackSpeed(-item.Modifier);
-                    break;
-                case Stat.SetAttackSpeed:
-                    actor.SetAttackSPeed(-item.Modifier);
-                    break;
-                case Stat.AddAmmo:
-                    actor.AddAmmo(-item.Modifier);
-                    break;
-                case Stat.SetAmmo:
-                    actor.SetAmmo(-item.Modifier);
-                    break;
-                case Stat.ModifySpeed:
-                    actor.ModifyMovementSpeed(-item.Modifier);
-                    break;
-                case Stat.SetSpeed:
-                    actor.SetMovementSpeed(-item.Modifier);
-                    break;
+                switch (effect.stat)
+                {
+                    case Stat.SetMaxHealth:
+                        actor.SetMaxHp(-effect.modifier);
+                        break;
+                    case Stat.SetCurrentHealth:
+                        actor.SetHp(-effect.modifier);
+                        break;
+                    case Stat.ModifyMaxHealth:
+                        actor.ModifyMaxHp(-effect.modifier);
+                        break;
+                    case Stat.ModifyCurrentHealth:
+                        actor.ModifyCurrentHp(-effect.modifier);
+                        break;
+                    case Stat.ModifySpeed:
+                        actor.ModifyMovementSpeed(-effect.modifier);
+                        break;
+                    case Stat.SetSpeed:
+                        actor.SetMovementSpeed(-effect.modifier);
+                        break;
+                }
             }
             ManageEffects.MarkEffectAsNotApplied(actor, item);
         }
     }
-    */
 }

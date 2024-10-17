@@ -5,9 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
-    [SerializeField] private float _acceleration = 0.5f;
-    [SerializeField] private float _deceleration = 0.5f;
-    [SerializeField] private float _maxSpeed = 5f;
+    private PlayerActor actor;
     [SerializeField] private InputActionReference moveActionToUse;
     [SerializeField] private bool keyboard;
 
@@ -18,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        actor = GetComponent<PlayerActor>();
     }
 
     private void Update()
@@ -65,14 +64,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_input != Vector2.zero)
         {
-            _currentSpeed += _acceleration * Time.fixedDeltaTime;
+            _currentSpeed += actor.Acceleration * Time.fixedDeltaTime;
         }
         else
         {
-            _currentSpeed -= _deceleration * Time.fixedDeltaTime;
+            _currentSpeed -= actor.Deceleration * Time.fixedDeltaTime;
         }
 
-        _currentSpeed = Mathf.Clamp(_currentSpeed, 0, _maxSpeed);
+        _currentSpeed = Mathf.Clamp(_currentSpeed, 0, actor.MaxSpeed);
         _rb.velocity = _input * _currentSpeed;
     }
 }

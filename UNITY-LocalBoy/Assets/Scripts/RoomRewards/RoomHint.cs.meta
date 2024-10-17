@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:UNITY-LocalBoy/Assets/Scripts/RoomRewards/RoomHint.cs.meta
 guid: 98806c5bae1e0184d91564e0b3a13467
+========
+guid: 1e09a2dd730b21a488da58a0cbdc869e
+>>>>>>>> Door_Rewards-v2:UNITY-LocalBoy/Assets/Scripts/Health Management/Heal.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

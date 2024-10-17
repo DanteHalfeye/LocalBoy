@@ -6,7 +6,6 @@ public class RoomHint : MonoBehaviour
 {
     private float floatHeight = 0.5f;
     private float floatDuration = 2.0f;
-    private float rotationSpeed = 30f;
     private Vector2 originalPosition;
 
 

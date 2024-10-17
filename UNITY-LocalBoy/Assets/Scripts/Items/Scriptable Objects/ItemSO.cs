@@ -17,7 +17,7 @@ public class ItemSO : ScriptableObject
     [SerializeField]
     private Condition conditional;
     [SerializeField]
-    private int conditionValue;
+    private float conditionValue;
     [SerializeField]
     private ConditionNumberType conditionNumber;
     [SerializeField]
@@ -34,7 +34,11 @@ public class ItemSO : ScriptableObject
     public string Description => description;
     public Sprite Icon => icon;
     public Condition Conditional => conditional;
-    public int ConditionValue => conditionValue;
+    public float ConditionValue
+    {
+        get { return conditionValue; }
+        set { conditionValue = value; }
+    }
     public ConditionNumberType ConditionNumber => conditionNumber;
     public EffectTrigger TriggerType => triggerType;
     public DurationType Duration => duration;

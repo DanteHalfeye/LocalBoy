@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.Mathematics;
+using UnityEngine.Events;
 
 public class NewHealthController : MonoBehaviour
 {
-    [SerializeField] private int _maxHealth, _currentHealth;
+    public UnityAction OnHealthChanged;
     [SerializeField] private Image _healthBarFiller;
     [SerializeField] private Transform _healthBarTransform;
     [SerializeField] private int _damageAmount, _healAmount;
@@ -15,10 +16,7 @@ public class NewHealthController : MonoBehaviour
     private Camera _camera;
     bool isPlayerDead = false;
 
-    public int CurrentHealth
-    {
-        get { return _currentHealth; }
-    }
+    private PlayerActor actor;
 
     public bool IsPlayerDead
     {
@@ -27,7 +25,8 @@ public class NewHealthController : MonoBehaviour
 
     private void Awake()
     {
-        _maxHealth = _currentHealth;
+        actor = GetComponent<PlayerActor>();
+        actor.CurrentHealth = actor.MaxHp;
         _camera = Camera.main;
     }
 
@@ -44,7 +43,7 @@ public class NewHealthController : MonoBehaviour
 
     private void ResetHealth()
     {
-        _currentHealth = _maxHealth;
+        actor.CurrentHealth = actor.MaxHp;
         UpdateHealth();
     }
 
@@ -66,34 +65,33 @@ public class NewHealthController : MonoBehaviour
 
     private void TakeDamage(int damageAmount)
     {
-        _currentHealth -= damageAmount;
-        _currentHealth = math.clamp(_currentHealth, 0, _maxHealth);
+        actor.CurrentHealth -= damageAmount;
+        actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHp);
 
-        // Play Damaged Audio
-
-        if (_currentHealth <= 0 && !isPlayerDead) 
+        if (actor.CurrentHealth <= 0 && !isPlayerDead) 
         {
             Die();
         }
 
         UpdateHealth();
+        OnHealthChanged?.Invoke();
     }
 
     private void Heal(int healAmount)
     {
-        _currentHealth += healAmount;
-        _currentHealth = math.clamp(_currentHealth, 0, _maxHealth);
+        actor.CurrentHealth += healAmount;
+        actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHp);
         UpdateHealth();
+        OnHealthChanged?.Invoke();
     }
 
     private void UpdateHealth()
     {
-        _healthBarFiller.fillAmount = (float)_currentHealth / _maxHealth;
+        _healthBarFiller.fillAmount = (float)actor.HpPercent;
     }
 
     private void Die()
     {
-        //Play Death Audio
         isPlayerDead = true;
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
         gameObject.SetActive(false);
