@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 100}
+  m_SizeDelta: {x: 1332.8, y: 333.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3080270670743156641
 CanvasRenderer:
@@ -143,7 +143,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5255532
+  m_Radius: 3.4636464
 --- !u!114 &8743542694388174394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 370, y: 70}
+  m_SizeDelta: {x: 1369.3, y: 259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2401004190895236195
 CanvasRenderer:
@@ -272,7 +272,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 370, y: 70}
+  m_SizeDelta: {x: 1351.8, y: 255.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5115321857726378212
 CanvasRenderer:
@@ -348,7 +348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.89}
+  m_AnchoredPosition: {x: 0, y: 3.82}
   m_SizeDelta: {x: 1334, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4772725966651486138
@@ -432,6 +432,8 @@ GameObject:
   - component: {fileID: 8254176683153398159}
   - component: {fileID: 3062667410806097142}
   - component: {fileID: 638066894162086627}
+  - component: {fileID: 3586058998194955491}
+  - component: {fileID: 7938774957289915019}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -494,10 +496,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -653709415
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f98518ea52fb068469c12cade19c2f8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -571,14 +573,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 6.6666665, y: 6.6666665}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.5137525, y: 3.5137525}
   m_EdgeRadius: 0
 --- !u!114 &-8102665496856643070
 MonoBehaviour:
@@ -592,7 +594,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2314cca1e93be9409b22f6da935edaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 100
+  _acceleration: 21
+  _deceleration: 0.5
+  _maxSpeed: 30
+  _dashSpeed: 70
+  _dashDuration: 0.2
+  _dashCooldown: 0.5
 --- !u!114 &6663238840484938664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,11 +613,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6ede5426d7f3849a336882184ec53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 21
-  _deceleration: 0.5
-  _maxSpeed: 30
   moveActionToUse: {fileID: -2381067643824337270, guid: dc6c1dbc32c7d024f9bd750d589b6d34, type: 3}
-  keyboard: 1
+  keyboard: 0
 --- !u!114 &714762725402581796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,10 +627,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a304b8fb6a9e90b4aa64f25bb064ac04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dashSpeed: 70
-  _dashDuration: 0.2
-  _dashCooldown: 0.5
+  actor: {fileID: -8102665496856643070}
   dashActionReference: {fileID: -6578172533981278334, guid: dc6c1dbc32c7d024f9bd750d589b6d34, type: 3}
+  _playerMovement: {fileID: 6663238840484938664}
+  _rb: {fileID: 8499963114932448287}
+  autoAimDirection: {fileID: 8254176683153398159}
   _attackCollider: {fileID: 6941401219798349554}
 --- !u!114 &8254176683153398159
 MonoBehaviour:
@@ -685,17 +691,17 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 3
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.016171169
-        value: 0.67470396
+        time: 0
+        value: 1
         inSlope: -1.4403195
         outSlope: -1.4403195
         tangentMode: 0
@@ -703,7 +709,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.49998227
       - serializedVersion: 3
-        time: 0.13478047
+        time: 0.97608376
         value: 0
         inSlope: 0
         outSlope: 0
@@ -716,9 +722,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0.8008341, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
+      key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -726,7 +732,7 @@ TrailRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -740,7 +746,7 @@ TrailRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 0
       m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
@@ -773,3 +779,28 @@ MonoBehaviour:
   _damageAmount: 5
   _healAmount: 5
   _attack: {fileID: 714762725402581796}
+--- !u!114 &3586058998194955491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360505760994624112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0f1dde73aecf34e94f61d4ac00e2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTimer: 1
+--- !u!114 &7938774957289915019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360505760994624112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85d79220af70334c9321594fec2e554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
