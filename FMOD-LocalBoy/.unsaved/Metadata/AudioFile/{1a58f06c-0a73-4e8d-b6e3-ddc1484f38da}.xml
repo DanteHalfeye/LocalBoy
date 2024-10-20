@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1a58f06c-0a73-4e8d-b6e3-ddc1484f38da}">
+		<property name="assetPath">
+			<value>CambioDeNivel.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.9189795918367347</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b598fa37-0593-4970-9f26-c57eeed8416c}</destination>
+		</relationship>
+	</object>
+</objects>

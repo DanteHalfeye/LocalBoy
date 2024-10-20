@@ -1,26 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7651602742005745755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/PRUEBAS.bank
-  m_EditorClassIdentifier: 
-  Path: ../FMOD-LocalBoy/Build/Desktop/PRUEBAS.bank
-  Name: PRUEBAS
-  StudioPath: bank:/PRUEBAS
-  lastModified: 638593532460000000
-  FileSizes:
-  - Name: Desktop
-    Value: 55872
-  Exists: 1
---- !u!114 &-4240533214711209374
+--- !u!114 &-8426122597956476734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,23 +10,77 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PARA BUILDEAR
+  m_Name: event:/MAIN GAME/new-level
   m_EditorClassIdentifier: 
-  Path: event:/PARA BUILDEAR
+  Path: event:/MAIN GAME/new-level
   Guid:
-    Data1: 2071522686
-    Data2: 1318627159
-    Data3: -289952895
-    Data4: -783877339
+    Data1: 1138563537
+    Data2: 1198443301
+    Data3: 1468563868
+    Data4: 1426209913
   Banks:
-  - {fileID: -7651602742005745755}
+  - {fileID: 1141101244218560770}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4623
+  Length: 1918
+--- !u!114 &-7963509218848968440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENEMIES/Enemy-Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/ENEMIES/Enemy-Spawn
+  Guid:
+    Data1: -605003230
+    Data2: 1148615143
+    Data3: -215916649
+    Data4: -1671669222
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2026
+--- !u!114 &-5306187212886028834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MAIN GAME/Level-finish
+  m_EditorClassIdentifier: 
+  Path: event:/MAIN GAME/Level-finish
+  Guid:
+    Data1: -278148527
+    Data2: 1321606975
+    Data3: -1172442750
+    Data4: -2105003486
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &-4221699823372732368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +96,57 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638593532460000000
+  lastModified: 638649968278502004
   FileSizes:
   - Name: Desktop
-    Value: 812
+    Value: 1350
+  Exists: 1
+--- !u!114 &-3905174804607873237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ITEMS/Pick-Item
+  m_EditorClassIdentifier: 
+  Path: event:/ITEMS/Pick-Item
+  Guid:
+    Data1: 2093599506
+    Data2: 1328794945
+    Data3: 1667418035
+    Data4: -1656911255
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 563
+--- !u!114 &-3456857346023823776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD-LocalBoy/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638649935476200035
+  FileSizes:
+  - Name: Desktop
+    Value: 2831968
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -82,15 +163,26 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -4221699823372732368}
   - {fileID: 614239836045416818}
-  - {fileID: -7651602742005745755}
+  - {fileID: -3456857346023823776}
+  - {fileID: 1141101244218560770}
   EditorEvents:
-  - {fileID: -4240533214711209374}
+  - {fileID: 3738615639909111997}
+  - {fileID: 4451227598241958954}
+  - {fileID: 2025831616271745068}
+  - {fileID: -8426122597956476734}
+  - {fileID: 4802545530419700638}
+  - {fileID: 5184356360317318741}
+  - {fileID: -3905174804607873237}
+  - {fileID: 4375177151923595380}
+  - {fileID: 6034357620517410146}
+  - {fileID: -5306187212886028834}
+  - {fileID: -7963509218848968440}
   EditorParameters: []
   MasterBanks:
   - {fileID: 614239836045416818}
   StringsBanks:
   - {fileID: -4221699823372732368}
-  cacheTime: 638593532460000000
+  cacheTime: 638649968279237156
   cacheVersion: 131619
 --- !u!114 &614239836045416818
 MonoBehaviour:
@@ -107,8 +199,217 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638593532460000000
+  lastModified: 638649968278483455
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &1141101244218560770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD-LocalBoy/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638649968279237156
+  FileSizes:
+  - Name: Desktop
+    Value: 87552
+  Exists: 1
+--- !u!114 &2025831616271745068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PLAYER/Player-Damage
+  m_EditorClassIdentifier: 
+  Path: event:/PLAYER/Player-Damage
+  Guid:
+    Data1: 1566925023
+    Data2: 1316152246
+    Data3: -1773053261
+    Data4: 1260357768
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 349
+--- !u!114 &3738615639909111997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MAIN GAME/music-fondo
+  m_EditorClassIdentifier: 
+  Path: event:/MAIN GAME/music-fondo
+  Guid:
+    Data1: 97051724
+    Data2: 1090830826
+    Data3: 1553265591
+    Data4: -943537412
+  Banks:
+  - {fileID: -3456857346023823776}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 215431
+--- !u!114 &4375177151923595380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENEMIES/Enemy-Shot
+  m_EditorClassIdentifier: 
+  Path: event:/ENEMIES/Enemy-Shot
+  Guid:
+    Data1: -495710967
+    Data2: 1081839236
+    Data3: -251406690
+    Data4: -531725978
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 69
+--- !u!114 &4451227598241958954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PLAYER/Player-Die
+  m_EditorClassIdentifier: 
+  Path: event:/PLAYER/Player-Die
+  Guid:
+    Data1: 65056909
+    Data2: 1194006807
+    Data3: -1805039229
+    Data4: -667257352
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 665
+--- !u!114 &4802545530419700638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SCORE/multiplier-up
+  m_EditorClassIdentifier: 
+  Path: event:/SCORE/multiplier-up
+  Guid:
+    Data1: -1570364285
+    Data2: 1115141261
+    Data3: 1900202402
+    Data4: 1145965519
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 202
+--- !u!114 &5184356360317318741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PLAYER/Player-Dash
+  m_EditorClassIdentifier: 
+  Path: event:/PLAYER/Player-Dash
+  Guid:
+    Data1: 1091338356
+    Data2: 1169424317
+    Data3: -460332120
+    Data4: -859579419
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 640
+--- !u!114 &6034357620517410146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENEMIES/Enemy-Die
+  m_EditorClassIdentifier: 
+  Path: event:/ENEMIES/Enemy-Die
+  Guid:
+    Data1: 1672382203
+    Data2: 1266225763
+    Data3: 1006381738
+    Data4: -1687750582
+  Banks:
+  - {fileID: 1141101244218560770}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 237

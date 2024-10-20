@@ -127,6 +127,8 @@ public class EnemyShoot : MonoBehaviour
 
     public void Shoot(string shootType)
     {
+        AudioManager.PlayOneShot("enemy-shot", gameObject.transform.position);
+
         if (type == "disparoNormal")
         {
             shoot.OnShoot(shoot.AutoShootDirection(), bp.RequerirBala());

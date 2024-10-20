@@ -16,6 +16,7 @@ public class EnemeySpawner : MonoBehaviour
     }
     public void InstantiateEnemies(int id)
     {
+        AudioManager.PlayOneShot("enemy-spawn", new Vector3(0, 0, 0));
         GameObject currentPatterns = Instantiate(enemyPatterns[id]);
         AmountOfEnemiesInCurrentPatern(id);
         currentPatterns.transform.position = Vector3.zero;

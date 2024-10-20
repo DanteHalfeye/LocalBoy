@@ -49,8 +49,7 @@ public class ApplyItem_noRNG_shop : MonoBehaviour
             Debug.Log("No hay objetos con la rareza seleccionada.");
         }
 
-        //RECORDAR HACER LA UI
-        //text = DetatchFromParent.Instance.transform.Find("Joystick Canvas").Find("ItemPop").GetComponent<UIText>();
+        text = UIText.instance;
     }
 
     private void Start()
@@ -63,6 +62,10 @@ public class ApplyItem_noRNG_shop : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             PlayerActor actor = other.GetComponent<PlayerActor>();
+
+            text.Show(item);
+
+            AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
 
             if (actor.Currency < price) return;
 

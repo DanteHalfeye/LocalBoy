@@ -49,7 +49,7 @@ public class ApplyItem_shop : MonoBehaviour
         }
 
 
-        //text = DetatchFromParent.Instance.transform.Find("Joystick Canvas").Find("ItemPop").GetComponent<UIText>();
+        text = UIText.instance;
     }
 
     private void Start()
@@ -100,6 +100,8 @@ public class ApplyItem_shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerActor actor = other.GetComponent<PlayerActor>();
+            AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
+            text.Show(item);
 
             if (actor.Currency < price) return;
 

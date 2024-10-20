@@ -65,6 +65,7 @@ public class NewHealthController : MonoBehaviour
 
     private void TakeDamage(int damageAmount)
     {
+        AudioManager.PlayOneShot("player-damage", gameObject.transform.position);
         actor.CurrentHealth -= damageAmount;
         actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHealth);
 
@@ -94,6 +95,7 @@ public class NewHealthController : MonoBehaviour
     {
         isPlayerDead = true;
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+        AudioManager.PlayOneShot("player-die", gameObject.transform.position);
         gameObject.SetActive(false);
     }
 }
