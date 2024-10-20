@@ -1,3 +1,5 @@
+using FMOD.Studio;
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,8 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
-   
-
     [SerializeField] 
     private GameObject doorPrefab;
     [SerializeField]
@@ -23,8 +23,12 @@ public class RoomManager : MonoBehaviour
 
     public static RoomManager instance { get; private set; }
 
+    private EventInstance fondoInstance;
+
+
     private void Awake()
     {
+        fondoInstance = AudioManager.CreateInstance("fondo-music");
         spawnArea = GetComponent<BoxCollider2D>();
         doors = new List<DoorReward>();
 
@@ -34,8 +38,18 @@ public class RoomManager : MonoBehaviour
             return;
         }
 
+        AudioManager.PlaySingleEmiter(fondoInstance);
+
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            SpawnDoors();
+        }
     }
 
     private void OnDestroy()
@@ -44,6 +58,8 @@ public class RoomManager : MonoBehaviour
         {
             instance = null;
         }
+
+        AudioManager.StopEmiter(fondoInstance);
     }
 
     private void OnEnable()
