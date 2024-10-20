@@ -44,4 +44,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0639e938cf924c647a6df63ad69716ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  events: []
+  events:
+  - name: player-die
+    <evento>k__BackingField:
+      Guid:
+        Data1: 65056909
+        Data2: 1194006807
+        Data3: -1805039229
+        Data4: -667257352
+      Path: event:/PLAYER/Player-Die
+  - name: player-damage
+    <evento>k__BackingField:
+      Guid:
+        Data1: 1566925023
+        Data2: 1316152246
+        Data3: -1773053261
+        Data4: 1260357768
+      Path: event:/PLAYER/Player-Damage
+  - name: player-dash
+    <evento>k__BackingField:
+      Guid:
+        Data1: 1091338356
+        Data2: 1169424317
+        Data3: -460332120
+        Data4: -859579419
+      Path: event:/PLAYER/Player-Dash
+  - name: fondo-music_2
+    <evento>k__BackingField:
+      Guid:
+        Data1: -1989059798
+        Data2: 1283225065
+        Data3: -273315705
+        Data4: 472380931
+      Path: event:/MAIN GAME/music-fondo 2
+  - name: level-clear
+    <evento>k__BackingField:
+      Guid:
+        Data1: -278148527
+        Data2: 1321606975
+        Data3: -1172442750
+        Data4: -2105003486
+      Path: event:/MAIN GAME/Level-finish
+  - name: new-level
+    <evento>k__BackingField:
+      Guid:
+        Data1: 1138563537
+        Data2: 1198443301
+        Data3: 1468563868
+        Data4: 1426209913
+      Path: event:/MAIN GAME/new-level
+  - name: multiplier-up
+    <evento>k__BackingField:
+      Guid:
+        Data1: -1570364285
+        Data2: 1115141261
+        Data3: 1900202402
+        Data4: 1145965519
+      Path: event:/SCORE/multiplier-up
+  - name: pick-item
+    <evento>k__BackingField:
+      Guid:
+        Data1: 2093599506
+        Data2: 1328794945
+        Data3: 1667418035
+        Data4: -1656911255
+      Path: event:/ITEMS/Pick-Item
+  - name: enemy-shot
+    <evento>k__BackingField:
+      Guid:
+        Data1: -495710967
+        Data2: 1081839236
+        Data3: -251406690
+        Data4: -531725978
+      Path: event:/ENEMIES/Enemy-Shot
+  - name: enemy-die
+    <evento>k__BackingField:
+      Guid:
+        Data1: 1672382203
+        Data2: 1266225763
+        Data3: 1006381738
+        Data4: -1687750582
+      Path: event:/ENEMIES/Enemy-Die
+  - name: enemy-spawn
+    <evento>k__BackingField:
+      Guid:
+        Data1: -605003230
+        Data2: 1148615143
+        Data3: -215916649
+        Data4: -1671669222
+      Path: event:/ENEMIES/Enemy-Spawn

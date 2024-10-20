@@ -14,6 +14,7 @@ public class GameUIManager : MonoBehaviour
 
     public void pauseMenuButton()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         pauseMenu.DOAnchorPos(new Vector2(0, 0), 0f).SetUpdate(true);
         darkOverlay.DOFade(0.9f, 0.5f).SetUpdate(true);
         gamePanelCanvasGroup.interactable = false;
@@ -22,6 +23,7 @@ public class GameUIManager : MonoBehaviour
 
     public void closePauseMenu()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         pauseMenu.DOAnchorPos(new Vector2(0, -10000), 0f).SetUpdate(true);
         darkOverlay.DOFade(0f, 0.5f).SetUpdate(true);
         gamePanelCanvasGroup.interactable = true;
@@ -29,16 +31,20 @@ public class GameUIManager : MonoBehaviour
     }
     public void OptionsMenuButton()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         optionsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
     }
 
     public void CloseOptionsMenu()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         optionsMenu.DOAnchorPos(new Vector2(0, 5000), 0.5f).SetUpdate(true);
     }
 
     public void closeGamePanel()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
+        AudioManager.StopEmiter(RoomManager.instance.MusicFondo);
         Time.timeScale = 1;
         SceneManager.LoadSceneAsync("UI New Game");
     }

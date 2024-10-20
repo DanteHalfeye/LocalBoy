@@ -260,9 +260,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.12409812
+    x: 0.124797404
     y: 0
-    width: 0.7503607
+    width: 0.74986494
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -320,274 +320,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[0].name
-      value: player-die
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[1].name
-      value: player-damage
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[2].name
-      value: player-dash
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[3].name
-      value: fondo-music
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[4].name
-      value: level-clear
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[5].name
-      value: new-level
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[6].name
-      value: multiplier-up
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[7].name
-      value: pick-item
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[8].name
-      value: enemy-shot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[9].name
-      value: enemy-die
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[10].name
-      value: enemy-spawn
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[0].<evento>k__BackingField.Path
-      value: event:/PLAYER/Player-Die
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[1].<evento>k__BackingField.Path
-      value: event:/PLAYER/Player-Damage
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[2].<evento>k__BackingField.Path
-      value: event:/PLAYER/Player-Dash
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[3].<evento>k__BackingField.Path
-      value: event:/MAIN GAME/music-fondo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[4].<evento>k__BackingField.Path
-      value: event:/MAIN GAME/Level-finish
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[5].<evento>k__BackingField.Path
-      value: event:/MAIN GAME/new-level
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[6].<evento>k__BackingField.Path
-      value: event:/SCORE/multiplier-up
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[7].<evento>k__BackingField.Path
-      value: event:/ITEMS/Pick-Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[8].<evento>k__BackingField.Path
-      value: event:/ENEMIES/Enemy-Shot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[9].<evento>k__BackingField.Path
-      value: event:/ENEMIES/Enemy-Die
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[10].<evento>k__BackingField.Path
-      value: event:/ENEMIES/Enemy-Spawn
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[0].<evento>k__BackingField.Guid.Data1
-      value: 65056909
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[0].<evento>k__BackingField.Guid.Data2
-      value: 1194006807
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[0].<evento>k__BackingField.Guid.Data3
-      value: -1805039229
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[0].<evento>k__BackingField.Guid.Data4
-      value: -667257352
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[1].<evento>k__BackingField.Guid.Data1
-      value: 1566925023
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[1].<evento>k__BackingField.Guid.Data2
-      value: 1316152246
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[1].<evento>k__BackingField.Guid.Data3
-      value: -1773053261
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[1].<evento>k__BackingField.Guid.Data4
-      value: 1260357768
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[2].<evento>k__BackingField.Guid.Data1
-      value: 1091338356
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[2].<evento>k__BackingField.Guid.Data2
-      value: 1169424317
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[2].<evento>k__BackingField.Guid.Data3
-      value: -460332120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[2].<evento>k__BackingField.Guid.Data4
-      value: -859579419
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[3].<evento>k__BackingField.Guid.Data1
-      value: 97051724
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[3].<evento>k__BackingField.Guid.Data2
-      value: 1090830826
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[3].<evento>k__BackingField.Guid.Data3
-      value: 1553265591
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[3].<evento>k__BackingField.Guid.Data4
-      value: -943537412
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[4].<evento>k__BackingField.Guid.Data1
-      value: -278148527
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[4].<evento>k__BackingField.Guid.Data2
-      value: 1321606975
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[4].<evento>k__BackingField.Guid.Data3
-      value: -1172442750
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[4].<evento>k__BackingField.Guid.Data4
-      value: -2105003486
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[5].<evento>k__BackingField.Guid.Data1
-      value: 1138563537
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[5].<evento>k__BackingField.Guid.Data2
-      value: 1198443301
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[5].<evento>k__BackingField.Guid.Data3
-      value: 1468563868
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[5].<evento>k__BackingField.Guid.Data4
-      value: 1426209913
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[6].<evento>k__BackingField.Guid.Data1
-      value: -1570364285
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[6].<evento>k__BackingField.Guid.Data2
-      value: 1115141261
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[6].<evento>k__BackingField.Guid.Data3
-      value: 1900202402
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[6].<evento>k__BackingField.Guid.Data4
-      value: 1145965519
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[7].<evento>k__BackingField.Guid.Data1
-      value: 2093599506
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[7].<evento>k__BackingField.Guid.Data2
-      value: 1328794945
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[7].<evento>k__BackingField.Guid.Data3
-      value: 1667418035
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[7].<evento>k__BackingField.Guid.Data4
-      value: -1656911255
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[8].<evento>k__BackingField.Guid.Data1
-      value: -495710967
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[8].<evento>k__BackingField.Guid.Data2
-      value: 1081839236
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[8].<evento>k__BackingField.Guid.Data3
-      value: -251406690
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[8].<evento>k__BackingField.Guid.Data4
-      value: -531725978
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[9].<evento>k__BackingField.Guid.Data1
-      value: 1672382203
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[9].<evento>k__BackingField.Guid.Data2
-      value: 1266225763
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[9].<evento>k__BackingField.Guid.Data3
-      value: 1006381738
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[9].<evento>k__BackingField.Guid.Data4
-      value: -1687750582
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[10].<evento>k__BackingField.Guid.Data1
-      value: -605003230
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[10].<evento>k__BackingField.Guid.Data2
-      value: 1148615143
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[10].<evento>k__BackingField.Guid.Data3
-      value: -215916649
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[10].<evento>k__BackingField.Guid.Data4
-      value: -1671669222
-      objectReference: {fileID: 0}
     - target: {fileID: 3129020186606480478, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -861,6 +593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6624505600821894540, guid: c4238df502ab8004a899f6bd51cc20e4, type: 3}
+      propertyPath: currentReward
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -870,7 +606,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 159846423}
   - {fileID: 2126774562218415624}
   - {fileID: 535464137}
-  - {fileID: 159846423}
   - {fileID: 28437399}

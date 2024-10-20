@@ -28,7 +28,7 @@ public class RoomManager : MonoBehaviour
 
     private void Awake()
     {
-        fondoInstance = AudioManager.CreateInstance("fondo-music");
+
         spawnArea = GetComponent<BoxCollider2D>();
         doors = new List<DoorReward>();
 
@@ -38,18 +38,15 @@ public class RoomManager : MonoBehaviour
             return;
         }
 
-        AudioManager.PlaySingleEmiter(fondoInstance);
+
+        if (FMODEvents.instance != null)
+        {
+            fondoInstance = AudioManager.CreateInstance("fondo-music_2");
+            AudioManager.PlaySingleEmiter(fondoInstance);
+        }
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            SpawnDoors();
-        }
     }
 
     private void OnDestroy()
@@ -120,7 +117,7 @@ public class RoomManager : MonoBehaviour
         GameObject prefab = Resources.Load <GameObject>("rewards/Prefabs/" + currentReward.ToString());
         if (prefab == null) return;
 
-        GameObject instance = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        GameObject instance = Instantiate(prefab, new Vector3(0, -20, 0 ), Quaternion.identity);
 
     }
 
@@ -135,5 +132,10 @@ public class RoomManager : MonoBehaviour
     {
         get { return currentReward; }
         set { currentReward = value; }
+    }
+
+    public EventInstance MusicFondo
+    {
+        get { return fondoInstance; }
     }
 }
