@@ -32,6 +32,7 @@ public class DoorReward : MonoBehaviour
 
     public void Enter()
     {
+        AudioManager.PlayOneShot("new-level", gameObject.transform.position);
         RoomManager.instance.CurrentReward = rewardType;
         SceneManager.LoadScene(sceneToLoad);
         ItemEvents.TriggerOnRoomEntered();

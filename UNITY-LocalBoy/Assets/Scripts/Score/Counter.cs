@@ -110,6 +110,7 @@ public class Counter : MonoBehaviour
 
     private void ChangeMultiplier(CurrentMultiplier multiplier)
     {
+        AudioManager.PlayOneShot("multiplier-up", new Vector3(0, 0, 0));
         currentMultiplier = multiplier;
     }
 

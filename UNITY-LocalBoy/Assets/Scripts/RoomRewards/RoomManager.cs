@@ -77,6 +77,7 @@ public class RoomManager : MonoBehaviour
 
     private void SpawnDoors()    
     {
+        AudioManager.PlayOneShot("level-clear", new Vector3(0, 0, 0));
         Vector2 areaSize = spawnArea.size;
         Vector2 areaCenter = spawnArea.transform.position + (Vector3)spawnArea.offset;
 

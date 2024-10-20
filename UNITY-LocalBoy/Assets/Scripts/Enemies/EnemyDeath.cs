@@ -52,6 +52,9 @@ public class EnemyDeath : MonoBehaviour
     }
     public void Death()
     {
+        AudioManager.PlayOneShot("enemy-die", gameObject.transform.position);
+
+
         // Play the particle effect
         _particles.Play();
         DeactivateAI();

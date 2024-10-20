@@ -560,7 +560,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - MainGame
+  - Music
+  - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

@@ -45,6 +45,8 @@ public class DashAttack : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        AudioManager.PlayOneShot("player-dash", gameObject.transform.position);
+
         // Deactivate movement for the duration of the dash
         _canDash = false;
         _isDashing = true;

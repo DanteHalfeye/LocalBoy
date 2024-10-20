@@ -96,7 +96,7 @@ public class ApplyItem : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             text.Show(item);
-
+            AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
             Debug.Log(item.Name);
 
             PlayerActor actor = other.GetComponent<PlayerActor>();
