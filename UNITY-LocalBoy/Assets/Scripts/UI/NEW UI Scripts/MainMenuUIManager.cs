@@ -15,19 +15,23 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void GamePanelButton()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         SceneManager.LoadScene("MAIN GAME", LoadSceneMode.Single);
     }
     public void OptionsMenuButton()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         optionsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
     }
 
     public void CloseOptionsMenu()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         optionsMenu.DOAnchorPos(new Vector2(0, 5000), 0.5f).SetUpdate(true);
     }
     public void CreditsPanelButton()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         mainMenu.DOAnchorPos(new Vector2(0, -10000), 0f);
         creditsBackground.DOAnchorPos(new Vector2(0, 0), 0.25f);
         creditsPanel.DOAnchorPos(new Vector2(0, 0), 0.25f);
@@ -36,6 +40,7 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void CloseCreditsPanel()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         creditsBackground.DOAnchorPos(new Vector2(-5000, 0), 0.25f);
         creditsPanel.DOAnchorPos(new Vector2(-5000, 0), 0.25f);
 
@@ -54,11 +59,13 @@ public class MainMenuUIManager : MonoBehaviour
     }
     public void AddsMenuButton()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         addsMenu.DOAnchorPos(new Vector2(0, 0), 0.25f).SetUpdate(true);
     }
 
     public void CloseAddsMenu()
     {
+        AudioManager.PlayOneShot("UI-button", Vector3.zero);
         addsMenu.DOAnchorPos(new Vector2(0, -5000), 0.5f).SetUpdate(true);
     }
 
