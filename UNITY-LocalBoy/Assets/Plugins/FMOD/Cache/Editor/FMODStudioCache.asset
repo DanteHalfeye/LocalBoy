@@ -1,32 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8602105869347747273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/UI-Button
-  m_EditorClassIdentifier: 
-  Path: event:/UI/UI-Button
-  Guid:
-    Data1: 107296914
-    Data2: 1261456480
-    Data3: 972033953
-    Data4: 698962088
-  Banks:
-  - {fileID: 1141101244218560770}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 64
 --- !u!114 &-8426122597956476734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,10 +96,10 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638650334399891663
+  lastModified: 638650375243589467
   FileSizes:
   - Name: Desktop
-    Value: 1394
+    Value: 1308
   Exists: 1
 --- !u!114 &-3905174804607873237
 MonoBehaviour:
@@ -170,10 +143,10 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638650323793494059
+  lastModified: 638650375243718278
   FileSizes:
   - Name: Desktop
-    Value: 2831968
+    Value: 494
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -203,14 +176,12 @@ MonoBehaviour:
   - {fileID: 6034357620517410146}
   - {fileID: -5306187212886028834}
   - {fileID: -7963509218848968440}
-  - {fileID: 3525259922940244272}
-  - {fileID: -8602105869347747273}
   EditorParameters: []
   MasterBanks:
   - {fileID: 614239836045416818}
   StringsBanks:
   - {fileID: -4221699823372732368}
-  cacheTime: 638650334400396389
+  cacheTime: 638650375245459737
   cacheVersion: 131619
 --- !u!114 &614239836045416818
 MonoBehaviour:
@@ -227,7 +198,7 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638650334399879804
+  lastModified: 638650375243553165
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -247,10 +218,10 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638650334400396389
+  lastModified: 638650375245459737
   FileSizes:
   - Name: Desktop
-    Value: 89344
+    Value: 87552
   Exists: 1
 --- !u!114 &2025831616271745068
 MonoBehaviour:
@@ -279,33 +250,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 349
---- !u!114 &3525259922940244272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MAIN GAME/music-fondo 2
-  m_EditorClassIdentifier: 
-  Path: event:/MAIN GAME/music-fondo 2
-  Guid:
-    Data1: -1989059798
-    Data2: 1283225065
-    Data3: -273315705
-    Data4: 472380931
-  Banks:
-  - {fileID: -3456857346023823776}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 215431
 --- !u!114 &4375177151923595380
 MonoBehaviour:
   m_ObjectHideFlags: 0
