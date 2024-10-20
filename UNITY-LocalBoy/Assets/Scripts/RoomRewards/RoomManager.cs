@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,10 +22,13 @@ public class RoomManager : MonoBehaviour
     [SerializeField]
     private Rewards currentReward;
 
+    private EventInstance fondoInstance;
+
     public static RoomManager instance { get; private set; }
 
     private void Awake()
     {
+        fondoInstance = AudioManager.instance.CreateInstance("musica-fondo");
         spawnArea = GetComponent<BoxCollider2D>();
         doors = new List<DoorReward>();
 
@@ -36,6 +40,8 @@ public class RoomManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        AudioManager.instance.PlayMultipleEmiter(fondoInstance);
     }
 
     private void Update()

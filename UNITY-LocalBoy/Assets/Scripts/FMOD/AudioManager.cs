@@ -22,9 +22,9 @@ public class AudioManager : MonoBehaviour
     /// <summary>
     /// Esta función reproduce un audio simple.
     /// </summary>
-    public void PlayOneShot(EventReference track, Vector3 Origin)
+    public void PlayOneShot(string track, Vector3 Origin)
     {
-        RuntimeManager.PlayOneShot(track, Origin);
+        RuntimeManager.PlayOneShot(LinqGetReference(track), Origin);
     }
 
     /// <summary>
@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
     /// <returns>EventInstance.</returns>
     public EventInstance CreateInstance(string track)
     {
-        EventInstance eventInstance = RuntimeManager.CreateInstance(FMODEvents.instance.events.FirstOrDefault(e => e.name == track).evento);
+        EventInstance eventInstance = RuntimeManager.CreateInstance(LinqGetReference(track));
         return eventInstance;
     }
 
@@ -78,7 +78,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Esta función reproducira un emisor y solo permitira la reproduccion de varios.
+    /// Esta función reproducira un emisor y permitira la reproduccion de varios.
     /// </summary>
     /// <param name="instance">Instancia que reproducira el emisor.</param>
     public void PlayMultipleEmiter(EventInstance track)
