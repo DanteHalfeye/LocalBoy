@@ -58,11 +58,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: HomeVideo-Regular SDF
+  m_Name: HomeVideo-Regular SDF 2
   m_EditorClassIdentifier: 
-  hashCode: -1417900616
+  hashCode: 2094454698
   material: {fileID: 2020038948541092571}
-  materialHashCode: -190420840
+  materialHashCode: 835568458
   m_Version: 1.1.0
   m_SourceFontFileGUID: 4cbcc463520f56440918f68a35d143c7
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 4cbcc463520f56440918f68a35d143c7, type: 3}
@@ -451,6 +451,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 27
+    m_Metrics:
+      m_Width: 45
+      m_Height: 63
+      m_HorizontalBearingX: 4.5
+      m_HorizontalBearingY: 63
+      m_HorizontalAdvance: 54
+    m_GlyphRect:
+      m_X: 205
+      m_Y: 402
+      m_Width: 46
+      m_Height: 63
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 28
     m_Metrics:
       m_Width: 45
@@ -567,6 +582,21 @@ MonoBehaviour:
       m_X: 10
       m_Y: 649
       m_Width: 28
+      m_Height: 63
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 37
+    m_Metrics:
+      m_Width: 45
+      m_Height: 63
+      m_HorizontalBearingX: 4.5
+      m_HorizontalBearingY: 63
+      m_HorizontalAdvance: 54
+    m_GlyphRect:
+      m_X: 205
+      m_Y: 484
+      m_Width: 46
       m_Height: 63
     m_Scale: 1
     m_AtlasIndex: 0
@@ -1036,36 +1066,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 27
-    m_Metrics:
-      m_Width: 45
-      m_Height: 63
-      m_HorizontalBearingX: 4.5
-      m_HorizontalBearingY: 63
-      m_HorizontalAdvance: 54
-    m_GlyphRect:
-      m_X: 205
-      m_Y: 402
-      m_Width: 46
-      m_Height: 63
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 37
-    m_Metrics:
-      m_Width: 45
-      m_Height: 63
-      m_HorizontalBearingX: 4.5
-      m_HorizontalBearingY: 63
-      m_HorizontalAdvance: 54
-    m_GlyphRect:
-      m_X: 205
-      m_Y: 484
-      m_Width: 46
-      m_Height: 63
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -1170,6 +1170,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 73
     m_GlyphIndex: 36
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 74
+    m_GlyphIndex: 37
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 76
@@ -1316,16 +1320,12 @@ MonoBehaviour:
     m_GlyphIndex: 26
     m_Scale: 1
   - m_ElementType: 1
-    m_Unicode: 8230
-    m_GlyphIndex: 88
-    m_Scale: 1
-  - m_ElementType: 1
     m_Unicode: 122
     m_GlyphIndex: 27
     m_Scale: 1
   - m_ElementType: 1
-    m_Unicode: 74
-    m_GlyphIndex: 37
+    m_Unicode: 8230
+    m_GlyphIndex: 88
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: -612311815511785580}
@@ -1839,7 +1839,7 @@ Material:
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.225881, g: 0.48454368, b: 0.8867924, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
