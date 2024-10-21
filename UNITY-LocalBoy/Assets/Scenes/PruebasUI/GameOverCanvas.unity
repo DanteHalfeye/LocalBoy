@@ -135,6 +135,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOver
       objectReference: {fileID: 0}
+    - target: {fileID: 2577180516402045646, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1353089916}
+    - target: {fileID: 2577180516402045646, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: closeGameOverPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395294424204145248, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1353089915}
+    - target: {fileID: 4395294424204145248, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7501613083409536516, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -215,6 +231,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8188958019522681808, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+      propertyPath: m_text
+      value: 'Next
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188958019522681808, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188958019522681808, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -223,6 +253,11 @@ PrefabInstance:
 --- !u!224 &502143575 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7501613083409536516, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+  m_PrefabInstance: {fileID: 502143574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1295656708 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2102228716039384145, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
   m_PrefabInstance: {fileID: 502143574}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1353089915
@@ -235,6 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1353089917}
   - component: {fileID: 1353089916}
+  - component: {fileID: 1353089918}
   m_Layer: 0
   m_Name: GameOverManager
   m_TagString: Untagged
@@ -255,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 502143575}
+  scorePanel: {fileID: 1295656708}
   myEase: 23
 --- !u!4 &1353089917
 Transform:
@@ -271,6 +308,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1353089918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353089915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c238c55f2df2684b9216ecb60cdc1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCurrentScore: {fileID: 522524964238970956}
+  uiHighScore: {fileID: 522524964238970955}
+--- !u!114 &522524964238970955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2075973802960590541, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+  m_PrefabInstance: {fileID: 502143574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &522524964238970956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2477841963072978438, guid: bc1190fc13f1b9c48bbe3a4370d22bb5, type: 3}
+  m_PrefabInstance: {fileID: 502143574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
