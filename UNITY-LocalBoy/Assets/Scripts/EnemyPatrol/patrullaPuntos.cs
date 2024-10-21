@@ -36,14 +36,9 @@ public class PatrullaPuntos : MonoBehaviour
 
     private void Girar()
     {
-        // Giramos al enemigo en función de la dirección en que se mueve
-        if (transform.position.x < puntosMovimiento[siguientePaso].x)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else
-        {
-            spriteRenderer.flipX = false;
-        }
+        Vector2 direccion = puntosMovimiento[siguientePaso] - (Vector2)transform.position; // Dirección hacia el siguiente punto
+        float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg; // Calcula el ángulo de la dirección
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90)); // Ajustamos el ángulo restando 90°
     }
 }
+
