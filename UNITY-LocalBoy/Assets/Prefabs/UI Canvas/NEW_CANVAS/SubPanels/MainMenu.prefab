@@ -1224,8 +1224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.8785, y: -70.6}
-  m_SizeDelta: {x: 488.2428, y: 50}
+  m_AnchoredPosition: {x: 352.58322, y: -70.6}
+  m_SizeDelta: {x: 1217.166, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2031225327288089515
 CanvasRenderer:
@@ -1358,8 +1358,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.8785, y: -120.70004}
-  m_SizeDelta: {x: 488.2428, y: 50}
+  m_AnchoredPosition: {x: 352.58, y: -120.70004}
+  m_SizeDelta: {x: 1217.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5316287090253524476
 CanvasRenderer:
@@ -1599,6 +1599,7 @@ GameObject:
   - component: {fileID: 2670802656643162406}
   - component: {fileID: 2173949982286175957}
   - component: {fileID: 348444909511186145}
+  - component: {fileID: 381821093775071502}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1719,7 +1720,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -6.372036, z: 0, w: 0}
+  m_margin: {x: 0, y: -6.372036, z: -559.07324, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1743,6 +1744,18 @@ MonoBehaviour:
   uiMultiplier: {fileID: 8558276900510198956}
   slider: {fileID: 7489020180741721096}
   uiHighScore: {fileID: 1217195454774163044}
+--- !u!114 &381821093775071502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6272511225124134061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64af054028d964b49a64219b6e35d0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6329043188915715053
 GameObject:
   m_ObjectHideFlags: 0
