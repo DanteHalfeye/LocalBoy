@@ -511,6 +511,23 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OptionsMenuButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3885655261044869135, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_text
+      value: If you liked this project, a voluntary contribution would make the members
+        involved very happy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885655261044869135, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885655261044869135, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_margin.w
+      value: 173.21921
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885655261044869135, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4008797876772029046, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -534,6 +551,18 @@ PrefabInstance:
     - target: {fileID: 4324137073630271406, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646041567309137651, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -47.087
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646041567309137651, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646041567309137651, guid: aa018ea455822504090187b69fe905a5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 4669268406668332291, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_LocalRotation.w

@@ -473,7 +473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 177107548, guid: e6b2baafc72c70d47addd45b26dae765, type: 3}
+  m_Sprite: {fileID: -2047630606, guid: 9be186ae0f4aa0642abf4dc411fb756c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1848828147, guid: 9c3104a5749109546af310ff3f99ca47, type: 3}
+  m_Sprite: {fileID: 759614199, guid: e3f4769076d84bd4eb284ff8381633d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2668,7 +2668,7 @@ PrefabInstance:
     - target: {fileID: 7623175839763349256, guid: 5de4bcf803866a0488d4895ab5e0087a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1427813327, guid: 5ab15dca9fa05b14bb03e98e5b419db2, type: 3}
+      objectReference: {fileID: -2062949602, guid: 23aea691c22bc94408e0ebe102b44315, type: 3}
     - target: {fileID: 7774449806678478346, guid: 5de4bcf803866a0488d4895ab5e0087a, type: 3}
       propertyPath: m_Name
       value: OptionsPanel
