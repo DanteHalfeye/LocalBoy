@@ -7,26 +7,55 @@ using UnityEngine;
 
 public static class TriggerEffect
 {
+    private static Dictionary<Guid, Action> statChangedHandlers = new Dictionary<Guid, Action>();
+    private static Dictionary<Guid, Action> enemyKilledHandlers = new Dictionary<Guid, Action>();
+    private static Dictionary<Guid, Action> roomEnteredHandlers = new Dictionary<Guid, Action>();
+
+
     public static void Initialize(ItemSO item, PlayerActor actor)
     {
         switch (item.TriggerType)
         {
             case EffectTrigger.Once:
-                EvaluateTrigger(item, actor); 
+                EvaluateTrigger(item, actor);
                 break;
 
             case EffectTrigger.Always:
+                Action statChangedHandler = () => EvaluateTrigger(item, actor);
+                statChangedHandlers[item.InstanceId] = statChangedHandler;
+                ItemEvents.OnStatChanged += statChangedHandler;
                 EvaluateTrigger(item, actor);
-                ItemEvents.OnStatChanged += () => EvaluateTrigger(item, actor);
                 break;
 
             case EffectTrigger.OnEnemyKill:
-                ItemEvents.OnEnemyKilled += () => EvaluateTrigger(item, actor);
+                Action enemyKilledHandler = () => EvaluateTrigger(item, actor);
+                enemyKilledHandlers[item.InstanceId] = enemyKilledHandler;
+                ItemEvents.OnEnemyKilled += enemyKilledHandler;
                 break;
-
             case EffectTrigger.OnRoomEnter:
-                ItemEvents.OnRoomEntered += () => EvaluateTrigger(item, actor);
+                Action roomEnteredHandler = () => EvaluateTrigger(item, actor);
+                roomEnteredHandlers[item.InstanceId] = roomEnteredHandler;
+                ItemEvents.OnRoomEntered += roomEnteredHandler;
                 break;
+        }
+    }
+
+    public static void Unsubscribe(Guid instanceId)
+    {
+        if (statChangedHandlers.TryGetValue(instanceId, out Action statChangedHandler))
+        {
+            ItemEvents.OnStatChanged -= statChangedHandler;
+            statChangedHandlers.Remove(instanceId);
+        }
+        else if (enemyKilledHandlers.TryGetValue(instanceId, out Action enemyKilledHandler))
+        {
+            ItemEvents.OnEnemyKilled -= enemyKilledHandler;
+            enemyKilledHandlers.Remove(instanceId);
+        }
+        else if (roomEnteredHandlers.TryGetValue(instanceId, out Action roomEnteredHandler))
+        {
+            ItemEvents.OnRoomEntered -= roomEnteredHandler;
+            roomEnteredHandlers.Remove(instanceId);
         }
     }
 

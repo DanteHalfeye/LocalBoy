@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
+using System;
 
 public class PlayerActor : MonoBehaviour
 {
@@ -27,6 +28,17 @@ public class PlayerActor : MonoBehaviour
         { 
             currency = value;
             ItemEvents.TriggerOnStatChange();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        List<Guid> currentItems = ItemManager.GetActiveItemIdsForActor(this);
+
+        foreach (var item in currentItems)
+        {
+            ItemManager.UnregisterItem(item, this);
+            TriggerEffect.Unsubscribe(item);
         }
     }
 

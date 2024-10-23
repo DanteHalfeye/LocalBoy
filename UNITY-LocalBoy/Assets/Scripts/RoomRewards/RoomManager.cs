@@ -28,7 +28,7 @@ public class RoomManager : MonoBehaviour
 
     private void Awake()
     {
-
+        ItemPool.LoadPool();
         spawnArea = GetComponent<BoxCollider2D>();
         doors = new List<DoorReward>();
 

@@ -16,6 +16,7 @@ MonoBehaviour:
   description: + Move Speed  On Low HP
   icon: {fileID: 21300000, guid: bc51481e7e9fba04fa64efc565c73c34, type: 3}
   rarity: 10
+  canStack: 1
   conditional: 2
   conditionValue: 0.5
   conditionNumber: 4

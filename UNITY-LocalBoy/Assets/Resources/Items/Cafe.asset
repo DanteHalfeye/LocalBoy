@@ -16,6 +16,7 @@ MonoBehaviour:
   description: + Speed
   icon: {fileID: 21300000, guid: 89dc4f5c662784544836c41bdac5c7fa, type: 3}
   rarity: 10
+  canStack: 1
   conditional: 0
   conditionValue: 0
   conditionNumber: 0
