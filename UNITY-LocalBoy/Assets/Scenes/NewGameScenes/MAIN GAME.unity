@@ -180,10 +180,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.124624625
-    y: 0
-    width: 0.7507508
-    height: 1
+    x: 0
+    y: 0.004447739
+    width: 1.00028
+    height: 0.9929578
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4696,6 +4696,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3896493818800920564, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: rotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8360505760994624112, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4743,28 +4747,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8360505760994624112, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5405745941245620659}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
 --- !u!1 &5405745941245620646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8360505760994624112, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
   m_PrefabInstance: {fileID: 5405745941245620645}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5405745941245620659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5405745941245620646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad2f1e27959e1847b1c7f27fab7085f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
