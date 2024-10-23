@@ -34,7 +34,7 @@ public class UIText : MonoBehaviour
 
         title = gameObject.transform.Find("Title").GetComponent<TextMeshProUGUI>();
         description = gameObject.transform.Find("Description").GetComponent<TextMeshProUGUI>();
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void Show(ItemSO item)

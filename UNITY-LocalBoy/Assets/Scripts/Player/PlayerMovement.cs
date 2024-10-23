@@ -13,6 +13,11 @@ public class PlayerMovement : MonoBehaviour
     private float _currentSpeed;
 
     public Vector2 CurrentInput { get { return _input; } set { _input = value; } }
+
+    public Vector2 SendCurrentInput()
+    {
+        return _input;
+    }
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
