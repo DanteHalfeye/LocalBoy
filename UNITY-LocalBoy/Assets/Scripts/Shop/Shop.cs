@@ -19,6 +19,7 @@ public class Shop : MonoBehaviour
     private void SpawnShop()
     {
         GameObject prefab = Resources.Load<GameObject>("Shop/Prefabs/" + shopType.ToString());
+        prefab.transform.position = transform.position;
         Instantiate(prefab);
     }
 

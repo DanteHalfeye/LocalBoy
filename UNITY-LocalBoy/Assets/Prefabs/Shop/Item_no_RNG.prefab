@@ -329,4 +329,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9822e10ece6e84b97d315c5102addc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarityPool: 10
+  rarityPool: 20

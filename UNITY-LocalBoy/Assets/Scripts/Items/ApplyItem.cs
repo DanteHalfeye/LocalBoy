@@ -45,7 +45,7 @@ public class ApplyItem : MonoBehaviour
         }
 
 
-        text = UIText.instance;
+        //text = UIText.instance;
     }
 
     private void Start()
@@ -95,7 +95,7 @@ public class ApplyItem : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            text.Show(item);
+            //text.Show(item);
             AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
             Debug.Log(item.Name);
 

@@ -15,6 +15,7 @@ public class StartEncounter : MonoBehaviour
         }
         BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.enabled = false;
+        ItemEvents.TriggerOnRoomEntered();
     }
     private void PlayLevelEncounter(int encounterLevelListIndex)
     {

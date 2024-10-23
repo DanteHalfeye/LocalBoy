@@ -49,14 +49,12 @@ public class RoomManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void OnDestroy()
+    private void Update()
     {
-        if (instance == this)
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            instance = null;
+            SpawnRewards();
         }
-
-        AudioManager.StopEmiter(fondoInstance);
     }
 
     private void OnEnable()

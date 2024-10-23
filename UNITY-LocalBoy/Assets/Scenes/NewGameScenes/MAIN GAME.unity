@@ -180,9 +180,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.125
+    x: 0.124624625
     y: 0
-    width: 0.75
+    width: 0.7507508
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7072230219737947515, guid: 594d32e38400bcd4ba9f62a84579f605, type: 3}
+      propertyPath: exitSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7835174883885110857, guid: 594d32e38400bcd4ba9f62a84579f605, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -449,6 +453,7 @@ GameObject:
   - component: {fileID: 442975890}
   - component: {fileID: 442975891}
   - component: {fileID: 442975892}
+  - component: {fileID: 442975893}
   m_Layer: 0
   m_Name: RoomManager
   m_TagString: Untagged
@@ -486,7 +491,7 @@ MonoBehaviour:
   doorPrefab: {fileID: 2042914295974283405, guid: 2bb2cf54318418246949bc2148dc598a, type: 3}
   minDoors: 3
   maxDoors: 5
-  currentReward: 0
+  currentReward: 1
 --- !u!61 &442975891
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -530,7 +535,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50.112015, y: 5.011248}
+  m_Size: {x: 62.68, y: 5.011248}
   m_EdgeRadius: 0
 --- !u!114 &442975892
 MonoBehaviour:
@@ -542,6 +547,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad2f1e27959e1847b1c7f27fab7085f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &442975893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442975888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e36834050eec7d4299dc42d1aaad3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &786601261 stripped

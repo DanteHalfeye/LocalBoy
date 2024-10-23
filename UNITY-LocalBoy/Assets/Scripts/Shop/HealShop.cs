@@ -26,6 +26,7 @@ public class HealShop : MonoBehaviour
 
             actor.Currency -= price;
             actor.ModifyCurrentHp(amount);
+            Destroy(gameObject);
         }
     }
 }

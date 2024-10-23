@@ -131,6 +131,12 @@ public static class TriggerEffect
                     case Stat.SetSpeed:
                         actor.SetMovementSpeed(effect.modifier);
                         break;
+                    case Stat.SetAttackSpeed:
+                        actor.SetAttackSpeed(effect.modifier);
+                        break;
+                    case Stat.ModifyAttackSpeed:
+                        actor.ModifyAttackSpeed(effect.modifier);
+                        break;
                 }
             }
 

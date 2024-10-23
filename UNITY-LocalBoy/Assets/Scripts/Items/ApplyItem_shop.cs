@@ -99,11 +99,11 @@ public class ApplyItem_shop : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
             PlayerActor actor = other.GetComponent<PlayerActor>();
+            if (actor.Currency < price) return;
             AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
             text.Show(item);
-
-            if (actor.Currency < price) return;
 
             actor.Currency -= price;
 

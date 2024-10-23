@@ -62,12 +62,12 @@ public class ApplyItem_noRNG_shop : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             PlayerActor actor = other.GetComponent<PlayerActor>();
-
+            if (actor.Currency < price) return;
             text.Show(item);
 
             AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
 
-            if (actor.Currency < price) return;
+
 
             actor.Currency -= price;
 
