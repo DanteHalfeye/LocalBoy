@@ -9,6 +9,7 @@ public class EnemySpawnEffect : MonoBehaviour
     EnemyShoot enemyShoot;
     private void Awake()
     {
+        AudioManager.PlayOneShot("enemy-spawn", Vector3.zero);
         targetScale = transform.localScale;
         transform.localScale = Vector3.zero; // Start at 0 scale
         StartCoroutine(ScaleUp());
