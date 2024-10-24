@@ -38,7 +38,7 @@ public class NewHealthController : MonoBehaviour
 
     private void Update()
     {
-        _healthBarTransform.rotation = quaternion.identity;
+        //_healthBarTransform.rotation = quaternion.identity;
     }
 
     private void ResetHealth()

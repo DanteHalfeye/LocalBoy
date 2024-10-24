@@ -180,10 +180,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.004447739
-    width: 1.00028
-    height: 0.9929578
+    x: 0.19186464
+    y: 0
+    width: 0.61627066
+    height: 0.99999994
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -993,6 +993,22 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1079124976}
   m_SourcePrefab: {fileID: 100100000, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+--- !u!224 &1434540094 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3355162977507814447, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+  m_PrefabInstance: {fileID: 1434540093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1434540095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 922992611699681809, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+  m_PrefabInstance: {fileID: 1434540093}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441723102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4696,6 +4712,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 638066894162086627, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: _healthBarFiller
+      value: 
+      objectReference: {fileID: 1434540095}
+    - target: {fileID: 638066894162086627, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
+      propertyPath: _healthBarTransform
+      value: 
+      objectReference: {fileID: 1434540094}
     - target: {fileID: 3896493818800920564, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: rotationSpeed
       value: 5
@@ -4745,7 +4769,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7532011041745188473, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
