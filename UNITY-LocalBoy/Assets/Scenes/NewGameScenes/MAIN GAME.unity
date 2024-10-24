@@ -209,9 +209,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.18421052
+    x: 0.12444445
     y: 0
-    width: 0.631579
+    width: 0.7506173
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -391,6 +391,7 @@ MonoBehaviour:
   doorPrefab: {fileID: 2042914295974283405, guid: 2bb2cf54318418246949bc2148dc598a, type: 3}
   minDoors: 3
   maxDoors: 5
+  doorTimer: 3.5
   currentReward: 1
 --- !u!61 &442975891
 BoxCollider2D:

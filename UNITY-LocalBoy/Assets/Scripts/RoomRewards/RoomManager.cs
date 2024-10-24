@@ -14,6 +14,8 @@ public class RoomManager : MonoBehaviour
     private int minDoors;
     [SerializeField]
     private int maxDoors;
+    [SerializeField]
+    private float doorTimer;
 
     private List<DoorReward> doors;
     private BoxCollider2D spawnArea;
@@ -59,16 +61,21 @@ public class RoomManager : MonoBehaviour
 
     private void OnEnable()
     {
-        StaticEventHandler.OnRoomCleared += SpawnDoors;
+        StaticEventHandler.OnRoomCleared += SpawnDoorsCall;
         StaticEventHandler.OnRoomCleared += SpawnRewards;
     }
 
     private void OnDisable()
     {
-        StaticEventHandler.OnRoomCleared -= SpawnDoors;
+        StaticEventHandler.OnRoomCleared -= SpawnDoorsCall;
         StaticEventHandler.OnRoomCleared -= SpawnRewards;
     }
 
+
+    private void SpawnDoorsCall()
+    {
+        StartCoroutine(TimerDoors());
+    }
 
     private void SpawnDoors()    
     {
@@ -109,6 +116,18 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    private IEnumerator TimerDoors()
+    {
+        float timer = doorTimer;
+        while (timer >= 0) 
+        {
+            timer -= Time.deltaTime;
+            Debug.Log(timer);
+            yield return null;
+        }
+
+        SpawnDoors();
+    }
 
     public void SpawnRewards()
     {
