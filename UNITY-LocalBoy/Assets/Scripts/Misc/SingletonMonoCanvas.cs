@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingletonMono : SingletonMonobehaviour<SingletonMono>
+public class SingletonMonoCanvas : SingletonMonobehaviour<SingletonMonoCanvas>
 {
     private void Start()
     {
