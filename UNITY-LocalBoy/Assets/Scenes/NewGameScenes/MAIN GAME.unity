@@ -209,10 +209,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.5
-    width: 0.771875
-    height: 0.771875
+    x: 0.16465975
+    y: 0
+    width: 0.6705871
+    height: 1.0011148
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -831,7 +831,8 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 40
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4977951557055275426, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6061389602928783789, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
     - {fileID: 6358277109982860957, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
@@ -1293,6 +1294,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -527913666, guid: 5e4b6225756cb4d4fa51f3dc5da087cb, type: 3}
+    - target: {fileID: 9063423397617047171, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_UseIsolatedInputActions
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063423397617047171, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_PointerDownAction.m_Name
+      value: Pointer Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063423397617047171, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_PointerMoveAction.m_Name
+      value: Pointer Move
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4810,6 +4823,7 @@ GameObject:
   - component: {fileID: 1871753148}
   - component: {fileID: 1871753147}
   - component: {fileID: 1871753146}
+  - component: {fileID: 1871753149}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4867,6 +4881,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1871753149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871753145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad2f1e27959e1847b1c7f27fab7085f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2105228202
 GameObject:
   m_ObjectHideFlags: 0
