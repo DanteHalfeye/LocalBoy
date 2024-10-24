@@ -5,14 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuDontDestroyOnLoadKiller : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        // Subscribe to the sceneLoaded event
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Check if the active scene is the main menu
+        if (scene.buildIndex == 0)
         {
             Destroy(this.gameObject);
         }
     }
 
-    
+    private void OnDestroy()
+    {
+        // Unsubscribe from the sceneLoaded event
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 }

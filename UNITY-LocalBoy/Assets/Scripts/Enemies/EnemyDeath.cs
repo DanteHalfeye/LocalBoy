@@ -63,7 +63,7 @@ public class EnemyDeath : MonoBehaviour
 
         // Start the coroutine to deactivate the enemy after the delay
         StartCoroutine(DeactivateAfterDelay());
-
+        ItemEvents.TriggerEnemyKilled();
         DeathTimer.instance.MuerteEnem();
 
         

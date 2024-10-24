@@ -2,45 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System;
 
 public static class ItemManager
 {
-    private static readonly Dictionary<PlayerActor, List<ItemSO>> _itemsByActor = new Dictionary<PlayerActor, List<ItemSO>>();
+    private static readonly Dictionary<PlayerActor, List<Guid>> _itemIdsByActor = new Dictionary<PlayerActor, List<Guid>>();
     private static Dictionary<(PlayerActor, ItemOrbitalSO), GameObject> instances = new Dictionary<(PlayerActor, ItemOrbitalSO), GameObject>();
 
     public static void RegisterItem(ItemSO item, PlayerActor actor)
     {
-        ManageEffects.AddEffect(actor,item);
+        ManageEffects.AddEffect(actor, item);
         TriggerEffect.Initialize(item, actor);
 
-        if (!_itemsByActor.ContainsKey(actor))
+        if (!_itemIdsByActor.ContainsKey(actor))
         {
-            _itemsByActor[actor] = new List<ItemSO>();
+            _itemIdsByActor[actor] = new List<Guid>();
         }
 
-        if (!_itemsByActor[actor].Contains(item))
+        var itemId = item.InstanceId;
+
+        if (!_itemIdsByActor[actor].Contains(itemId))
         {
-            _itemsByActor[actor].Add(item);
+            _itemIdsByActor[actor].Add(itemId);
         }
     }
 
-    // Elimina un item del gestor para un actor específico
-    public static void UnregisterItem(ItemSO item, PlayerActor actor)
+    public static void UnregisterItem(Guid itemId, PlayerActor actor)
     {
-        if (_itemsByActor.ContainsKey(actor) && _itemsByActor[actor].Contains(item))
+        if (_itemIdsByActor.ContainsKey(actor) && _itemIdsByActor[actor].Contains(itemId))
         {
-            _itemsByActor[actor].Remove(item);
+            _itemIdsByActor[actor].Remove(itemId);
         }
     }
 
-    // Obtiene todos los items activos para un actor específico
-    public static IEnumerable<ItemSO> GetActiveItemsForActor(PlayerActor actor)
+    public static List<Guid> GetActiveItemIdsForActor(PlayerActor actor)
     {
-        if (_itemsByActor.ContainsKey(actor))
+        if (_itemIdsByActor.ContainsKey(actor))
         {
-            return _itemsByActor[actor];
+            return _itemIdsByActor[actor].ToList();
         }
-        return Enumerable.Empty<ItemSO>();
+        return new List<Guid>();
     }
 
     public static void RegisterInstance(PlayerActor actor, ItemOrbitalSO item, GameObject instance)
@@ -48,12 +49,10 @@ public static class ItemManager
         var key = (actor, item);
         if (instances.ContainsKey(key))
         {
-            // Actualizar si ya existe
             instances[key] = instance;
         }
         else
         {
-            // Añadir nueva entrada
             instances.Add(key, instance);
         }
     }

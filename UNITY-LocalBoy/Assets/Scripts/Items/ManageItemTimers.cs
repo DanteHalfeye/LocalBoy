@@ -39,8 +39,10 @@ public class ManageItemTimers : MonoBehaviour
         while (activeTimers[item] > 0)
         {
             activeTimers[item] -= Time.deltaTime;
+            Debug.Log(activeTimers[item]);
             yield return null;
         }
+
 
         TriggerEffect.RemoveItemEffect(item, actor);
         activeTimers.Remove(item);

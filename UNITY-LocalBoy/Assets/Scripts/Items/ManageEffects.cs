@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public static class ManageEffects 
 {
-    private static readonly Dictionary<PlayerActor, Dictionary<ItemSO, bool>> _effectsAppliedByActor = new Dictionary<PlayerActor, Dictionary<ItemSO, bool>>();
+    private static readonly Dictionary<PlayerActor, Dictionary<Guid, bool>> _effectsAppliedByActor = new Dictionary<PlayerActor, Dictionary<Guid, bool>>();
 
     public static bool HasEffectBeenApplied(PlayerActor actor, ItemSO item)
     {
         if (_effectsAppliedByActor.TryGetValue(actor, out var itemEffects))
         {
-            return itemEffects.TryGetValue(item, out var effectApplied) && effectApplied;
+            return itemEffects.TryGetValue(item.InstanceId, out var effectApplied) && effectApplied;
         }
         return false;
     }
@@ -19,12 +20,12 @@ public static class ManageEffects
     {
         if (!_effectsAppliedByActor.ContainsKey(actor))
         {
-            _effectsAppliedByActor[actor] = new Dictionary<ItemSO, bool>();
+            _effectsAppliedByActor[actor] = new Dictionary<Guid, bool>();
         }
 
-        if (!_effectsAppliedByActor[actor].ContainsKey(item))
+        if (!_effectsAppliedByActor[actor].ContainsKey(item.InstanceId))
         {
-            _effectsAppliedByActor[actor][item] = false;
+            _effectsAppliedByActor[actor][item.InstanceId] = false;
         }
     }
 
@@ -32,19 +33,19 @@ public static class ManageEffects
     {
         if (!_effectsAppliedByActor.ContainsKey(actor))
         {
-            _effectsAppliedByActor[actor] = new Dictionary<ItemSO, bool>();
+            _effectsAppliedByActor[actor] = new Dictionary<Guid, bool>();
         }
 
-        _effectsAppliedByActor[actor][item] = true;
+        _effectsAppliedByActor[actor][item.InstanceId] = true;
     }
 
     public static void MarkEffectAsNotApplied(PlayerActor actor, ItemSO item)
     {
         if (!_effectsAppliedByActor.ContainsKey(actor))
         {
-            _effectsAppliedByActor[actor] = new Dictionary<ItemSO, bool>();
+            _effectsAppliedByActor[actor] = new Dictionary<Guid, bool>();
         }
 
-        _effectsAppliedByActor[actor][item] = false;
+        _effectsAppliedByActor[actor][item.InstanceId] = false;
     }
 }

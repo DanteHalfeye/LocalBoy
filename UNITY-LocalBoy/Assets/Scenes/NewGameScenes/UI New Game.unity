@@ -2103,34 +2103,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[11].name
-      value: UI-button
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[11].<evento>k__BackingField.Path
-      value: event:/UI/UI-Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[11].<evento>k__BackingField.Guid.Data1
-      value: 107296914
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[11].<evento>k__BackingField.Guid.Data2
-      value: 1261456480
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[11].<evento>k__BackingField.Guid.Data3
-      value: 972033953
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681318581691462733, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
-      propertyPath: events.Array.data[11].<evento>k__BackingField.Guid.Data4
-      value: 698962088
-      objectReference: {fileID: 0}
     - target: {fileID: 3129020186606480478, guid: 895b32fadd5fd5e4ba752fad6e65fc65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

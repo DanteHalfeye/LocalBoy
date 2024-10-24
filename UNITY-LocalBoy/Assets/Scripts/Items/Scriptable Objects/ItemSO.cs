@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,8 @@ public class ItemSO : ScriptableObject
     private Sprite icon;
     [SerializeField]
     private ItemRarity rarity;
-
+    [SerializeField]
+    private bool canStack;
 
     [SerializeField]
     private Condition conditional;
@@ -29,6 +31,13 @@ public class ItemSO : ScriptableObject
     private float durationAmount;
 
     private ItemTypeClass itemType;
+
+    private Guid instanceId;
+
+    public void Initialize()
+    {
+        instanceId = Guid.NewGuid();
+    }
 
     public string Name => name;
     public string Description => description;
@@ -48,6 +57,10 @@ public class ItemSO : ScriptableObject
         get { return itemType; }
         set { itemType = value; }
     }
+
+    public bool CanStack => canStack;
+
+    public Guid InstanceId => instanceId;
 
     public ItemRarity Rarity { get { return rarity; } }
 
