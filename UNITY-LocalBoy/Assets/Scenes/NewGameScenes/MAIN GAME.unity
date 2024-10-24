@@ -209,10 +209,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.12444445
-    y: 0
-    width: 0.7506173
-    height: 1
+    x: 0
+    y: 0.5
+    width: 0.771875
+    height: 0.771875
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1065,6 +1065,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 63947040807574267, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -199740661, guid: 733861511f967964e8722c7790082495, type: 3}
     - target: {fileID: 935666906490536212, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1164,6 +1168,14 @@ PrefabInstance:
     - target: {fileID: 1418813702776644954, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548537392456958884, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1434540094}
+    - target: {fileID: 1548537392456958884, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseOptionsMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1552767195492508257, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1277,6 +1289,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 8750096806011075480, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -527913666, guid: 5e4b6225756cb4d4fa51f3dc5da087cb, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1291,6 +1307,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1079124976}
   m_SourcePrefab: {fileID: 100100000, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+--- !u!114 &1434540094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2890648698528157186, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+  m_PrefabInstance: {fileID: 1434540093}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a86803258dbf346bf931e32ea766fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441723102
 GameObject:
   m_ObjectHideFlags: 0
