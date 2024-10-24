@@ -104,7 +104,11 @@ public class ApplyItem_shop : MonoBehaviour
             if (actor.Currency < price) return;
             AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
             text.Show(item);
-
+            item.Initialize();
+            if (!item.CanStack)
+            {
+                ItemPool.RemoveItemFromPool(item);
+            }
             actor.Currency -= price;
 
             actor.PickUpItem(item);

@@ -25,4 +25,4 @@ MonoBehaviour:
   durationAmount: 0
   effects:
   - stat: 4
-    modifier: 5
+    modifier: -2

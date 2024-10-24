@@ -32,9 +32,6 @@ public class ApplyItem : MonoBehaviour
 
             actor.PickUpItem(item);
             Destroy(this.gameObject);
-
-
-
         }
     }
 }

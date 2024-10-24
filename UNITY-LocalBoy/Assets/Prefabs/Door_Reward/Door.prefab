@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: MAIN GAME
-  rewardType: 0
+  rewardType: 2
 --- !u!61 &1643513719787837898
 BoxCollider2D:
   m_ObjectHideFlags: 0

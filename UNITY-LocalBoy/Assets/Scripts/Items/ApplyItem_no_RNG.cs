@@ -66,7 +66,11 @@ public class ApplyItem_noRNG_shop : MonoBehaviour
             text.Show(item);
 
             AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
-
+            item.Initialize();
+            if (!item.CanStack)
+            {
+                ItemPool.RemoveItemFromPool(item);
+            }
 
 
             actor.Currency -= price;
