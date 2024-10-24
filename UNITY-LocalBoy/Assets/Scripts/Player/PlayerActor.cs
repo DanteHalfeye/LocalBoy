@@ -20,14 +20,20 @@ public class PlayerActor : MonoBehaviour
     [SerializeField]
     private int currency;
 
-   
+    private bool _isUpdatingStats = false;
+
     public int Currency
     {
         get { return currency; }
         set 
         { 
             currency = value;
-            ItemEvents.TriggerOnStatChange();
+            if (!_isUpdatingStats)
+            {
+                _isUpdatingStats = true;
+                ItemEvents.TriggerOnStatChange();
+                _isUpdatingStats = false;
+            }
         }
     }
 
@@ -50,7 +56,16 @@ public class PlayerActor : MonoBehaviour
     public int CurrentHealth
     {
         get { return currentHealth;  }
-        set { currentHealth = value; ItemEvents.TriggerOnStatChange(); }
+        set 
+        { 
+            currentHealth = value;
+            if (!_isUpdatingStats)
+            {
+                _isUpdatingStats = true;
+                ItemEvents.TriggerOnStatChange();
+                _isUpdatingStats = false;
+            }
+        }
     }
 
     public float HpPercent
@@ -94,7 +109,12 @@ public class PlayerActor : MonoBehaviour
 
         currentHealth = math.clamp(currentHealth, 0, maxHealth);
 
-        ItemEvents.TriggerOnStatChange();
+        if (!_isUpdatingStats)
+        {
+            _isUpdatingStats = true;
+            ItemEvents.TriggerOnStatChange();
+            _isUpdatingStats = false;
+        }
     }
 
     public void ModifyCurrentHp(int value)
@@ -103,19 +123,34 @@ public class PlayerActor : MonoBehaviour
 
         currentHealth = math.clamp(currentHealth, 0, maxHealth);
 
-        ItemEvents.TriggerOnStatChange();
+        if (!_isUpdatingStats)
+        {
+            _isUpdatingStats = true;
+            ItemEvents.TriggerOnStatChange();
+            _isUpdatingStats = false;
+        }
     }
 
     public void SetMaxHp(int value)
     {
         maxHealth = value;
-        ItemEvents.TriggerOnStatChange();
+        if (!_isUpdatingStats)
+        {
+            _isUpdatingStats = true;
+            ItemEvents.TriggerOnStatChange();
+            _isUpdatingStats = false;
+        }
     }
 
     public void ModifyMaxHp(int value)
     {
         maxHealth += value;
-        ItemEvents.TriggerOnStatChange();
+        if (!_isUpdatingStats)
+        {
+            _isUpdatingStats = true;
+            ItemEvents.TriggerOnStatChange();
+            _isUpdatingStats = false;
+        }
     }
 
     public float GetMovementSpeed
@@ -126,13 +161,23 @@ public class PlayerActor : MonoBehaviour
     public void SetMovementSpeed(float value)
     {
         _maxSpeed = value;
-        ItemEvents.TriggerOnStatChange();
+        if (!_isUpdatingStats)
+        {
+            _isUpdatingStats = true;
+            ItemEvents.TriggerOnStatChange();
+            _isUpdatingStats = false;
+        }
     }
 
     public void ModifyMovementSpeed(float value)
     {
         _maxSpeed += value;
-        ItemEvents.TriggerOnStatChange();
+        if (!_isUpdatingStats)
+        {
+            _isUpdatingStats = true;
+            ItemEvents.TriggerOnStatChange();
+            _isUpdatingStats = false;
+        }
     }
 
     public float GetAttackSpeed
@@ -143,13 +188,23 @@ public class PlayerActor : MonoBehaviour
     public void SetAttackSpeed(float value)
     {
         _dashCooldown = value;
-        ItemEvents.TriggerOnStatChange();
+        if (!_isUpdatingStats)
+        {
+            _isUpdatingStats = true;
+            ItemEvents.TriggerOnStatChange();
+            _isUpdatingStats = false;
+        }
     }
 
     public void ModifyAttackSpeed(float value)
     {
         _dashCooldown += value;
-        ItemEvents.TriggerOnStatChange();
+        if (!_isUpdatingStats)
+        {
+            _isUpdatingStats = true;
+            ItemEvents.TriggerOnStatChange();
+            _isUpdatingStats = false;
+        }
     }
 
     public void PickUpItem(ItemSO item)
