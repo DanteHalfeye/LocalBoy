@@ -171,7 +171,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48312234}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -668,7 +668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4324137073630271406, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4324137073630271406, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Interactable
@@ -760,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5823866068833342494, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5823866068833342494, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Interactable
@@ -768,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056697328951477309, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6056697328951477309, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Interactable
@@ -780,7 +780,7 @@ PrefabInstance:
       objectReference: {fileID: -2062949602, guid: 23aea691c22bc94408e0ebe102b44315, type: 3}
     - target: {fileID: 6358270708970994434, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6358270708970994434, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Interactable
@@ -788,7 +788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6541038657492486361, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6541038657492486361, guid: aa018ea455822504090187b69fe905a5, type: 3}
       propertyPath: m_Interactable
