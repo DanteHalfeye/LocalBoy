@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{07042b60-6aab-47fd-9b73-8e0ac01699c3}">
+		<property name="assetPath">
+			<value>2.11. Slave Knight Gael (Transitory Lands Version) - signatux soundtracks (youtube).mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>167.66399999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b598fa37-0593-4970-9f26-c57eeed8416c}</destination>
+		</relationship>
+	</object>
+</objects>
