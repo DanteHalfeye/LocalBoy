@@ -40,15 +40,23 @@ public class RoomManager : MonoBehaviour
             return;
         }
 
-
-        if (FMODEvents.instance != null)
-        {
-            fondoInstance = AudioManager.CreateInstance("fondo-music_2");
-            AudioManager.PlaySingleEmiter(fondoInstance);
-        }
+        StartCoroutine(MusicCountDown());
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private IEnumerator MusicCountDown()
+    {
+        float count = 0.5f;
+
+        while (count > 0)
+        {
+            count -= Time.deltaTime;
+            yield return null;
+        }
+        fondoInstance = AudioManager.CreateInstance("fondo-music_2");
+        AudioManager.PlaySingleEmiter(fondoInstance);
     }
 
     private void Update()
