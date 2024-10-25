@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -39,11 +40,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         moveActionToUse.action.Enable();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
         moveActionToUse.action.Disable();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
 
@@ -63,6 +66,15 @@ public class PlayerMovement : MonoBehaviour
         _input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (_input.magnitude > 1)
             _input.Normalize();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        moveActionToUse.action.Disable();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        moveActionToUse.action.Enable();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void MoveCharacter()
