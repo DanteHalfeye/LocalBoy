@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 5251154723581459073}
   m_Layer: 8
   m_Name: EnemySniperShot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +177,7 @@ BoxCollider2D:
   m_Offset: {x: 0.0000019073486, y: -0.5604173}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.49514797, y: 0.058466773}
     oldSize: {x: 8, y: 8}
     newSize: {x: 6, y: 6}
     adaptiveTilingThreshold: 0.5

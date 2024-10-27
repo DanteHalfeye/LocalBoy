@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fab4f4177c55f408f83eb98e77576e, type: 3}
+  m_Name: Inertia
+  m_EditorClassIdentifier: 
+  name: Inertia
+  description: 'On Kill: 10 Movement Speed for 1 Second'
+  icon: {fileID: 986369517, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
+  rarity: 15
+  canStack: 1
+  conditional: 0
+  conditionValue: 0
+  conditionNumber: 0
+  triggerType: 2
+  duration: 1
+  durationAmount: 1
+  effects:
+  - stat: 6
+    modifier: 10

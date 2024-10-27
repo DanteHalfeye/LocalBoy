@@ -7,7 +7,9 @@ public enum Stat
     ModifyAttackSpeed,
     SetAttackSpeed,
     ModifySpeed,
-    SetSpeed
+    SetSpeed,
+    ModifyMoney,
+    ModifyDashSpeed
 }
 
 public enum EffectTrigger

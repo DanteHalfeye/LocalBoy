@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fab4f4177c55f408f83eb98e77576e, type: 3}
+  m_Name: Lagrange Point
+  m_EditorClassIdentifier: 
+  name: Lagrange Point
+  description: +25 Max Hp, -10 Movement Speed
+  icon: {fileID: 0}
+  rarity: 15
+  canStack: 1
+  conditional: 0
+  conditionValue: 0
+  conditionNumber: 0
+  triggerType: 0
+  duration: 0
+  durationAmount: 0
+  effects:
+  - stat: 2
+    modifier: 25
+  - stat: 6
+    modifier: -10

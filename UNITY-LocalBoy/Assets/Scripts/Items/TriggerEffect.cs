@@ -166,6 +166,12 @@ public static class TriggerEffect
                     case Stat.ModifyAttackSpeed:
                         actor.ModifyAttackSpeed(effect.modifier);
                         break;
+                    case Stat.ModifyMoney:
+                        actor.Currency += effect.modifier;
+                        break;
+                    case Stat.ModifyDashSpeed:
+                        actor.Currency += effect.modifier;
+                        break;
                 }
             }
 
@@ -208,6 +214,12 @@ public static class TriggerEffect
                         break;
                     case Stat.SetSpeed:
                         actor.SetMovementSpeed(-effect.modifier);
+                        break;
+                    case Stat.ModifyMoney:
+                        actor.Currency -= effect.modifier;
+                        break;
+                    case Stat.ModifyDashSpeed:
+                        actor.Currency -= effect.modifier;
                         break;
                 }
             }

@@ -90,7 +90,17 @@ public class PlayerActor : MonoBehaviour
 
     public float DashSpeed
     {
-        get { return _dashSpeed; }
+        get { return _dashCooldown; }
+        set
+        {
+            _dashSpeed = value;
+            if (!_isUpdatingStats)
+            {
+                _isUpdatingStats = true;
+                ItemEvents.TriggerOnStatChange();
+                _isUpdatingStats = false;
+            }
+        }
     }
 
     public float DashDuration

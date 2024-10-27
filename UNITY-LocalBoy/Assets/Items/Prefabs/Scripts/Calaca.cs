@@ -10,13 +10,13 @@ public class Calaca : BaseOrbital
     private float attackTime;
 
 
-    private Shoot shoot;
+    private ShootPlayer shoot;
     private BulletPool bp;
 
     protected override void Awake()
     {
         base.Awake();
-        shoot = GetComponent<Shoot>();
+        shoot = GetComponent<ShootPlayer>();
         bp = GetComponent<BulletPool>();
     }
 

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 511853246272019312}
   - component: {fileID: 7117388545588104573}
   - component: {fileID: 6973499515883763887}
-  - component: {fileID: 2256819475637403305}
   - component: {fileID: 5321783322642208104}
+  - component: {fileID: 5601647270454438159}
   m_Layer: 0
   m_Name: Calaca
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.9499998, y: 0, z: 0}
-  m_LocalScale: {x: 0.45199, y: 0.45199, z: 0.45199}
+  m_LocalScale: {x: 0.6352822, y: 0.6637542, z: 2.369603}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4820384525506755783}
@@ -76,11 +76,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  m_Color: {r: 0.8113208, g: 0.04209684, b: 0.73430127, a: 1}
+  m_Sprite: {fileID: 944447074, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -103,23 +103,6 @@ MonoBehaviour:
   axis: 0
   rotateAroundItself: 0
   attackSpeed: 10
---- !u!114 &2256819475637403305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667729775565407269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7cc905bc9fb406439024c3991e523d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuerza: 5
-  autoShootRange: 10
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 32768
 --- !u!114 &5321783322642208104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,8 +115,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537eab8a99e1b4742bdcf7b5a874b119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balaPrefab: {fileID: 1889673154734698582, guid: efe3e80ee591cd8419c34df8ab5b0913, type: 3}
+  balaPrefab: {fileID: 1889673154734698582, guid: 63131be09d20d9840b75717c832fab7a, type: 3}
   cantidadDeBalas: 5
+--- !u!114 &5601647270454438159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667729775565407269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e893a3407d9c357458da4d7c5e995e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerza: 20
+  tagObjetivo: Enemy
 --- !u!1 &3706518597274311117
 GameObject:
   m_ObjectHideFlags: 0
