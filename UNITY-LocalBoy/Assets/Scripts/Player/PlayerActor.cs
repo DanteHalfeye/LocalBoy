@@ -90,7 +90,7 @@ public class PlayerActor : MonoBehaviour
 
     public float DashSpeed
     {
-        get { return _dashCooldown; }
+        get { return _dashSpeed; }
         set
         {
             _dashSpeed = value;

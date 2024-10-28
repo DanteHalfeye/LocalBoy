@@ -209,10 +209,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.32707924
+    x: 0.125
     y: 0
-    width: 0.3464949
-    height: 1.0021598
+    width: 0.75
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07388891c5da20149913eb5fe4a3eb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentLevelNumber: 0
+  _currentLevelNumber: 5
   gameState: 0
   previousGameState: 0
 --- !u!4 &1545793526
