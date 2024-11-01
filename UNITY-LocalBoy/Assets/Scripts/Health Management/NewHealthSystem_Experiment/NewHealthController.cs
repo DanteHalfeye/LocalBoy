@@ -55,13 +55,8 @@ public class NewHealthController : MonoBehaviour
             collision.gameObject.SetActive(false);
             return;
         }
-        if (collision.CompareTag("Heal"))
-        {
-            Heal(_healAmount);
-            collision.gameObject.SetActive(false);
-            return;
-        }
     }
+
 
     private void TakeDamage(int damageAmount)
     {
@@ -78,7 +73,7 @@ public class NewHealthController : MonoBehaviour
         OnHealthChanged?.Invoke();
     }
 
-    private void Heal(int healAmount)
+    public void Heal(int healAmount)
     {
         actor.CurrentHealth += healAmount;
         actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHealth);

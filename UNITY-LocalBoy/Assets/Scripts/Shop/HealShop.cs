@@ -25,7 +25,8 @@ public class HealShop : MonoBehaviour
             if (actor.Currency < price) return;
 
             actor.Currency -= price;
-            actor.ModifyCurrentHp(amount);
+            NewHealthController healthController = collision.GetComponent<NewHealthController>();
+            healthController.Heal(amount);
             Destroy(gameObject);
         }
     }

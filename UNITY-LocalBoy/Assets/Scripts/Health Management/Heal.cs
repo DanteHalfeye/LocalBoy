@@ -12,8 +12,9 @@ public class Heal : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerActor actor = collision.GetComponent<PlayerActor>();
-            actor.ModifyCurrentHp(amount);
+            NewHealthController actor = collision.GetComponent<NewHealthController>();
+            actor.Heal(amount);
+            Destroy(gameObject);
         }
     }
 
