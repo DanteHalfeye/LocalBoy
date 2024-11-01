@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07388891c5da20149913eb5fe4a3eb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentLevelNumber: 5
+  _currentLevelNumber: 0
   gameState: 0
   previousGameState: 0
 --- !u!4 &1545793526
