@@ -209,10 +209,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.125
+    x: 0
     y: 0
-    width: 0.75
-    height: 1
+    width: 0
+    height: 0
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1122,6 +1122,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -199740661, guid: 733861511f967964e8722c7790082495, type: 3}
+    - target: {fileID: 733861127095197038, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 935666906490536212, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1292,7 +1296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5298810447398784233, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 373
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 5298810447398784233, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1322,6 +1326,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -817797039, guid: 0bce1f12e576d7843928ac652e539150, type: 3}
+    - target: {fileID: 6592873516094093890, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 6776492009800920486, guid: 472a04c740e9c0746b004b56fec076c3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -135.99997
