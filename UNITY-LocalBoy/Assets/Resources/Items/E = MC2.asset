@@ -26,5 +26,5 @@ MonoBehaviour:
   effects:
   - stat: 0
     modifier: 15
-  - stat: 5
+  - stat: 4
     modifier: 30

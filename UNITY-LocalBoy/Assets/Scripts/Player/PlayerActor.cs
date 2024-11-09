@@ -208,7 +208,7 @@ public class PlayerActor : MonoBehaviour
 
     public void ModifyAttackSpeed(float value)
     {
-        _dashCooldown += (value * 0.1f);
+        _dashCooldown *= (value * 0.1f);
         if (!_isUpdatingStats)
         {
             _isUpdatingStats = true;

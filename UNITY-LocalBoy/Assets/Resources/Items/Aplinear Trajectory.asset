@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Apolinear Trajectory
   description: +15 Movement Speed for 5 Rooms
-  icon: {fileID: 0}
+  icon: {fileID: 1378357506, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 10
   canStack: 1
   conditional: 0

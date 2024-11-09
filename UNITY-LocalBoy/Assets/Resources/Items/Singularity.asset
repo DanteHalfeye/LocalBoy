@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Singularity
   description: Push bullets away every 5 seconds
-  icon: {fileID: 0}
+  icon: {fileID: 1193026405, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 20
   canStack: 1
   conditional: 0

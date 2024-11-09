@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Lagrange Point
   description: +25 Max Hp, -10 Movement Speed
-  icon: {fileID: 0}
+  icon: {fileID: -1154536270, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 15
   canStack: 1
   conditional: 0
