@@ -25,6 +25,7 @@ public class HealShop : MonoBehaviour
             if (actor.Currency < price) return;
 
             actor.Currency -= price;
+            AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
             NewHealthController healthController = collision.GetComponent<NewHealthController>();
             healthController.Heal(amount);
             Destroy(gameObject);

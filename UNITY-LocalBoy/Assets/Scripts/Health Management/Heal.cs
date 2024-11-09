@@ -13,6 +13,7 @@ public class Heal : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             NewHealthController actor = collision.GetComponent<NewHealthController>();
+            AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
             actor.Heal(amount);
             Destroy(gameObject);
         }

@@ -24,7 +24,7 @@ MonoBehaviour:
   duration: 0
   durationAmount: 0
   effects:
-  - stat: 0
+  - stat: 2
     modifier: 15
   - stat: 4
-    modifier: 30
+    modifier: 25

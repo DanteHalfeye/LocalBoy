@@ -20,6 +20,9 @@ public class PlayerActor : MonoBehaviour
     [SerializeField]
     private int currency;
 
+    [SerializeField]
+    private TMPro.TextMeshProUGUI _textMeshPro;
+
     private bool _isUpdatingStats = false;
 
     public int Currency
@@ -34,6 +37,7 @@ public class PlayerActor : MonoBehaviour
                 ItemEvents.TriggerOnStatChange();
                 _isUpdatingStats = false;
             }
+            _textMeshPro.text = "MONEY: " + currency;
         }
     }
 
@@ -208,7 +212,7 @@ public class PlayerActor : MonoBehaviour
 
     public void ModifyAttackSpeed(float value)
     {
-        _dashCooldown *= (value * 0.1f);
+        _dashCooldown *= ((1f-value) * 0.01f);
         if (!_isUpdatingStats)
         {
             _isUpdatingStats = true;
