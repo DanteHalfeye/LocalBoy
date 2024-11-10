@@ -124,7 +124,6 @@ public static class TriggerEffect
 
     private static void RemoveOrbital(ItemOrbitalSO item, PlayerActor actor)
     {
-        Unsubscribe(item.InstanceId);
         if (ManageEffects.HasEffectBeenApplied(actor, item))
         {
             GameObject Instance = ItemManager.GetInstance(actor, item);
@@ -195,7 +194,6 @@ public static class TriggerEffect
 
     private static void RemoveEffectStats(ItemStatSO item, PlayerActor actor)
     {
-        Unsubscribe(item.InstanceId);
 
         if (ManageEffects.HasEffectBeenApplied(actor, item))
         {

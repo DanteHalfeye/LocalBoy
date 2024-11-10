@@ -66,7 +66,7 @@ public class ManageItemTimers : MonoBehaviour
         }
 
         ItemEvents.OnRoomEntered -= IncrementRoomCount;
-
+        TriggerEffect.Unsubscribe(item.InstanceId);
         TriggerEffect.RemoveItemEffect(item, actor);
     }
 
