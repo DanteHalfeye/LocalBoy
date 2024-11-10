@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velocity
   m_EditorClassIdentifier: 
   name: Velocity
-  description: +7 Speed
+  description: +3 Speed
   icon: {fileID: -548847353, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 10
   canStack: 1

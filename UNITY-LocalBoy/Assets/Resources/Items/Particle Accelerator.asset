@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Particle Accelerator
   m_EditorClassIdentifier: 
   name: Particle Accelerator
-  description: +20 Movement Speed, +0.3 Attack Speed
+  description: +10 Movement Speed, +0.3 Attack Speed
   icon: {fileID: -1761851458, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 20
   canStack: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Inertia
   m_EditorClassIdentifier: 
   name: Inertia
-  description: 'On Kill: 10 Movement Speed for 1 Second'
+  description: 'On Kill: 5 Movement Speed for 1 Second'
   icon: {fileID: 986369517, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 15
   canStack: 1

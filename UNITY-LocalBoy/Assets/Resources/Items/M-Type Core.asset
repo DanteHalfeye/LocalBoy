@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: M-Type Core
   m_EditorClassIdentifier: 
   name: M-Type Core
-  description: -15 Speed, +15 Gold
+  description: -5 Speed, +15 Gold
   icon: {fileID: -148696161, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 15
   canStack: 1
@@ -26,6 +26,6 @@ MonoBehaviour:
   durationAmount: 0
   effects:
   - stat: 6
-    modifier: 5
+    modifier: -5
   - stat: 8
     modifier: 15

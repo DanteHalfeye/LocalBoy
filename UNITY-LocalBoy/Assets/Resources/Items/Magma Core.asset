@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Magma Core
   m_EditorClassIdentifier: 
   name: Magma Core
-  description: Set Hp to 25, +30 Movement Speed, +0.5 Attack Speed
+  description: Set Hp to 25, +15 Movement Speed, +0.5 Attack Speed
   icon: {fileID: -2117605260, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 20
   canStack: 1
