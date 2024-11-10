@@ -27,6 +27,7 @@ public class RoomManager : MonoBehaviour
 
     private EventInstance fondoInstance;
 
+    public EventInstance FondoInstance => fondoInstance;
 
     private void Awake()
     {
@@ -147,9 +148,40 @@ public class RoomManager : MonoBehaviour
 
     private static T SeleccionarEnumAleatorio<T>() where T : Enum
     {
+        // Definir los pesos en el mismo orden que los valores del enum.
+        int[] weights = new int[] { 40, 20, 10, 30 };
+
+        // Obtener los valores del enum.
         T[] valores = (T[])Enum.GetValues(typeof(T));
-        int indiceAleatorio = UnityEngine.Random.Range(0, valores.Length);
-        return valores[indiceAleatorio];
+
+        // Verificar que los pesos coincidan con el número de valores.
+        if (weights.Length != valores.Length)
+        {
+            throw new ArgumentException("El número de pesos no coincide con el número de valores en el enum.");
+        }
+
+        // Calcular la suma total de los pesos.
+        int totalWeight = 0;
+        foreach (int weight in weights)
+        {
+            totalWeight += weight;
+        }
+
+        // Generar un número aleatorio entre 0 y el total de los pesos.
+        int randomValue = UnityEngine.Random.Range(0, totalWeight);
+
+        // Determinar qué valor corresponde al número aleatorio basado en los pesos.
+        int cumulativeWeight = 0;
+        for (int i = 0; i < valores.Length; i++)
+        {
+            cumulativeWeight += weights[i];
+            if (randomValue < cumulativeWeight)
+            {
+                return valores[i];
+            }
+        }
+
+        throw new InvalidOperationException("No se pudo seleccionar un valor aleatorio del enum.");
     }
 
     public Rewards CurrentReward
