@@ -209,9 +209,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.124533
     y: 0
-    width: 1
+    width: 0.75051886
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -5268,7 +5268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8102665496856643070, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: maxHealth
-      value: 75
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: -8102665496856643070, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: _textMeshPro
@@ -5280,7 +5280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8102665496856643070, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: _dashCooldown
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 431767270818713733, guid: 8f02796aa6f34024e8e7157634feaf5f, type: 3}
       propertyPath: m_LocalScale.x

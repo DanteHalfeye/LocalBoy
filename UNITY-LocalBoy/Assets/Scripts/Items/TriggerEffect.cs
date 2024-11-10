@@ -23,7 +23,7 @@ public static class TriggerEffect
             case EffectTrigger.Always:
                 Action statChangedHandler = () => EvaluateTrigger(item, actor);
                 statChangedHandlers[item.InstanceId] = statChangedHandler;
-                ItemEvents.OnStatChanged += statChangedHandler;
+                ItemEvents.OnStatChanged += () => EvaluateTrigger(item, actor);
                 EvaluateTrigger(item, actor);
                 break;
 
@@ -124,6 +124,7 @@ public static class TriggerEffect
 
     private static void RemoveOrbital(ItemOrbitalSO item, PlayerActor actor)
     {
+        Unsubscribe(item.InstanceId);
         if (ManageEffects.HasEffectBeenApplied(actor, item))
         {
             GameObject Instance = ItemManager.GetInstance(actor, item);
@@ -175,7 +176,10 @@ public static class TriggerEffect
                 }
             }
 
-            ManageEffects.MarkEffectAsApplied(actor, item);
+            if (!item.CanStack)
+            {
+                ManageEffects.MarkEffectAsApplied(actor, item);
+            }
 
             if (item.Duration != DurationType.Infinite)
             {
@@ -191,6 +195,8 @@ public static class TriggerEffect
 
     private static void RemoveEffectStats(ItemStatSO item, PlayerActor actor)
     {
+        Unsubscribe(item.InstanceId);
+
         if (ManageEffects.HasEffectBeenApplied(actor, item))
         {
             foreach (var effect in item.Effects)
@@ -207,7 +213,6 @@ public static class TriggerEffect
                         actor.ModifyMaxHp(-effect.modifier);
                         break;
                     case Stat.ModifyCurrentHealth:
-                        actor.ModifyCurrentHp(-effect.modifier);
                         break;
                     case Stat.ModifySpeed:
                         actor.ModifyMovementSpeed(-effect.modifier);
@@ -216,7 +221,6 @@ public static class TriggerEffect
                         actor.SetMovementSpeed(-effect.modifier);
                         break;
                     case Stat.ModifyMoney:
-                        actor.Currency -= effect.modifier;
                         break;
                     case Stat.ModifyDashSpeed:
                         actor.Currency -= effect.modifier;

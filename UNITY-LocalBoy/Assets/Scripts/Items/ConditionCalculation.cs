@@ -19,7 +19,7 @@ public static class ConditionCalculation
         }
         else if (condition == Condition.Halth_percent)
         {
-            conditionMet = EvaluateConditionNumber(conditionNumber, actor.HpPercent, conditionValue);
+            conditionMet = EvaluateConditionNumber(conditionNumber, (actor.HpPercent*100), conditionValue);
         }
         else if (condition == Condition.Speed)
         {
@@ -41,12 +41,13 @@ public static class ConditionCalculation
                 return Mathf.Approximately(statValue, conditionValue);
 
             case ConditionNumberType.LESS_THAN:
-                return statValue < conditionValue;
-
-            case ConditionNumberType.GREATER_THAN:
                 return statValue > conditionValue;
 
+            case ConditionNumberType.GREATER_THAN:
+                return statValue < conditionValue;
+
             case ConditionNumberType.LESS_THAN_OR_EQUAL:
+                Debug.Log($"Stat Value: {statValue}, Condition Value: {conditionValue}");
                 return statValue <= conditionValue;
 
             case ConditionNumberType.GREATER_THAN_OR_EQUAL:

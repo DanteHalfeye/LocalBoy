@@ -15,6 +15,8 @@ public class ItemSO : ScriptableObject
     private ItemRarity rarity;
     [SerializeField]
     private bool canStack;
+    [SerializeField]
+    private bool effectCanStack;
 
     [SerializeField]
     private Condition conditional;
@@ -39,6 +41,7 @@ public class ItemSO : ScriptableObject
         instanceId = Guid.NewGuid();
     }
 
+    public bool EffectCanStack => effectCanStack;
     public string Name => name;
     public string Description => description;
     public Sprite Icon => icon;

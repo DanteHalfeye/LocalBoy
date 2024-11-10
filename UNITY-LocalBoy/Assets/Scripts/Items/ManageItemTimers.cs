@@ -60,7 +60,7 @@ public class ManageItemTimers : MonoBehaviour
 
         ItemEvents.OnRoomEntered += IncrementRoomCount;
 
-        while (count >= item.DurationAmount)
+        while (count <= item.DurationAmount)
         {
             yield return null;
         }

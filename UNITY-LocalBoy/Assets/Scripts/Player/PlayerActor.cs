@@ -59,10 +59,10 @@ public class PlayerActor : MonoBehaviour
 
     public int CurrentHealth
     {
-        get { return currentHealth;  }
-        set 
-        { 
-            currentHealth = value;
+        get { return currentHealth; }
+        set
+        {
+            currentHealth = math.clamp(value, 0, maxHealth);
             if (!_isUpdatingStats)
             {
                 _isUpdatingStats = true;
@@ -72,9 +72,10 @@ public class PlayerActor : MonoBehaviour
         }
     }
 
+
     public float HpPercent
     {
-        get { return currentHealth / maxHealth; }
+        get { return (float)currentHealth / maxHealth; }
     }
 
     public float Acceleration
@@ -136,6 +137,8 @@ public class PlayerActor : MonoBehaviour
         currentHealth += value;
 
         currentHealth = math.clamp(currentHealth, 0, maxHealth);
+
+        Debug.Log(currentHealth);
 
         if (!_isUpdatingStats)
         {
@@ -212,7 +215,8 @@ public class PlayerActor : MonoBehaviour
 
     public void ModifyAttackSpeed(float value)
     {
-        _dashCooldown *= ((1f-value) * 0.01f);
+        _dashCooldown *= ((100f-value) * 0.01f);
+        Debug.Log(value);
         if (!_isUpdatingStats)
         {
             _isUpdatingStats = true;

@@ -130,7 +130,6 @@ public class RoomManager : MonoBehaviour
         while (timer >= 0) 
         {
             timer -= Time.deltaTime;
-            Debug.Log(timer);
             yield return null;
         }
 
