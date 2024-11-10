@@ -13,6 +13,7 @@ public class GiveMoney : MonoBehaviour
         {
             PlayerActor actor = collision.GetComponent<PlayerActor>();
             actor.Currency += amount;
+            AudioManager.PlayOneShot("pick-item", gameObject.transform.position);
             Destroy(this.gameObject);
         }
     }
