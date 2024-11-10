@@ -50,9 +50,6 @@ public class PlayerActor : MonoBehaviour
             ItemManager.UnregisterItem(item, this);
             TriggerEffect.Unsubscribe(item);
         }
-
-        AudioManager.StopEmiter(RoomManager.instance.FondoInstance);
-
     }
 
     public int MaxHealth

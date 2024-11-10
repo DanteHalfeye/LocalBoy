@@ -78,6 +78,8 @@ public class RoomManager : MonoBehaviour
     {
         StaticEventHandler.OnRoomCleared -= SpawnDoorsCall;
         StaticEventHandler.OnRoomCleared -= SpawnRewards;
+
+        AudioManager.StopEmiter(fondoInstance);
     }
 
 
