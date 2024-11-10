@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: -1761851458, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 20
   canStack: 1
+  effectCanStack: 0
   conditional: 0
   conditionValue: 0
   conditionNumber: 0
@@ -27,4 +28,4 @@ MonoBehaviour:
   - stat: 6
     modifier: 20
   - stat: 4
-    modifier: 30
+    modifier: 15

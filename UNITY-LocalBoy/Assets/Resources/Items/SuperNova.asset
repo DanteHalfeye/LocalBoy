@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: SuperNova
   m_EditorClassIdentifier: 
   name: Supernova
-  description: +30 Dash Speed
+  description: +50 Dash Speed
   icon: {fileID: -1715690404, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
   rarity: 20
   canStack: 1
+  effectCanStack: 0
   conditional: 0
   conditionValue: 0
   conditionNumber: 0
@@ -25,4 +26,4 @@ MonoBehaviour:
   durationAmount: 0
   effects:
   - stat: 9
-    modifier: 30
+    modifier: 50

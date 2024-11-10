@@ -272,8 +272,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.4
-  m_fontSizeBase: 8.4
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -378,6 +378,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heal_shop
       objectReference: {fileID: 0}
+    - target: {fileID: 7364715546530907227, guid: 19302625df00efe49b7437c75055003b, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364715546530907227, guid: 19302625df00efe49b7437c75055003b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8094624279891541376, guid: 19302625df00efe49b7437c75055003b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.52
@@ -480,6 +488,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e38b0199b1ef8444a970829dc1b9f735, type: 3}
+    - target: {fileID: 5895483619092848003, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895483619092848003, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8918933820584489683, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
       propertyPath: m_Name
       value: Item_no_RNG
@@ -502,6 +518,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5996069889005650442}
     m_Modifications:
+    - target: {fileID: 1340621656094472156, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340621656094472156, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5717074246783873786, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.373566
@@ -564,6 +588,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5996069889005650442}
     m_Modifications:
+    - target: {fileID: 1340621656094472156, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340621656094472156, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4519228018144727900, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 5.12

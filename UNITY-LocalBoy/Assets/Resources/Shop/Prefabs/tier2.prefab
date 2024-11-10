@@ -86,6 +86,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1154536270, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
+    - target: {fileID: 5895483619092848003, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895483619092848003, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7604017024067058341, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 3.91
@@ -119,6 +127,14 @@ PrefabInstance:
     - target: {fileID: 1552165548737420767, guid: 19302625df00efe49b7437c75055003b, type: 3}
       propertyPath: m_Name
       value: Heal_shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364715546530907227, guid: 19302625df00efe49b7437c75055003b, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364715546530907227, guid: 19302625df00efe49b7437c75055003b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8094624279891541376, guid: 19302625df00efe49b7437c75055003b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,6 +194,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5287088404631305250}
     m_Modifications:
+    - target: {fileID: 1340621656094472156, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340621656094472156, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5717074246783873786, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.02
