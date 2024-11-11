@@ -25,6 +25,10 @@ public class PlayerActor : MonoBehaviour
 
     private bool _isUpdatingStats = false;
 
+    private void OnEnable()
+    {
+        _textMeshPro.text = "MONEY: " + currency;
+    }
     public int Currency
     {
         get { return currency; }
