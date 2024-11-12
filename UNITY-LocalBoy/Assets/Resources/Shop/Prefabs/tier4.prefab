@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1572355177598155191, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e38b0199b1ef8444a970829dc1b9f735, type: 3}
     - target: {fileID: 5895483619092848003, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
       propertyPath: m_fontSize
       value: 12
@@ -91,6 +95,14 @@ PrefabInstance:
     - target: {fileID: 5895483619092848003, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
       propertyPath: m_fontSizeBase
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604017024067058341, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604017024067058341, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 8918933820584489683, guid: 264a5a8d7ae3dde4ab502a6665c679ba, type: 3}
       propertyPath: m_Name
@@ -192,6 +204,18 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 4519228018144727900, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.5600002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519228018144727900, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.8200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130317644723975787, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 207679323, guid: 1d8a6e5c71c8695419ddb3605221a0a9, type: 3}
     - target: {fileID: 5717074246783873786, guid: 1816e74e69ec51145814fa41161d18ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.35

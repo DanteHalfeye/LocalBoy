@@ -19,7 +19,7 @@ public class ApplyItem_noRNG_shop : MonoBehaviour
 
     private ItemSO item;
 
-    private void Awake()
+    private void OnEnable()
     {
         getPrice = transform.GetComponentInChildren<GetPrice>();
         price = (int)rarityPool;

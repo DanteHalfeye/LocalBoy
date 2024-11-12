@@ -15,7 +15,7 @@ public class ApplyItem_shop : MonoBehaviour
 
     private int price;
 
-    private void Awake()
+    private void OnEnable()
     {
         rarityPool = GetRandomRarity<ItemRarity>();
         spriteRender = GetComponent<SpriteRenderer>();
