@@ -209,9 +209,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.18421052
+    x: 0.1923077
     y: 0
-    width: 0.631579
+    width: 0.61538464
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -375,7 +375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8.478798, y: -49.99997}
+  m_AnchoredPosition: {x: 8.478821, y: -49.99997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227237603
@@ -443,16 +443,16 @@ RectTransform:
   m_GameObject: {fileID: 310136767}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.683844, y: 1.2798692, z: 1.7776455}
+  m_LocalScale: {x: 4.4244, y: 1.1061, z: 1.9662536}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 227237602}
   - {fileID: 341068376}
   m_Father: {fileID: 1509102976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -807, y: 415}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 272, y: -124}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310136769
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -6.372036, z: -379.83386, w: 0}
+  m_margin: {x: 0, y: -6.372036, z: -277.6423, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1297,7 +1297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835174883885110857, guid: 594d32e38400bcd4ba9f62a84579f605, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1795.3364
+      value: -2713
       objectReference: {fileID: 0}
     - target: {fileID: 7835174883885110857, guid: 594d32e38400bcd4ba9f62a84579f605, type: 3}
       propertyPath: m_AnchoredPosition.y
