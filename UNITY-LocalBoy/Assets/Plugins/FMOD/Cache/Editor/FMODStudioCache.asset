@@ -123,7 +123,7 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638668713684976766
+  lastModified: 638654643551561094
   FileSizes:
   - Name: Desktop
     Value: 1394
@@ -170,10 +170,10 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638668713685372594
+  lastModified: 638654643597582423
   FileSizes:
   - Name: Desktop
-    Value: 2831968
+    Value: 2215712
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -210,7 +210,7 @@ MonoBehaviour:
   - {fileID: 614239836045416818}
   StringsBanks:
   - {fileID: -4221699823372732368}
-  cacheTime: 638668713686593610
+  cacheTime: 638654643599435183
   cacheVersion: 131619
 --- !u!114 &614239836045416818
 MonoBehaviour:
@@ -227,7 +227,7 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638668713684966724
+  lastModified: 638654643551551100
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -247,7 +247,7 @@ MonoBehaviour:
   Path: ../FMOD-LocalBoy/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638668713686593610
+  lastModified: 638654643599435183
   FileSizes:
   - Name: Desktop
     Value: 89344
@@ -301,11 +301,11 @@ MonoBehaviour:
   - {fileID: -3456857346023823776}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 215431
+  Length: 167664
 --- !u!114 &4375177151923595380
 MonoBehaviour:
   m_ObjectHideFlags: 0

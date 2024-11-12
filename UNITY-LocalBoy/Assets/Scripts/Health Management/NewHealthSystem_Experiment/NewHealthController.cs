@@ -75,7 +75,7 @@ public class NewHealthController : MonoBehaviour
 
     public void Heal(int healAmount)
     {
-        actor.CurrentHealth += healAmount;
+        actor.CurrentHealth = actor.MaxHealth * (healAmount/100);
         actor.CurrentHealth = math.clamp(actor.CurrentHealth, 0, actor.MaxHealth);
         UpdateHealth();
         OnHealthChanged?.Invoke();
